@@ -3312,6 +3312,8 @@ blockquote cite
 .fiche_avatar
 {
   grid-area: fiche_avatar;
+  /*width: 150px;
+  height: 350px;*/
   overflow: hidden;
   border: 1px solid var(--stroke-tertiary);
   padding: 4px;
@@ -3452,6 +3454,26 @@ display: none;
   width: 200px;
 }
 
+/*#fiche_slide_horsjeu #fiche_roliste_section
+{
+  gap: 16px;
+  height: 100%;
+}
+
+#fiche_roliste_section .sectionCard
+{
+  width: 100%;
+  height: 180px;
+}*/
+
+/*#fiche_experience .sectionText, #fiche_roliste .sectionText
+{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  overflow: auto;
+}*/
 
 .horsjeu_row
 {
@@ -3490,7 +3512,7 @@ display: none;
   display: flex;
 
 }
-#fichePrez .sectionTitle, .sectionTitleRight
+.sectionCardTitle, .sectionTitleRight
 {
   position: absolute;
   top:-16px;

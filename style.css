@@ -3514,7 +3514,6 @@ display: none;
 }
 .sectionCardTitle, .sectionTitleRight
 {
-  color: var(--text-tint);
   position: absolute;
   top:-16px;
 }

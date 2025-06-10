@@ -210,6 +210,11 @@
     letter-spacing: 9px;
     z-index:2;
   }
+
+#forumName:hover
+{
+	color: var(--text-color) !important;
+}
   
   
   .important

@@ -87,7 +87,15 @@
     --svg-feat : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-sparkles"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z" /%3E%3C/svg%3E');
     --svg-work : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-tools"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M3 21h4l13 -13a1.5 1.5 0 0 0 -4 -4l-13 13v4" /%3E%3Cpath d="M14.5 5.5l4 4" /%3E%3Cpath d="M12 8l-5 -5l-4 4l5 5" /%3E%3Cpath d="M7 8l-1.5 1.5" /%3E%3Cpath d="M16 12l5 5l-4 4l-5 -5" /%3E%3Cpath d="M16 17l-1.5 1.5" /%3E%3C/svg%3E');
     --svg-cristal : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-diamond"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M6 5h12l3 5l-8.5 9.5a.7 .7 0 0 1 -1 0l-8.5 -9.5l3 -5" /%3E%3Cpath d="M10 12l-2 -2.2l.6 -1" /%3E%3C/svg%3E');
- 
+    --svg-elementaire : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-droplet"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M7.502 19.423c2.602 2.105 6.395 2.105 8.996 0c2.602 -2.105 3.262 -5.708 1.566 -8.546l-4.89 -7.26c-.42 -.625 -1.287 -.803 -1.936 -.397a1.376 1.376 0 0 0 -.41 .397l-4.893 7.26c-1.695 2.838 -1.035 6.441 1.567 8.546z" /%3E%3C/svg%3E');
+
+    --svg-alteration : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-transfer"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M20 10h-16l5.5 -6" /%3E%3Cpath d="M4 14h16l-5.5 6" /%3E%3C/svg%3E');
+    --svg-construction : var(--svg-work);
+    --svg-invocation : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chart-bubble"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M6 16m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /%3E%3Cpath d="M16 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /%3E%3Cpath d="M14.5 7.5m-4.5 0a4.5 4.5 0 1 0 9 0a4.5 4.5 0 1 0 -9 0" /%3E%3C/svg%3E');
+    --svg-communication : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-message"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M8 9h8" /%3E%3Cpath d="M8 13h6" /%3E%3Cpath d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" /%3E%3C/svg%3E');
+    --svg-animation : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-seedling"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M12 10a6 6 0 0 0 -6 -6h-3v2a6 6 0 0 0 6 6h3" /%3E%3Cpath d="M12 14a6 6 0 0 1 6 -6h3v1a6 6 0 0 1 -6 6h-3" /%3E%3Cpath d="M12 20l0 -10" /%3E%3C/svg%3E');
+    --svg-aucune : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M18 6l-12 12" /%3E%3Cpath d="M6 6l12 12" /%3E%3C/svg%3E');
+
 
   
     /************* TOKENS *************/
@@ -210,11 +218,6 @@
     letter-spacing: 9px;
     z-index:2;
   }
-
-#forumName:hover
-{
-	color: var(--text-color) !important;
-}
   
   
   .important
@@ -309,7 +312,7 @@
   font-size: 15px;
   }
   
-  .label50, {font-size: 12px;}
+  .label50 {font-size: 12px;}
   
   .text_600, .text_500,.text_300 {
     font-family: "Lora", "Merriweather Sans";
@@ -474,8 +477,36 @@
 {
   background-image: var(--svg-cristal);
 }
+.chipAlteration .chip_icon
+{
+  background-image: var(--svg-alteration);
+}
+.chipElementaire .chip_icon
+{
+  background-image: var(--svg-elementaire);
+}
+.chipConstruction .chip_icon
+{
+  background-image: var(--svg-construction);
+}
+.chipInvocation .chip_icon
+{
+  background-image: var(--svg-invocation);
+}
+.chipCommunication .chip_icon
+{
+  background-image: var(--svg-communication);
+}
+.chipAnimation .chip_icon
+{
+  background-image: var(--svg-animation);
+}
+.chipNone .chip_icon
+{
+  background-image: var(--svg-aucune);
+}
 
-#fiche_carousel .chip_icon
+#fiche_carousel .chip_icon, .optionButtonContent .chip_icon
 {
   height:18px;
   width: 18px;
@@ -502,7 +533,7 @@
   cursor: pointer;
   width: 100%;
   overflow: hidden;
-
+  transition: transform 0.2s ease-out;
 }
 
 .optionButtonContent
@@ -517,17 +548,22 @@
 
 }
 
-.optionButton_active .optionButtonContent, .optionButton:hover .optionButtonContent
+.optionButton_active .optionButtonContent, .optionButton:hover .optionButtonContent, .optionButton:has(input:checked) .optionButtonContent
 {
   background: linear-gradient(to right, var(--tint-grad-left), var(--tint-grad-right));
   border: 1px solid var(--stroke-tint);
 }
 
-.optionButton_active, .optionButton:hover
+.optionButton_active, .optionButton:hover, .optionButton:has(input:checked) 
 {
   border: 1px solid var(--stroke-tint);
 }
   
+.optionButton:hover
+{
+  transform: scale(0.95);
+}
+
   .secondaryButton, .tertiaryButton, .switcheroo__form-button, #fa_toolbar #fa_right #notif_list li.see_all a
   {
     background: linear-gradient(to right, var(--tint-grad-left), var(--tint-grad-right));
@@ -626,11 +662,16 @@
   }
   */
   
-  .inputbox, input[type="text"]:link, .inputbox, input[type="text"]:visited {
-      border: none;
+  .inputbox, input[type="text"]:link, .inputbox, input[type="text"]:visited, textarea {
+    border: none;
     color: var(--text-onTint);
   }
-  .inputbox, input[type="text"], input[type="password"] {
+  input:focus, textarea:focus
+  {
+    outline: 1px solid var(--text-tint);
+
+  }
+  .inputbox, input[type="text"], input[type="password"], textarea {
       background: var(--surface-2);
       font-size: 14px;
       cursor: text;
@@ -641,11 +682,19 @@
       border:1px solid var(--stroke-tertiary);
       border-radius: 4px;
   }
+
+  textarea
+  {
+    width: 100%;
+    max-width: 100%;
+    min-height: 200px;
+  }
+
   
   label
   {
     display: inline-block;
-    margin-bottom: 8px;
+    /*margin-bottom: 8px;*/
   }
   
   input[name=subject]
@@ -2006,7 +2055,7 @@
     gap: 8px;
   }
 
-.post .author_infos .chip
+.author_infos .chip
   {
 display: none;
   }
@@ -3314,21 +3363,24 @@ blockquote cite
   gap: 16px;
 }
 
-.fiche_avatar
+.fiche_avatar, .fiche_roliste_avatar
 {
-  grid-area: fiche_avatar;
-  /*width: 150px;
-  height: 350px;*/
   overflow: hidden;
   border: 1px solid var(--stroke-tertiary);
   padding: 4px;
 }
 
-.fiche_avatar div
+.fiche_avatar
+{
+  grid-area: fiche_avatar;
+}
+
+.fiche_avatar div, .fiche_roliste_avatar div
 {
   width: 100%;
   height: 100%;
   background-size: cover;
+  background-position: center;
   border: 1px solid var(--stroke-tertiary);
 
 }
@@ -3352,16 +3404,21 @@ blockquote cite
   height:100%;
   display: grid;
   grid-template-areas:
-      "fiche_avatar_user fiche_experience"
-      "fiche_avatar_user fiche_roliste";
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr 1fr;
+      "fiche_experience  fiche_roliste"
+      "fiche_experience fiche_avatar_user";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
   gap: 16px;
 }
 
-#fiche_slide_horsjeu .fiche_avatar
+#fiche_slide_horsjeu .fiche_roliste_avatar
 {
   grid-area:fiche_avatar_user ;
+}
+
+#fiche_slide_horsjeu .fiche_roliste_avatar div
+{
+  
 }
 
 
@@ -3519,6 +3576,7 @@ display: none;
 }
 .sectionCardTitle, .sectionTitleRight
 {
+  color: var(--text-tint);
   position: absolute;
   top:-16px;
 }

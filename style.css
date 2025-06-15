@@ -3330,6 +3330,11 @@ blockquote cite
   width: 100%;;
 }
 
+.rp_title, .rp_subtitle
+{
+  z-index:2;
+}
+
 #ficheHeader
 {
   grid-area: rp_header;
@@ -3346,6 +3351,7 @@ blockquote cite
   filter: brightness(50%);
   top: 0px;
   left: 0px;
+  z-index:0;
 }
 
 #fiche_buttons

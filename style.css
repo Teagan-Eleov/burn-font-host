@@ -2045,7 +2045,7 @@
   
   .post_author
   {
-    align-items: flex-start !important;
+    align-items: flex-start;
     color: var(--text-secondary);
     gap: 12px;
   }
@@ -2149,7 +2149,7 @@ display: none;
   {
     display: flex;
     flex-grow: 2;
-    /*width: 100%;*/
+    width: 100%;
   }
 
 .post_right_content
@@ -3321,16 +3321,33 @@ blockquote cite
 
 .rp_header
 {
-  grid-area: rp_header;
   height: 180px;
-  background-position: center;
-  background-size: cover;
   border: 1px solid var(--stroke-tertiary);
   padding: 16px;
   justify-content: end;
   align-items: flex-end;
   text-align: end;
+  width: 100%;;
 }
+
+#ficheHeader
+{
+  grid-area: rp_header;
+  position: relative;
+}
+
+#ficheBandeau
+{
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 180px;
+  border: 1px solid red;
+  top: 0px;
+  left: 0px;
+}
+
 #fiche_buttons
 {
   grid-area: fiche_buttons;

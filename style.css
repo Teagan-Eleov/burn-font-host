@@ -2432,6 +2432,7 @@ display: none;
   .mp_left_content
   {
     display: flex;
+    align-items: center;
     gap: 16px;
   }
   

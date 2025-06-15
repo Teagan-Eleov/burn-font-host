@@ -3343,7 +3343,7 @@ blockquote cite
   background-size: cover;
   width: 100%;
   height: 180px;
-  border: 1px solid red;
+  filter: brightness(50%);
   top: 0px;
   left: 0px;
 }

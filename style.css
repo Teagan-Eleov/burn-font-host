@@ -1849,10 +1849,9 @@
   
   #list_partos a
   {
-    border: 1px solid var(--stroke-secondary);
     width: 100px;
-    height: 35px;
-    width: 35px;
+    height: 50px;
+    width: 50px;
     display: flex;
     justify-content: center;
     align-items: center;

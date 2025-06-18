@@ -96,8 +96,13 @@
     --svg-animation : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-seedling"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M12 10a6 6 0 0 0 -6 -6h-3v2a6 6 0 0 0 6 6h3" /%3E%3Cpath d="M12 14a6 6 0 0 1 6 -6h3v1a6 6 0 0 1 -6 6h-3" /%3E%3Cpath d="M12 20l0 -10" /%3E%3C/svg%3E');
     --svg-aucune : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M18 6l-12 12" /%3E%3Cpath d="M6 6l12 12" /%3E%3C/svg%3E');
 
+    --svg-date : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-clock-hour-3"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /%3E%3Cpath d="M12 12h3.5" /%3E%3Cpath d="M12 7v5" /%3E%3C/svg%3E');
+    --svg-lieu : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-pin"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" /%3E%3Cpath d="M9 15l-4.5 4.5" /%3E%3Cpath d="M14.5 4l5.5 5.5" /%3E%3C/svg%3E');
+    --svg-partenairerp : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-users"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /%3E%3Cpath d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /%3E%3Cpath d="M16 3.13a4 4 0 0 1 0 7.75" /%3E%3Cpath d="M21 21v-2a4 4 0 0 0 -3 -3.85" /%3E%3C/svg%3E');
 
-  
+
+    --svg-modele : url('data:image/svg+xml;utf8,SVG');
+
     /************* TOKENS *************/
   
     /*Theme colors*/
@@ -118,6 +123,7 @@
     --text-secondary: var(--grey-200);
     --text-tertiary: var(--grey-300);
     --text-onTint: var(--grey-100);
+    --text-important: var(--green-400);
   
     /* surface */
     --surface-0: var(--blue-900);
@@ -224,9 +230,10 @@
   }
   
   
-  .important
+  .exergue, exergue
   {
-    color: var(--text-tint);
+    color: var(--text-important) !important;
+    display: inline;
   }
   
   h1, h2, .label600
@@ -437,6 +444,22 @@
 {
   background-image: var(--svg-sorciere);
 }
+
+.chipDate .chip_icon
+{
+  background-image: var(--svg-date);
+}
+
+.chipLieu .chip_icon
+{
+  background-image: var(--svg-lieu);
+}
+
+.chipPartenaireRP .chip_icon
+{
+  background-image: var(--svg-partenairerp);
+}
+
 .chipAge .chip_icon
 {
   background-image: var(--svg-age);
@@ -510,7 +533,8 @@
   background-image: var(--svg-aucune);
 }
 
-#fiche_carousel .chip_icon, .optionButtonContent .chip_icon
+/*#fiche_carousel .chip_icon, .optionButtonContent .chip_icon*/
+.chip_icon
 {
   height:18px;
   width: 18px;
@@ -2083,6 +2107,7 @@ display: none;
     background-color: var(--surface-1);
     border: 1px solid var(--stroke-quinary);
     color:var(--text-color);
+    font-size: 12px;
   }
   
   .chip svg{
@@ -3350,11 +3375,15 @@ blockquote cite
   z-index:2;
 }
 
-#ficheHeader
+#ficheHeader, .rp_header
 {
-  grid-area: rp_header;
   position: relative;
   overflow: hidden;
+}
+
+#fichePrez .rp_header
+{
+  grid-area: rp_header;
 }
 
 #ficheBandeau
@@ -3618,4 +3647,51 @@ display: none;
   color: var(--text-tint);
   position: absolute;
   top:-16px;
+}
+
+
+
+/************** post rp ************/
+rp, rpbloc, hrp
+{
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+rp .chip
+{
+  width: fit-content;
+}
+
+rpbloc
+{
+  padding: 32px !important;
+  gap: 32px;
+}
+
+chipsrp
+{
+  display: flex;
+  gap: 8px;
+}
+
+hrp
+{
+  gap: 16px;
+  color: var(--text-secondary);
+}
+
+note
+{
+  background-color: var(--surface-3);
+  border: 1px solid var(--stroke-tertiary);
+  outline: solid 1px var(--stroke-tertiary);
+  outline-offset: 4px;
+  padding: 16px;
+}
+
+invisible
+{
+  color: #00000000;
 }

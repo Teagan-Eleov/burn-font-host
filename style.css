@@ -225,7 +225,7 @@
     z-index:2;
   }
 
-  #forumName:hover {
+  #forumName:hover, #kiosque:hover {
 	  color: var(--text-color);
   }
   

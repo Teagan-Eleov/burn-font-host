@@ -1661,6 +1661,7 @@
     display: grid !important;
     grid-template-columns: 1fr 1.5fr;
   }
+
   .categorie[data-id="c3"] .list_of_forums
   {
     display: grid !important;
@@ -1688,6 +1689,13 @@
   {
     height: 100%;
   }
+
+/* kiosque changement UI*/
+  .categorie[data-id="c5"] .categorie_title
+{
+	display: none;
+}
+
   
   .categorie[data-id^="f"] .list_of_forums
   {

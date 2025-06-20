@@ -1691,7 +1691,7 @@
   }
 
 /* kiosque changement UI*/
-  .categorie[data-id="c5"] .categorie_title, .categorie[data-id="c5"] .separator, .categorie[data-id="c5"] .forum_description_section
+  .categorie[data-id="c5"] .categorie_title, .categorie[data-id="c5"] .separatorInverse, .categorie[data-id="c5"] .forum_description_section
 {
 	display: none;
 }

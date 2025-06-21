@@ -76,6 +76,8 @@
 
       
     --red-200: #9E6758;
+--red-300: #994A34;
+
     --red-400: #802028;
 
     /*********** ICON SVG **********/
@@ -184,7 +186,7 @@
   }
 
   .theme-red {
-    --text-tint: var(--red-400);
+    --text-tint: var(--red-300);
     --surface-tint: var(--fire-theme);
     --stroke-tint: var(--fire-theme);
     --tint-grad-left: var(--red-200);

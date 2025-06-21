@@ -604,7 +604,7 @@
   border: 1px solid var(--stroke-tint);
 }
   
-.optionButton:hover
+.optionButton:hover, .selectCode:hover
 {
   transform: scale(0.95);
 }
@@ -3228,10 +3228,12 @@ display: none;
 
 .selectCode
 {
-	cursor:pointer;
-    	color:var(--text-tint);
-	padding-top: 4px;
-	padding-right: 8px;
+    cursor: pointer;
+    color: var(--text-color);
+    background: var(--surface-tint);
+    padding: 4px 8px 4px 8px;
+	transition: transform 0.2s ease-out;
+
 }
 .spoiler dt
 {

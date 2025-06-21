@@ -188,7 +188,7 @@
   .theme-red {
     --text-tint: var(--red-300);
     --surface-tint: var(--fire-theme);
-    --stroke-tint: var(--fire-theme);
+    --stroke-tint: var(--red-300);
     --tint-grad-left: var(--red-200);
     --tint-grad-right: var(--red-400);
     --background-image: url("https://cdnb.artstation.com/p/assets/images/images/035/631/701/large/oliver-ryan-little-boat-big-men-resize.jpg?1615471672");

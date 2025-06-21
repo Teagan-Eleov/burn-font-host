@@ -184,7 +184,7 @@
   }
 
   .theme-red {
-    --text-tint: var(--red-200);
+    --text-tint: var(--red-400);
     --surface-tint: var(--red-theme);
     --stroke-tint: var(--red-theme);
     --tint-grad-left: var(--red-200);

@@ -2128,7 +2128,7 @@
     gap: 8px;
   }
 
-.author_infos .chip
+#subject_body .author_infos .chip
   {
 display: none;
   }

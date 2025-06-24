@@ -1392,7 +1392,6 @@
   .accessory_image
   {
     height: 100px;
-    filter: brightness(60%);
   }
   
   .statusOpen
@@ -2152,8 +2151,9 @@ display: none;
   
   .author_group img
   {
-    height: 70px;
-  }
+    position: absolute;
+    right: 0px;
+    top: -50px;  }
   
   .post_content
   {

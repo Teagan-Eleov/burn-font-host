@@ -1377,11 +1377,19 @@
   }
   #statut_inscriptions
   {
-    justify-content: space-between;
+    justify-content: end;
     padding: 8px;
     gap: 16px;
     width: 100%;
+    position : relative;
   }
+
+#statut inscriptions .accessory_image
+{
+height: 50px;
+    position: absolute;
+    left: 0;
+}
   
   #statut_inscriptions div
   {

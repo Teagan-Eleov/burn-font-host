@@ -2148,6 +2148,11 @@ display: none;
     height: 18px !important;
     fill: var(--text-color);
   }
+
+.author_group
+{
+	position: relative;
+}
   
   .author_group img
   {

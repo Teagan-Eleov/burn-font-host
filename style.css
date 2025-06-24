@@ -1855,11 +1855,14 @@ height: 50px;
   }
   
   #qeel_legend img{
-    height: 28px;
+    position: absolute;
+    left: -40px;  
   }
   .group_legend
   {
-    justify-content: space-between;
+    justify-content: end;
+    position: relative;
+    overflow: hidden;
     width: 100%;
     padding: 8px 12px 8px 12px;
     border-radius: var(--radius-s);

@@ -1003,12 +1003,12 @@
   
   
   .avatar_diamond {
-    width: 80px;
-    height: 80px;
-    padding:4px;
+    width: 70px;
+    height: 70px;
+    padding:3px;
     transform: rotate(45deg); 
-    border: 1px solid var(--stroke-secondary);
-    background: var(--surface-3);
+    border: 1px solid var(--stroke-tertiary);
+    background: var(--surface-2);
   }
   
   .avatar_losange {
@@ -1031,7 +1031,7 @@
   .avatar_diamond_border, .avatar_rectangle_border {
     width: 100%;
     height: 100%;
-    border: 1px solid var(--stroke-secondary);
+    border: 1px solid var(--stroke-tertiary);
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -1668,7 +1668,7 @@ height: 50px;
   {
     flex:1;
     position: relative;
-    top:-55px;
+    top:-52px;
     align-items: end;
     gap:32px;
     min-width: 150px;

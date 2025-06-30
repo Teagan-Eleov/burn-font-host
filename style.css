@@ -1644,7 +1644,7 @@ height: 50px;
   {
     align-items: flex-start;
     padding: 16px 8px 16px 16px;
-    /*height: 170px;*/     height: 140px;
+    height: 140px;
     width: 100%;
     gap: 16px;
   }
@@ -1668,10 +1668,10 @@ height: 50px;
   {
     flex:1;
     position: relative;
-    top:-52px;
+    top:-51px;
     align-items: end;
     gap:32px;
-    min-width: 150px;
+    min-width: 170px;
   }
   
   .forum_last_activity > div /*div intermediaire pour meilleur alignement*/

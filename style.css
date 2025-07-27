@@ -573,6 +573,7 @@
 
   .optionButton
 {
+  display: block;
   border: 1px solid var(--stroke-tertiary);
   padding: 4px;
   cursor: pointer;

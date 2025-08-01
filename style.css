@@ -105,6 +105,9 @@
     --svg-date : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-clock-hour-3"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /%3E%3Cpath d="M12 12h3.5" /%3E%3Cpath d="M12 7v5" /%3E%3C/svg%3E');
     --svg-lieu : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-pin"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" /%3E%3Cpath d="M9 15l-4.5 4.5" /%3E%3Cpath d="M14.5 4l5.5 5.5" /%3E%3C/svg%3E');
     --svg-partenairerp : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-users"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /%3E%3Cpath d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /%3E%3Cpath d="M16 3.13a4 4 0 0 1 0 7.75" /%3E%3Cpath d="M21 21v-2a4 4 0 0 0 -3 -3.85" /%3E%3C/svg%3E');
+    --svg-link : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-link"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M9 15l6 -6" /%3E%3Cpath d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464" /%3E%3Cpath d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" /%3E%3C/svg%3E');
+    --svg-inprogress : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-writing"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /%3E%3Cpath d="M16 7h4" /%3E%3Cpath d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /%3E%3C/svg%3E');
+    --svg-termine : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-book-2"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12z" /%3E%3Cpath d="M19 16h-12a2 2 0 0 0 -2 2" /%3E%3Cpath d="M9 8h6" /%3E%3C/svg%3E');
 
 
     --svg-modele : url('data:image/svg+xml;utf8,SVG');
@@ -545,10 +548,26 @@
 {
   background-image: var(--svg-animation);
 }
-.chipNone .chip_icon
+.chipNone .chip_icon, .rp_abandon .chip_icon
 {
   background-image: var(--svg-aucune);
 }
+/*bouton lien recap des rp*/
+.recap_rp_section .chip_icon
+{
+  background-image: var(--svg-link);
+}
+
+.rp_termine .chip_icon
+{
+  background-image: var(--svg-termine);
+}
+
+.rp_encours .chip_icon
+{
+  background-image: var(--svg-inprogress);
+}
+
 
 /*#fiche_carousel .chip_icon, .optionButtonContent .chip_icon*/
 .chip_icon
@@ -805,7 +824,8 @@
   }
   
   .rune_button {
-    display: block;
+    /*display: block;*/
+    display: inline-block;
   }
   .rune_button:hover .inner-square,
   .rune_button:hover .outer-diamond {
@@ -3090,7 +3110,7 @@ display: none;
   
   #fa_toolbar #fa_right #notif_list li a.delete:before {
       content: "x";
-      top: -2px
+      top: -2px;
       right: -2px;
       position: relative;
       font-weight: normal;
@@ -3399,6 +3419,18 @@ blockquote cite
   color: var(--text-secondary);
 }*/
 
+.fiche
+{
+  display: grid;
+}
+
+.ficheTimeline
+{
+  display: flex;
+  gap: 16px;
+
+}
+
 #fichePrez
 {
   display: grid;
@@ -3699,6 +3731,96 @@ display: none;
   color: var(--text-tint);
   position: absolute;
   top:-16px;
+}
+
+/************** timeline *************/
+
+.timeline {
+  width: 100%;
+  padding-top: 50px;
+  position: relative;
+}
+.timeline:before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: calc(25% - 2px);
+  bottom: 0px;
+  width: 4px;
+  background: var(--surface-tint);
+}
+.timeline:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.entry {
+  clear: both;
+  text-align: left;
+  position: relative;
+}
+.entry .timelineDate {
+  margin-bottom: .5em;
+  float: left;
+  width: 25%;
+  padding-right: 30px;
+  text-align: right;
+  position: relative;
+}
+.entry .timelineDate:before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 4px solid var(--stroke-tint);
+  background-color: #fff;
+  border-radius: 100%;
+  top: 15%;
+  right: -8px;
+  z-index: 99;
+}
+.entry .timelineDate h3 {
+  margin: 0;
+  font-size: 120%;
+}
+
+.entry .recap_rp_section {
+  float: right;
+  width: 75%;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.entry .recap_rp_section p {
+  line-height: 1.4em;
+}
+.entry .recap_rp p:first-child {
+  margin-top: 0;
+  font-weight: 400;
+}
+
+.recap_rp_section .recap_rp_button
+{
+    display: flex;
+    padding-right: 24px;
+    width: 100%;
+    transform: translateY(-17px);
+    justify-content: end;
+}
+
+.recap_rp, .recap_rp_title
+{
+    display: flex;
+    gap: 16px;
+}
+
+.recap_rp_title
+{
+  align-items: center;
+  gap:8px;
 }
 
 

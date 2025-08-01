@@ -553,7 +553,7 @@
   background-image: var(--svg-aucune);
 }
 /*bouton lien recap des rp*/
-.recap_rp_section .chip_icon
+.recap_rp_button .chip_icon
 {
   background-image: var(--svg-link);
 }

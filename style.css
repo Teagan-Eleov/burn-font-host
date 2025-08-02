@@ -109,6 +109,10 @@
     --svg-inprogress : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-writing"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z" /%3E%3Cpath d="M16 7h4" /%3E%3Cpath d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" /%3E%3C/svg%3E');
     --svg-termine : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-book-2"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12z" /%3E%3Cpath d="M19 16h-12a2 2 0 0 0 -2 2" /%3E%3Cpath d="M9 8h6" /%3E%3C/svg%3E');
 
+    --svg-fiche : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-script"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M17 20h-11a3 3 0 0 1 0 -6h11a3 3 0 0 0 0 6h1a3 3 0 0 0 3 -3v-11a2 2 0 0 0 -2 -2h-10a2 2 0 0 0 -2 2v8" /%3E%3C/svg%3E');
+    --svg-message : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" /%3E%3C/svg%3E');
+
+
 
     --svg-modele : url('data:image/svg+xml;utf8,SVG');
 
@@ -568,6 +572,21 @@
   background-image: var(--svg-inprogress);
 }
 
+.rune_button_fiche .chip_icon
+{
+  background-image: var(--svg-fiche);
+}
+
+.rune_button_relations .chip_icon
+{
+  background-image: var(--svg-link);
+}
+
+.rune_button_mp .chip_icon
+{
+  background-image: var(--svg-message);
+}
+
 
 /*#fiche_carousel .chip_icon, .optionButtonContent .chip_icon*/
 .chip_icon
@@ -1014,6 +1033,7 @@
   
   
   /******************** AVATAR **************/
+
   .artdeco_avatar
   {
     max-width: 240px;
@@ -1021,7 +1041,6 @@
     height: 400px;
     /*padding: 8px;*/
     background: var(--surface-2);
-    
   }
   
   .artdeco_avatar_image
@@ -1530,12 +1549,8 @@ height: 50px;
     gap: 8px;
     width: 100%;
     grid-area: liensRapides;
+  
   }
-
-#pa_liens_rapides .secondaryButton
-{
-	width: 100%;
-}
   
   #pa_topsites
   {
@@ -2446,36 +2461,45 @@ display: none;
   {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
     height: auto;
-    padding: 32px;
     gap: 32px;
   }
   
-  .user_mini_profile
+  .memberlist_member
   {
-    display: grid;
-    grid-template-columns: auto auto;
-    padding: 32px;
-    gap: 32px;
-    align-items: center;
-    background-image: url('https://i.imgur.com/zbS7M9l.png');
-    background-size: cover;
-    border-radius: var(--radius-xs);
-    }
-  
-  .user_infos
-  {
-    display: grid;
-    grid-template-rows: auto auto auto;
-    gap: 16px;
+    width: 214px;
+    display: flex;
+    justify-content: center;  
+    justify-self: center;   
   }
-  
-  .user_name
+
+  .memberlist_member .artdeco_avatar, .memberlist_member .fiche_avatar
   {
-    display: grid;
-    grid-template-rows: auto auto ;
-    gap: 4px;
+    width: 200px;
+    height: 400px;
+  }
+
+  .users_links_sections
+  {
+    width: 100%;
+    justify-content: space-around;
+    padding-left: 16px;
+    padding-right: 16px;
+    transform: translateY(-16px);
+  }
+
+  .memberlist_member .user_name
+  {
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    padding: 0px 8px 0px 8px;
+    display: -webkit-box; /* On précise qu'on veut utiliser webkit-box */
+    -webkit-box-orient: vertical; /* On indique le sens du texte */
+    -webkit-line-clamp: 2; /* On donne le nombre de lignes souhaité */
+    overflow: hidden;
   }
   
   

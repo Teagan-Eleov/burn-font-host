@@ -2487,10 +2487,16 @@ display: none;
     justify-self: center;   
   }
 
-  .memberlist_member .artdeco_avatar, .memberlist_member .fiche_avatar
+  .memberlist_member .artdeco_avatar
   {
     width: 200px;
     height: 400px;
+  }
+
+.memberlist_member .fiche_avatar
+  {
+    width: 208px;
+    height: 408px;
   }
 
   .users_links_sections

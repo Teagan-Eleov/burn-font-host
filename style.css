@@ -629,11 +629,11 @@
   transform: scale(0.95);
 }
 
-  .secondaryButton, .tertiaryButton, .switcheroo__form-button, #fa_toolbar #fa_right #notif_list li.see_all a
+
+  .secondaryButton, .mainButton, .tertiaryButton, .switcheroo__form-button, #fa_toolbar #fa_right #notif_list li.see_all a
   {
     background: linear-gradient(to right, var(--tint-grad-left), var(--tint-grad-right));
     border: 1px solid var(--stroke-quinary);
-    width: 100%;
     padding: 8px;
     display: block;
     text-align: center;
@@ -644,16 +644,28 @@
     cursor : pointer;
     /*text-transform: uppercase;*/
   
-  
+  }
+
+   .tertiaryButton, .switcheroo__form-button, #fa_toolbar #fa_right #notif_list li.see_all a
+  {
+    width: 100%;
   }
   
-  .secondaryButton:hover, .tertiaryButton:hover, .switcheroo__form-button:hover, #fa_toolbar #fa_right #notif_list li.see_all a:hover
+  .secondaryButton:hover, .mainButton:hover, .tertiaryButton:hover, .switcheroo__form-button:hover, #fa_toolbar #fa_right #notif_list li.see_all a:hover
   {
     background: var(--surface-1);
     border: 1px solid var(--stroke-tint);
     color: var(--text-tint);
     transform: scale(0.95);
     cursor : pointer;
+  }
+
+  .mainButton
+  {
+    padding-left: 16px;
+
+    padding-right: 16px;
+
   }
   
   .tertiaryButton
@@ -894,6 +906,7 @@
     padding: calc(-1 * var(--button-ornament-offset)); /* à ajuster */
     text-align: center;
   }
+
   
   .primary_button
   {

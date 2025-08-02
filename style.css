@@ -1561,8 +1561,13 @@ height: 50px;
     gap: 8px;
     width: 100%;
     grid-area: liensRapides;
-  
   }
+
+  #pa_liens_rapides .secondaryButton
+{
+	width: 100%;
+}
+
   
   #pa_topsites
   {

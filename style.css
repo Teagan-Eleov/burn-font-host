@@ -112,6 +112,14 @@
     --svg-fiche : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-script"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M17 20h-11a3 3 0 0 1 0 -6h11a3 3 0 0 0 0 6h1a3 3 0 0 0 3 -3v-11a2 2 0 0 0 -2 -2h-10a2 2 0 0 0 -2 2v8" /%3E%3C/svg%3E');
     --svg-sendmessage : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" /%3E%3C/svg%3E');
 
+    --svg-amour : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-tinder"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M18.918 8.174c2.56 4.982 .501 11.656 -5.38 12.626c-7.702 1.687 -12.84 -7.716 -7.054 -13.229c.309 -.305 1.161 -1.095 1.516 -1.349c0 .528 .27 3.475 1 3.167c3 0 4 -4.222 3.587 -7.389c2.7 1.411 4.987 3.376 6.331 6.174z" /%3E%3C/svg%3E');
+    --svg-ami : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-heart"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /%3E%3C/svg%3E');
+    --svg-connaissance : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-heartbeat"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M19.5 13.572l-7.5 7.428l-2.896 -2.868m-6.117 -8.104a5 5 0 0 1 9.013 -3.022a5 5 0 1 1 7.5 6.572" /%3E%3Cpath d="M3 13h2l2 3l2 -6l1 3h3" /%3E%3C/svg%3E');
+    --svg-bof : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-heart-broken"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /%3E%3Cpath d="M12 6l-2 4l4 3l-2 4v3" /%3E%3C/svg%3E');
+    --svg-ennemi : url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-skull"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M12 4c4.418 0 8 3.358 8 7.5c0 1.901 -.755 3.637 -2 4.96l0 2.54a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1v-2.54c-1.245 -1.322 -2 -3.058 -2 -4.96c0 -4.142 3.582 -7.5 8 -7.5z" /%3E%3Cpath d="M10 17v3" /%3E%3Cpath d="M14 17v3" /%3E%3Cpath d="M9 11m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /%3E%3Cpath d="M15 11m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /%3E%3C/svg%3E');
+
+
+
 
 
     --svg-modele : url('data:image/svg+xml;utf8,SVG');
@@ -595,8 +603,33 @@
 .rune_button_messages .chip_icon
 {
   background-image: var(--svg-inprogress);
-
 }
+
+.ami .chip_icon
+{
+  background-image: var(--svg-ami);
+}
+
+.amour .chip_icon
+{
+  background-image: var(--svg-amour);
+}
+
+.connaissance .chip_icon
+{
+  background-image: var(--svg-connaissance);
+}
+
+.relationbof .chip_icon
+{
+  background-image: var(--svg-bof);
+}
+
+.ennemi .chip_icon
+{
+  background-image: var(--svg-ennemi);
+}
+
 
 
 
@@ -3869,7 +3902,7 @@ display: none;
   font-weight: 400;
 }
 
-.recap_rp_section .recap_rp_button
+.recap_rp_section .recap_rp_button, .recap_relations_section .recap_rp_button
 {
     display: flex;
     padding-right: 24px;
@@ -3877,6 +3910,19 @@ display: none;
     transform: translateY(-17px);
     justify-content: end;
 }
+
+.recap_relations_section .recap_rp_button
+{
+  transform: translateY(-35px);
+
+}
+
+.recap_relations_section .recap_rp_description
+{
+  padding-bottom: 24px;
+  padding-right: 32px;
+}
+
 
 .recap_rp
 {
@@ -3904,6 +3950,21 @@ display: none;
   align-items: center;
   gap:8px;
 }
+
+/************* fiche de relations ************/
+.listeRelations
+{
+  width: 100%;
+  text-align: left;
+}
+
+.recap_relations_section {
+  width: 100%;;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
 
 
 

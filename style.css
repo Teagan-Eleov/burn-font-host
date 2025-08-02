@@ -1079,6 +1079,27 @@
   
   /******************** AVATAR **************/
 
+  .avatar_default
+  {
+    width:100%;
+    max-width: 200px;
+    height: 400px;
+    background: var(--surface-2);
+    overflow: hidden;
+    border: 1px solid var(--stroke-tertiary);
+    padding: 4px;
+  }
+
+  .avatar_default img
+  {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid var(--stroke-tertiary);
+
+  }
+
+
   .artdeco_avatar
   {
     max-width: 240px;

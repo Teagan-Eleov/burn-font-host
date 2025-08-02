@@ -663,8 +663,11 @@
   .mainButton
   {
     padding-left: 16px;
-
     padding-right: 16px;
+  }
+
+  .mainOutlineButton
+  {
 
   }
   
@@ -797,14 +800,14 @@
   
   }
   
-  input[name=reset], input[name=preview], input[name=save],input[name=delete],input[name=deleteall], input[name=cancel], input[name=prevent_post], input[name=mark_as_read],input[name=mark_as_unread]
+  .mainOutlineButton, input[name=reset], input[name=preview], input[name=save],input[name=delete],input[name=deleteall], input[name=cancel], input[name=prevent_post], input[name=mark_as_read],input[name=mark_as_unread]
   {
     color: var(--text-onTint);
     background: var(--surface-1);
   
   }
   
-  input:hover, input[name=login]:hover, .cgu-buttons:hover, input[name=submit]:hover, input[name=reset]:hover, input[name=preview]:hover, input[name=post]:hover, input[name=save]:hover,input[name=delete]:hover,input[name=deleteall]:hover,input[name=confirm]:hover,input[name=cancel]:hover,, input[name=mark_as_read]:hover,input[name=mark_as_unread]:hover
+  .mainOutlineButton:hover, input:hover, input[name=login]:hover, .cgu-buttons:hover, input[name=submit]:hover, input[name=reset]:hover, input[name=preview]:hover, input[name=post]:hover, input[name=save]:hover,input[name=delete]:hover,input[name=deleteall]:hover,input[name=confirm]:hover,input[name=cancel]:hover,, input[name=mark_as_read]:hover,input[name=mark_as_unread]:hover
   {
     border: 1px solid var(--stroke-tint);
     transform: scale(0.95);

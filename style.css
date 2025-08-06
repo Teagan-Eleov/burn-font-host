@@ -919,7 +919,9 @@
     stroke: var(--text-tint);
   }
   .outer-diamond {
-    position: absolute;
+    /*position: absolute; /*a remettre si un truc casse, retirer le top*/
+    position: relative;
+    top: 32px;
     box-sizing: border-box;
     width: 32px;
     height: 32px;
@@ -1193,12 +1195,19 @@
   
   
   /********************* STYLE ****************/
+
+
   
   /* Supprimer les marges par défaut */
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
   }
   
   body {
@@ -1298,7 +1307,7 @@
     z-index: 1;
     justify-content: center;
     width: 75%;
-    min-width: 500px;
+    /*min-width: 500px;*/
     max-width: 800px;
     align-items: flex-start;
     justify-content: flex-end;
@@ -1467,13 +1476,7 @@
 
 
   
-  @media only screen and (max-width: 1200px) {
-    #pa
-    {
-      gap: 16px;
-    }
-    
-  }
+
   
   
   
@@ -1643,6 +1646,7 @@ height: 50px;
   {
   width: 100%;
   justify-content: space-between;
+  flex-wrap: wrap;
   }
   
   #pa_partenaires
@@ -1696,10 +1700,15 @@ height: 50px;
   {
     max-width: 1300px;
     width: 100%;
-    padding-right: 150px;
-    padding-left: 150px;
+    padding-right: 50px;
+    padding-left: 50px;
     gap: 32px;
     align-items: center;
+  }
+
+  .page-content > div
+  {
+    max-width: 1000px;
   }
   
   #index_body{
@@ -4050,17 +4059,24 @@ iframe{
 
   
   /************************** RESPONSIVE************************/
-
-
-  @media (max-width: 600px) {
-    #c1 .list_of_forums {
-      grid-template-columns: 1fr; /* une colonne sur mobile */
+  @media only screen and (max-width: 1200px) {
+    #pa
+    {
+      gap: 16px;
     }
+    
   }
+
 
   @media (max-width: 900px) {
     #hero {
       height: auto;
     } 
+
+    @media (max-width: 600px) {
+      #c1 .list_of_forums {
+        grid-template-columns: 1fr; /* une colonne sur mobile */
+      }
+    }
     
 }

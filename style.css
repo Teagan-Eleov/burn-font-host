@@ -1269,7 +1269,7 @@
   #hero {
     position: relative;
     height: 100vh;
-    width: 100%;
+    width: 100vh;
     overflow: hidden;
     display: flex;
     align-items: flex-end;
@@ -1297,7 +1297,8 @@
     position: relative;
     z-index: 1;
     justify-content: center;
-    width: 55%;
+    width: 75%;
+    min-width: 500px;
     max-width: 800px;
     align-items: flex-start;
     justify-content: flex-end;
@@ -4057,8 +4058,9 @@ iframe{
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     #hero {
       height: auto;
     } 
+    
 }

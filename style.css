@@ -4141,6 +4141,11 @@ iframe{
     {
       display: none;
     }
+    .forum_last_activity .avatar_diamond
+    {
+      height: 60px;
+      width: 60px;
+    }
   }
 
   @media (max-width: 500px) {
@@ -4166,16 +4171,16 @@ iframe{
       overflow: visible;
     }
     #pa {
+      padding-top: 0px;
       grid-template-areas:
           "date date"
           "main main"
           "progress progress "
           "messages news"
-          "messages news "
           "liensRapides liensRapides"
           "partenaires partenaires";
       grid-template-columns:  1fr 1fr;
-      grid-template-rows:  0.5fr 0.5fr auto auto auto auto auto;
+      grid-template-rows:  0.5fr 0.5fr auto 0.5fr auto auto;
       gap: 16px;
     }
     #pa_date_inscriptions

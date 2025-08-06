@@ -4108,6 +4108,11 @@ iframe{
     #qeel_legend
     {
       flex-direction: row;
+      flex-wrap: wrap;
+    }
+    #qeel_legend .group_legend
+    {
+      width: 48%;
     }
     .categorie[data-id="c3"] .list_of_forums, .categorie[data-id^="f"] .list_of_forums
     {

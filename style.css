@@ -2012,6 +2012,7 @@ height: 50px;
   .group_legend > div
   {
   align-items: flex-end;
+  z-index: 1;
   }
   
   /***************** footer ************/

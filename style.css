@@ -1885,8 +1885,6 @@ height: 50px;
     gap: 32px;
     padding: 32px;
     width: 100%;
-    /*align-items: flex-start;*/
-    /*flex-wrap: wrap;*/
     display: grid;
       grid-template-areas:
       "welcome welcome legend"
@@ -1894,7 +1892,7 @@ height: 50px;
       "stats lastConnected legend ";
     grid-template-columns: 1fr 1fr 0.5fr;
     grid-template-rows: auto 1fr auto;
-    max-height: 450px;
+    /*max-height: 450px;*/
     overflow: hidden;
     border-radius: var(--radius-m);
     position: relative;
@@ -4073,11 +4071,44 @@ iframe{
     #hero {
       height: auto;
     } 
+    #list_partos
+    {
+        flex-direction: column;
+    }
+    #qeel
+    {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr auto auto;
+      grid-template-areas:
+        "welcome welcome"
+        "connected lastConnected"
+        "stats lastConnected"
+        "legend legend";
+    }
+    #qeel_legend
+    {
+      flex-direction: row;
+    }
+    .categorie[data-id="c3"] .list_of_forums, .categorie[data-id^="f"] .list_of_forums
+    {
+      grid-template-columns: 1fr;
+      grid-template-rows : auto;
+    }
+    .categorie[data-id="c1"] .list_of_forums
+    {
+      grid-template-columns: 1fr;
 
-    @media (max-width: 600px) {
+    }
+    .categorie[data-id="c1"] .forum:first-child {
+      grid-row: 1;
+  }
+  }
+
+  @media (max-width: 600px) {
       #c1 .list_of_forums {
         grid-template-columns: 1fr; /* une colonne sur mobile */
       }
-    }
+
+      
+  }
     
-}

@@ -4151,6 +4151,11 @@ iframe{
       height: 60px;
       width: 60px;
     }
+
+    .forum_last_activity
+    {
+      top:-47px;
+    }
   }
 
   @media (max-width: 500px) {

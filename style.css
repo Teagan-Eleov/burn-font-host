@@ -919,9 +919,9 @@
     stroke: var(--text-tint);
   }
   .outer-diamond {
-    /*position: absolute; /*a remettre si un truc casse, retirer le top*/
+    position: absolute; /*a remettre si un truc casse, retirer le top
     position: relative;
-    top: 32px;
+    top: 32px;*/
     box-sizing: border-box;
     width: 32px;
     height: 32px;
@@ -4067,10 +4067,19 @@ iframe{
   }
 
 
-  @media (max-width: 900px) {
+  @media (max-width: 800px) {
+    #forumName
+    {
+      font-size: 75px;
+    }
     #hero {
       height: auto;
     } 
+    #hero_content
+    {
+      padding: 50px 0px 32px 16px;
+    }
+
     #list_partos
     {
         flex-direction: column;
@@ -4101,14 +4110,18 @@ iframe{
     }
     .categorie[data-id="c1"] .forum:first-child {
       grid-row: 1;
-  }
-  }
-
-  @media (max-width: 600px) {
-      #c1 .list_of_forums {
-        grid-template-columns: 1fr; /* une colonne sur mobile */
-      }
-
-      
+    }
+    #pa {
+      grid-template-areas:
+          "main main date"
+          "progress progress progress"
+          "messages news liensRapides"
+          "messages news topSites"
+          "partenaires partenaires partenaires";
+      grid-template-columns:  1fr 1fr 0.75fr;
+      /* grid-template-rows: 0.80fr auto auto auto auto; */
+      grid-template-rows:  fr 0.5fr auto auto;
+      gap: 16px;
+    }
   }
     

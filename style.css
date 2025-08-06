@@ -1357,6 +1357,7 @@
     100% { transform: translateX(-50%); }
   }
   
+
   
   
   /******************* selecteur de thème ******************/
@@ -1461,12 +1462,16 @@
     padding-top: 120px;
     padding-bottom: 120px;
   }
+
+
+
   
   @media only screen and (max-width: 1200px) {
     #pa
     {
       gap: 16px;
     }
+    
   }
   
   
@@ -3413,13 +3418,7 @@ blockquote cite
 }
 
   
-  
-  /************************** RESPONSIVE************************/
-  @media (max-width: 600px) {
-    #c1 .list_of_forums {
-      grid-template-columns: 1fr; /* une colonne sur mobile */
-    }
-  }
+
 
   
 
@@ -4042,4 +4041,24 @@ invisible
 /************ iframe ***********/
 iframe{
   border: none;
+}
+
+
+
+
+
+  
+  /************************** RESPONSIVE************************/
+
+
+  @media (max-width: 600px) {
+    #c1 .list_of_forums {
+      grid-template-columns: 1fr; /* une colonne sur mobile */
+    }
+  }
+
+  @media (max-width: 800px) {
+    #hero {
+      height: auto;
+    } 
 }

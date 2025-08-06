@@ -1278,6 +1278,7 @@
   #hero {
     position: relative;
     height: 100vh;
+    max-height: 900px;
     width: 100%;
     overflow: hidden;
     display: flex;
@@ -4064,7 +4065,14 @@ iframe{
     {
       gap: 16px;
     }
-    
+  
+  }
+
+  @media only screen and (max-height: 400px) {
+    #hero {
+      height: auto;
+    } 
+  
   }
 
 
@@ -4126,9 +4134,83 @@ iframe{
       grid-template-rows:  fr 0.5fr auto auto;
       gap: 16px;
     }
+    #pa_illu{
+      display: none;
+    }
     .fog-layer
     {
       display: none;
+    }
+  }
+
+  @media (max-width: 500px) {
+
+    h2 {
+      font-size: 30px;
+    }
+    #forumName
+    {
+      font-size: 45px;
+    }
+    #hero_context_section {
+      padding: 0;
+      transform: translateY(0px);
+    } 
+    #hero_contexte
+    {
+      height: 200px;
+      padding: 8px;
+    }
+    #hero
+    {
+      overflow: visible;
+    }
+    #pa {
+      grid-template-areas:
+          "date date"
+          "main main"
+          "progress progress "
+          "messages news"
+          "messages news "
+          "liensRapides liensRapides"
+          "partenaires partenaires";
+      grid-template-columns:  1fr 1fr;
+      grid-template-rows:  0.5fr 0.5fr auto auto auto auto auto;
+      gap: 16px;
+    }
+    #pa_date_inscriptions
+    {
+      flex-direction: row;
+    }
+    #statut_inscriptions, #pa_topsites, #pa_partenaires .separator
+    {
+      display: none;
+    }
+    #pa_liens_rapides .secondaryButton
+    {
+      width: 45%;
+    }
+    #pa_liens_rapides
+    {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+    #pa_partenaires
+    {
+      flex-direction: column;
+      gap: 4px;
+      align-items: flex-start;
+    }
+    #qeel
+    {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr auto auto;
+      grid-template-areas:
+        "welcome "
+        "connected"
+        "lastConnected"
+        "stats"
+        "legend";
     }
   }
     

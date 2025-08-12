@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="https://teagan-eleov.github.io/burn-font-host/style.css"/>  
-  <link rel="stylesheet" href="https://teagan-eleov.github.io/burn-font-host/guidebook.css"/>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="guidebook.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/malihu/jquery-style-my-tooltips/jquery.style-my-tooltips.js"></script>
   <script src="https://arsin-rpg.forumactif.com/10306.js"></script>
@@ -57,32 +57,30 @@
   <div id="guidebook" class="text_600">
     <div class="layout">
       <!-- Onglets de 1er niveau (varient selon la catég -->
-      <div>
-        <div id="guidebook_nav" class="tabs primary" role="tablist" aria-label="Catégories">
-          <a id="button_back" class="tab-btn optionButton label100" href="https://arsin-rpg.forumactif.com/">
-            <div class="optionButtonContent">Retour au forum</div>
-          </a>
-          <button id="button_horsjeu" role="tab" data-cat="horsjeu" aria-controls="sec-horsjeu" aria-selected="true"
-            class="tab-btn optionButton label100">
-            <div class="optionButtonContent">Hors jeu</div>
-          </button>
-          <button id="button_ville" role="tab" data-cat="ville" aria-controls="sec-ville" aria-selected="false"
-            class="tab-btn optionButton label100">
-            <div class="optionButtonContent">Port-Fidèl</div>
-          </button>
-          <button id="button_magie" role="tab" data-cat="magie" aria-controls="sec-magie" aria-selected="false"
-            class="tab-btn optionButton label100">
-            <div class="optionButtonContent">Magie</div>
-          </button>
-          <button id="button_groupes" role="tab" data-cat="groupes" aria-controls="sec-groupes" aria-selected="false"
-            class="tab-btn optionButton label100">
-            <div class="optionButtonContent">Groupes</div>
-          </button>
-          <button id="button_bestiaire" role="tab" data-cat="bestiaire" aria-controls="sec-bestiaire"
-            aria-selected="false" class="tab-btn optionButton label100">
-            <div class="optionButtonContent">Bestiaire</div>
-          </button>
-        </div>
+      <div id="guidebook_nav" class="tabs primary" role="tablist" aria-label="Catégories">
+        <a id="button_back" class="tab-btn optionButton label100" href="https://arsin-rpg.forumactif.com/">
+          <div class="optionButtonContent">Retour au forum</div>
+        </a>
+        <button id="button_horsjeu" role="tab" data-cat="horsjeu" aria-controls="sec-horsjeu" aria-selected="true"
+          class="tab-btn optionButton label100">
+          <div class="optionButtonContent">Hors jeu</div>
+        </button>
+        <button id="button_ville" role="tab" data-cat="ville" aria-controls="sec-ville" aria-selected="false"
+          class="tab-btn optionButton label100">
+          <div class="optionButtonContent">Port-Fidèl</div>
+        </button>
+        <button id="button_magie" role="tab" data-cat="magie" aria-controls="sec-magie" aria-selected="false"
+          class="tab-btn optionButton label100">
+          <div class="optionButtonContent">Magie</div>
+        </button>
+        <button id="button_groupes" role="tab" data-cat="groupes" aria-controls="sec-groupes" aria-selected="false"
+          class="tab-btn optionButton label100">
+          <div class="optionButtonContent">Groupes</div>
+        </button>
+        <button id="button_bestiaire" role="tab" data-cat="bestiaire" aria-controls="sec-bestiaire"
+          aria-selected="false" class="tab-btn optionButton label100">
+          <div class="optionButtonContent">Bestiaire</div>
+        </button>
 
       </div>
 
@@ -159,7 +157,7 @@
               </div>
               <div class="subnav">
                 <button class="tab-btn secondary_tab label150" role="tab" data-cat="groupes" data-sub="prez_humains"
-                  aria-controls="panel-groupes-prez_humains" aria-selected="false"><span>Présentation</span>
+                  aria-controls="panel-groupes-prez_humains" aria-selected="false"><span>Les humains</span>
                   <div class="separator"></div>
                 </button>
               </div>
@@ -168,7 +166,7 @@
               </div>
               <div class="subnav">
                 <button class="tab-btn secondary_tab label150" role="tab" data-cat="groupes" data-sub="prez_sorcieres"
-                  aria-controls="panel-groupes-prez_sorcieres" aria-selected="false"><span>Présentation</span>
+                  aria-controls="panel-groupes-prez_sorcieres" aria-selected="false"><span>Les sorcières</span>
                   <div class="separator"></div>
                 </button>
                 <button class="tab-btn secondary_tab label150" role="tab" data-cat="groupes" data-sub="sororite"
@@ -191,7 +189,7 @@
               </div>
               <div class="subnav">
                 <button class="tab-btn secondary_tab label150" role="tab" data-cat="groupes" data-sub="prez_cristalise"
-                  aria-controls="panel-groupes-prez_cristalise" aria-selected="false"><span>Présentation</span>
+                  aria-controls="panel-groupes-prez_cristalise" aria-selected="false"><span>Les cristallisés</span>
                   <div class="separator"></div>
                 </button>
                 <button class="tab-btn secondary_tab label150" role="tab" data-cat="groupes" data-sub="processus"
@@ -210,7 +208,7 @@
               </div>
               <div class="subnav">
                 <button class="tab-btn secondary_tab label150" role="tab" data-cat="groupes" data-sub="prez_chasseurs"
-                  aria-controls="panel-groupes-prez_chasseurs" aria-selected="false"><span>Présentation</span>
+                  aria-controls="panel-groupes-prez_chasseurs" aria-selected="false"><span>Les Chasseurs</span>
                   <div class="separator"></div>
                 </button>
                 <button class="tab-btn secondary_tab label150" role="tab" data-cat="groupes" data-sub="ordre"
@@ -261,9 +259,9 @@
                 <div class="separator"></div>
               </button>
               <button class="tab-btn secondary_tab label150" role="tab" data-cat="bestiaire" data-sub="mortsvivants"
-              aria-controls="panel-bestiaire-mortsvivants" aria-selected="false"><span>Morts-vivants</span>
-              <div class="separator"></div>
-            </button>
+                aria-controls="panel-bestiaire-mortsvivants" aria-selected="false"><span>Morts-vivants</span>
+                <div class="separator"></div>
+              </button>
             </div>
           </div>
 
@@ -1351,8 +1349,36 @@
 
           <section class="panel" id="panel-groupes-prez_humains" role="tabpanel" aria-labelledby="cat-groupes"
             data-cat="groupes" data-sub="prez_humains">
-            <h2 class="gradientTitle">Présentation des humains</h2>
-            <p>Nom, réputation, prérequis d’adhésion…</p>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Présentation des humains</h2>
+                <p>La majorité, la “norme” qui peuple Seiland, faite de contradictions et de désaccords, de conflits
+                  oubliés et secrets.<br /><br />
+
+                  Entre Ealmodhoriens et autochtones de Seiland, la différence déjà si fine n’est plus possible tant les
+                  deux peuples se sont mélangés, pour au final former la population actuelle. Les rancœurs entre eux
+                  n’ont jamais étaient plus bruyantes que des murmures, la hargne des Ealmodhoriens longtemps concentrée
+                  sur les Sorcières.<br /><br />
+
+                  Les humains sont naturellement incapables d’utiliser la magie, quand bien même les cristallisés
+                  viennent questionner cette réalité. Cependant, une particularité longtemps comparée à de la magie
+                  court dans les généalogies de certains. Une malformation aux yeux permet à certains chanceux ou
+                  malheureux de voir les fantômes. Incompris et pris pour fous pendant des siècles, ils sont maintenant
+                  enfin laissés en paix, même si peut-être encore incompris.</p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h3 class="gradientTitle">Conflits internes</h3>
+                <p>Aujourd'hui, plus que contre les sorcières, c’est en leur sein même que les humains se trouvent pris
+                  en plein conflit. Entre oublier et pardonner pour reconstruire, ou s’acharner à régler les querelles
+                  qui durent, les nouvelles mentalités et les lois divisent plus ouvertement que jamais un peuple où la
+                  chasse aux sorcières n’a jamais fait l’unanimité. </p>
+              </div>
+
+            </div>
           </section>
           <section class="panel" id="panel-groupes-prez_sorcieres" role="tabpanel" aria-labelledby="cat-groupes"
             data-cat="groupes" data-sub="prez_sorcieres">

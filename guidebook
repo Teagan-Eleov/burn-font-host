@@ -1,0 +1,2086 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="guidebook.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/malihu/jquery-style-my-tooltips/jquery.style-my-tooltips.js"></script>
+  <script src="https://arsin-rpg.forumactif.com/10306.js"></script>
+
+  <title>Guidebook</title>
+  <style>
+
+  </style>
+</head>
+
+<body id="modernbb" class="">
+  <div id="background_blured"></div>
+
+  <div class="text_600 forum_content">
+
+    <div id="hero">
+      <div class="fog-layer"></div>
+      <a id="hero_image" href="https://burn-rpg.forumactif.com/"></a>
+
+      <div id="hero_content" class="flexColumn">
+        <div id="forumName">Guidebook</div>
+
+        <div id="hero_context_section" class="flexColumn">
+          <div class="blur_card" id="hero_contexte">
+            Bienvenue sur le guidebook de Arsin.</br>
+            Si vous êtes ici c'est que les quelques aperçus obtenus vous ont donné l'envie d'en savoir plus. Vous êtes
+            au bon endroit ! Bonne lecture !
+          </div>
+        </div>
+      </div>
+      <div id="theme_selector" class="flexColumn">
+        <input type="radio" id="input_blue" name="theme" value="blue" checked />
+        <label for="input_blue" id="theme_button_blue" class="theme-button"></label>
+
+        <input type="radio" id="input_green" name="theme" value="green" />
+        <label for="input_green" id="theme_button_green" class="theme-button"></label>
+
+        <input type="radio" id="input_gold" name="theme" value="gold" />
+        <label for="input_gold" id="theme_button_gold" class="theme-button"></label>
+
+        <input type="radio" id="input_licorne" name="theme" value="licorne" />
+        <label for="input_licorne" id="theme_button_licorne" class="theme-button"></label>
+
+        <input type="radio" id="input_red" name="theme" value="red" />
+        <label for="input_red" id="theme_button_red" class="theme-button"></label>
+      </div>
+    </div>
+  </div>
+  <div id="guidebook" class="text_600">
+    <div class="layout">
+      <!-- Onglets de 1er niveau (varient selon la catég -->
+      <div>
+        <div id="guidebook_nav" class="tabs primary" role="tablist" aria-label="Catégories">
+          <a id="button_back" class="tab-btn optionButton label100" href="https://arsin-rpg.forumactif.com/">
+            <div class="optionButtonContent">Retour au forum</div>
+          </a>
+          <button id="button_horsjeu" role="tab" data-cat="horsjeu" aria-controls="sec-horsjeu" aria-selected="true"
+            class="tab-btn optionButton label100">
+            <div class="optionButtonContent">Hors jeu</div>
+          </button>
+          <button id="button_ville" role="tab" data-cat="ville" aria-controls="sec-ville" aria-selected="false"
+            class="tab-btn optionButton label100">
+            <div class="optionButtonContent">Port-Fidèl</div>
+          </button>
+          <button id="button_magie" role="tab" data-cat="magie" aria-controls="sec-magie" aria-selected="false"
+            class="tab-btn optionButton label100">
+            <div class="optionButtonContent">Magie</div>
+          </button>
+          <button id="button_groupes" role="tab" data-cat="groupes" aria-controls="sec-groupes" aria-selected="false"
+            class="tab-btn optionButton label100">
+            <div class="optionButtonContent">Groupes</div>
+          </button>
+          <button id="button_bestiaire" role="tab" data-cat="bestiaire" aria-controls="sec-bestiaire"
+            aria-selected="false" class="tab-btn optionButton label100">
+            <div class="optionButtonContent">Bestiaire</div>
+          </button>
+        </div>
+
+      </div>
+
+      <div id="guidebook_content">
+        <!-- Onglets de 2ème niveau (varient selon catég) -->
+        <div id="secondary">
+          <div class="secondary-wrap active" id="sec-horsjeu" role="tablist" aria-label="Sous-onglets horsjeu">
+            <div class="tabs">
+              <button class="tab-btn secondary_tab label150" role="tab" data-cat="horsjeu" data-sub="introduction"
+                aria-controls="panel-horsjeu-introduction" aria-selected="true"><span>Introduction</span>
+                <div class="separator"></div>
+              </button>
+              <button class="tab-btn secondary_tab label150" role="tab" data-cat="horsjeu" data-sub="contexte"
+                aria-controls="panel-horsjeu-contexte" aria-selected="false"><span>Contexte</span>
+                <div class="separator"></div>
+              </button>
+              <button class="tab-btn secondary_tab label150" role="tab" data-cat="horsjeu" data-sub="reglement"
+                aria-controls="panel-horsjeu-reglement" aria-selected="false"><span>Règlement</span>
+                <div class="separator"></div>
+              </button>
+              <button class="tab-btn secondary_tab label150" role="tab" data-cat="horsjeu" data-sub="systemejeu"
+                aria-controls="panel-horsjeu-systemejeu" aria-selected="false"><span>Système de jeu</span>
+                <div class="separator"></div>
+              </button>
+              <button class="tab-btn secondary_tab label150" role="tab" data-cat="horsjeu" data-sub="credits"
+                aria-controls="panel-horsjeu-credits" aria-selected="false"><span>Crédits</span>
+                <div class="separator"></div>
+              </button>
+            </div>
+          </div>
+          <div class="secondary-wrap active" id="sec-ville" role="tablist" aria-label="Sous-onglets ville">
+            <div class="tabs">
+              <button class="tab-btn secondary_tab label150" role="tab" data-cat="ville" data-sub="legende"
+                aria-controls="panel-ville-legende" aria-selected="true"><span>Légende & valeurs</span>
+                <div class="separator"></div>
+              </button>
+              <button class="tab-btn secondary_tab label150" role="tab" data-cat="ville" data-sub="fonctionnement"
+                aria-controls="panel-ville-fonctionnement" aria-selected="false"><span>Fonctionnement</span>
+                <div class="separator"></div>
+              </button>
+              <button class="tab-btn secondary_tab label150" role="tab" data-cat="ville" data-sub="us"
+                aria-controls="panel-ville-us" aria-selected="false"><span>Us et coutumes</span>
+                <div class="separator"></div>
+              </button>
+              <button class="tab-btn secondary_tab label150" role="tab" data-cat="ville" data-sub="histoire"
+                aria-controls="panel-ville-histoire" aria-selected="false"><span>Histoire</span>
+                <div class="separator"></div>
+              </button>
+
+            </div>
+          </div>
+          <div class="secondary-wrap active" id="sec-magie" role="tablist" aria-label="Sous-onglets magie">
+            <div class="tabs">
+              <button class="tab-btn secondary_tab label150" role="tab" data-cat="magie" data-sub="perception_magie"
+                aria-controls="panel-magie-perception_magie" aria-selected="true"><span>Perception</span>
+                <div class="separator"></div>
+              </button>
+              <button class="tab-btn secondary_tab label150" role="tab" data-cat="magie" data-sub="fonctionnement"
+                aria-controls="panel-magie-fonctionnement" aria-selected="false"><span>Fonctionnement</span>
+                <div class="separator"></div>
+              </button>
+              <button class="tab-btn secondary_tab label150" role="tab" data-cat="magie" data-sub="particularites"
+                aria-controls="panel-magie-particularites" aria-selected="false"><span>Spécificités</span>
+                <div class="separator"></div>
+              </button>
+
+            </div>
+          </div>
+
+          <div class="secondary-wrap active" id="sec-groupes" role="tablist" aria-label="Sous-onglets groupes">
+            <div class="tabs">
+              <div class="label150 navtitle">
+                <imp>Les humains</imp>
+              </div>
+              <div class="subnav">
+                <button class="tab-btn secondary_tab label150" role="tab" data-cat="groupes" data-sub="prez_humains"
+                  aria-controls="panel-groupes-prez_humains" aria-selected="false"><span>Présentation</span>
+                  <div class="separator"></div>
+                </button>
+              </div>
+              <div class="label150 navtitle">
+                <imp>Les sorcières</imp>
+              </div>
+              <div class="subnav">
+                <button class="tab-btn secondary_tab label150" role="tab" data-cat="groupes" data-sub="prez_sorcieres"
+                  aria-controls="panel-groupes-prez_sorcieres" aria-selected="false"><span>Présentation</span>
+                  <div class="separator"></div>
+                </button>
+                <button class="tab-btn secondary_tab label150" role="tab" data-cat="groupes" data-sub="sororite"
+                  aria-controls="panel-groupes-sororite" aria-selected="false"><span>La sororité</span>
+                  <div class="separator"></div>
+                </button>
+                <button class="tab-btn secondary_tab label150" role="tab" data-cat="groupes"
+                  data-sub="apprentissage_sorcieres" aria-controls="panel-groupes-apprentissage_sorcieres"
+                  aria-selected="false"><span>Apprentissage</span>
+                  <div class="separator"></div>
+                </button>
+                <button class="tab-btn secondary_tab label150" role="tab" data-cat="groupes" data-sub="corruption"
+                  aria-controls="panel-groupes-corruption" aria-selected="false"><span>Contre coup et Corruption</span>
+                  <div class="separator"></div>
+                </button>
+
+              </div>
+              <div class="label150 navtitle">
+                <imp>Les cristallisés</imp>
+              </div>
+              <div class="subnav">
+                <button class="tab-btn secondary_tab label150" role="tab" data-cat="groupes" data-sub="prez_cristalise"
+                  aria-controls="panel-groupes-prez_cristalise" aria-selected="false"><span>Présentation</span>
+                  <div class="separator"></div>
+                </button>
+                <button class="tab-btn secondary_tab label150" role="tab" data-cat="groupes" data-sub="processus"
+                  aria-controls="panel-groupes-processus" aria-selected="false"><span>Cristaux et greffes</span>
+                  <div class="separator"></div>
+                </button>
+                <button class="tab-btn secondary_tab label150" role="tab" data-cat="groupes"
+                  data-sub="apprentissage_cristalises" aria-controls="panel-groupes-apprentissage_cristalises"
+                  aria-selected="false"><span>Usage de la magie</span>
+                  <div class="separator"></div>
+                </button>
+
+              </div>
+              <div class="label150 navtitle">
+                <imp>Les Chasseurs</imp>
+              </div>
+              <div class="subnav">
+                <button class="tab-btn secondary_tab label150" role="tab" data-cat="groupes" data-sub="prez_chasseurs"
+                  aria-controls="panel-groupes-prez_chasseurs" aria-selected="false"><span>Présentation</span>
+                  <div class="separator"></div>
+                </button>
+                <button class="tab-btn secondary_tab label150" role="tab" data-cat="groupes" data-sub="ordre"
+                  aria-controls="panel-groupes-ordre" aria-selected="false"><span>Ordre des Chasseurs</span>
+                  <div class="separator"></div>
+                </button>
+                <button class="tab-btn secondary_tab label150" role="tab" data-cat="groupes"
+                  data-sub="competences_chasseurs" aria-controls="panel-groupes-competences_chasseurs"
+                  aria-selected="false"><span>Compétences</span>
+                  <div class="separator"></div>
+                </button>
+              </div>
+              <div class="label150 navtitle">
+                <imp>???</imp>
+              </div>
+              <div class="subnav">
+                <button class="tab-btn secondary_tab label150" role="tab" data-cat="groupes" data-sub="prez_inconnu"
+                  aria-controls="panel-groupes-prez_inconnu" aria-selected="false"><span>Présentation</span>
+                  <div class="separator"></div>
+                </button>
+
+              </div>
+              <div class="label150 navtitle">
+                <imp>??</imp>
+              </div>
+              <div class="subnav">
+                <button class="tab-btn secondary_tab label150" role="tab" data-cat="groupes" data-sub="prez_inconnu2"
+                  aria-controls="panel-groupes-prez_inconnu2" aria-selected="false"><span>Présentation</span>
+                  <div class="separator"></div>
+                </button>
+
+              </div>
+
+            </div>
+          </div>
+          <div class="secondary-wrap active" id="sec-bestiaire" role="tablist" aria-label="Sous-onglets bestiaire">
+            <div class="tabs">
+              <button class="tab-btn secondary_tab label150" role="tab" data-cat="bestiaire" data-sub="esprits"
+                aria-controls="panel-bestiaire-esprits" aria-selected="true"><span>Esprits</span>
+                <div class="separator"></div>
+              </button>
+              <button class="tab-btn secondary_tab label150" role="tab" data-cat="bestiaire" data-sub="sirenes"
+                aria-controls="panel-bestiaire-sirenes" aria-selected="false"><span>Sirènes</span>
+                <div class="separator"></div>
+              </button>
+              <button class="tab-btn secondary_tab label150" role="tab" data-cat="bestiaire" data-sub="necrophages"
+                aria-controls="panel-bestiaire-necrophages" aria-selected="false"><span>Nécrophages</span>
+                <div class="separator"></div>
+              </button>
+              <button class="tab-btn secondary_tab label150" role="tab" data-cat="bestiaire" data-sub="mortsvivants"
+              aria-controls="panel-bestiaire-mortsvivants" aria-selected="false"><span>Morts-vivants</span>
+              <div class="separator"></div>
+            </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Contenus -->
+        <div id="panels" class="panels" aria-live="polite">
+
+          <!-- HORS JEU -->
+          <section class="panel active" id="panel-horsjeu-introduction" role="tabpanel" aria-labelledby="cat-horsjeu"
+            data-cat="horsjeu" data-sub="introduction">
+            <div class="guidebook_banniere arsin_illu">
+              <div
+                style="background-image: url('https://cdna.artstation.com/p/assets/images/images/049/040/782/large/john-patrick-ganas-hitodama-graveyard2.jpg?1651558373');">
+              </div>
+            </div>
+            <h2 class="gradientTitle">Introduction</h2>
+            <p>Bienvenue sur le guidebook de Arsin ! <br />
+              Arsin est un forum RPG de <imp>dark fantasy</imp> prenant place à la grande époque victorienne. Oscillant
+              entre gothic et gaslamp fantasy, il est un univers dont l’intrigue se veut <imp>participative</imp>.<br />
+              Vous trouvez dans ces pages les particularités de l’univers ainsi que le système de jeu.<br />
+              Bonne lecture, au plaisir de vous croiser bientôt ♥</p>
+          </section>
+          <section class="panel" id="panel-horsjeu-contexte" role="tabpanel" aria-labelledby="cat-horsjeu"
+            data-cat="horsjeu" data-sub="contexte">
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Contexte</h2>
+                <p>Un brouillard s’abaisse sur la ville. Dans la mer, un clapotis funeste, comme si les sirènes étaient
+                  déjà là. Pourtant, le danger n’est pas dans l’eau à Port-Fidèl. <br />
+                  Sur les quais, les marins hurlent pour couvrir le cri des mouettes qui planent au-dessus des tonneaux
+                  de
+                  poisson. La sueur leur colle à la peau, laisse des traces sur les vêtements pendant qu'ils travaillent
+                  à
+                  toute heure, à toute saison. Ils grognent contre les nouvelles entreprises trop avares, contre ceux
+                  dont
+                  la reconnaissance est absente, et malgré tout ils continuent de suer, jusqu'à la prochaine
+                  grève.<br />
+                  Malgré les conflits, la ville prospère. Enveloppée dans ses chappes brumeuses, Port-Fidèl est à deux
+                  tranchants, elle attise aussi bien la méfiance que la fierté, et ses racines s’enfoncent bien plus
+                  profondément dans la terre que ce que Isolde d’Hellac a pu penser lorsqu’elle a pris la ville aux
+                  sorcières, il y a 500 ans de cela. <br />
+                  Les incendies et les bûchers ont été abandonnés, les cendres ont rejoint la terre fertile et
+                  désormais,
+                  la Sororité veille au grain, accompagne et soutient. Elle a gagné sa place au conseil, et si ses
+                  opposants serrent les dents, ils sourient et tendent la main, hypocrisie venimeuse qui s’insinue dans
+                  tous les recoins. Et en écho dissonant, l’ombre chuchote sa dissidence au sein de la loyale et
+                  historique communauté. <br />
+                  Et entre les murs de Port-Fidèl, une nouvelle découverte fait frissonner ses habitants. Aux mains de
+                  l’armée, des cristaux sont enfoncés dans la chair des plus valeureux, des plus affamés et désespérés,
+                  pâle imitation de quelconque sorcellerie, et pourtant, les voilà qui invoquent, transforment, changent
+                  les choses. <br />
+                  Sous le regard méfiant des plus grands, Port-Fidèl se développe, s’agrandit, veut toujours plus, avide
+                  petite soeur que l’on contient avec des promesses vides et des faux sourires. <br />
+                  Les temps anciens sont révolus. La mécanique est lancée, emmenant avec elle le destin commun.</p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+            </div>
+          </section>
+          <section class="panel" id="panel-horsjeu-reglement" role="tabpanel" aria-labelledby="cat-horsjeu"
+            data-cat="horsjeu" data-sub="reglement">
+            <div class="guidebook_banniere arsin_illu">
+              <div
+                style="background-image: url('https://cdna.artstation.com/p/assets/images/images/049/040/782/large/john-patrick-ganas-hitodama-graveyard2.jpg?1651558373');">
+              </div>
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Savoir vivre</h2>
+                <p>Le <imp>respect et la bienveillance</imp> sont les fondations de notre communauté. Nous tenons à ce
+                  que chacun des membres s’y sente à sa place. Aussi, nous ne tolérerons aucun propos ou comportement
+                  qui irait à l’encontre de cet esprit, que ce soit sur discord ou en message privé.</p>
+                <p>Des différents peuvent arriver. Dans ce cas, nous vous prions de le régler en privé, avec
+                  l’intervention de l’équipe administrative si besoin.</p>
+                <p>
+                  <imp>La communication est la clef.</imp>
+                </p>
+              </div>
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Discord</h2>
+                <p>
+                  <imp>Le règlement du forum s’applique sur discord.</imp>
+                </p>
+                <p>Le discord est accessible même si vous n’êtes pas inscrit. Nous savons qu’il est utile pour sonder
+                  une communauté ou poser des questions. </p>
+                <p>L’usage de discord n’est pas obligatoire, bien qu’il soit recommandé pour plus de praticité</p>
+                <p>Votre pseudo sur le serveur doit permettre de vous identifier sur le forum (mentionnez le prénom de
+                  vos principaux personnages)</p>
+              </div>
+            </div>
+            <div class="guidebook_banniere arsin_illu">
+              <div
+                style="background-image: url('https://cdna.artstation.com/p/assets/images/images/049/040/782/large/john-patrick-ganas-hitodama-graveyard2.jpg?1651558373');">
+              </div>
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Inscription</h2>
+                <p>Le forum est <imp>interdit aux joueurs de moins de 16</imp> ans révolus<br />
+                  Le <imp>personnage doit avoir 15 ans</imp> minimum. Des exceptions peuvent s’envisager<br />
+                  Le nom du compte permet d’identifier votre personnage. Nous acceptons “Nom Prénom”, “Prénom” ou
+                  “Surnom”.<br />
+                  L’avatar doit être <imp>illustré</imp> (digital art), <imp>cohérent avec l'univers</imp> et ne
+                  présenter aucun contenu -18ans.<br />
+                  L’avatar par défaut fait <imp>200px*400px.</imp><br />
+                  Les figures les plus importantes de Port-Fidèl ne sont pas jouables à l’inscription.<br />
+                  Une fois inscrit, vous disposez de <imp>2 semaines</imp> pour poster et finaliser votre fiche
+                  d’inscription.<br />
+                  Le <imp>multi-comptes est autorisé</imp> à condition de remplir les critères requis. Vous pouvez en
+                  faire la demande à la Boutique.<br />
+                  Le <imp>reroll est gratuit</imp> (refaire un personnage de zéro)</p>
+              </div>
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Suppression</h2>
+                <p>Si vous souhaitez nous quitter, nous apprécierons que vous nous préveniez, ainsi que vos partenaires
+                  de RP.<br />
+                  A votre inscription, il vous sera demandé vos dernières volontés en ce qui concerne le traitement de
+                  vos personnages. Nous respecterons au mieux ces volontés.<br />
+                  Sauf demande de votre part, le compte ne sera pas supprimé mais deviendra inactif.<br />
+                  Si vous souhaitez le reprendre, vous pourrez en faire la demande par MP ou sur discord.</p>
+              </div>
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Activité</h2>
+                <p>Nous demandons un minimum de <imp>1 RP par mois</imp>, exception faite des absences prévenues.<br />
+                  Aucun pression à l’encontre d’un autre joueur quant à son activité ne sera tolérée. <imp>IRL first
+                  </imp>.<br />
+                  L’intrigue du forum est participative. Vos actions en rp ont un impact, mais également hors rp. Si
+                  vous avez des idées de contenu supplémentaire, n’hésitez pas à nous les communiquer.</p>
+              </div>
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Réservation</h2>
+                <p>Les réservations de feat, de scénarios ou de liens sont possibles.<br />
+                  Du moment que votre intérêt est maintenu, ces réservations n’ont pas de date d’expiration. A
+                  contrario, si vous disparaissez du forum sans prévenir, nous nous réservons le droit de libérer ces
+                  réservations.</p>
+              </div>
+            </div>
+            <div class="guidebook_banniere arsin_illu">
+              <div
+                style="background-image: url('https://cdna.artstation.com/p/assets/images/images/049/040/782/large/john-patrick-ganas-hitodama-graveyard2.jpg?1651558373');">
+              </div>
+            </div>
+            <div class="chapitre">
+
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Contenu RP</h2>
+                <p>
+                  <imp>Aucun minimum de mots.</imp><br />
+                  Faites attention à votre orthographe. Plusieurs sites proposent une correction de vos textes en deux
+                  clics, n’hésitez pas à les utiliser.<br />
+                  Le contenu pornographique est interdit.<br />
+                  Le contenu sensible (violences, érotisme) est autorisé à condition d’être prévenu (balise hide pour
+                  masquer le texte, ou mention TW)<br /><br />
+                  Des codes sont mis à votre disposition pour mettre en forme vos textes. Vous êtes libres d’en utiliser
+                  d’autres du moment qu’ils ne déforment pas le forum.<br />
+                  Merci de respecter une <imp>taille de police d’au moins 11px et des couleurs suffisamment contrastées
+                  </imp>.
+                </p>
+
+
+              </div>
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Bonnes pratiques RP</h2>
+                <p>Le RP est un loisir collaboratif, veillez donc à ne pas entacher le plaisir de vos partenaires.
+                  Notamment : <br /><br />
+
+                  - Ne jouez pas le personnage des autres.<br />
+                  - Aucun personnage n’est invincible. Il peut être fort mais présentera toujours des
+                  faiblesses.<br />
+                  - N’utilisez pas d’informations obtenues hors jeu dans vos textes : restez cohérents avec les
+                  informations dont dispose votre personnage.<br />
+                  - Si votre partenaire a des sujets sensibles (mentionné par l’information “Trigger” sur son profil),
+                  merci de le respecter et de les éviter.</p>
+              </div>
+            </div>
+            <div class="chapitre">
+
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Confiance et auto modération</h2>
+                <p>
+                  Vos textes ne seront pas tous lus. Nous partons du principe que vous êtes des personnes intelligentes
+                  et de bonne foi.<br />
+
+                  En cas de question, l’équipe administrative reste disponible pour vous aider à demeurer le plus
+                  réaliste possible. <br />
+
+                  S’il advenait que des erreurs ou incohérences soient commises, nous en parlerons ensemble.<br />
+                  Si toutefois vous vous obstinez à être mauvais joueur, nous nous réservons le droit d’intervenir en
+                  RP, voire de rendre certains RP caducs.
+                </p>
+
+
+              </div>
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Conclusion</h2>
+                <p>En vous inscrivant, vous acceptez toutes ces règles.
+
+                  Ces règles peuvent être amenées à évoluer. Vous en serez prévenu.</p>
+              </div>
+            </div>
+          </section>
+          <section class="panel" id="panel-horsjeu-systemejeu" role="tabpanel" aria-labelledby="cat-horsjeu"
+            data-cat="horsjeu" data-sub="systemejeu">
+            <div class="guidebook_banniere arsin_illu">
+              <div
+                style="background-image: url('https://cdna.artstation.com/p/assets/images/images/049/040/782/large/john-patrick-ganas-hitodama-graveyard2.jpg?1651558373');">
+              </div>
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Système de jeu</h2>
+                <p>Le système de jeu de Arsin se veut relativement simple.<br /><br />
+
+                  Arsin est un forum <imp>participatif et collaboratif</imp>. Vos actions en RP ont un impact sur
+                  l’intrigue.</p>
+              </div>
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Période jouable</h2>
+                <p>La période jouable court de <imp>mai à août 1842</imp>. Celle-ci sera amenée à évoluer avec le temps
+                  ou après des évènements.<br />
+
+                  Vous avez possibilité de faire des RP flashback.</p>
+              </div>
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Magie et auto-modération</h2>
+                <p>L’usage de la magie est possible à Arsin.<br />
+
+                  Le contexte permet des magies puissantes et des contreparties considérables.<br />
+
+                  Nous vous faisons confiance pour ne pas abuser de ces avantages en RP et rester cohérent et réaliste.
+                  <br />
+
+                  En cas de non respect des règles, des avertissements seront donnés, puis des sanctions irp et hors rp
+                  seront prises.
+                </p>
+              </div>
+            </div>
+            <div class="guidebook_banniere arsin_illu">
+              <div
+                style="background-image: url('https://cdna.artstation.com/p/assets/images/images/049/040/782/large/john-patrick-ganas-hitodama-graveyard2.jpg?1651558373');">
+              </div>
+            </div>
+            <div class="subject_title flexRow">
+              <h2>Développement des personnages</h2>
+              <div class="separator"></div>
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h3 class="">Connaissances du monde</h3>
+                <p>Ce guidebook introduit les notions importantes de l'univers. <imp>Certaines informations ne sont
+                    connues que par certains groupes</imp>, nous vous demanderons de rester cohérent avec ce
+                  postulat.<br /><br />
+
+                  Les journaux sont la principale source d’informations à Port-Fidèl. Ils annoncent les rumeurs et les
+                  faits importants pour le mois en cours.<br />
+                  <imp>Tout ce qui est annoncé dans les journaux peut être considéré comme connu par votre personnage.
+                  </imp>
+                </p>
+              </div>
+              <div class="chapitre_content">
+                <h3 class="gradientTitle">Rôles importants et évolutions</h3>
+                <p>Les figures les plus importantes de Port-Fidèl ne sont pas jouables, vous aurez néanmoins la
+                  possibilité de faire évoluer votre personnage afin qu’il gagne en notoriété et en responsabilités.</p>
+                <note>A votre inscription, il vous sera demandé vos ambitions pour votre personnage, si vous en avez.
+                  Ceci nous permettra d’affiner avec vous ses évolutions possibles.</note>
+              </div>
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h3 class="">Interventions RP</h3>
+                <p>Afin de faire avancer l’intrigue, le staff pourra intervenir dans vos RP au travers de comptes
+                  MJ.<br /><br />
+
+                  Certaines interventions MJ ne seront que des pistes que vous aurez la liberté d’explorer si vous le
+                  souhaitez.
+                  D’autres interventions plus conséquentes ne vous laisseront pas le choix. Vous serez obligé de le
+                  prendre en compte dans vos écrits.
+                </p>
+              </div>
+              <div class="chapitre_content">
+                <h3 class="gradientTitle">Sanctions RP</h3>
+                <p>S’il advenait que vos actions RP soient incohérentes en dépit des avertissements (personnage
+                  invincible, contenu meta, non respect des règles), des interventions MJ pourraient avoir lieu pour
+                  vous sanctionner.</p>
+              </div>
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h3 class="">Vie, blessures et mort</h3>
+                <p>Sur Arsin, votre personnage <imp>pourra subir des blessures</imp> plus ou moins graves lors des
+                  missions, des évènements ou lors d’interventions MJ.<br />
+                  Ces états seront décris par le MJ. Il n’y a pas de système de point de vie, alors la gravité de ces
+                  dernières seront narrées.<br />
+                  Selon vos actions, vos blessures pourront conduire à la mort du personnage.
+                </p>
+              </div>
+
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Lancé de dés</h2>
+                <p>Lors d’évènements ou de missions, il pourra vous être demandé de lancer un dé 20.<br />
+                  Les lancés de dés se font sur discord, dans le channel approprié.<br /><br />
+
+                  Les résultats du dé 20 :<br />
+
+                  <imp>1 : Echec critique</imp> : L’action est ratée, voire présente des conséquences négatives.<br />
+
+                  <imp>2 - 10 : Echec</imp> : L’action est manquée. Les conséquences dépendent du résultat<br />
+
+                  <imp>11 - 19 : Réussite</imp> : L’action est réussie. Le degré de succès dépend du résultat.<br />
+
+                  <imp>20 : Réussite critique</imp> : L’action est réussie et engendre des conséquences
+                  positives.<br /><br />
+
+                  Ces résultats sont des valeurs par défaut. <br />
+                  Leur interprétation sera laissée à la discrétion du MJ.<br />
+                  En fonction du contexte, des points bonus ou malus pourront s’ajouter à votre jet. Par exemple, une
+                  action téméraire pourrait être récompensée. A contrario, des actions incohérentes ou invraisemblables
+                  pourront être sanctionnées.
+
+                  L’usage des dés en dehors des missions et évènements est possible. Nous vous laisserons juge des
+                  résultats.
+                </p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Monnaie</h2>
+                <p>La monnaie hors jeu est le Seï. Elle a le même nom que l’argent dans l’univers d’Arsin. Toutefois
+                  elle n’apporte que des avantages hors rp, débloquable dans la boutique.<br />
+                  Vous avez plusieurs moyens pour en gagner : <br /><br />
+
+                  Poster votre fiche d’inscription : <imp>50 seï</imp><br />
+
+                  Créer un sujet RP : <imp>20 seï</imp><br />
+
+                  Répondre à un RP : <imp>10 seï</imp><br />
+
+                  Archiver un RP : <imp>10 seï</imp><br />
+
+                  Ecrire un message de bienvenue : <imp>5 seï</imp><br />
+
+                  Votes : <imp>1 seï</imp><br /><br />
+
+                  Les events pourront apporter des cadeaux et seï supplémentaires.</p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+            </div>
+          </section>
+          <section class="panel" id="panel-horsjeu-credits" role="tabpanel" aria-labelledby="cat-horsjeu"
+            data-cat="horsjeu" data-sub="credits">
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Généralités</h2>
+                <p>Arsin est un forum ouvert le 10 aout 2025.<br /><br />
+
+                  Il est le fruit du travail de l’équipe administrative et de chacun de ses précieux
+                  membres.<br /><br />
+
+                  Le forum est une idée originale, influencée de diverses oeuvres telles que Dishonored, Penny Dreadful,
+                  The Witcher, Sherlock Holmes, Dredge, The Locked Tomb, The Spirit Bares Its Teeth et bien
+                  d’autres.<br />
+                  Toute inspiration est <imp>libre et encouragée</imp>.<br /><br />
+                  On s'inspire tous de ce qui nous entoure. On apprend des autres pour grandir et s'améliorer. Ce qui
+                  plait gagne à être partagé, réutilisé, démocratisé.<br />
+                  Bien sur, nous apprécierons qu'il n'y ait pas de simple copié collé. Du reste, nous partagerons avec
+                  plaisir notre travail, et si celui-ci vous plait, n'hésitez pas à venir nous faire un coucou ♥</p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h3 class="">Ecrits et Evolution</h3>
+                <p>Le développement de l’intrigue est le résultat de la collaboration des membres et de l’équipe
+                  administrative.
+                  Les textes appartiennent à leurs auteurs.
+                </p>
+              </div>
+              <div class="chapitre_content">
+                <h3 class="gradientTitle">Design et développement</h3>
+                <p>Le design et le développement du forum rpg Arsin est le résultat du travail de l’équipe
+                  administrative, avec l’usage de plusieurs codes et tuto en libre services.<br><br>
+                  Notamment : <br>
+                  - Christina sur Epicode, pour <a target=”_blank”
+                    href=”https://www.epicode-entraide.com/t18146-afficher-automatiquement-l-effectif-d-un-groupe-sur-le-qeel”>l’affichage
+                    du nombre de membre par groupe</a> et <a target=”_blank”
+                    href=”https://www.epicode-entraide.com/t18178-une-infobulle-tooltip-qui-suit-la-souris”>l’infobulle</a><br />
+                  - Momomer pour le <a target=”_blank”
+                    href=”https://blankthemerpg.forumactif.com/t36-switcheroo”>switcheroo</a> et les <a target=”_blank”
+                    href=”https://blankthemerpg.forumactif.com/t128-ajouter-le-module-des-derniers-sujets”>derniers
+                    sujets</a><br>
+                  Si un crédit est manquant, n’hésitez pas à nous contacter.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- MAGIE -->
+          <section class="panel" id="panel-magie-perception_magie" role="tabpanel" aria-labelledby="cat-magie"
+            data-cat="magie" data-sub="perception_magie">
+            <div class="liste_citations">
+              <div class="citation_bloc citation_left">
+                <div class="citation_content">La magie est historiquement l’apanage des sorcières. Mais aujourd’hui vous
+                  savez, avec les cristallisés… La donne va changer.</div>
+              </div>
+              <div class="citation_bloc citation_right">
+                <div class="citation_content">Moi mon grand-père m’a dit, quand il était jeune, les sorcières, elles
+                  soulevaient des montagnes ! Des montagnes, j’te dis, avec leur magie. Des blocs de pierres gros comme
+                  la ville, et même pas qu’elles bougeaient ! Elles sont bien bonnes de pas nous avoir rasés, j’te dis,
+                  parce qu’avec leurs sorts là, elles le pourraient…</div>
+              </div>
+              <div class="citation_bloc citation_left">
+                <div class="citation_content">Prends pas les marins et leurs amulettes en os à la légère. C’est facile
+                  de se moquer, puis tu te retrouves au milieu d’une tempête et tout ce qui te tient en vie, c’est ce
+                  petit bout d’os taillé, qui repousse l’eau, les vagues, la pluie, tu sais pas comment…</div>
+              </div>
+              <div class="citation_bloc citation_right">
+                <div class="citation_content">La fille de Almed a bientôt dix ans. Il est pas très serein, non, elle est
+                  bizarre la petite, toujours dans la lune à s’intéresser aux grenouilles. Imagines, si c’est une
+                  sorcière qui commence à se transformer en crapaud ?</div>
+              </div>
+            </div>
+
+
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Perception par les citoyens</h2>
+                <p>Longtemps interdite, la magie a été légalisée pour la première fois dans le pays en 1827, à
+                  Port-Fidèl. La nouvelle fit grand remous et ce, même dans le reste du pays. Ce que la magie est
+                  capable de faire ou non est une source d’interrogations, de débats et de tâtonnement législatif pour
+                  tous. Aussi, elle est particulièrement réglementée, tracée. Chaque sorcière est recensée et l'usage de
+                  la magie ne saurait se soustraire aux lois. Aussi il est évidemment interdit de l'utiliser pour
+                  troubler l'ordre publique ou nuire aux autres - exception faite des soldats cristallisés pendant leur
+                  service. Son usage dans l'espace public est encore débattu, mais les petits sorts à caractères
+                  domestiques ne sont pour l'instant pas réprimandés. <br /><br />
+
+                  Depuis la lente popularisation des cristallisés ces dernières années, un regain de confiance commence
+                  à se faire sentir pour la pratique elle-même. L’idée que sorcière et magie sont indissociable est
+                  lentement balayer des esprits</p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+            </div>
+          </section>
+          <section class="panel" id="panel-magie-fonctionnement" role="tabpanel" aria-labelledby="cat-magie"
+            data-cat="magie" data-sub="fonctionnement">
+            <div class="guidebook_banniere arsin_illu">
+              <div
+                style="background-image: url('https://cdna.artstation.com/p/assets/images/images/049/040/782/large/john-patrick-ganas-hitodama-graveyard2.jpg?1651558373');">
+              </div>
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Théorie de la magie</h2>
+                <p>La magie vient du corps et de l’esprit.<br /><br />
+                  D’abord c’est une volonté, une émotion, l’adepte *veut* et ce désir tord la réalité. L’adepte jeune et
+                  moins expérimenté manque parfois de précision dans ses vœux. C’est un art qui s’apprend avec le temps
+                  et la pratique.</p><br />
+              </div>
+            </div>
+            <div class="">
+              <div class="">
+                <h2 class="gradientTitle">Les branches de magie</h2><br />
+                <p> Indéfinissable et multiple, la magie a malgré tout été théorisée en cinq branches, pour faciliter la
+                  compréhension :</p>
+              </div>
+            </div>
+            <div class="chapitre chapitre_branches">
+              <div class="chapitre_content">
+                <div class="recap_rp_title label150 gradientTitle chipCommunication">
+                  <div class="chip_icon"></div>Communication
+                </div>
+                <p>La Branche la plus inoffensive, permettant d’échanger par delà le langage avec d’autres humains, des
+                  animaux, son environnement, et même les morts. Sa difficulté réside dans le recul qu’il faut pour
+                  comprendre la façon dont une tulipe dans un parc peut voir la vie. <br />
+                  Exemple: Télépathie, empathie, traduction innée de langage inconnu, communication avec les fantômes.
+                </p>
+              </div>
+              <div class="chapitre_content">
+                <div class="recap_rp_title label150 gradientTitle chipElementaire">
+                  <div class="chip_icon"></div>Manipulation
+                </div>
+                <p>Le déplacement un sujet dans l’espace et la modification de sa forme. Il s’agit d’un des types de
+                  magie les plus utilisés dans sa forme simple. Sa complexité réside dans le nombre de sujet, ou dans la
+                  précision de la manipulation. <br />
+                  Exemple : Télékinésie, remodeler la forme d’un sujet.</p>
+              </div>
+              <div class="chapitre_content">
+                <div class="recap_rp_title label150 gradientTitle chipAlteration">
+                  <div class="chip_icon"></div>Altération
+                </div>
+                <p>La modification des propriétés d’un sujet physique ou psychique existant. Si modifier des sujets
+                  physiques demande un certain entraînement, la modification de sujet psychique ( souvenirs, fantômes,
+                  sentiments, ect) demande une maîtrise relevant de la Haute magie. L’Alteration de sujets organiques,
+                  vivants, n’est pas recommandé avant des années de pratiques sur des inertes, puisque la marge d’erreur
+                  doit être quasi inexistante dans ce cas. <br />
+                  Exemple: Modifier la température d’un objet, la matière le composant, altérer un souvenir. </p>
+              </div>
+              <div class="chapitre_content">
+                <div class="recap_rp_title label150 gradientTitle chipConstruction">
+                  <div class="chip_icon"></div>Construction
+                </div>
+                <p>La multiplication d’un sujet, permettant d’en augmenter la quantité. Souvent vu comme une cousine de
+                  la Manipulation tant elles sont complémentaires. Si multiplié un sujet fait d’une unique matière comme
+                  du bois est considéré comme facile, des sujets composés d’une multitude de matière sont bien plus
+                  compliqué. Il est actuellement considéré impossible de multiplier un corps humain dans son
+                  entièrement, tant sa composition est complexe, même avec de la Haute magie.<br />
+                  Exemple: dupliquer la matière, cloner un sujet inerte, augmenter sa taille. </p>
+              </div>
+              <div class="chapitre_content">
+                <div class="recap_rp_title label150 gradientTitle chipInvocation">
+                  <div class="chip_icon"></div>Invocation
+                </div>
+                <p>Amener à soi un sujet existant ou un esprit. L’invocation gagne à être utilisé dans un contexte
+                  connu: quel objet invoquer, depuis où, jusqu’où, sur quelle distance. Chaque information manquante
+                  complexifier le sort et s’ajoute aussi la taille du sujet à déplacer. Peut-être moins polyvalente que
+                  les autres branches, elle reste essentielle. <br />
+                  Exemple: Téléportation, invocation de fantôme. </p>
+              </div>
+              <div class="chapitre_content">
+                <div class="recap_rp_title label150 gradientTitle chipAnimation">
+                  <div class="chip_icon"></div>Animation
+                </div>
+                <p>Les sorts insufflant la vie, ou du moins une certaine conscience à un sujet physique. La spécificité
+                  de cette branche et de permettre l’autonomie du sujet : la complexité des tâches qu’il peut réaliser
+                  dépend de la puissance de l’adepte, et de la liberté qu'il lui donne.</p>
+              </div>
+            </div>
+            <div class="">
+              <div class="">
+                <p> Chaque branche permet un ensemble de sorts qui ne trouve comme limite que l’imagination et la
+                  technique de l’adepte.</p>
+              </div>
+            </div>
+            <div class="chapitre chapitre_inverse">
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+              <div class="chapitre_content">
+                <h3 class="gradientTitle">Le multi branches</h3>
+                <p>Les sorts multi-branches font appel à plusieurs branches dont une maîtrise quasi-parfaite est
+                  nécessaire. Ils ne sont accessibles avec sûreté qu’après déjà des années de pratique, parfois des
+                  décennies.<br />
+                  Exemple: sort de soin (construction et altération), maîtrise élémentaire (construction et
+                  manipulation), résurrection (invocation, construction, altération).</p><br />
+                <h3 class="gradientTitle">La Haute Magie</h3>
+                <p>La Haute Magie est un ensemble de sorts complexes, mobilisant souvent <imp>trois branches ou plus
+                  </imp> et nécessitant des <imp>décennies d’entrainement</imp>. Peu à peu redécouverte depuis la
+                  légalisation de la magie, elle fascine mais inquiète et les possibilités qu’elle permet sont encore
+                  vastement inexplorées. Elle est aussi plus durement encadré par les institutions de sorcières, qui en
+                  interdisent complètement l’utilisation dans l’espace public ou devant des profanes. </p>
+              </div>
+
+            </div>
+
+          </section>
+          <section class="panel" id="panel-magie-particularites" role="tabpanel" aria-labelledby="cat-magie"
+            data-cat="magie" data-sub="particularites">
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Usage chez les sorcières</h2>
+                <p>Les premières manifestations de la magie d’une sorcière commencent à ses dix ans. Instable, souvent
+                  peu
+                  puissante, elle peut réaliser toutes branches de magie d’utiliser des sorts simples. A ses vingt ans,
+                  à
+                  force d’entraînement et une fois sa magie stabilisée, elle pourra apprendre les subtilités de son art,
+                  perfectionner sa maîtrise d’une branche et accéder à des sorts plus puissants et complexes. Ce choix
+                  est
+                  souvent influencé par l’affinité que chaque sorcière a dans une branche en particulier. <br /><br />
+                  Il est possible, avec les années, de domestiquer une seconde, parfois même une troisième branche. La
+                  combinaison de plusieurs branches offre alors des sorts plus complexes : Construction et Manipulation
+                  donnent une maîtrise élémentaire, Invocation et Communication permettent la médiumnité. Mais cette
+                  maestria trouve son prix.</p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+            </div>
+            <div class="chapitre chapitre_inverse">
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Usage chez les cristallisés</h2>
+                <p>Le temps et l’entrainement sont les deux alliés d’un cristallisé. La magie qu’il peut manipuler après
+                  cicatrisation de sa greffe est infime mais elle ne cessera alors de se renforcer avec le temps. Plus
+                  brute, directe et puissante que celle de nombreuses sorcières, leur magie est cependant limitée à une
+                  seule branche. <br /><br />
+
+                  L’entrainement physique et l’entretien d’un corps en bonne santé sont les manières les plus efficaces
+                  d’améliorer le contrôle et la puissance de sa magie. C’est par le geste qu’un cristallisé manie ses
+                  sorts, entre l’art martial et la danse, la chorégraphie propre à chacun demande une netteté
+                  d’exécution totale pour un résultat maximal.</p>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- VILLE -->
+          <section class="panel" id="panel-ville-legende" role="tabpanel" aria-labelledby="cat-ville" data-cat="ville"
+            data-sub="legende">
+            <div class="guidebook_banniere arsin_illu">
+              <div
+                style="background-image: url('https://cdna.artstation.com/p/assets/images/images/049/040/782/large/john-patrick-ganas-hitodama-graveyard2.jpg?1651558373');">
+              </div>
+            </div>
+            <div class="citation_bloc citation_left">
+              <div class="citation_content">Plus haut que la couronne...<br /><br /><br /></div>
+            </div>
+            <h2 class="gradientTitle">Légende</h2>
+            <p>Sur les côtes du pays, Port-Fidèl est un drapeau secoué par les vents, une vanité, la petite sœur
+              indocile de la Capitale. Ses fondations ne lui appartiennent pas, l’une des dernières cités sorcières de
+              Seiland s’y dressait auparavant. Des terres anciennes lorgnées depuis des siècles par la Royauté, à la
+              convergence d’intérêts économiques et militaires. Lorsqu’Isolde d’Hellac, ancienne fidèle chevaleresse
+              devenue désavouée traîtresse, s’y présenta il y a 500 ans, c’était avec ce qu'il lui restait de soldats
+              loyaux et une réputation à rebâtir. Les toits de chaume, les runes gravées dans le bois et la pierre, les
+              herbes suspendues aux poutres étaient voués à brûler. L'ambition d'une femme allait y bâtir des maisons,
+              des murs et des pontons, tout ce qu'il fallait pour laver un nom.<br /><br />
+
+              Cent mythes existent à propos d’Hellac et du siège qu’elle tint, de la hargne dont elle fit preuve ou de
+              la prudence de sa stratégie. Beaucoup se contredisent. On parle de sang, de feu, de victoires glorieuses.
+              Certaines langues prétendant qu'une traîtresse en restera toujours une et qu'après la Couronne, ce furent
+              les sorcières qui goûtèrent à sa déloyauté. Mais qu’importent les diffamations, son nom est désormais trop
+              doré pour se voir entaché de qu’en dira-t-on.<br /><br />
+
+              Récompensée pour sa dévotion, infaillible malgré l’opprobre, d’Hellac se vit confier les rênes de la ville
+              trophée et eut la lourde tâche d’en faire le fer de lance de la puissance Seilandaise. Un cadeau
+              empoisonné, la nouvelle occasion de la désavouer. Mais là encore, ses résultats furent incontestables. De
+              la pêche et du commerce, la cité fructifia, poussée par des valeurs qui devinrent adages, Port-Fidèl
+              s’érigea.<br /><br />
+
+              Le nom d’Hellac ne fut jamais officiellement lavé, mais pour tous elle fut héros, elle fut sauveur.</p>
+            <h2 class="gradientTitle">Valeurs</h2>
+            <p>blabla</p>
+          </section>
+          <section class="panel" id="panel-ville-fonctionnement" role="tabpanel" aria-labelledby="cat-ville"
+            data-cat="ville" data-sub="fonctionnement">
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Politique</h2>
+                <p>Capitale économique de Seiland, Port-Fidèl est une région fédérée qui se targue d’un progressisme
+                  novateur.<br /><br />
+
+                  A sa tête, deux entités cohabitent. Le <imp>Gouverneur</imp>, représentant de la couronne et désigné
+                  par le
+                  Roi est accompagné d’un <imp>conseil</imp> élu par la ville.<br />
+                  Ce dernier est le plus éclectique du pays. D’abord représenté par l’<imp>ancienne noblesse</imp> de la
+                  région
+                  et son <imp>armée</imp>, il s’est depuis quelques décennies enrichi et diversifié. D’abord, <imp>
+                    marins</imp> et
+                  plus récemment <imp>sorcières</imp> ont obtenu voix au chapitre, amenant avec eux leur lot de
+                  controverse.
+                  Ainsi, trois individus représentent chacun des quatre partis, assurant diversité et impartialité aux
+                  sujets discutés.<br />
+
+                  Mais le conseil, s’il est la voix du peuple n’en est pas moins qu’un représentant. Le Gouverneur est
+                  juge, et s’il souhaite s’opposer à une décision, sa parole fera loi.<br />
+                  <imp>Personne ne saurait contester l’autorité du roi.</imp>
+                </p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+            </div>
+            <div class="chapitre chapitre_inverse">
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Militaire</h2>
+                <p>Comme tous les autres Etats Seilandais, Port-Fidèl bénéficie d’une armée locale. Au service du
+                  conseil, ses plus haut gradés y siègent eux-mêmes. Elle a pour mission de maintenir l'ordre dans la
+                  ville, d'enquêter sur ses crimes. Mais aussi de protéger ses alentours, notamment du problème
+                  fluctuant des nécrophages.<br /><br />
+
+                  En complément, l’armée Royale, chargée de la sécurité du Gouverneur, offre à ce dernier les moyens de
+                  faire respecter ses décisions en ville.<br />
+                  Les relations entre les deux ont par le passé connu plus de bas que de haut et ne sont aujourd'hui que
+                  cordiales. La présence récente des cristallisés dans les rangs de l'armée du Conseil vient à nouveau
+                  perturber le respect fragilement acquis.</p>
+              </div>
+
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Economique</h2>
+                <p>Le commerce maritime et la pêche sont la colonne vertébrale de la ville, la raison de son
+                  développement, en plus d'un avantage militaire certain. Les denrées partent et viennent, traversent la
+                  ville comme les voyageurs et les travailleurs.<br /><br />
+
+                  Avec une économie reposant sur les quais, il était impossible que les marins et les dockers ne
+                  deviennent pas un organe vital de la ville. La reconnaissance ne fait pourtant rien contre la mort et
+                  l'épuisement du corps, ni contre les salaires trop bas.<br />
+                  Le pouvoir qu'ils ont sur le rythme de Port-Fidél ne leur a pas échappé et depuis des siècles ils sont
+                  connu pour être des protestataires cyniques, bien organisés et adeptes des grèves.<br /><br />
+
+                  Face à eux se dresse la bourgeoisie de la ville trophée, les compagnies marchandes, les patrons et les
+                  commerçants, les dignes héritiers de l'ancienne noblesse, que l'industrialisation fait rêver de
+                  millions et d'un nom.<br /><br />
+
+                  Un commerce parallèle s'est inévitablement développé dans la ville, celui qui échappe aux douanes et
+                  aux lois, où il est possible de se procurer tout ce qui ne peut pas être trouvé ailleurs et même ce
+                  qu'il est interdit de posséder. Armes, cristaux, animaux rares et substance prohibées, même certaines
+                  nouveautés venues d'autres pays peuvent être trouvées au marché noir. S'il est petit, discret et
+                  volage, c'est une hydre dont les autorités n'arrivent pas à se débarrasser. Contrôlé par la pègre
+                  seilandaise venue de plus haut dans les terres, son assujettissement commence à frustrer ses
+                  ambitions, et on perçoit dans les ruelles les prémisses d'une mutinerie
+                </p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+            </div>
+            <div class="chapitre chapitre_inverse">
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Géographique et sociétal</h2>
+                <p>Couronnée d'un bois sombre regorgeant de vie et de leurs amateurs, Port-Fidèl descend le long d’une
+                  la falaise où trône son élite puis s’écoule dans la baie où patauge son peuple. <br />
+                  Ses quartiers sont naturellement séparés par le fleuve et ses confluences. <br />
+                  A l’ouest, l’altitude réserve sa vue panoramique aux personnalités <imp>notables</imp> et à leur
+                  famille, qui
+                  bénéficient d’une technologie plus avancée que ses voisins. <br />
+                  A l’est, la baie se scinde en deux. Plus enfoncée dans les terres, la Petite Fidèle s’étend, profitant
+                  de la proximité de la mer sans les marées, de la campagne sans son fumet. Ses rues plus étroites sont
+                  le domaine d’une population <imp>respectable</imp>, dont le commerce constitue le gagne pain
+                  principal. Au
+                  raz-de-marée, les plus pauvres pataugent. Depuis l’effondrement du quartier devenu Les Noyés, les
+                  <imp>prolétaires</imp>, ouvriers et pêcheurs historiquement habitants des Cris partagent désormais
+                  leur espace
+                  avec les <imp>poissons noir</imp>, membres invisibilisés et désapprouvés de la cité. Moutons noirs
+                  d’une ville
+                  portuaire, ils ont longtemps compté parmi leurs rangs sorcières, prostituées et autres métiers
+                  désavoués.
+                </p>
+              </div>
+
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Géopolitique</h2>
+                <p>Port-Fidèl est la capitale économique de Seiland. Située à la pointe sud du pays, elle est au
+                  carrefour des voies maritimes reliant le pays à Thedarban et Nesta-Himil, ses voisines mouillant
+                  respectivement au sud-est et sud-ouest de la région. <br />
+                  Si le commerce est désormais fructifiant, quoi qu’encore tendu, il n’en a pas moins été le revers
+                  sanglant de conflits répétés. Contrariées de la soudaine et coûteuse souveraineté seilandaise sur les
+                  eaux confluente de la XXX voilà deux cent ans, chacun des deux pays a tenté d’en reprendre le contrôle
+                  pendant de nombreuses décennies, gavant les sirènes des corps de soldats sacrifiés pour leur cause
+                  sans jamais parvenir à défaire la flotte fidèle. Si un accord a été trouvé, réduisant les coûts pour
+                  les bateaux affiliés, Thedarban n’en a néanmoins jamais véritablement pris son parti. <br />
+                  Aussi, il arrive encore que des bateaux seilandais, naviguant trop loin de l’archipel soient envoyés
+                  par le fond. Les affres de pirates qui n’auraient soit-disant ni maître ni règles, bien qu’un accent
+                  particulièrement prononcé. <br /><br />
+
+                  Le dernier pays qui ceint Seiland se trouve à son nord, et coiffe la capitale d’un héritage délaissé.
+                  Contrée originaire ce peuple délocalisé, Ealmodhor souffre d’un climat bien moins clément que celui
+                  qui couvre à Port-Fidèl, mais bien loin pour s’en soucier, seuls les écoliers peuvent encore le
+                  souligner.
+                </p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+            </div>
+          </section>
+          <section class="panel" id="panel-ville-us" role="tabpanel" aria-labelledby="cat-ville" data-cat="ville"
+            data-sub="us">
+            <div class="chapitre chapitre_inverse">
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Education, travail et majorité</h2>
+                <p>Les enfants de Port-Fidèl, qu’ils grandissent entre des murs rongés par la moisissure ou des draps
+                  chauds, bénéficient d’une éducation gratuite et obligatoire jusqu’à l’âge de quatorze ans. Une fois
+                  sortis de l’école, s’offrent à eux la possibilité de travailler, ou de continuer des études dans les
+                  quelques établissements privés de la ville. Quelques rares bourses au mérite sont attribuées aux
+                  chanceux. <br /><br />|
+
+                  La majorité est actée à dix-neuf ans dans tout le pays. L’âge adulte vient avec son lot de droit et
+                  d’obligation : voter, se marier, devenir patron, s’émanciper de ses parents.|
+                </p>
+              </div>
+
+            </div>
+            <div class="chapitre ">
+
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Marins et traditions</h2>
+                <p>Marqués par les disparitions en mer et les corps qui manquent dans le cercueil, les traditions des
+                  marins cherchent à cajoler l’océan et protéger les braves sur les bateaux. C’est une spiritualité à
+                  part entière, faites de festivités durant des journées entières et d’offrandes à des esprits
+                  personnifiant les vents, à l’aube d’un long voyage en mer. Les baleiniers, les plus courageux ou les
+                  plus fous, se protègent des dangers avec des amulette protectrices faites de l’os de leur butin,
+                  taillés selon un ensemble de symboles précis nourris avec les années.<br /><br />
+
+                  Le reste du métier de marin ne relève pas d'une tradition, et c'est un véritable savoir faire que
+                  d'observer les étoiles, les âmes mortes qui dansent sur l’eau, départager celles qui conseillent de
+                  celles qui égarent et surtout, vite passer son chemin. Ou les sirènes arrivent, attirées par leur
+                  lumière.<br /><br />
+
+                  Les sorcières sont des alliées difficiles et contestées, porte-malheurs par nature, mais capables
+                  malgré tout, pour les plus puissantes et les plus adroites, de faciliter une sortie en mer. Ce
+                  qu’elles attirent de monstres écailleux à la coque du bateau, elles peuvent aussi les éliminer d’un
+                  chuchotement. <br /><br />
+
+                  Certains marins leurs préfèrent pourtant désormais les cristallisés, qui ne semblent pas attirer
+                  autant de problèmes.<br /><br />
+                </p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+            </div>
+            <div class="guidebook_banniere arsin_illu">
+              <div
+                style="background-image: url('https://cdna.artstation.com/p/assets/images/images/049/040/782/large/john-patrick-ganas-hitodama-graveyard2.jpg?1651558373');">
+              </div>
+            </div>
+            <div class="subject_title flexRow">
+              <h2>Rapport à la mort</h2>
+              <div class="separator"></div>
+            </div>
+            <div class="chapitre ">
+              <div class="chapitre_content">
+                <h3 class="gradientTitle">Rites mortuaires</h3>
+                <p>Il fut un temps où les corps des défunts étaient enterrés, mais la résurgence des nécrophages suite à
+                  l’épidémie a forcé la population à revoir ses rites. Désormais la crémation prime, et seules les
+                  familles les plus aisées s’offrent encore le luxe de conserver sous crypte le corps de leurs proches.
+                </p>
+              </div>
+            </div>
+            <div class="chapitre ">
+              <div class="chapitre_content">
+                <h3 class="gradientTitle">Rapport aux esprits</h3>
+                <p class="chapitre_height_limited">Le rapport aux esprits a longtemps été un sujet aussi sensible que
+                  complexe. <br />
+                  S’il est désormais acquis que les fantômes existent, âme des défunts retenus sur terre du fait d’une
+                  émotion trop puissante, ce ne fut pas toujours le cas. Ceci s’explique du fait d’un constat simple :
+                  les personnes capables de voir les esprits sont une minorité. Majoritairement sorcière, leur propos a
+                  donc toujours été dénigré.<br />
+                  Ce sont les travaux de XXX qui démontrèrent que cette faculté n’a rien de magique mais tout de
+                  physiologique. De la même manière qu’un être peut voir les couleurs et d’autres non, ou que cette
+                  vision peut se dégrader avec le temps, la faculté de voir les fantôme est génétique. Par la suite, il
+                  a même été prouvé qu’il ne s’agit pas tant de voir les fantômes, que de les voir <i>tôt</i>.
+                  <br /><br />
+
+                  Plus un esprit est jeune, moins de personnes sont en mesure de l’observer. Au contraire, plus il est
+                  âgé plus il est décelable. Ainsi, tous perçoivent les feux-follets, derniers résidus d’esprit avant
+                  leur complète disparition. <br /><br />
+
+                  L’existence des esprits désormais actée -quoi que toujours légèrement reconsidéré- et l’usage de la
+                  magie autorisé, un gain d’intérêt pour l’occultisme s’est rapidement fait ressentir. Seule magie liée
+                  à la nécromancie tolérée, de nombreux médiums officialisent leur activité dans Port-Fidèl. Sorcière ou
+                  bonimenteurs, il est parfois dur de trancher.
+                </p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+            </div>
+          </section>
+          <section class="panel" id="panel-ville-histoire" role="tabpanel" aria-labelledby="cat-ville" data-cat="ville"
+            data-sub="histoire">
+            <h2 class="gradientTitle">Histoire</h2>
+            <div class="timeline">
+              <div class="entry">
+                <div class="timelineDate">
+                  <div class="label150 gradientTitle">Longtemps</div>
+                </div>
+                <div class="recap_rp_section">
+                  <div class="recap_rp flexRow sectionCard">
+                    <div>
+                      <div class="recap_rp_title label150 gradientTitle">Seiland, terre de magie</div>
+                    </div>
+                    <div class="recap_rp_description">Des bateaux chargés de soldats et d’ambitions accostent au Nord du
+                      pays. <br />
+                      Les Ealmodhoriens colonisent Seiland. Les sorcières, craintes, sont traquées. Le dernier groupe
+                      officiel vit sur la côte Sud, dans une ville portuaire qu’il garde farouchement.</div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="entry">
+                <div class="timelineDate">
+                  <div class="label150 gradientTitle">XIVème siècle, <br />il y a 500 ans</div>
+                </div>
+                <div class="recap_rp_section">
+                  <div class="recap_rp flexRow sectionCard">
+                    <div>
+                      <div class="recap_rp_title label150 gradientTitle">La prise de Port-Fidèl</div>
+                    </div>
+                    <div class="recap_rp_description">Isolde d’Hellac prend la ville. La magie finie d’être interdite
+                      dans tous le pays, c’est un âge sombre pour les sorcières survivantes partout dans Seiland.<br />
+                      Quelques poignées subsistent, la magie est cachée, intériorisée, le savoir des sorts magistraux
+                      oublié. Elles se cachent dans les campagnes, dans les villes, dans les usines de Port-Fidèl.</div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="entry">
+                <div class="timelineDate">
+                  <div class="label150 gradientTitle">XVIème siècle, <br />il y a 300 ans</div>
+                </div>
+                <div class="recap_rp_section">
+                  <div class="recap_rp flexRow sectionCard">
+                    <div>
+                      <div class="recap_rp_title label150 gradientTitle">La sororité</div>
+                    </div>
+                    <div class="recap_rp_description">A Port-Fidel, les sorcières s’entraident dans l’ombre. Un groupe
+                      se forme, la Sororité.</div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="entry">
+                <div class="timelineDate">
+                  <div class="label150 gradientTitle">XVIIème siècle, <br />il y a 200 ans</div>
+                </div>
+                <div class="recap_rp_section">
+                  <div class="recap_rp flexRow sectionCard">
+                    <div>
+                      <div class="recap_rp_title label150 gradientTitle">Fin de la noblesse</div>
+                    </div>
+                    <div class="recap_rp_description">La royauté de Seiland met fin à la noblesse féodale et instaure le
+                      système fédéral dans tout le pays. Afin de renforcer son pouvoir, un conseiller élu par la
+                      couronne est placé à la tête de chaque état, en plus d’un conseil élu localement.</div>
+
+                  </div>
+
+
+                </div>
+
+              </div>
+              <div class="entry">
+                <div class="timelineDate">
+                  <div class="label150 gradientTitle">XVIIIème siècle, <br />il y a 100 ans</div>
+                </div>
+                <div class="recap_rp_section">
+                  <div class="recap_rp flexRow sectionCard">
+                    <div>
+                      <div class="recap_rp_title label150 gradientTitle">La décennies des cendres </div>
+                    </div>
+                    <div class="recap_rp_description">Certaines sorcières n’en peuvent plus d’être persécutées, alors
+                      elles sortent la nuit, mettent le feu aux monuments publics, aux habitations, au port, aux
+                      quartiers. Port-Fidèl s'embrase, devenant la ville d'Arsin.<br />
+                      C’est la Sororité qui, après des années d'indendie, mettra fin aux violences. En échange d’une
+                      reconnaissance officielle par la ville, elle se porte garante des sorcières et de leur bon
+                      comportement.</div>
+
+                  </div>
+
+
+                </div>
+
+              </div>
+              <div class="entry">
+                <div class="timelineDate">
+                  <div class="label150 gradientTitle">1794</div>
+                </div>
+                <div class="recap_rp_section">
+                  <div class="recap_rp flexRow sectionCard">
+                    <div>
+                      <div class="recap_rp_title label150 gradientTitle">La révolte des dockers</div>
+                    </div>
+                    <div class="recap_rp_description">Après de violentes manifestations et une grève de plusieurs
+                      semaines qui porte un dur coup à la ville, les marins et les dockers sont enfin représentés par
+                      trois sièges au Conseil de Port-Fidèl.</div>
+
+                  </div>
+
+
+                </div>
+
+              </div>
+              <div class="entry">
+                <div class="timelineDate">
+                  <div class="label150 gradientTitle">1820</div>
+                </div>
+                <div class="recap_rp_section">
+                  <div class="recap_rp flexRow sectionCard">
+                    <div>
+                      <div class="recap_rp_title label150 gradientTitle">L'épidémie écailleuse</div>
+                    </div>
+                    <div class="recap_rp_description">La ville est frappée par une épidémie mortelle, dûe à la
+                      consommation de viande sirène par un groupe de pêcheurs perdus en mer et sauvé de justesse. Les
+                      sorcières outre-passent l’interdit de magie pour aider à l’endiguer. Elles repoussent aussi les
+                      nécrophages aux abords de la ville, avec les Chasseurs. A la fin des évènements, elles demandent à
+                      être représentées à leur tour au Conseil, ce qui ne peut leur être refusé. </div>
+                  </div>
+
+
+                </div>
+
+              </div>
+              <div class="entry">
+                <div class="timelineDate">
+                  <div class="label150 gradientTitle">1827</div>
+                </div>
+                <div class="recap_rp_section">
+                  <div class="recap_rp flexRow sectionCard">
+                    <div>
+                      <div class="recap_rp_title label150 gradientTitle">Légalisation de la magie </div>
+                    </div>
+                    <div class="recap_rp_description">Avec la représentation de sorcières au Conseil pour la première
+                      fois dans l’histoire, de longs mois de débats mènent à la légalisation de la magie. La nouvelle ne
+                      fait pas l’unanimité. La Sororité est reconnue comme une structure officielle.</div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="entry">
+                <div class="timelineDate">
+                  <div class="label150 gradientTitle">1828</div>
+                </div>
+                <div class="recap_rp_section">
+                  <div class="recap_rp flexRow sectionCard">
+                    <div>
+                      <div class="recap_rp_title label150 gradientTitle">Arrivée en ville des cristaux</div>
+                    </div>
+                    <div class="recap_rp_description">Une nouveauté au marché noir attire: des cristaux à la provenance
+                      inconnue, qui une fois incrustés dans la chair d’un porteur le rendent capable de manipuler une
+                      magie. </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="entry">
+                <div class="timelineDate">
+                  <div class="label150 gradientTitle">1832</div>
+                </div>
+                <div class="recap_rp_section">
+                  <div class="recap_rp flexRow sectionCard">
+                    <div>
+                      <div class="recap_rp_title label150 gradientTitle">Expérimentations menées par l'armée</div>
+                    </div>
+                    <div class="recap_rp_description">L’armée exploite les cristaux pour son compte. De jeunes poissons
+                      noirs sont engagés pour que l’autorité expérimente et valide l’usage des cristaux.<br />
+                      Des tests sont menés par l’armée, où il est proposé au plus démunis de rejoindre leur rang après
+                      avoir acceptés une greffe de cristal. </div>
+
+                  </div>
+
+
+                </div>
+
+              </div>
+              <div class="entry">
+                <div class="timelineDate">
+                  <div class="label150 gradientTitle">1838</div>
+                </div>
+                <div class="recap_rp_section">
+                  <div class="recap_rp flexRow sectionCard">
+                    <div>
+                      <div class="recap_rp_title label150 gradientTitle">Popularisation des cristaux</div>
+                    </div>
+                    <div class="recap_rp_description">Après des années d’études et de suivis, l’usage des cristaux est
+                      considéré viable et sans danger. Leur usage, bien qu’encore à ses débuts, se multiplie dans
+                      l’armée, et les premiers civils fortunés, reçoivent des greffes. </div>
+                  </div>
+                </div>
+              </div>
+              <div class="entry">
+                <div class="timelineDate">
+                  <div class="label150 gradientTitle">1842</div>
+                </div>
+                <div class="recap_rp_section">
+                  <div class="recap_rp flexRow sectionCard">
+                    <div>
+                      <div class="recap_rp_title label150 gradientTitle">Début de l'Acte 1</div>
+                    </div>
+                    <div class="recap_rp_description">Le conseiller Dubélerre destitué, Port-Fidèl s'ébroue, ressentant
+                      les prémisses d'une instabilité grandissante.</div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+            </div>
+          </section>
+
+          <!-- GROUPES -->
+
+          <section class="panel" id="panel-groupes-prez_humains" role="tabpanel" aria-labelledby="cat-groupes"
+            data-cat="groupes" data-sub="prez_humains">
+            <h2 class="gradientTitle">Présentation des humains</h2>
+            <p>Nom, réputation, prérequis d’adhésion…</p>
+          </section>
+          <section class="panel" id="panel-groupes-prez_sorcieres" role="tabpanel" aria-labelledby="cat-groupes"
+            data-cat="groupes" data-sub="prez_sorcieres">
+            <div class="liste_citations">
+              <div class="citation_bloc citation_left">
+                <div class="citation_content">Elles sont difformes, ce sont des monstres. Tout ce qui les fait nous
+                  ressembler, ce sont leurs sorts, des illusions pour nous tromper. Elles portent une peau humaine mais
+                  dessous ce sont des bêtes…</div>
+              </div>
+              <div class="citation_bloc citation_right">
+                <div class="citation_content">Mon voisin, c’est une sorcière. Il est tout jeune et vraiment charmant, il
+                  m’a aidé, quand je me suis cassé le pouce, il a fredonné comme ça et PAF! Plus rien… Non, moi je pense
+                  qu’elles ont changé, depuis l’épidémie, je pense qu’elles ont leur place ici…</div>
+              </div>
+              <div class="citation_bloc citation_left">
+                <div class="citation_content">Tant qu’elles montent pas sur nos bateaux… Ah non, j’en veux pas moi, les
+                  murmureuses, ça reste sur terre. Hein? Oui, elles peuvent être utiles, mais elles portent la poisse…
+                  Et ça croyez-moi, y’en a pas beaucoup qui arrivent à le conjurer avec de la magie ! Y’en a même de
+                  moins en moins !</div>
+              </div>
+              <div class="citation_bloc citation_right">
+                <div class="citation_content">Nous les avons injustement persécutées trop longtemps ! Ce sont des gens
+                  comme vous et moi, voyez-vous. J’en reçois quelques unes dans mon salon et ce sont des personnes
+                  délicieuses, nous parlons occultisme, esprit… Vous devez vivre avec votre temps, mon vieux, pourquoi
+                  se priver de tant de savoir ?</div>
+              </div>
+              <div class="citation_bloc citation_left">
+                <div class="citation_content">La question n’est pas de savoir, si oui ou non, les sorcières sont dignes
+                  de confiance. Un avantage déloyal leur a été offert à la naissance, et la législation laxiste du
+                  conseil ne fait que creuser ce fossé.</div>
+              </div>
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Perception des sorcières à Port-Fidèl</h2>
+                <p>Depuis des siècles, les sorcières sont cette figure invoquée pour faire peur aux enfants, une
+                  identité et
+                  une communauté aux traditions étranges, aux pouvoirs troubles et inquiétants. Tantôt persécutées,
+                  tantôt
+                  ignorées, la paix qu'elles ont pu connaître n'a jamais été qu'instable et relative. Pourtant, les
+                  dernières décennies laissent voir un visage nouveau, celui de citoyennes prêtes à aider la ville
+                  qu'autre
+                  fois elles brûlaient, leurs vies mises en jeu pour Port-Fidèl. Certains se demandent alors si elles ne
+                  seraient pas dignes de confiances, tandis que d'autres, affriolés par la nouveauté et l'interdit tout
+                  juste levé, se pressent pour tomber dans leur bonnes grâces.<br /><br />
+                  La corruption, difformités et comportements étranges de certaines posent cependant la question de la
+                  réelle possibilité d'une cohabitation. La cendre de Port-Fidèl et les siècles de tension n'ont pas
+                  quitté
+                  tous les esprits. Les anti-magies pointent du doigt le déséquilibre de force croissant avec l'arrivée
+                  de
+                  nouvelles sorcières gonflant les rangs des quelques centaines déjà en ville. Les marins quant à eux,
+                  restent certains que ces "marmonneuses" traînent derrière elles une malchance poisseuse qui fait
+                  couler
+                  les bateaux.</p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+            </div>
+            <h2 class="gradientTitle">La vérité</h2>
+            <p>
+              Décrites comme une infection à chasser, les sorcières préfèrent se considérer comme un héritage de
+              Seiland, les gardiennes de ce que cette terre porte de plus vieux : la magie. Elles naissent dans toutes
+              les familles, souvent filles, parfois garçons, sans signe d’hérédité - il faut des générations pour
+              retrouver une nouvelle sorcière dans un arbre généalogique. A Port-Fidèl, elles ne sont que quelques
+              centaines, même si le nombre augmente avec les nouvelles lois plus clémentes qu’ailleurs. <br /><br />
+
+              Depuis vingt ans, les sorcières vivent un lent renouveau. Une part de la noblesse exprime maintenant au
+              grand jour son intérêt pour l’ésotérisme et l’occulte, recherchant la compagnie de sorcières, qui pour
+              certaines se laissent amadouer par cette nouvelle vie.
+              La Haute magie, ces sorts plus compliqués et plus puissants, commence tout juste à être redécouverte
+              aussi, dans un environnement qui n’oblige plus les sorcières à la discrétion.
+            </p>
+
+          </section>
+          <section class="panel" id="panel-groupes-sororite" role="tabpanel" aria-labelledby="cat-groupes"
+            data-cat="groupes" data-sub="sororite">
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">La Sororité</h2>
+                <p>La Sororité est un refuge pour les sorcières de Port-Fidèl, une toile vieille de centaines d’années,
+                  là pour rassembler une communauté par nature éparpillée. D’abord clandestine et secrète, elle
+                  bataille, parfois avec mais souvent contre le Conseil, depuis des décennies pour limiter les
+                  répressions subites. Depuis la légalisation de la magie, La Sororité est une institution établie et
+                  reconnue par la ville - une sorte de Ministère des sorcières. <br /><br />
+
+                  Entre les arbres rares et ancestraux du Jardin botanique de Port-Fidèl, la serre immense qui s’y
+                  dresse est leur quartier général. C’est là que les plus jeunes peuvent s’entraîner et se former. Des
+                  parties de Dames s’y jouent à l’ombre d’un Dracaena et des décisions essentielles à l’avenir de la
+                  communauté sont prises. Toute sorcière est bienvenue, accueillie à bras ouverts, mais La Sororité est
+                  sévère face aux agissements de ses membres. Siégeant au Conseil, c’est elle qui doit répondre des
+                  actes d’une sorcière mal intentionnée. C’est aussi elle qui veille à ce que cette même sorcière ne se
+                  retourne pas conte les siennes.<br /><br />
+
+                  Bien qu’elle se veuille fluide et horizontale dans ses rapports humains, une hiérarchie a fini par se
+                  dégager avec les années et les impératifs politiques, pour simplifier son fonctionnement. Autour de
+                  cette structure papillonnent des membres cherchant seulement une communauté, ou à l’investissement
+                  plus ponctuel ou spécifique.</p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+            </div>
+            <div class="chapitre chapitre_inverse">
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+              <div class="chapitre_content">
+                <p>Les <imp>Bourgeons</imp> sont les jeunes sorcières d’une dizaine d’années, dont la magie vient de se
+                  manifester. Celles qui n’ont pas la chance d’être aidées d’une autre sorcière dans leur entourage sont
+                  souvent trouvées par des <imp>Arpenteuses</imp>, qui ont voué une part de leur vie à sillonner Seiland
+                  pour y aider de jeunes sorcières isolées. Les Bourgeons peuvent être hébergés à La Sororité au besoin
+                  et aussi y trouver un mentor. <br />
+                  Les <imp>Cigognes</imp>, sorcières plus âgées et expérimentées, enseignent, orientent, conseillent
+                  leur cadettes. C’est aussi elles qui s’occupent des dortoirs où dorment les Bourgeons hébergés.<br />
+                  Chargée du plus gros de l’organisation de la Sororité et des décisions parfois les plus compliquées,
+                  comme le bannissement ou la traque d’une sorcière, la <imp>Roseraie</imp> est un ensemble de membres
+                  dont trois siègent au Conseil pour représenter les sorcières. Si tout autre rôle est accessible avec
+                  un bon comportement et de l’investissement, rejoindre la Roseraie demande un dévouement de plusieurs
+                  années et quelques mois d’enquêtes sur la vie du candidat.</p>
+              </div>
+
+            </div>
+          </section>
+          <section class="panel" id="panel-groupes-apprentissage_sorcieres" role="tabpanel"
+            aria-labelledby="cat-groupes" data-cat="groupes" data-sub="apprentissage_sorcieres">
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Apprentissage</h2>
+                <p>Intro</p>
+              </div>
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Comptines et adages</h2>
+                <p>Pendant leurs premières années d’apprentissage, les jeunes sorcières se verront enseigner des
+                  comptines, mantra fredonné pour guider l’esprit et empêcher les distractions qui rendraient instable
+                  un sort. La magie demande une concentration sans faille et les comptines facilitent cet état. Si
+                  certaines jeunes sorcières apprennent différentes comptines pour chaque sort, d’autres se contentent
+                  d’une seule : c’est à l’apprentissage de chacune.<br /><br />
+
+                  Après quelques années, plus besoin de fredonner. La répétition muette dans la tête suffit et encore
+                  après, les plus aguerries peuvent se satisfaire du silence de leur esprit. Malgré tout, certaines
+                  sorcières s’aident encore d’une simple phrase, un adage, par sécurité.<br /><br />
+
+                  La comptine est centrale à la culture des sorcières et la plupart des chansonnettes Seilandaises
+                  viendraient d’elles. Chaque communauté a son propre répertoire et beaucoup de jeunes sorcières aiment
+                  aussi inventer leur propre comptine.</p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+            </div>
+            <div class="chapitre chapitre_inverse">
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Runes et Théorèmes</h2>
+
+                <p>Aussi centrale à la pratique et la maîtrise, une rune est un sort simple - une seule branche de magie
+                  - figé sous la forme d’un symbole, dans lequel il suffit de réinjecter de la magie pour l’activer.
+                  Elle permet la stabilité d’un sort puisqu’elle ne demande pas de concentration mais de l’énergie. Les
+                  différentes runes forment un alphabet qui varie d’un peuple de sorcière à l’autre.<br /><br />
+                  Un théorème est un ensemble de runes, au résultat plus complexe, ou avec des consignes d’exécution
+                  précises (ne s’activer que pour telle personne, ne s’activer qu’à tel moment, etc…). C’est
+                  l’équivalent écrit d’un sort multi-branche. Plus puissant que les runes mais aussi plus énergivore, un
+                  théorème peut parfois demander la collaboration de plusieurs sorcières pour être activé. Les plus
+                  complexes d’entre eux prennent la forme de cercles remplis de symboles complexes.<br /><br />
+                  Il est possible de graver un objet d’une rune ou d’un théorème et ainsi d’en faire un artefact - qui
+                  nécessite aussi d’être alimenté en magie. Un artefact peut-être préalablement chargé de magie pour le
+                  confier à quelqu’un qui n’aurait pas les moyens de l’activer soi-même.</p>
+
+                <h3 class="gradientTitle">Cas particulier - Rune réservoir</h3>
+
+                <p>Les runes-réservoirs sont des runes dont la particularité est de simplement servir à conserver la
+                  magie. La puissance et l'ampleur d'un sort dépend de l'énergie d'une sorcière. Aussi, les
+                  enchantements les plus complexes, les plus impressionnants se réalisent au détriment d'une vie. Pour
+                  éviter des conséquences funèbres, l'usage de rune-réservoir permet au lanceur de puiser dans une
+                  énergie au préalablement stockée.<br /><br />
+
+                  Elles sont très utilisées et appréciées, surtout depuis le retour de la Haute magie - plus complexe et
+                  puissante mais aussi plus coûteuse à l’organisme. Leur apprentissage n’est donc prodigué qu’auprès de
+                  sorcières assez matures pour ne pas en abuser.</p>
+
+              </div>
+
+            </div>
+          </section>
+          <section class="panel" id="panel-groupes-corruption" role="tabpanel" aria-labelledby="cat-groupes"
+            data-cat="groupes" data-sub="corruption">
+            <div class="guidebook_banniere arsin_illu">
+              <div
+                style="background-image: url('https://cdna.artstation.com/p/assets/images/images/049/040/782/large/john-patrick-ganas-hitodama-graveyard2.jpg?1651558373');">
+              </div>
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Contre coup et corruptions</h2>
+                <p>Moins puissantes que ne le fantasment les profanes, les sorcières doivent connaître leur limite et ne
+                  pas
+                  les dépasser. La magie fonctionnant comme un muscle, son utilisation fatigue de la même façon, plus ou
+                  moins vite dépendamment de l’entraînement et la puissance d’une sorcière. Si cet épuisement n’est pas
+                  écouté et dépassé, les conséquences sont alors permanentes.<br /><br />
+
+                  Tout désir trouve ses dérives. C’est ce qu’est la corruption, l’effritement naturel de la magie d’une
+                  sorcière. Le corps se tord et change, l’esprit s’efface derrière des lubies, des obsessions, des
+                  perversions qui finissent par l’éloigner de ses paires et la mener à sa perte. La corruption est
+                  différente pour chaque sorcière, et inévitable - c’est la vieillesse des sorcières. <br />
+                  Il est possible, avec un usage modéré de sa magie, qu’une sorcière puisse échapper aux stades les plus
+                  avancés, il ne s’agit alors que d’une altération. Mais ignorer la fatigue a une dégradation soudaine,
+                  intense et irréversible de la corruption.</p>
+
+
+                <note>La corruption de votre personnage peut être déterminé par vos soins, ou proposé par le staff si
+                  vous le souhaitez</note>
+              </div>
+            </div>
+            <div class="chapitre chapitre_inverse">
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+              <div class="chapitre_content">
+                <h3 class="gradientTitle">Interdits - Le drainage</h3>
+                <p>Le drainage consiste en la ponction de la magie d’une sorcière part une autre, pour activer un sort
+                  puissant, souvent sans consentement. La cruauté de l’acte repose dans les séquelles laissés à la
+                  sorcière drainée, dont la corruption est violemment aggravée, parfois jusqu’à la mort.<br /><br />
+
+                  C’est une pratique strictement prohibée. Chaque bravade de l’interdit à travers l’histoire a prouvé
+                  l’horreur qu’elle engendrait et de nombreuses communautés de sorcières punissent les désobéissantes
+                  par le bannissement ou l’exécution.<br /><br />
+
+                  Même dans la bonne entente et l’écoute de chaque parti, le drainage reste interdit : les runes
+                  réservoirs, ou la collaboration pour des sorts complexes mêlant plusieurs branches, restent toujours à
+                  préférer.</p>
+              </div>
+            </div>
+          </section>
+          <section class="panel" id="panel-groupes-prez_cristalise" role="tabpanel" aria-labelledby="cat-groupes"
+            data-cat="groupes" data-sub="prez_cristalise">
+            <div class="liste_citations">
+              <div class="citation_bloc citation_left">
+                <div class="citation_content">Regarde-les, les chiens du gouverneur… Ils paradent moins, depuis qu’on
+                  est là.</div>
+              </div>
+              <div class="citation_bloc citation_right">
+                <div class="citation_content">Oui, mon fils les a rejoints. J’étais pas très d’accord au début, mais il
+                  m’a tellement répété que ça irait, je lui fais confiance maintenant. Il est en pleine forme, mais
+                  j’aimerais qu’il parle d’autres choses que l’armée.</div>
+              </div>
+              <div class="citation_bloc citation_left">
+                <div class="citation_content">On va peut-être trop vite avec cette greffe. Des soldats avec ça, c’est
+                  une chose, mais des civils c’en est une autre.</div>
+              </div>
+
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Perception des cristallisés à Port-Fidèl</h2>
+                <p>Les cristallisés sont un l’équilibre entre les secrets ancestraux de Seiland et la pointe de la
+                  médecine et du progrès, qui promet une nouvelle ère. Avec le cristal palpitant dans leur chair comme
+                  un second cœur, ils présentent tous les avantages des sorcières et s’affranchissent de leur
+                  contraintes : leur corps reste saint, leur esprit éclairé, et leur histoire encore à écrire n’est pas
+                  jalonnée de persécutions ni de rancœur. <br />
+
+                  Si tous n’ont pas oublié l’arrivée questionnable de cette révolution dans la ville, quand les premiers
+                  cristallisés étaient des truands, des estropiés, des marins et des enfants des rues, l’armée en a
+                  depuis redoré l’image. Au mot “cristallisé”, c’est maintenant un soldat dévoué à Port-Fidèl jusque
+                  dans sa chair qui vient à l’esprit. <br />
+
+                  L’attrait est tel qu’il y a quelques années, l’armée a autorisé les plus courageux ou inconscients de
+                  la bourgeoisie à recevoir leur propre greffe dans les locaux militaires. <br />
+
+                  L’opération serait accessible à tous si son prix n’était pas colossal, dû à la rareté des cristaux
+                  dont l’armée garde jalousement tous les secrets.</p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">La vérité</h2>
+                <p>
+                  Sous la propagande tonitruante, la réalité des cristallisés est plus éparse et il n’y a parfois que la
+                  greffe pour les lier. De cette population, trois générations venues de milieux différents se
+                  distinguent
+                  et se superposent.<br /><br />
+
+                  Les premiers cristallisés le sont depuis 1828, quand les rumeurs de pierres étranges et d’opérations
+                  sanglantes faisant d’un simple humain une sorcière, arrivèrent jusqu’au marché noir. Payés une misère
+                  pour
+                  servir d’expérience et rassurer des intéressés frileux, les plus fragiles de la ville furent les
+                  premiers
+                  à recevoir la greffe. Ceux qui survécurent se relevèrent avec une magie plus brute et simple que
+                  celles
+                  des sorcières, mais assez puissante pour faire oublier les risques. Les escrocs et les charlatans
+                  s’empressèrent de gonfler les rangs, quelques marins qui aspiraient à contrôler les vagues tentèrent
+                  aussi
+                  l’opération. <br />
+                  Cette génération de cristallisés apprit à utiliser leur magie seuls et de par leur milieux et leur
+                  mode de
+                  vie, peu sont encore en vie aujourd’hui.<br /><br />
+
+                  La seconde génération est celle à l’initiative de l’armée, cinq ans après la précédente. Des années à
+                  observer l’évolution des premiers cristallisés convainquirent l’armée de Port-Fidèl de l’avantage que
+                  représenter la greffe. Les réseaux d’opérations furent démantelés et la majorité des réserves de
+                  cristaux, récupérée. Pour cette chance peut-être unique de former des troupes capables de rivaliser
+                  avec les sorcières, l’armée chercha des enfants des rues qui ne manqueraient à personne, des rêveurs
+                  naïfs, des désespérés sans chemin.
+                </p>
+              </div>
+              <div class="chapitre_content">
+                <p>
+                  Après quelques mois de suivit médical pour vérifier la stabilité de
+                  la greffe, tous ces candidats voués à plus grand qu’eux purent profiter du confort et de la sécurité
+                  des casernes. Un contrat de plusieurs année parmi les soldats de la ville leur promettait une vie
+                  stable faite de discipline et de privilège. Aujourd'hui ils se tiennent droits aux coins des rues,
+                  dans les couloirs du Siège, ils sont une fierté, un joyau de la technologie et de l’ambition de
+                  Port-Fidèl. Apanage de l’armée de la ville, les troupes du Gouverneur sont encore loin d’en
+                  profiter.<br /><br />
+
+                  La dernière génération à l’heure actuelle est faite des plus privilégiés de la ville, des enfants de
+                  notables que la nouveauté envoûte, des excentriques fascinés par la magie, des arrogants avides de
+                  pouvoir. Ils se sont précipités dès que l’armée, après autorisation du Conseil, a ouvert le procédé
+                  aux civils capables de se le payer. L’autorité de l’armée, en charge de l’opération et de son suivi,
+                  ne fait pas toujours bon ménage avec ces personnalités qui pour certaines ont toujours vécu au-dessus
+                  des règles et des injonctions.<br /><br />
+
+                  Malfrat ou soldat, les cristallisés restent un exploit scientifique, des humains soudain affublés d’un
+                  pouvoir qui leur a toujours paru inatteignable.
+                </p>
+              </div>
+            </div>
+
+          </section>
+          <section class="panel" id="panel-groupes-processus" role="tabpanel" aria-labelledby="cat-groupes"
+            data-cat="groupes" data-sub="processus">
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Cristaux et greffes</h2>
+                <p>Arrivés à Port-Fidèl par le marché noir, les cristaux sont une énigmatique denrée dont l’armée garde
+                  jalousement le monopole et les secrets. Les demandes répétées de l’Université et des laboratoires de
+                  la ville pour les étudier ont toutes rencontré un refus et leur origine comme leur composition restent
+                  inconnues.<br /><br />
+
+                  Greffé dans la chair, un cristal offre l’accès à <imp>une branche de magie</imp> et une seule. Leur
+                  magie très brute
+                  se prête aux sorts puissant et explosifs, mais elle peut rendre complexe l’apprentissage de ceux
+                  demandant de la précision et de la mesure.<br /><br />
+
+                  Leur apparence varient en forme et en couleur sans rien indiquer de leur puissance ou de la branche
+                  à laquelle ils donnent accès.<br /><br />
+
+                  Seule l’armée et ses médecins ont actuellement le droit de pratiquer la greffe, même si
+                  quelques survivants des premiers réseaux sur le marché noir doivent encore proposer leur service, dans
+                  l’ombre et le silence. <br /><br />
+
+                  Après l’opération, des rendez-vous de suivi réguliers et obligatoires sont
+                  organisés pour veiller à la bonne cicatrisation de la greffe et au bien-être du cristallisé. Ces
+                  rendez-vous s’accompagnent d’une formation, courte pour les civils, complète et martiale pour les
+                  soldats, afin d’apprendre à user de la magie qui se manifeste dès les premiers jours suivants la
+                  greffe. Elle est à ce moment là faible et bafouillante, mais gagnera en puissance avec les années.</p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h3 class="gradientTitle">Rejet de la greffe</h3>
+                <p>Des cas de rejets ont été recensés, mais les informations les concernant sont difficilement
+                  accessibles. Un rejet semble pouvoir survenir à tout moment, quelques jours comme des années après la
+                  greffe, mais reste heureusement très rare. Il cause cependant des inflammations et nécroses mortelles
+                  si le cristallisé ne reçoit pas une lourde aide médicale. </p>
+              </div>
+
+            </div>
+          </section>
+          <section class="panel" id="panel-groupes-apprentissage_cristalises" role="tabpanel"
+            aria-labelledby="cat-groupes" data-cat="groupes" data-sub="apprentissage_cristalises">
+            <div class="guidebook_banniere arsin_illu">
+              <div
+                style="background-image: url('https://cdna.artstation.com/p/assets/images/images/049/040/782/large/john-patrick-ganas-hitodama-graveyard2.jpg?1651558373');">
+              </div>
+            </div>
+            <div class="chapitre">
+
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Apprentissage - Armée</h2>
+                <p>Si le cristallisé a vu la magie lui être offerte par la chair, c’est aussi par elle qu’il en use et
+                  la maîtrise. Une subtile désarticulation des doigts ou un ample geste du bras convoquent les subtiles
+                  nuances d’un sort ou la brutalité d’un autre.<br /><br />
+
+                  De ses gestes instinctifs, les instructeurs de l’armée ont développé un art martial encore balbutiant,
+                  liant magie et combat. Il est enseigné à tous les soldats cristallisés, qui apprennent à le maîtriser
+                  à la perfection.<br /><br />
+
+                  Aux civils, il n’est enseigné qu’une version très allégée, sans l’aspect martial ; il leur est
+                  d’ailleurs plutôt recommandé de suivre leur instinct.</p>
+              </div>
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Fatigue</h2>
+                <p>La fatigue des cristallisés après un usage excessif de la magie est physique ; fatigue, épuisement,
+                  parfois crampes et courbatures. Aucune séquelle sur le long terme n’a été observé, mais rien n’empêche
+                  un cristallisé de s’effondrer, exténué, s’il n’écoute pas ses limites.</p>
+              </div>
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Législation</h2>
+                <p>Les cristallisés se doivent de respecter les lois lentement instaurées en Port-Fidèl : limitation de
+                  l’usage de la magie dans l’espace public et recensement. Des exceptions sont faites pour les soldats
+                  cristallisés qui peuvent évidemment faire usage de la magie dans le service, dérogation dont certains
+                  les accusent d’abuser.<br /><br />
+
+                  La première génération a quant à elle tendance à fuir le recensement, par conviction, méfiance, ou
+                  parce que leur activité illicite est incompatible avec leur nom dans une liste. C’est un long jeu de
+                  cache-cache qui s’est lancé avec l’armée et qui dure.</p>
+              </div>
+            </div>
+          </section>
+          <section class="panel" id="panel-groupes-prez_chasseurs" role="tabpanel" aria-labelledby="cat-groupes"
+            data-cat="groupes" data-sub="prez_chasseurs">
+            <div class="guidebook_banniere arsin_illu">
+              <div
+                style="background-image: url('https://cdna.artstation.com/p/assets/images/images/049/040/782/large/john-patrick-ganas-hitodama-graveyard2.jpg?1651558373');">
+              </div>
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Perception des chasseurs à Port-Fidèl</h2>
+                <p>Les Chasseurs foulent Seiland depuis si longtemps que plus aucune histoire ne sait les dater. On dit
+                  qu’il ont connu les premières Sorcières venues de l’aube, leur âge d’or et leur déclin. On dit qu’il
+                  ont connu les premiers colons venus du nord, leur âge d’or et leur maintien.
+                  Omniprésents depuis la nuit des temps, ils ne sont pourtant qu’une poignée aux traits déformés
+                  d’encre, une somme d’hommes et de femmes aux capacités physiques remarquables dont la connaissance
+                  poussée des fléaux de Seiland, de la magie et du combat a fait d’eux les seuls défenseurs de la ville
+                  durant des siècles. </p>
+              </div>
+              <div class="chapitre_content">
+                <p>Mandatés par les chefs de clan, les matriarches, les voyageurs, les maires et les marins, ils étaient
+                  en charge d’occire esprits vengeurs, les nécrophages, les sorcières corrompues et chacun des autres
+                  monstres qui jadis foulaient Seiland contre la promesse d’une bourse pleine. Loin d’être charitables,
+                  ils étaient néanmoins dévoués à leur tâche. Neutres dans les conflits, par ailleurs jamais présent
+                  durant ces derniers, ils ont ainsi pu subsister lors des diverses chasses qui visèrent à éteindre
+                  toute magie du pays.
+                  Les menaces réduisant avec le développement des villes et des technologies, leur nombre s’est
+                  lentement réduit, laissant désormais qu’une poignée de représentants sans héritier dans tout le pays,
+                  dont certains louent désormais leurs services à d’autres desseins.</p>
+              </div>
+
+            </div>
+          </section>
+          <section class="panel" id="panel-groupes-ordre" role="tabpanel" aria-labelledby="cat-groupes"
+            data-cat="groupes" data-sub="ordre">
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">L'ordre des chasseurs</h2>
+                <p>L’Ordre des Chasseurs fut constitué il y a dix-huit siècles dans l’objectif de défendre les habitants
+                  de Seiland face aux déviances magiques et surnaturelles qui gorgeaient ce monde. A la fois juge et
+                  bourreau des monstres et des sorcières corrompues, les Chasseurs ont pour mot d’ordre une impartialité
+                  et une neutralité indéfectible dans les affaires sociétales. Pour ces raisons, ils doivent demeurer à
+                  l’écart des hameaux, villes et villages, à la fois solitaires et nomades.<br /><br />
+
+                  Si ses représentants étaient pléthores à l’époque, l’important développement de la civilisation et des
+                  technologies de ces cinq derniers siècles rendit leur intervention de plus en plus superflue. Les
+                  maîtres cessèrent de prendre des apprentis, et le travail venant à manquer, ils s’éteignirent sans
+                  donner d’héritier, ne laissant désormais plus qu’une petite centaine de Chasseurs sur l’ensemble du
+                  pays.<br /><br />
+
+                  L’Ordre subsiste toujours, administrativement, dirigeant et enseignant aux quelques derniers
+                  représentants de quoi perpétuer leurs traditions. Depuis quelques décennies pourtant, il arrive
+                  toutefois que des chasseurs abandonnent leur code de conduite au profit d’un mercenariat plus
+                  lucratif. Dur à réprimer tant les effectifs sont clairsemés, on les retrouve aux abords des cités où
+                  ils apprennent à se faire connaitre.<br /><br />
+
+                  Refusant toute autorité Seilandaise, l’Ordre entretient des relations parfois tendues avec la
+                  monarchie encore en place et ses états fédérés. Trop neutres, encore trop utiles, les Chasseurs sont
+                  néanmoins laissés en paix, contrairement à leurs alliées sorcières qui ont été rejetées.</p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+
+            </div>
+          </section>
+          <section class="panel" id="panel-groupes-competences_chasseurs" role="tabpanel" aria-labelledby="cat-groupes"
+            data-cat="groupes" data-sub="competences_chasseurs">
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Compétences et connaissances</h2>
+                <p>Reconnaissables aux coulures d’encre, d’or ou de carmin qui se meuvent se leur peau, les Chasseurs
+                  sont formés à combattre les créatures magiques, qui ne pourraient être vaincues par les connaissances
+                  et compétences humaines.<br />
+                  Pour cela, ils suivent une formation particulièrement éprouvante et ont à leur côté un allié de taille
+                  : l’Armoricia, de laquelle ils tirent leur particularité physique.</p>
+              </div>
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h3 class="gradientTitle">Sélection et formation</h3>
+                <p>Les Chasseurs n’ont aucune compétence magique innée. Humains, ils ont été choisis par leur
+                  prédécesseur du fait de leur compétences physiques et mentales jugées supérieures à leurs confrères.
+                  Il fut un temps, des familles entière de Chasseurs existaient. L’élite transmise de génération en
+                  génération se faisait au détriment des frères et sœurs abandonnés à l’enfance, jugé trop faibles par
+                  leurs parents. Ces pratiques critiquables ont quasiment disparu en Seiland.<br /><br />
+
+                  Une fois choisi, l’enfant suit une formation intensive durant dix ans auprès d’un Chasseur plus âgé.
+                  Il apprend à ses côtés tout ce qu’il faut savoir sur les créatures extraordinaires qui peuplent ce
+                  monde, leurs particularités, points faibles et fléaux. Il découvre le fonctionnement de la magie et
+                  son usage par les sorcières, le système de runes et d’artefact. Et bien sûr, il se voit dispensé une
+                  formation martiale conséquente, afin de le rendre aussi compétent à mains nues qu’au sabre ou,
+                  désormais, au pistolet. Si c’est un guerrier, il est avant tout un chasseur. Pisteur, traqueur,
+                  piégeur.<br />
+                  Ce n’est qu’une fois que l’apprenti Chasseur a fait ses preuves qu’il reçoit son Armoricia, une
+                  créature immortelle capable d’augmenter ses compétences.</p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+
+            </div>
+            <div class="chapitre chapitre_inverse">
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+              <div class="chapitre_content">
+                <h3 class="gradientTitle">Armoricia</h3>
+                <p>L’Armoricia est l’une des rares créatures aux compétences magique qui existe encore à Seiland.
+                  D’aucun dirait qu’elle est plante, qu’elle est minérale, le fait est qu’elle est animale, et peut
+                  prendre l’apparence de bien des choses.<br />
+                  Son aspect naturel est celui d’une substance liquide dont la couleur varie selon les individus. Vivant
+                  en symbiose avec son hôte, elle a la capacité de s’étendre, se durcir ou s’épaissir. Toujours sur la
+                  peau du Chasseur, elle peut ainsi lui fournir plaque ou acier, armure ou épée au gré des situations.
+                  L’armor toutefois n’est pas un simple outil. Véritable coéquipière, elle est une partenaire de travail
+                  qu’il faut choyer. Son identité est marquée, son caractère souvent explosif, aussi il n’est pas rare
+                  qu’un symbiote vexé décide de bouder son hôte au pire moment, refusant défense et assistance tant que
+                  ce dernier ne se sera pas excusé.<br />
+                  Outre ses propriétés mécaniques, elle dispose également de capacités magiques. Loin de pouvoir
+                  formuler un sort, elle sait néanmoins accumuler et partager son énergie. Elle est donc idéale pour
+                  activer ou recharger runes et des artéfacts magiques achetés auprès de Sorcières.
+                  Néanmoins, à l’instar de tout autre créature capable de manipuler la magie, elle dispose d’une
+                  quantité d’énergie limitée. Raison pour laquelle la traque et les pièges sont favorisés aux combats
+                  directs. Lorsque, finalement, l’armor s’épuise, elle retrouve sa forme initiale, une masse liquide ou
+                  visqueuse qui viendra se loger contre un morceau de peau pour se reposer. Le Chasseur devra alors se
+                  débrouiller par ses propres moyens.<br /><br />
+
+                  Partenaire historique du Chasseur, elle lui survit la majeure partie du temps et est alors transmise à
+                  son successeur. </p>
+              </div>
+
+
+            </div>
+            <div class="chapitre ">
+
+              <div class="chapitre_content">
+                <h3 class="gradientTitle">Arsenal</h3>
+                <p>Une fois intronisé, le Chasseur pourra constituer son arsenal à sa convenance. Depuis longtemps en
+                  relation avec les sorcières, il n’est pas rare qu’ils bénéficient d’artefacts magiques
+                  particulièrement utiles que son Armor pourra déclencher.<br /><br />
+
+                  Chaque Chasseur dispose de ses propres outils, armes et runes.</p>
+              </div>
+
+
+            </div>
+          </section>
+          <section class="panel" id="panel-groupes-prez_inconnu" role="tabpanel" aria-labelledby="cat-groupes"
+            data-cat="groupes" data-sub="prez_inconnu">
+            <h2 class="gradientTitle">Présentation des ???</h2>
+            <p>..........</p>
+          </section>
+          <section class="panel" id="panel-groupes-prez_inconnu2" role="tabpanel" aria-labelledby="cat-groupes"
+            data-cat="groupes" data-sub="prez_inconnu2">
+            <h2 class="gradientTitle">Présentation des ??</h2>
+            <p>..........</p>
+          </section>
+
+
+          <!-- BESTIAIRE -->
+          <section class="panel" id="panel-bestiaire-sirenes" role="tabpanel" aria-labelledby="cat-bestiaire"
+            data-cat="bestiaire" data-sub="sirenes">
+            <div class="citation_bloc citation_left">
+              <div class="citation_content">En mer, faut pas croire c’que t’entends. Les sirènes, elles savent t’imiter
+                l’chant des baleines mieux qu’un phonographe. Alors l’bateau avance, jusqu’à c’qu’elles te coincent dans
+                les récifs, et elles te bouffent.</div>
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Sirènes</h2>
+                <p class="chapitre_height_limited">
+                  De toutes les créatures hostiles qui sillonnent la mer, les sirènes en sont les plus fourbes, les plus
+                  cruelles, les plus perfides. Ne croyez rien de leur minois délicat, de leurs courbes affriolantes.
+                  Leurs lèvres plantureuses ne se poseront sur votre peau que pour y planter une immonde rangée de
+                  crocs. Leurs doigts délicats ne vous caresseront que pour vous attirer par le fond. Mais le pire, le
+                  pire à craindre chez ces créatures de malheur, ce n’est pas leur queue puissante qui sait les
+                  propulser au travers des vagues les plus violentes ; ce n’est pas leurs ailes irisées qui leur
+                  permettent de vous attaquer même sur la sécurité du pont ; ce n’est pas même leur buste séduisant qui
+                  dissimule la plus infâme ignominie. Non, le pire c’est leur chant. D’une imagination infinie, elles
+                  savent user de tous les subterfuges pour vous attirer dans leurs filets. Parfois, c’est le chant des
+                  baleines chassées qu’elles imitent pour vous attirer. D’autres fois, celui d’une corne de brume quand
+                  dans le brouillard vous cherchez à vous orienter. Parfois, c’est l’appel au secours de votre meilleur
+                  ami qui, dans l’abîme vient de tomber. <br />
+                  Ne vous y trompez pas. Quand bien mêmes elles puissent sembler humaines, ces immondices ne cherchent
+                  rien d’autre que vous dévorer.<br />
+                  D’aucuns ont cherché à leur rendre la pareille. Profitant du fil de feux follets qui les accompagne,
+                  ils leur ont tendu un piège. Leur cadavre hissé sur le pont ont été éviscéré, la viande découpée. Mais
+                  si leur chair est succulente, la consommation de leur viande attire le malheur plus encore que la
+                  présence de sorcières à votre bord.<br /><br />
+
+                  Messieurs, mêmes perdus en mer, vos tonneaux vides, laissez la faim vous tordre l’estomac.
+                </p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+            </div>
+          </section>
+          <section class="panel" id="panel-bestiaire-necrophages" role="tabpanel" aria-labelledby="cat-bestiaire"
+            data-cat="bestiaire" data-sub="necrophages">
+            <div class="citation_bloc citation_left">
+              <div class="citation_content">Ils sont de retour, quelle plaie. Depuis l’épidémie, et les morts à en
+                saturer le sol. Ca les attire, et ça s’reproduit. Et quand y’a plus d’morts, y’s’tournent vers les
+                vivants. On peut plus s’éloigner des routes sans risquer d’être attaqués.</div>
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Nécrophages</h2>
+                <p class="chapitre_height_limited">
+                  Les nécrophages n’ont jamais véritablement disparus de Seiland, bien qu’ils aient failli être
+                  exterminés il y a plusieurs siècles. On ne peut pas dire qu’il s’agisse d’une espèce à part entière,
+                  car on a déjà retrouve des Dévoreurs sous les traits déformés d’un loup, d’un cerf, d’un lapin ou d’un
+                  aigle. Il semble plutôt s’agir d’une forme de mutation. Parfois, un mammifère nait différent au sein
+                  d’une fratrie. Le lait ne lui suffit pas, c’est le sang et la chair qui le nourrit. Et plus il
+                  grandit, plus il dévore, plus il dévore plus il grandit. Doté de yeux luisants, il présente souvent
+                  d’autres malformations physiques considérables que nous n’expliquons pas. Hostile, violent, il quitte
+                  sa meute pour en créer une nouvelle, faites d’individus qui partagent sa soif.
+
+                  On les retrouve à proximité des lieux de morts. Les cimetières sont leur terrain de jeux favoris.
+                </p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+            </div>
+          </section>
+          <section class="panel" id="panel-bestiaire-esprits" role="tabpanel" aria-labelledby="cat-bestiaire"
+            data-cat="bestiaire" data-sub="esprits">
+            <div class="citation_bloc citation_left">
+              <div class="citation_content">Sa présence me hante. Chaque jour je la vois, dans le coin de la chambre.
+                Immobile. Le visage déformé d’avoir été trop longtemps retenue. Elle pleure sans bouger, et pleure
+                encore, et son deuil est devenu contagieux. J’ai mal d’un mort que je ne connais pas. Il faut qu’elle
+                parte.</div>
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Esprits</h2>
+                <p class="chapitre_height_limited">
+                  Il y a des âmes que la mort ne soulage pas. Des maux que le trépas n’éteint pas. Retenu sur terre par
+                  une émotion que rien ne délivre, l’Esprit alors persiste.<br /><br />
+
+                  D’abord, il est la fidèle représentation de la personnalité qu’il fut de son vivant. Un composite de
+                  souvenirs et d’émotions multiples qui constituent une identité à part entière, néanmoins malmené d’un
+                  sentiment brutal qui persiste, qui le retient. Haine, jalousie, amour, vengeance. Si son apparence
+                  même approche de celui qu’il était de son vivant, il demeure malheureusement invisible les premiers
+                  temps de sa non existence, ignoré d’un monde qui ne sait plus voir, hantant sans comprendre un être ou
+                  un lieu qui lui était cher.<br /><br />
+
+                  L’Esprit ne devient perceptible qu’avec le temps. Comme si à mesure des années, il devenait capable de
+                  réfléchir la lumière autrement, glissant lentement vers le spectre du visible. Une poignée d’êtres
+                  dont l’oeil est suffisamment aiguisé peut le déceler quelques mois seulement après son trépas. Des
+                  sorcières pour la majorité, bien qu’elles ne soient pas les seules. Les autres finiront par le voir,
+                  tôt ou tard, mais de moins en moins seront capable de le reconnaître.<br /><br />
+
+                  Plus le temps s’écoule, et plus son identité se désagrège. Comme doucement grignoté par l’émotion qui
+                  l’a retenu, l’Esprit perd sa mémoire, et sans mémoire son apparence se déforme. Le visage se tord, le
+                  corps change. Certains deviennent monstrueux.<br /><br />
+
+                  Aucun esprit ne mérite de rester piégé sur terre. Et si la majorité est inoffensive, pas même capable
+                  d’interagir avec une bougie, il en existe quelques uns tant en colère, tant en douleur qu’ils sont
+                  capables de détruire d’autres vies. Instillant la peur, provoquant des accidents, mus de leur
+                  ressentiments, ils deviennent capables d’interagir et sont aptes à provoquer de bien horribles
+                  maux.<br /><br />
+
+                  Le **bannissement** est leur seule rédemption. Chasseurs et nécromanciens seront vos plus précieux
+                  alliés.
+                </p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+            </div>
+            <div class="citation_bloc citation_right">
+              <div class="citation_content">Les feux follets sont des attrapes poisse. Parfois vous les voyez qui
+                glissent dans l’ombre d’un navire. C’est joli, ces éclats bleu qui furètent dans l’écume. Jusqu’à ce que
+                les sirènes jaillissent.</div>
+            </div>
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Feu-follet</h2>
+                <p class="chapitre_height_limited">
+                  Il vient un jour où l’Esprit termine de se s’étioler. Quand l’émotion a dévoré l’entièreté de son
+                  identité et qu’il ne reste plus rien sinon la raison de sa hantise, l’Esprit lui même se désagrège.
+                  Les traits s’effacent complètement, les membres s’atrophient, la silhouette s’affaisse, jusqu’à ce
+                  qu’il ne reste du fantôme que le coeur meurtri. Un éclat d’énergie qui brûle comme une flamme, d’un
+                  bleu spectral visible de tous. Vide, sans véritable volonté, il subsiste simplement, virevolte, devenu
+                  feu follet.<br /><br />
+
+                  Les feux follets sont attirés par la lumière. Souvent, on en voit qui filent sans but à la traîne des
+                  navires, qui papillonnent autour du phare en conférant à son faisceau quelques éclats turquoise. Il
+                  arrive encore que certains se montrent agressifs, réminiscence de l’émotion rageuse qui les animait
+                  jusqu’alors, la majorité toutefois ne vous fera rien.
+                </p>
+              </div>
+              <img class="chapitre_illu" src="https://imgur.com/mfONbis.png" />
+
+            </div>
+          </section>
+          <section class="panel" id="panel-bestiaire-mortsvivants" role="tabpanel" aria-labelledby="cat-bestiaire"
+            data-cat="bestiaire" data-sub="mortsvivants">
+            <div class="chapitre">
+              <div class="chapitre_content">
+                <h2 class="gradientTitle">Mort-vivants</h2>
+                <p class="chapitre_height_limited">
+                  Dénués d’âme, les morts-vivants ne sont que des corps qu’une magie particulièrement complexe a su
+                  animer. Marionnettes sans volonté, elles ont un champ d’action limité, écrit par le nécromancien qui
+                  les a comme <i>programmées</i>, et par conséquent ne disposent qu’aucune capacité d’apprentissage.
+                  Tantôt d’os tantôt de chair, ni l’un ni l’autre n’est cependant accepté en Seiland. L’idée même qu’une
+                  sorcière puisse redresser des corps hanterait nombre de citoyens, par chance la majorité est encore
+                  convaincue que, contrairement à ses ancêtres, les sorcières d’aujourd’hui n’en sont pas capables.
+                </p>
+              </div>
+
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://arsin-rpg.forumactif.com/22575.js"></script>
+
+
+
+</body>
+
+</html>

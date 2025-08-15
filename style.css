@@ -1167,7 +1167,7 @@
   }
   
   .avatar_diamond_border img {
-    width: 200%;
+    width: 150%;
     object-fit: cover;
     transform: rotate(-45deg);
   }

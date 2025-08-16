@@ -2707,10 +2707,12 @@ display: none;
   #profil_evolution
   {
     grid-area: profil_evolution;
+	overflow: auto;
   }
   #profil_description
   {
     grid-area: profil_description;
+	overflow: auto;
   }
 
   #profil_container #fiche_slide_roliste
@@ -2744,10 +2746,12 @@ display: none;
   #roliste_description
   {
     grid-area: roliste_description;
+	overflow: auto;
   }
   #roliste_triggers
   {
     grid-area: roliste_triggers;
+	overflow: auto;
   }
   #roliste_quick_data
   {

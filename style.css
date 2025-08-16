@@ -439,6 +439,8 @@
   {
     border:1px solid var(--stroke-primary);
     background-color: var(--surface-3);
+    overflow: visible;
+    max-height: none;
   }
   
   .quaternary_card
@@ -1217,7 +1219,8 @@
   body {
     background-color: var(--surface-0);
     background: var(--background-image);
-    overflow: auto;
+    /*overflow: auto;*/
+    overflow: visible;
     color:var(--text-color);
     font-family: "Lora";
     font-size: 14px;
@@ -1709,7 +1712,8 @@ height: 50px;
     padding-left: 50px;
     gap: 32px;
     align-items: center;
-    overflow:hidden;
+    /*overflow:hidden;*/
+    overflow: visible;
   }
 
   .page-content > div
@@ -2322,16 +2326,25 @@ display: none;
     justify-content: space-between;
     padding: 32px;
     flex-wrap: nowrap;
-    align-items: flex-start;
-    display: grid;
-    grid-template-columns: 1fr auto;
+    align-items: start;
+    /*display: grid;
+    grid-template-columns: 1fr auto;*/
     gap: 32px;
+  }
+  .post_content.flexRow{
+    align-items: flex-start;     /* important pour que le sticky ne soit pas “étiré” */
+    gap: 1rem;                   /* optionnel, espace entre colonnes */
+    /* Assure-toi que post_content n’a PAS overflow: hidden/auto/clip */
+    overflow: visible !important;           /* pas d'overflow qui clippe */
+
   }
   
   .message_section
   {
     display: flex;
     flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0; 
   }
   
   .message_infos
@@ -2389,8 +2402,17 @@ display: none;
 
 .post_right_content
 {
+  
+  align-self: flex-start;          /* au cas où le parent resterait en stretch */
+  flex: 0 0 200px;                 /* largeur fixe indicative, ajuste à ton design */
+  z-index: 1;                      /* passe au-dessus du flot si nécessaire */
+  height: fit-content;             /* évite de prendre toute la hauteur en Safari/Firefox */
+  overflow: visible;
   position: sticky;
-  top: 20px;
+  top: 12px;                 /* ajuste selon ton header */
+  height: fit-content;       /* évite l’étirement plein height */
+  z-index: 1;
+
 }
 
   .post_right_content .artdeco_avatar

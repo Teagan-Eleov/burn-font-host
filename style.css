@@ -4104,6 +4104,17 @@ iframe{
   height: auto;
 }
 
+#message_panels
+{
+  flex-wrap: nowrap;
+  gap:16px;
+}
+
+#message_panels #smiley-box
+{
+  padding-top: 16px;
+}
+
 
 
 
@@ -4239,6 +4250,10 @@ iframe{
     {
       font-size: 20px;
     }
+	#message_panels #smiley-box
+	{
+	  display: none;
+	}
 
   }
 

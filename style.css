@@ -2327,16 +2327,9 @@ display: none;
     padding: 32px;
     flex-wrap: nowrap;
     align-items: start;
-    /*display: grid;
-    grid-template-columns: 1fr auto;*/
+    display: grid;
+    grid-template-columns: 1fr auto;
     gap: 32px;
-  }
-  .post_content.flexRow{
-    align-items: flex-start;     /* important pour que le sticky ne soit pas “étiré” */
-    gap: 1rem;                   /* optionnel, espace entre colonnes */
-    /* Assure-toi que post_content n’a PAS overflow: hidden/auto/clip */
-    overflow: visible !important;           /* pas d'overflow qui clippe */
-
   }
   
   .message_section

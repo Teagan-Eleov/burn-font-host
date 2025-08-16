@@ -2622,7 +2622,7 @@ display: none;
   
   
   /***************** user profile *************/
-  #profil_container .post_right_content
+  /*#profil_container .post_right_content
   {
     padding-top: 4px;
   }
@@ -2680,9 +2680,89 @@ display: none;
   .roliste_buttons
   {
     grid-column: 1 / -1;
-    /*justify-content: space-between;*/
     gap: 32px;
+  }*/
+
+  #profil_container .fiche_avatar
+  {
+    width: 200px;
+    height: 400px;
   }
+
+  #profil_container #fiche_buttons
+  {
+    grid-template-columns: repeat(2, 1fr);  
+  }
+
+  #profil_container #fiche_slide_info
+  {
+    grid-template-columns: 200px auto;
+    grid-template-rows: 1fr auto 1fr;
+    grid-template-areas:
+        "fiche_avatar profil_description"
+        "fiche_avatar fiche_quick_data"
+        "fiche_avatar profil_evolution";
+  }
+
+  #profil_evolution
+  {
+    grid-area: profil_evolution;
+  }
+  #profil_description
+  {
+    grid-area: profil_description;
+  }
+
+  #profil_container #fiche_slide_roliste
+  {
+    display: grid;
+    grid-template-columns: auto 200px;
+    grid-template-rows: repeat(3, auto); 
+    grid-template-areas:
+        "roliste_description roliste_avatar"
+        "roliste_triggers roliste_buttons"
+        "roliste_quick_data roliste_buttons";
+    gap: 16px; 
+  }
+  #roliste_avatar
+  {
+    grid-area: roliste_avatar;
+    height: 200px;
+    width: 200px;
+    border: 1px solid var(--stroke-tertiary);
+    padding: 4px;
+  }
+
+  #roliste_avatar img
+  {
+    height: 100%;
+    width: 100%;
+    border: 1px solid var(--stroke-tertiary);
+
+  }
+
+  #roliste_description
+  {
+    grid-area: roliste_description;
+  }
+  #roliste_triggers
+  {
+    grid-area: roliste_triggers;
+  }
+  #roliste_quick_data
+  {
+    grid-area: roliste_quick_data;
+    gap: 8px;
+  }
+  #roliste_buttons
+  {
+    grid-area: roliste_buttons;
+    gap: 8px;
+  }
+
+
+
+
   
   /************** MP ***************/
   #messagerie, #profil_edit

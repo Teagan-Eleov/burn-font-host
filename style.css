@@ -3997,6 +3997,113 @@ iframe{
 }
 
 
+ /*****************POST TEXTAREA & QUICK REPLY****************/
+  a[name="quickreply"] + .h3
+  {
+    display: none;
+  }
+  
+  #quick_reply{
+    width: 100%;
+  }
+  
+  #quick_reply *{
+  box-sizing: content-box;
+  
+  }
+  
+  #quick_reply #textarea_content
+  {
+    width: calc(100% - 24px)!important;
+  }
+  
+  
+  .sceditor-container {
+      background: var(--surface-3)!important;
+      border: 1px solid var(--stroke-tertiary)!important;
+      z-index: 1;
+      box-sizing: border-box !important;
+      position: inline-block !important;
+      width: 100% !important;
+      border-radius: var(--radius-s) !important;
+    overflow: hidden;
+  }
+  
+  .sceditor-container textarea, .sceditor-container iframe  {
+    padding: 5px !important;
+    background-color: var(--surface-3) !important;
+    color: var(--text-color) !important;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0) !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+  
+  #postingbox .sceditor-container textarea, #postingbox .sceditor-container iframe  {
+      background-color: var(--surface-2) !important;
+  }
+  
+  .sceditor-toolbar {
+    background-color: var(--surface-1) !important;
+      border: none !important;
+      padding: 12px !important;
+      text-align: center !important;
+  }
+  
+  .sceditor-group {
+    background-color: var(--surface-1) !important;
+    border: none !important;
+  }
+
+  .sceditor-button
+{
+	width: 25px;
+}
+  
+  .sceditor-button div
+  {
+    margin : 0px !important;
+  }
+  #smilies_header
+  {
+    background-color: var(--surface-4) !important;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom:0px!important;
+  }
+  .smiley-element
+  {
+    background-color: var(--surface-4) !important;
+    padding: 8px!important;
+    box-sizing: border-box;
+  }
+  div.sceditor-dropdown
+  {
+    border: none;
+    background: var(--surface-4) !important;
+    color: var(--text-color)!important;
+  }
+
+  div.sceditor-dropdown a
+{
+  color: var(--text-color)!important;
+}
+
+.sceditor-button
+{
+  width: auto!important;
+  padding: 4px !important;
+}
+
+.sceditor-group {
+    background-color: var(--surface-4) !important;
+    border: none !important;
+  }
+
+#postingbox .sceditor-button /*page prevusualisation*/
+{
+  height: auto;
+}
+
 
 
 

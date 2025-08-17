@@ -1843,6 +1843,55 @@ height: 50px;
     text-align: center;
     width: 100%;
   }
+
+  /* kiosque*/
+
+  #extrait_journaux
+  {
+    width: 400px;
+    height: 130px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    right: 100px;
+    bottom:-10px;
+  }
+  #extrait_trident, #extrait_trident2
+  {
+    width: 300px!important;
+    height: 200px!important;
+    flex-shrink: 0;
+    display: block;
+    background-position: top;
+    background-size: cover;
+    border-radius: 8px;
+    transition: all 500ms ease;
+    box-shadow: 2px 2px 15px rgb(54, 54, 54);
+
+  }
+  #extrait_trident
+  {
+    z-index: 2;
+  }
+
+  #extrait_trident:hover
+  {
+    transform: rotate(5deg);
+  }
+
+  #extrait_trident2:hover
+  {
+    transform: rotate(10deg);
+  }
+
+  #extrait_trident2
+  {
+    transform: rotate(5deg);
+    position: relative;
+    top: -20px;
+    right: 200px;
+  }
+
   
   
   /********* UI différente categ 1********/

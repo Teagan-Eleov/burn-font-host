@@ -1999,7 +1999,7 @@ height: 50px;
   {
     position: absolute;
     right: 40px;
-    top: 2000px;
+    top: 4000px;
   }
 
   #rumeur_hey
@@ -2027,30 +2027,6 @@ height: 50px;
   {
     opacity: 0;
   }
-
-  /*.rumeur_message:before {
-    content: ' ';
-    position: absolute;
-    width: 0;
-    height: 0;
-    left: auto;
-    right: 30px;
-    bottom: -20px;
-    border: 10px solid;
-    border-color: var(--stroke-tertiary) var(--stroke-tertiary) transparent transparent;
-  }
-
-  .rumeur_message:after {
-    content: ' ';
-    position: absolute;
-    width: 0;
-    height: 0;
-    left: auto;
-    right: 31px;
-    bottom: -17px;
-    border: 10px solid;
-    border-color: var(--surface-3) var(--surface-3) transparent transparent;
-}*/
 
   
   /****************** QEEL *****************/

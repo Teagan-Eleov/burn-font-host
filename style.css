@@ -1181,7 +1181,7 @@ input[type="text"]:hover, input[type="password"]:hover, textarea:hover
   .avatar_diamond_border img {
     object-fit: cover;
     transform: rotate(-45deg);
-	width: 150%;
+	width: 90px;
 
   }
   

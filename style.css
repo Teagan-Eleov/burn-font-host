@@ -1950,6 +1950,7 @@ height: 50px;
   /***************** RUMEUR ***************/
   .rumeur_section
   {
+	z-index:2;
     display: flex;
     gap: 10px;
     flex-direction: column;

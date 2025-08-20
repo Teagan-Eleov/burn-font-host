@@ -18,6 +18,11 @@
   font-family: Activist;
   src: url('https://teagan-eleov.github.io/burn-font-host/Activists_Regular.otf');
   }
+
+@font-face {
+  font-family: Honey Script;
+  src: url('https://teagan-eleov.github.io/burn-font-host/HoneyScript-Light.ttf');
+  }
   
   :root {
     /****** Images*****/

@@ -1180,7 +1180,7 @@ input[type="text"]:hover, input[type="password"]:hover, textarea:hover
   
   .avatar_diamond_border img {
     object-fit: cover;
-    transform: rotate(-45deg) scale(1.5);
+    transform: rotate(-45deg) scale(0.2);
   }
   
   .avatar_losange .artdeco_avatar_image {

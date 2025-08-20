@@ -1961,6 +1961,11 @@ height: 50px;
     position: relative;
   }
 
+#qeel .avatar_diamond_border
+{
+	width: 200% !important;
+}
+
   #qeel_faille
   {
     position: absolute;

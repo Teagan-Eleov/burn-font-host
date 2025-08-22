@@ -111,19 +111,13 @@ button {
     height: 100%;
     height: 820px;
 }
-
-.chapitre {
-    display: grid;
-    gap: 64px;
-}
-
 .chapitre_height_limited {
     height: 400px;
     overflow: auto;
     padding-right: 16px;
 }
 
-.chapitre .recap_rp_title {
+.chapitre_content .recap_rp_title {
     width: fit-content;
 }
 
@@ -218,15 +212,23 @@ section {
 }
 
 .chapitre {
-    display: grid;
-    gap: 64px;
+   display: flex;
+   flex-direction: column;
+    gap: 16px;
+    /*align-items: center;*/
 }
 
 .chapitre_content {
-    display: flex;
-    flex-direction: column;
+
+    column-count: 2;
     gap: 16px;
 }
+
+.chapitre_content > *
+{
+    margin-bottom: 0.5em;
+}
+
 
 .chapitre_content a {
     color: var(--text-tint);
@@ -244,13 +246,20 @@ p {
 
 .guidebook_banniere {
     width: 100%;
-    height: 180px;
+    height: 230px;
+}
+.guidebook_banniere_paint
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: fit-content;
 }
 
 .chapitre_illu {
     width: 100%;
     height: auto;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 .arsin_illu {
@@ -262,7 +271,7 @@ p {
     border: 1px solid var(--stroke-quinary);
     background-size: cover;
     background-position: center;
-    height: 164px;
+    height: 208px;
 }
 
 .subnav {
@@ -294,9 +303,9 @@ p {
         align-items: start;
     }
 
-    .chapitre {
-        grid-template-columns: 1fr 0.8fr;
-    }
+   /* .chapitre {
+        grid-template-columns: 1fr 1fr;
+    }*/
 
     .chapitre_inverse {
         grid-template-columns: 0.6fr 1fr;
@@ -352,5 +361,26 @@ p {
 
 @media (max-width: 800px)
 {
-    
+    #guidebook
+    {
+        padding: 16px;
+        margin-top: 200px;
+    }
+
+    #guidebook_nav
+    {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .optionButton 
+    {
+        width: fit-content;
+    }
+    .liste_citations .citation_bloc
+    {
+        transform: translateY(0);
+    }
 }

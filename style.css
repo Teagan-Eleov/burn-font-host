@@ -4198,12 +4198,14 @@ hrp
 
 note
 {
-display: block;
+  display: block;
   background-color: var(--surface-3);
   border: 1px solid var(--stroke-tertiary);
   outline: solid 1px var(--stroke-tertiary);
   outline-offset: 4px;
   padding: 16px;
+  width: 90%;
+  margin-left: 8px;
 }
 
 invisible

@@ -150,7 +150,7 @@ button {
 /* Chaque panneau est empilé et on affiche seulement l’actif */
 .panel {
     position: absolute;
-    padding-top: 16px;
+    padding: 16px;
     inset: 0;
     opacity: 0;
     pointer-events: none;

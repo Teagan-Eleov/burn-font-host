@@ -361,7 +361,9 @@ p {
 
     #secondary {
         /* position: sticky;*/
-        top: 1rem;
+        /*top: 1rem;*/
+        height: auto;
+        overflow: auto;
     }
 
 }

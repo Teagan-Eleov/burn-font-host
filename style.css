@@ -1990,7 +1990,6 @@ height: 50px;
 
   .rumeur_message
   {
-    border-radius: 8px;
     position: relative;
     font-style: italic;
     max-width: 300px;
@@ -3726,12 +3725,14 @@ tw {
   top:0;
   left: 0;
   display: flex;
-  align-items: start;
-  padding-top: 40px;
+  /*align-items: center;*/
+  padding: 16px;
+  padding-top: 40px;;
   justify-content: center;
   height: 100%;
   width: 100%;
   transition: opacity .5s;
+  text-align: center;
   font-weight: 500;
   text-shadow: var(--text-color) 1px 0 10px;
  }

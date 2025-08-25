@@ -639,12 +639,6 @@ blockquote cite {
   background-image: var(--svg-ennemi);
 }
 
-.go_to_lastpost .chip_icon
-{
-  background-image: var(--svg-arrow);
-
-}
-
 
 
 
@@ -2324,6 +2318,11 @@ input:checked+.theme-button {
   display: flex;
   flex-direction: row;
   gap : 4px;
+}
+
+.lastPost_date
+{
+  font-size: 10px;
 }
 
 .unread_message svg {

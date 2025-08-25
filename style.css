@@ -2330,7 +2330,7 @@ input:checked+.theme-button {
   fill: var(--text-tint);
 }
 
-.go_to_lastpost:hover svg
+.go_to_lastpost:hover svg, .last-post-icon:hover svg
 {
   stroke: var(--text-tint);
 }

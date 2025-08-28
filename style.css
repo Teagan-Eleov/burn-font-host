@@ -837,6 +837,7 @@ input[type="text"],
 input[type="password"],
 textarea {
   background: var(--surface-2);
+  color: var(--text-color);
   font-size: 14px;
   cursor: text;
   padding: 10px 0 9px 9px;

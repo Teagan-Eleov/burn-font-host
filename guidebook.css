@@ -112,6 +112,7 @@ button {
     height: 100%;
     /*height: 820px;*/
 }
+
 .chapitre_height_limited {
     height: 400px;
     overflow: auto;
@@ -213,8 +214,8 @@ section {
 }
 
 .chapitre {
-   display: flex;
-   flex-direction: column;
+    display: flex;
+    flex-direction: column;
     gap: 16px;
     /*align-items: center;*/
 }
@@ -225,8 +226,7 @@ section {
     gap: 16px;
 }
 
-.chapitre_content > *
-{
+.chapitre_content>* {
     margin-bottom: 0.5em;
 }
 
@@ -249,12 +249,11 @@ p {
     width: 100%;
     height: 230px;
 }*/
-.section_illu
-{
+.section_illu {
     max-width: 800px;
 }
-.guidebook_banniere_paint
-{
+
+.guidebook_banniere_paint {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -291,8 +290,11 @@ p {
     color: var(--text-secondary);
     font-size: 22px;
 }
-#paragraphe_rumeur /*necessaire pour positionner la fausse rumeur*/
-{
+
+#paragraphe_rumeur
+
+/*necessaire pour positionner la fausse rumeur*/
+    {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -305,43 +307,39 @@ p {
     right: 0;
 }*/
 
-#staff_section
-{
+#staff_section {
     width: 70%;
     display: flex;
     flex-direction: column;
     gap: 32px;
 }
 
-.staff_bloc
-{
+.staff_bloc {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: end;}
-
-.staff_bloc .separator
-{
-    background :linear-gradient(to right, transparent, var(--stroke-quinary))!important;
+    justify-content: end;
 }
 
-.staff_bloc .separatorInverse
-{
-    background :linear-gradient(to left, transparent, var(--stroke-quinary));
+.staff_bloc .separator {
+    background: linear-gradient(to right, transparent, var(--stroke-quinary)) !important;
+}
+
+.staff_bloc .separatorInverse {
+    background: linear-gradient(to left, transparent, var(--stroke-quinary));
     width: 100%;
     align-self: center;
 
 }
 
 
-.staff_name, .staff_citation
-{
+.staff_name,
+.staff_citation {
     text-align: right;
     padding-right: 90px;
 }
 
-.staff_citation
-{
+.staff_citation {
     padding-top: 4px;
     display: flex;
     flex-direction: column;
@@ -349,14 +347,12 @@ p {
     justify-content: flex-end;
 }
 
-.staff_bloc .author_infos
-{
+.staff_bloc .author_infos {
     justify-content: flex-end;
 }
 
 
-.staff_avatar
-{
+.staff_avatar {
     display: flex;
     flex-direction: row;
     height: 10px;
@@ -364,22 +360,124 @@ p {
     width: 100%;
 }
 
-.staff_left
-{
+.staff_left {
     justify-content: start;
 }
 
-.staff_left .staff_name, .staff_left .staff_citation
-{
+.staff_left .staff_name,
+.staff_left .staff_citation {
     text-align: left;
     padding-left: 90px;
     justify-content: flex-start;
 }
 
-.staff_left .author_infos
-{
+.staff_left .author_infos {
     justify-content: flex-start;
 
+}
+
+
+
+/************* hide et toggle ***********/
+/* === Mode "révélé" global : quand le switch est coché === */
+:root:has(#reveal-switch:checked) tw {
+    filter: none !important;
+}
+
+
+/* On transforme l’overlay en badge (nouveau style) */
+:root:has(#reveal-switch:checked) twreason {
+    opacity: 1 !important;
+    pointer-events: none;
+    /* coin bas-gauche */
+    background-color: var(--surface-1);
+    border: 1px solid var(--stroke-tertiary);
+    font-size: 11px;
+    border-radius: 8px;
+    padding: 8px 16px 8px 16px;
+    width: 90%;
+    margin-left: 8px;
+    text-shadow: none;
+    position: initial;
+    width: fit-content;
+    height: fit-content;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+/* En mode révélé, le hover ne change plus rien */
+:root:has(#reveal-switch:checked) twsection:hover twreason {
+    opacity: 1;
+}
+
+/* Toggle (switch) */
+.switch {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    cursor: pointer;
+    user-select: none;
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    z-index: 8;
+    background-color: #0000006E;
+    border-radius: 8px;
+    padding: 4px 8px 4px 8px;
+}
+
+.switch__input {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+/* sr-only */
+
+.switch__track {
+    inline-size: 44px;
+    block-size: 24px;
+    border-radius: 999px;
+    background: var(--text-color);
+    display: inline-flex;
+    align-items: center;
+    padding: 2px;
+    transition: background .2s ease;
+    position: relative;
+}
+
+.switch__thumb {
+    inline-size: 20px;
+    block-size: 20px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .12);
+    transform: translateX(0);
+    transition: transform .2s ease;
+}
+
+/* Etat ON */
+.switch__input:checked+.switch__track {
+    background: var(--text-tint);
+}
+
+.switch__input:checked+.switch__track .switch__thumb {
+    transform: translateX(20px);
+}
+
+/* Focus visible */
+.switch__input:focus-visible+.switch__track {
+    outline: 2px solid var(--text-tint);
+    outline-offset: 2px;
+}
+
+.switch__label {
+    font: 500 14px/1.3 system-ui, sans-serif;
 }
 
 
@@ -401,7 +499,7 @@ p {
         align-items: start;
     }
 
-   /* .chapitre {
+    /* .chapitre {
         grid-template-columns: 1fr 1fr;
     }*/
 
@@ -459,28 +557,24 @@ p {
 
 }
 
-@media (max-width: 800px)
-{
-    #guidebook
-    {
+@media (max-width: 800px) {
+    #guidebook {
         padding: 16px;
         margin-top: 200px;
     }
 
-    #guidebook_nav
-    {
+    #guidebook_nav {
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
 
     }
 
-    .optionButton 
-    {
+    .optionButton {
         width: fit-content;
     }
-    .liste_citations .citation_bloc
-    {
+
+    .liste_citations .citation_bloc {
         transform: translateY(0);
     }
 }

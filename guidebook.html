@@ -5,7 +5,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="https://teagan-eleov.github.io/burn-font-host/style.css" />
-  <link rel="stylesheet" href="https://teagan-eleov.github.io/burn-font-host/guidebook.css" />
+    <link rel="stylesheet" href="https://teagan-eleov.github.io/burn-font-host/guidebook.css" />
+ 
 
 
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
@@ -269,9 +270,15 @@
           </div>
 
         </div>
+        
 
         <!-- Contenus -->
         <div id="panels" class="panels" aria-live="polite">
+          <label class="switch reveal-toggle">
+            <span class="switch__label">Afficher le contenu masqué</span>
+            <input type="checkbox" id="reveal-switch" class="switch__input">
+            <span class="switch__track" aria-hidden="true"><span class="switch__thumb"></span></span>
+          </label>
 
           <!-- HORS JEU -->
           <section class="panel active" id="panel-horsjeu-introduction" role="tabpanel" aria-labelledby="cat-horsjeu"
@@ -958,6 +965,8 @@
               <div class="">
                 <h2 class="gradientTitle">Théorie de la magie</h2>
                 <twsection>
+                  <twreason>Connu uniquement des Sorcières, Cristallisés, Chasseurs, et quelques initiés ..<br /> Passer
+                    la souris pour dévoiler.</twreason>
                   <tw>La magie vient du <imp>corps et de l’esprit</imp>.<br /><br />
                     D’abord c’est une volonté, une émotion, l’adepte <imp>veut</imp> et ce désir <imp>tord la réalité
                     </imp>. L’adepte jeune et
@@ -966,8 +975,7 @@
                       temps</imp>
                     et la <imp>pratique</imp>.
                   </tw>
-                  <twreason>Connu uniquement des Sorcières, Cristallisés, Chasseurs, et quelques initiés ..<br /> Passer
-                    la souris pour dévoiler.</twreason>
+                  
                 </twsection>
                 <br />
               </div>

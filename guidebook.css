@@ -305,6 +305,86 @@ p {
     right: 0;
 }*/
 
+#staff_section
+{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.staff_bloc
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;}
+
+.staff_bloc .separator
+{
+    background :linear-gradient(to right, transparent, var(--stroke-quinary))!important;
+}
+
+.staff_bloc .separatorInverse
+{
+    background :linear-gradient(to left, transparent, var(--stroke-quinary));
+    width: 100%;
+    align-self: center;
+
+}
+
+
+.staff_name, .staff_citation
+{
+    text-align: right;
+    padding-right: 90px;
+}
+
+.staff_citation
+{
+    padding-top: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.staff_bloc .author_infos
+{
+    justify-content: flex-end;
+}
+
+
+.staff_avatar
+{
+    display: flex;
+    flex-direction: row;
+    height: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+.staff_left
+{
+    justify-content: start;
+}
+
+.staff_left .staff_name, .staff_left .staff_citation
+{
+    text-align: left;
+    padding-left: 90px;
+    justify-content: flex-start;
+}
+
+.staff_left .author_infos
+{
+    justify-content: flex-start;
+
+}
+
+
+
+
 
 /* Respecte la réduction de mouvement */
 @media (prefers-reduced-motion: reduce) {

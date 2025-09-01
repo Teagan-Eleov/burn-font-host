@@ -2897,7 +2897,16 @@
   // Map param -> { bouton primaire, sous-onglet, fallback cat si data-cat absent }
   const ROUTES = {
     contexte : { btn: '#button_horsjeu', sub: 'contexte',      catFallback: 'horsjeu'  },
-    sorciere : { btn: '#button_groupe', sub: 'prez_sorcieres', catFallback: 'groupes'  }
+    portfidel : { btn: '#button_ville', sub: 'legende', catFallback: 'ville'},
+    magie : { btn: '#button_magie', sub: 'perception_magie', catFallback: 'magie'},
+    humain : { btn: '#button_groupes', sub: 'prez_humains', catFallback: 'groupes'},
+    chasseur : { btn: '#button_groupes', sub: 'prez_chasseurs', catFallback: 'groupes'},
+    sorciere : { btn: '#button_groupes', sub: 'prez_sorcieres', catFallback: 'groupes'  },
+    cristallise : { btn: '#button_groupes', sub: 'prez_cristalise', catFallback: 'groupes'},
+    reglement : { btn: '#button_horsjeu', sub: 'reglement', catFallback: 'horsjeu'},
+    bestiaire : { btn: '#button_bestiaire', sub: 'esprits', catFallback: 'bestiaire'},
+    credit : { btn: '#button_horsjeu', sub: 'credits', catFallback: 'horsjeu'},
+    systemejeu : { btn: '#button_horsjeu', sub: 'systemejeu', catFallback: 'horsjeu'}
   };
 
   function getParam() {

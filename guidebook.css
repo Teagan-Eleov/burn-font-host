@@ -410,6 +410,9 @@ p {
     opacity: 1;
 }
 
+.reveal-toggle { display: none; }
+
+
 /* Toggle (switch) */
 .switch {
     display: inline-flex;

@@ -16,6 +16,7 @@
   <script src="https://arsin-rpg.forumactif.com/10306.js"></script>
   <script src="https://arsin-rpg.forumactif.com/24151.js"></script>
   <!--script rumeurs-->
+  
 
   <title>Guidebook</title>
   <style>
@@ -2890,6 +2891,89 @@
   </div>
 
   <script src="https://arsin-rpg.forumactif.com/22575.js"></script>
+<!-- Dans page.html (l'intérieur de l'iframe) -->
+<script>
+(() => {
+  // Map param -> { bouton primaire, sous-onglet, fallback cat si data-cat absent }
+  const ROUTES = {
+    contexte : { btn: '#button_horsjeu', sub: 'contexte',      catFallback: 'horsjeu'  },
+    sorciere : { btn: '#button_groupe', sub: 'prez_sorcieres', catFallback: 'groupes'  }
+  };
+
+  function getParam() {
+    const p = new URLSearchParams(location.search).get('param');
+    return p ? p.trim().toLowerCase() : '';
+  }
+
+  function applyRoute(key) {
+    const r = ROUTES[key];
+    if (!r) return false;
+
+    const catBtn = document.querySelector(r.btn);
+    if (!catBtn) { console.warn('Bouton primaire introuvable pour', key); return false; }
+
+    const cat = catBtn.dataset?.cat || r.catFallback;
+
+    // Cas idéal : on a tes helpers
+    if (typeof window.selectCategory === 'function' && typeof window.selectSub === 'function') {
+      selectCategory(cat, { updateUrl: true, animate: false });
+      selectSub(cat, r.sub, { updateUrl: true, animate: false });
+      return true;
+    }
+
+    // Fallback "manuel" si les helpers ne sont pas dispo
+    // 1) Activer l'onglet primaire
+    document.querySelectorAll('.tabs.primary [role="tab"]').forEach(b =>
+      b.setAttribute('aria-selected', String(b === catBtn))
+    );
+
+    // 2) Afficher la bonne barre secondaire
+    document.querySelectorAll('#secondary .secondary-wrap').forEach(w =>
+      w.classList.toggle('active', w.id === `sec-${cat}`)
+    );
+
+    // 3) Activer le sous-onglet
+    const secButtons = document.querySelectorAll(`#sec-${cat} [role="tab"]`);
+    const subBtn = document.querySelector(`#sec-${cat} [role="tab"][data-sub="${r.sub}"]`);
+    if (subBtn) {
+      secButtons.forEach(b => b.setAttribute('aria-selected', String(b === subBtn)));
+    }
+
+    // 4) Activer le panneau
+    const next = document.querySelector(`.panel[data-cat="${cat}"][data-sub="${r.sub}"]`);
+    if (next) {
+      document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p === next));
+    }
+
+    // 5) Sync URL interne (utile pour refresh / partage)
+    const u = new URL(location.href);
+    u.searchParams.set('cat', cat);
+    u.searchParams.set('sub', r.sub);
+    history.replaceState({}, '', u);
+
+    return true;
+  }
+
+  // Démarrage après que le DOM & (idéalement) tes onglets soient prêts
+  function boot() {
+    const key = getParam();
+    if (!key) return;
+
+    // Si tes fonctions sont initialisées un peu plus tard, on patiente un peu
+    let tries = 0;
+    const t = setInterval(() => {
+      const ok = applyRoute(key);
+      if (ok || ++tries > 20) clearInterval(t); // ~1s max
+    }, 50);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();
+</script>
 
 
 

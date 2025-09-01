@@ -2984,6 +2984,58 @@
 })();
 </script>
 
+<script>
+  (function ($) {
+  $(function () {
+    // Sous-onglets pour lesquels on veut afficher le toggle
+    const SHOW_FOR_SUBS = ['sororite', 'apprentissage_sorcieres','corruption','fonctionnement','particularites','processus','competences_chasseurs']; // ajoute d'autres valeurs si besoin
+
+    const $toggle = $('.reveal-toggle');
+
+function getActiveSub() {
+  // 1) idéal: lire le panneau actuellement affiché
+  const $panel = $('.panel.active').first();
+  if ($panel.length) return String($panel.data('sub') || '');
+
+  // 2) fallback: lire le sous-onglet sélectionné dans la barre secondaire visible
+  const $btn = $('#secondary .secondary-wrap.active [role="tab"][aria-selected="true"]').first();
+  return String($btn.data('sub') || '');
+}
+
+function updateToggleVisibility() {
+  const sub = getActiveSub();
+  const show = sub && SHOW_FOR_SUBS.includes(sub);
+  $toggle.toggle(!!show);                // montre / cache
+  // ou : $toggle.toggleClass('is-visible', !!show);
+}
+
+// --- Initialisation
+updateToggleVisibility();
+
+// --- Écoute les clics sur sous-onglets ET catégories
+$('#secondary').on('click', '[role="tab"][data-sub]', () => setTimeout(updateToggleVisibility, 0));
+$('.tabs.primary').on('click', '[role="tab"]',        () => setTimeout(updateToggleVisibility, 0));
+
+// --- Écoute les changements faits par script (selectCategory/selectSub)
+const panels = document.getElementById('panels');
+if (panels) {
+  new MutationObserver(updateToggleVisibility).observe(panels, {
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['class']
+  });
+}
+const secondary = document.getElementById('secondary');
+if (secondary) {
+  new MutationObserver(updateToggleVisibility).observe(secondary, {
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['aria-selected','class']
+  });
+}
+});
+})(window.jQuery);
+</script>
 
 
 </body>

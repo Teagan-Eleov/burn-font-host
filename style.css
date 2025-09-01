@@ -1590,7 +1590,7 @@ input:checked+.theme-button {
 }
 
 .statusClose {
-  color: var(--magenta-400)
+  color: var(--red-400)
 }
 
 #pa_progressbar {

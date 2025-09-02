@@ -2917,7 +2917,7 @@ select {
   padding: 32px;
   align-items: flex-start;
   gap: 32px;
-
+  display: flex;
 }
 
 #error_section .default_card a {

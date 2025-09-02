@@ -13,6 +13,17 @@
     rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/malihu/jquery-style-my-tooltips/jquery.style-my-tooltips.js"></script>
+  <script>
+    (function($){
+        $(document).ready(function(){
+            $("[title]").style_my_tooltips({
+                tip_follows_cursor:true,
+                tip_delay_time:0,
+                tip_fade_speed:300
+            });
+        });
+})(jQuery);
+</script>
   <script src="https://arsin-rpg.forumactif.com/10306.js"></script>
   <script src="https://arsin-rpg.forumactif.com/24151.js"></script>
   <!--script rumeurs-->

@@ -29,7 +29,7 @@
   /****** Images*****/
   --background-image: url("https://static.wixstatic.com/media/e609d3_db5e1da067484082b3afa8a510d28709~mv2.png");
   --header-image: url("https://cdna.artstation.com/p/assets/images/images/046/971/522/large/axel-sauerwald-sea-witch.jpg?1646419242");
-  --pa-image: url("https://i.pinimg.com/736x/a6/da/f5/a6daf52db933ef9b85c42422c5d4cabd.jpg");
+  --pa-image: url("https://imgur.com/1i5kIIl.png");
 
   /*a suppr*/
   --subject-annonce: url("https://i.imgur.com/WBW2Adp.png");
@@ -205,7 +205,7 @@
   --text-important: var(--gold-200);
   --background-image: url("https://cdnb.artstation.com/p/assets/images/images/035/631/701/large/oliver-ryan-little-boat-big-men-resize.jpg?1615471672");
   --header-image: url("https://cdna.artstation.com/p/assets/images/images/046/971/522/large/axel-sauerwald-sea-witch.jpg?1646419242");
-  --pa-image: url("https://imgur.com/mgaMtBu.png");
+  --pa-image: url("https://imgur.com/1i5kIIl.png");
 }
 
 .theme-red {

@@ -1662,7 +1662,7 @@ input:checked+.theme-button {
 }
 
 .pa_news {
-  padding: 16px;
+  padding: 8px;
   gap: 4px;
   align-items: flex-start;
   width: 100%;

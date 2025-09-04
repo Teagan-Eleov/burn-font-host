@@ -759,7 +759,8 @@ a:hover {
 form[name=form_login],
 form[name=form_login]~.panel,
 .row3,
-#postingbox {
+#postingbox, 
+form[name=form_confirm]{
   border: 1px solid var(--stroke-tertiary);
   background-color: var(--surface-3);
   padding: 16px;

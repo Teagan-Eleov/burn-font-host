@@ -655,6 +655,7 @@ a {
   text-decoration: none;
   color: var(--text-color);
   font-family: brugenfield;
+  font-size: 15px;
 }
 
 a:hover {
@@ -2450,6 +2451,15 @@ input:checked+.theme-button {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 32px;
+}
+
+.post_content a
+{
+  color: var(--text-tint);
+}
+.post_content a:hover
+{
+  color: var(--text-color);
 }
 
 .message_section {

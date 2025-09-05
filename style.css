@@ -2554,7 +2554,7 @@ input:checked+.theme-button {
   max-width: 704px; /*forcer largeur equivalente a un message posté*/
 }
 
-#preview ..post_content
+#preview .post_content
 {
   display : flex;
 }

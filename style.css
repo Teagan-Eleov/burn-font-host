@@ -709,6 +709,7 @@ a:hover {
 #fa_toolbar #fa_right #notif_list li.see_all a {
   background: linear-gradient(to right, var(--tint-grad-left), var(--tint-grad-right));
   border: 1px solid var(--stroke-quinary);
+  color : var(--text-color);
   padding: 8px;
   display: block;
   text-align: center;

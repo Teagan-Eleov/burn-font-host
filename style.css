@@ -3038,7 +3038,7 @@ select {
 
 /* Image de l'avatar */
 .switcheroo__avatar img {
-  height: 200%;
+  width: 45px;
   object-fit: cover;
   transform: rotate(-45deg);
 

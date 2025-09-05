@@ -2519,7 +2519,7 @@ input:checked+.theme-button {
   /* évite de prendre toute la hauteur en Safari/Firefox */
   overflow: visible;
   position: sticky;
-  top: 12px;
+  top: 24px;
   /* ajuste selon ton header */
   height: fit-content;
   /* évite l’étirement plein height */

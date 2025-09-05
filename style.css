@@ -2551,7 +2551,7 @@ input:checked+.theme-button {
 #preview .message_section
 {
   align-self: center;
-  max-width: 704px;
+  max-width: 704px; /*forcer largeur equivalente a un message posté*/
 }
 
 /* liste participants*/

@@ -2536,11 +2536,15 @@ input:checked+.theme-button {
   z-index: 1;
 }
 
+.post_right_content .avatar_default{
+  width: 200px;
+}
 
-.post_right_content .artdeco_avatar {
+
+/*.post_right_content .artdeco_avatar {
   width: 200px;
   height: 400px;
-}
+}*/
 
 .message_footer {
   padding: 16px 32px;

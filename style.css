@@ -2547,6 +2547,13 @@ input:checked+.theme-button {
   gap: 16px;
 }
 
+/*apercu d'un message en cours*/
+#preview .message_section
+{
+  align-self: center;
+  max-width: 704px;
+}
+
 /* liste participants*/
 
 .poster-list {

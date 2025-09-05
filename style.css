@@ -655,7 +655,6 @@ a {
   text-decoration: none;
   color: var(--text-color);
   font-family: brugenfield;
-  font-size: 15px;
 }
 
 a:hover {
@@ -2395,10 +2394,7 @@ input:checked+.theme-button {
   opacity: 0.5;
 }
 
-.post_button_img
-
-/*, .post_buttons a*/
-  {
+.post_button_img  {
   display: none;
 }
 
@@ -2456,6 +2452,7 @@ input:checked+.theme-button {
 .post_content a
 {
   color: var(--text-tint);
+  font-size: 15px;
 }
 .post_content a:hover
 {

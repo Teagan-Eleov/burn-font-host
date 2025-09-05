@@ -2524,8 +2524,8 @@ input:checked+.theme-button {
   height: fit-content;
   /* évite l’étirement plein height */
   z-index: 1;
-
 }
+
 
 .post_right_content .artdeco_avatar {
   width: 200px;
@@ -3418,6 +3418,7 @@ select {
 /* Bloc "notifs non lues" */
 .fa_tbMainElement#fa_right a.rightHeaderLink.unread#fa_notifications {
   background: var(--surface-tint);
+  opacity: 1;
 }
 
 #fa_toolbar #fa_right #notif_list li.unread {

@@ -701,6 +701,16 @@ a:hover {
   transform: scale(0.95);
 }
 
+.post_content a
+{
+  color: var(--text-tint);
+  font-size: 15px;
+}
+.post_content a:hover
+{
+  color: var(--text-color);
+}
+
 
 .secondaryButton,
 .mainButton,
@@ -708,9 +718,7 @@ a:hover {
 .switcheroo__form-button,
 #fa_toolbar #fa_right #notif_list li.see_all a {
   background: linear-gradient(to right, var(--tint-grad-left), var(--tint-grad-right));
-  border: 1px solid var(--stroke-quinary);
-  color : var(--text-color);
-  padding: 8px;
+  border: 1px solid var(--stroke-quinary);  padding: 8px;
   display: block;
   text-align: center;
   color: var(--text-onTint);
@@ -2448,15 +2456,7 @@ input:checked+.theme-button {
   gap: 32px;
 }
 
-.post_content a
-{
-  color: var(--text-tint);
-  font-size: 15px;
-}
-.post_content a:hover
-{
-  color: var(--text-color);
-}
+
 
 .message_section {
   display: flex;

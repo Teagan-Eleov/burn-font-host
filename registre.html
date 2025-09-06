@@ -506,22 +506,7 @@
                                 </div>
                             </div>
 
-                            <div class="field"><span class="label100">Magie</span>
-                                <div class="filterset" id="m-feat" role="group" aria-label="Filtre magie">
-                                    <button type="button" class="tab-btn optionButton label100 filter-btn" data-value=""
-                                        aria-selected="true">
-                                        <div class="optionButtonContent">Toutes</div>
-                                    </button>
-                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
-                                        data-value="oui">
-                                        <div class="optionButtonContent">avec magie</div>
-                                    </button>
-                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
-                                        data-value="non">
-                                        <div class="optionButtonContent">sans magie</div>
-                                    </button>
-                                </div>
-                            </div>-->
+                            -->
 
                             <div class="field"><span class="label100">Type</span>
                                 <div class="filterset" id="a-feat" role="group" aria-label="Filtre actif">
@@ -613,15 +598,17 @@
                                 </div>
                             </div>
 
-                            <div class="filterset" id="m-metier" role="group" aria-label="Filtre magie">
-                                <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="" aria-selected="true"><div class="optionButtonContent">Toutes</div></button>
-                                <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="animation"><div class="optionButtonContent">Animation</div></button>
-                                <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="construction"><div class="optionButtonContent">Construction</div></button>
-                                <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="communication"><div class="optionButtonContent">Communication</div></button>
-                                <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="alteration"><div class="optionButtonContent">Altération</div></button>
-                                <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="manipulation"><div class="optionButtonContent">Manipulation</div></button>
-                                <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="invocation"><div class="optionButtonContent">Invocation</div></button>
+                            <div class="field"><span class="label100">Magie</span>
+                                <div class="filterset" id="m-metier" role="group" aria-label="Filtre magie">
+                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="" aria-selected="true"><div class="optionButtonContent">Toutes</div></button>
+                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="animation"><div class="optionButtonContent">Animation</div></button>
+                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="construction"><div class="optionButtonContent">Construction</div></button>
+                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="communication"><div class="optionButtonContent">Communication</div></button>
+                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="alteration"><div class="optionButtonContent">Altération</div></button>
+                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="manipulation"><div class="optionButtonContent">Manipulation</div></button>
+                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="invocation"><div class="optionButtonContent">Invocation</div></button>
 
+                                </div>
                               </div>
 
                             <div class="field"><span class="label100">Type</span>
@@ -655,7 +642,7 @@
                         data-sub="liste">
                             <div id="list-personnage" class="secondary_card grid-list">
                             </div>
-                            <div id="empty-personnage" class="muted" style="display:none">Aucun résultat.</div>
+                            <div id="empty-personnage" class="muted secondary_card" style="display:none">Aucun résultat.</div>
                     </section>
 
                     <section class="panel" id="panel-feat" role="tabpanel" data-cat="feat" data-sub="liste">
@@ -677,7 +664,7 @@
     <!-- Données démo : remplace par ton JSON -->
     <script id="registre-data" type="application/json">[
     {"nom":"Rojas","prenom":"Altelo","age":49,"metier":"Docker & Membre du Syndic","feat":"Corvo - Dishonored","actif":"oui","type":"joué","urlProfil":"https://arsin-rpg.forumactif.com/u5","urlFiche":"https://arsin-rpg.forumactif.com/t20-altelo-go-into-the-wet","referent":"Ghorgos","groupe":"Humain","classe":"Prolétaire","magie":"","avatar":"https://i.imgur.com/C9970TT.png"},
-    {"nom":"Thompson","prenom":"William","age":45,"metier":"Politicien","feat":"Obi-Wan - Star Wars","actif":"oui","type":"joué","urlProfil":"https://arsin-rpg.forumactif.com/u4","urlFiche":"https://arsin-rpg.forumactif.com/t19-will-le-passe-est-un-sourire","referent":"Cassie","groupe":"Humain","classe":"Notable","magie":"—","avatar":"https://sig.grumpybumpers.com/host/WillArsin.gif"},
+    {"nom":"Thompson","prenom":"William","age":45,"metier":"Politicien","feat":"Obi-Wan - Star Wars","actif":"oui","type":"joué","urlProfil":"https://arsin-rpg.forumactif.com/u4","urlFiche":"https://arsin-rpg.forumactif.com/t19-will-le-passe-est-un-sourire","referent":"Cassie","groupe":"Humain","classe":"Notable","magie":"","avatar":"https://sig.grumpybumpers.com/host/WillArsin.gif"},
     
   ]</script>
 
@@ -972,21 +959,31 @@
 
   /* ===================== Rendu d'une vue ===================== */
   function renderView(view){
-    const targets = {
-      personnage: {list:'#list-personnage', empty:'#empty-personnage'},
-      feat:       {list:'#list-feat',       empty:'#empty-feat'},
-      metier:     {list:'#list-metier',     empty:'#empty-metier'}
-    }[view];
+  const targets = {
+    personnage: {list:'#list-personnage', empty:'#empty-personnage'},
+    feat:       {list:'#list-feat',       empty:'#empty-feat'},
+    metier:     {list:'#list-metier',     empty:'#empty-metier'}
+  }[view];
 
-    const c = readControls(view);
-    const arr = applyFilterSort(DATA, view, c);
+  const c   = readControls(view);
+  const arr = applyFilterSort(DATA, view, c);
 
-    const $list = $(targets.list).empty();
-    if(!arr.length){ $(targets.empty).show(); return; } else { $(targets.empty).hide(); }
+  const $list  = $(targets.list).empty();
+  const $empty = $(targets.empty);
 
-    const renderItem = VIEW_RENDERER[view] || cardPersonnage;
-    for(let i=0;i<arr.length;i++) $list.append( renderItem(arr[i]) );
+  if (!arr.length) {
+    $empty.show();
+    $list.hide();              // ← cache la section “résultats”
+    return;
   }
+
+  $empty.hide();
+  $list.show();                // ← ré-affiche la liste si on a des résultats
+
+  const renderItem = VIEW_RENDERER[view] || cardPersonnage;
+  for (let i = 0; i < arr.length; i++) $list.append(renderItem(arr[i]));
+}
+
 
   /* ===================== Navigation ===================== */
   function currentView(){ return $('#guidebook_nav [role="tab"][aria-selected="true"]').data('cat') || 'personnage'; }

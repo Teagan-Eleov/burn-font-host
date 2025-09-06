@@ -1,0 +1,1163 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Feuilles existantes -->
+  <link rel="stylesheet" href="https://teagan-eleov.github.io/burn-font-host/style.css" />
+  <link rel="stylesheet" href="https://teagan-eleov.github.io/burn-font-host/guidebook.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+
+    <!-- jQuery + tooltips comme dans le guidebook -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/malihu/jquery-style-my-tooltips/jquery.style-my-tooltips.js"></script>
+    <script>
+        (function ($) {
+            $(function () {
+                $("[title]").style_my_tooltips({
+                    tip_follows_cursor: true,
+                    tip_delay_time: 0,
+                    tip_fade_speed: 300
+                });
+            });
+        })(jQuery);
+    </script>
+
+    <title>Registre</title>
+
+    <!-- Complément CSS local (le gros vient de style.css) -->
+    <style>
+        /* ===== Mise en page commune ===== */
+        .toolbar {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin: 12px 0
+        }
+
+        .toolbar .field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: start;
+            width: 100%;
+        }
+
+        .toolbar input[type="search"] {
+            background: var(--surface-1);
+            border: 1px solid var(--stroke-tertiary);
+            color: var(--text-color);
+            padding: 8px 10px;
+            width: 100%;
+        }
+
+        .toolbar select {
+            background: var(--surface-2);
+            border: 1px solid var(--stroke-tertiary);
+            color: var(--text-color);
+            padding: 8px 10px !important;
+            width: 100%;
+        }
+
+        .grid-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px
+        }
+
+        @media(min-width:800px) {
+            .grid-list {
+                grid-template-columns: 1fr 1fr
+            }
+        }
+
+        
+
+        /* ===== Boutons de filtres (style "tabs") ===== */
+
+        .field .optionButton {
+            width: fit-content;
+        }
+
+
+
+        /* ===== Variantes d’affichage par tab ===== */
+        /* Feat : grille carte avec ruban */
+        #panel-feat .grid-list {
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px
+        }
+
+        
+
+        /* Layout des groupes */
+        .filterset {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap
+        }
+
+
+
+        /*********** feat card *********/
+        .featSection {
+            padding: 32px;
+            width: 100%;
+            gap: 64px;
+        }
+
+        .featRow {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            /* avatar | nom du feat | perso */
+            grid-template-areas: "feat_avatar featName featPerso";
+            align-items: center;
+            column-gap: 32px;
+        }
+
+        /* Placements */
+        .avatar_diamond {
+            grid-area: feat_avatar;
+        }
+
+        .feat_name {
+            grid-area: featName;
+        }
+
+        .feat_perso {
+            grid-area: featPerso;
+            text-align: right;
+            justify-self: end;
+        }
+
+        #list-feat {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 16px;
+        }
+
+        /* Responsive : empile sur petits écrans */
+        @media (max-width: 440px) {
+            .featRow {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "feat_avatar"
+                    "featName"
+                    "featPerso";
+                row-gap: 32px;
+            }
+
+            .feat_perso {
+                text-align: left;
+                justify-self: start;
+            }
+        }
+
+
+        /*********** metier card *********/
+        .metierSection {
+            padding: 32px;
+            width: 100%;
+            gap: 64px;
+        }
+
+        .metierRow {
+            display: grid;
+            grid-template-columns: auto 1fr 1fr auto;
+            /* avatar | nom du feat | perso */
+            grid-template-areas: "feat_avatar metierPerso metierMetier metierAuteur";
+            align-items: center;
+            column-gap: 32px;
+        }
+
+        .metier_metier {
+            grid-area: metierMetier;
+            text-align: left;
+            justify-self: start;
+        }
+
+        .metier_perso {
+            grid-area: metierPerso;
+
+        }
+
+        .metier_auteur {
+            grid-area: metierAuteur;
+            text-align: right;
+            justify-self: end;
+        }
+
+        #list-feat,
+        #list-metier {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 16px;
+        }
+
+        .chipSmall {
+            width: fit-content;
+            font-size: 10px;
+
+        }
+
+        .perso_span {
+            gap: 8px;
+        }
+
+        .panel {
+            padding: 0;
+        }
+
+        .personnageRow .fiche_avatar
+        {
+            width: 100px;
+            height: 200px;
+            grid-area: perso_avatar;
+        }
+
+        .personnageRow
+        {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-template-rows: auto auto;
+            /* avatar | nom du feat | perso */
+            grid-template-areas: 
+            "perso_avatar perso_identity"
+            "perso_avatar perso_chips";
+            column-gap: 32px;
+        }
+
+        .personnageRow .perso_name
+        {
+            grid-area: perso_name;
+        }
+        .perso_identity
+        {
+            grid-area: perso_identity;
+            justify-content: start;
+            align-items: start;
+        }
+        .personnageRow .perso_metier
+        {
+            grid-area: perso_metier;
+        }
+        .personnageRow .perso_chips
+        {
+            grid-area: perso_chips;
+            justify-content: start;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+        .personnageRow .perso_chips .chip
+        {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+
+        /* Responsive : empile sur petits écrans */
+        @media (max-width: 440px) {
+            .featRow {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "feat_avatar"
+                    "featName"
+                    "featPerso";
+                row-gap: 32px;
+            }
+
+            .feat_perso {
+                text-align: left;
+                justify-self: start;
+            }
+        }
+    </style>
+</head>
+
+<body id="modernbb" class="">
+    <div id="background_blured"></div>
+
+    <!-- HERO -->
+    <div class="text_600 forum_content">
+        <div id="hero">
+            <div class="fog-layer"></div>
+            <a id="hero_image" href="https://arsin-rpg.forumactif.com/"></a>
+            <div id="hero_content" class="flexColumn">
+                <div id="forumName">Registre</div>
+                <div id="hero_context_section" class="flexColumn">
+                    <div class="blur_card" id="hero_contexte"><br />
+                        Bienvenue sur le registre de Arsin.<br />
+                        Retrouvez ici les personnages, leurs feats et leurs métiers. Les trois onglets partagent la même
+                        source de données ; seule la mise en avant change.
+                    </div>
+                </div>
+            </div>
+            <div id="theme_selector" class="flexColumn">
+                <input type="radio" id="input_blue" name="theme" value="blue" checked />
+                <label for="input_blue" id="theme_button_blue" class="theme-button"></label>
+                <input type="radio" id="input_green" name="theme" value="green" />
+                <label for="input_green" id="theme_button_green" class="theme-button"></label>
+                <input type="radio" id="input_gold" name="theme" value="gold" />
+                <label for="input_gold" id="theme_button_gold" class="theme-button"></label>
+                <input type="radio" id="input_licorne" name="theme" value="licorne" />
+                <label for="input_licorne" id="theme_button_licorne" class="theme-button"></label>
+                <input type="radio" id="input_red" name="theme" value="red" />
+                <label for="input_red" id="theme_button_red" class="theme-button"></label>
+            </div>
+        </div>
+    </div>
+    <!-- visuel personnage row -->
+    <div style="width: 75%; display: flex; justify-content: center;">
+        <div class="message scoopcorners colorborder offsetEffect metierSection">
+            <div class="borders_top">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="borders_bottom">
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="personnageRow">
+                <div class="fiche_avatar">
+                    <div
+                        style="background-image: url(https://i.pinimg.com/736x/c3/a0/59/c3a0590bddd85f2ab27efd934d90aebc.jpg);">
+                    </div>
+                </div>
+                <div class="perso_identity flexColumn">
+                    <a class="perso_name" href=""><h3>La Souris</h3></a>
+                    <div class="perso_metier text_600">Soldate</div>
+                </div>
+                
+                <chipsrp class="perso_chips"><div class="chip chipDate flexRow"><div class="chip_icon"></div><span>Date</span></div><div class="chip chipLieu flexRow"><div class="chip_icon"></div><span>Lieu</span></div><div class="chip chipPartenaireRP flexRow"><div class="chip_icon"></div><span>Partenaires</span></div></chipsrp>
+            </div>
+
+
+
+        </div>
+        <div class="message scoopcorners colorborder offsetEffect metierSection">
+            <div class="borders_top">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="borders_bottom">
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="personnageRow">
+                <div class="fiche_avatar">
+                    <div
+                        style="background-image: url(https://i.pinimg.com/736x/c3/a0/59/c3a0590bddd85f2ab27efd934d90aebc.jpg);">
+                    </div>
+                </div>
+                <div class="perso_identity flexColumn">
+                    <a class="perso_name" href=""><h3>La Souris</h3></a>
+                    <div class="perso_metier text_600">Soldate</div>
+                </div>
+                
+                <chipsrp class="perso_chips"><div class="chip chipDate flexRow"><div class="chip_icon"></div><span>Date</span></div><div class="chip chipLieu flexRow"><div class="chip_icon"></div><span>Lieu</span></div><div class="chip chipPartenaireRP flexRow"><div class="chip_icon"></div><span>Partenaires</span></div></chipsrp>
+            </div>
+
+
+
+        </div>
+        
+    </div>
+
+    <!-- visuel feat row -->
+    <div style="width: 75%; display: flex; justify-content: center;">
+        <div class="message scoopcorners colorborder offsetEffect featSection">
+            <div class="borders_top">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="borders_bottom">
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="featRow">
+                <div class="avatar_diamond">
+                    <div class="avatar_diamond_border">
+                        <img src="https://i.imgur.com/wCy25MW.png" />
+                    </div>
+                </div>
+                <div class="feat_info feat_name">
+                    <div>Feat</div>
+                    <h4><a href="">Eilin - Stray Soul</a></h4>
+                </div>
+                <div class="feat_info feat_perso">
+                    <div>Personnage</div>
+                    <h4><a href="">La Souris</a></h4>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!-- visuel metier row -->
+    <div style="width: 75%; display: flex; justify-content: center;">
+        <div class="message scoopcorners colorborder offsetEffect metierSection">
+            <div class="borders_top">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="borders_bottom">
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="metierRow">
+                <div class="avatar_diamond">
+                    <div class="avatar_diamond_border">
+                        <img src="https://i.imgur.com/wCy25MW.png" />
+                    </div>
+                </div>
+                <div class="feat_info metier_perso">
+                    <div>Personnage</div>
+                    <div class="flexRow perso_span">
+                        <h4><a href="">La Souris</a></h4>
+                        <div class="chip chipSmall">PNJ</div>
+                    </div>
+
+                </div>
+                <div class="feat_info metier_metier">
+                    <div>Métier</div>
+                    <h4>Soldat</h4>
+                </div>
+                <div class="feat_info metier_auteur">
+                    <div>Auteur</div>
+                    <h4><a href="">La Souris</a></h4>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    <!-- LAYOUT GUIDEBOOK -->
+    <div id="guidebook" class="text_600">
+        <div class="layout">
+            <!-- Onglets 1er niveau -->
+            <div id="guidebook_nav" class="tabs primary" role="tablist" aria-label="Catégories">
+                <a id="button_back" class="tab-btn optionButton label100" href="https://arsin-rpg.forumactif.com/">
+                    <div class="optionButtonContent">Retour au forum</div>
+                </a>
+                <button id="button_personnage" role="tab" data-cat="personnage" aria-controls="sec-personnage"
+                    aria-selected="true" class="tab-btn optionButton label100">
+                    <div class="optionButtonContent">Personnage</div>
+                </button>
+                <button id="button_feat" role="tab" data-cat="feat" aria-controls="sec-feat" aria-selected="false"
+                    class="tab-btn optionButton label100">
+                    <div class="optionButtonContent">Feat</div>
+                </button>
+                <button id="button_metier" role="tab" data-cat="metier" aria-controls="sec-metier" aria-selected="false"
+                    class="tab-btn optionButton label100">
+                    <div class="optionButtonContent">Métier</div>
+                </button>
+            </div>
+
+            <div id="guidebook_content">
+                <!-- Barre secondaire = filtres par tab -->
+                <div id="secondary" class="secondary_card">
+                    <!-- PERSONNAGE -->
+                    <div class="secondary-wrap active" id="sec-personnage" role="tablist"
+                        aria-label="Sous-onglets personnage">
+                        <div class="toolbar" data-for="personnage">
+                            <div class="field">
+                                <input id="q-personnage" type="search" placeholder="Rechercher ...">
+                            </div>
+                            <div class="field">
+                                <label class="label100" for="s-personnage">Tri</label>
+                                <select id="s-personnage">
+                                    <option value="az" selected>Nom A→Z</option>
+                                    <option value="za">Nom Z→A</option>
+                                </select>
+                            </div>
+                            <div class="field"><span class="label100">Groupe</span>
+                                <div class="filterset" id="g-personnage" role="group" aria-label="Filtre groupe">
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn" data-value=""
+                                        aria-selected="true">
+                                        <div class="optionButtonContent">Tous</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="humain">
+                                        <div class="optionButtonContent">Humains</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="chasseur">
+                                        <div class="optionButtonContent">Chasseurs</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="sorcière">
+                                        <div class="optionButtonContent">Sorcières</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="cristallisé">
+                                        <div class="optionButtonContent">Cristallisés</div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="field"><span class="label100">Classe</span>
+                                <div class="filterset" id="c-personnage" role="group" aria-label="Filtre classe">
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn" data-value=""
+                                        aria-selected="true">
+                                        <div class="optionButtonContent">Toutes</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="poissonnoir">
+                                        <div class="optionButtonContent">Poissons Noirs</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="prolétaire">
+                                        <div class="optionButtonContent">Prolétaires</div>
+                                    </button>
+
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="respectable">
+                                        <div class="optionButtonContent">Respectables</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="notable">
+                                        <div class="optionButtonContent">Notables</div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="field"><span class="label100">Magie</span>
+                                <div class="filterset" id="m-personnage" role="group" aria-label="Filtre magie">
+                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="" aria-selected="true"><div class="optionButtonContent">Toutes</div></button>
+                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="animation"><div class="optionButtonContent">Animation</div></button>
+                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="construction"><div class="optionButtonContent">Construction</div></button>
+                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="communication"><div class="optionButtonContent">Communication</div></button>
+                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="alteration"><div class="optionButtonContent">Altération</div></button>
+                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="manipulation"><div class="optionButtonContent">Manipulation</div></button>
+                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="invocation"><div class="optionButtonContent">Invocation</div></button>
+
+                                </div>
+                              </div>
+
+                            <div class="field"><span class="label100">Actif</span>
+                                <div class="filterset" id="a-personnage" role="group" aria-label="Filtre actif">
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn" data-value=""
+                                        aria-selected="true">
+                                        <div class="optionButtonContent">Tous</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="oui">
+                                        <div class="optionButtonContent">Actifs</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="non">
+                                        <div class="optionButtonContent">Inactifs</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="pnj">
+                                        <div class="optionButtonContent">PNJ</div>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- FEAT -->
+                    <div class="secondary-wrap" id="sec-feat" role="tablist" aria-label="Sous-onglets feat">
+                        <div class="toolbar" data-for="feat">
+                            <div class="field">
+                                <input id="q-feat" type="search" placeholder="Rechercher ...">
+                            </div>
+                            <div class="field">
+                                <label class="label100" for="s-feat">Tri</label>
+                                <select id="s-feat">
+                                    <option value="az" selected>Feat A→Z</option>
+                                    <option value="za">Feat Z→A</option>
+                                </select>
+                            </div>
+                            <!--<div class="field"><span class="label100">Groupe</span>
+                                <div class="filterset" id="g-feat" role="group" aria-label="Filtre groupe">
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn" data-value=""
+                                        aria-selected="true">
+                                        <div class="optionButtonContent">Tous</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="humain">
+                                        <div class="optionButtonContent">Humains</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="chasseur">
+                                        <div class="optionButtonContent">Chasseurs</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="sorcière">
+                                        <div class="optionButtonContent">Sorcières</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="cristallisé">
+                                        <div class="optionButtonContent">Cristallisés</div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="field"><span class="label100">Classe</span>
+                                <div class="filterset" id="c-feat" role="group" aria-label="Filtre classe">
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn" data-value=""
+                                        aria-selected="true">
+                                        <div class="optionButtonContent">Toutes</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="poissonnoir">
+                                        <div class="optionButtonContent">Poissons Noirs</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="prolétaire">
+                                        <div class="optionButtonContent">Prolétaires</div>
+                                    </button>
+
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="respectable">
+                                        <div class="optionButtonContent">Respectables</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="notable">
+                                        <div class="optionButtonContent">Notables</div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="field"><span class="label100">Magie</span>
+                                <div class="filterset" id="m-feat" role="group" aria-label="Filtre magie">
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn" data-value=""
+                                        aria-selected="true">
+                                        <div class="optionButtonContent">Toutes</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="oui">
+                                        <div class="optionButtonContent">avec magie</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="non">
+                                        <div class="optionButtonContent">sans magie</div>
+                                    </button>
+                                </div>
+                            </div>-->
+
+                            <div class="field"><span class="label100">Type</span>
+                                <div class="filterset" id="a-feat" role="group" aria-label="Filtre actif">
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn" data-value=""
+                                        aria-selected="true">
+                                        <div class="optionButtonContent">Tous</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="oui">
+                                        <div class="optionButtonContent">Actifs</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="non">
+                                        <div class="optionButtonContent">Inactifs</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="pnj">
+                                        <div class="optionButtonContent">PNJ</div>
+                                    </button>
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- METIER -->
+                    <div class="secondary-wrap" id="sec-metier" role="tablist" aria-label="Sous-onglets métier">
+                        <div class="toolbar" data-for="metier">
+                            <div class="field">
+                                <label class="label100" for="q-metier">Recherche</label>
+                                <input id="q-metier" type="search" placeholder="Rechercher">
+                            </div>
+                            <div class="field">
+                                <label class="label100" for="s-metier">Tri</label>
+                                <select id="s-metier">
+                                    <option value="az" selected>Métier A→Z</option>
+                                    <option value="za">Métier Z→A</option>
+                                </select>
+                            </div>
+                            <div class="field"><span class="label100">Groupe</span>
+                                <div class="filterset" id="g-metier" role="group" aria-label="Filtre groupe">
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn" data-value=""
+                                        aria-selected="true">
+                                        <div class="optionButtonContent">Tous</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="humain">
+                                        <div class="optionButtonContent">Humains</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="chasseur">
+                                        <div class="optionButtonContent">Chasseurs</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="sorcière">
+                                        <div class="optionButtonContent">Sorcières</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="cristallisé">
+                                        <div class="optionButtonContent">Cristallisés</div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="field"><span class="label100">Classe Sociale</span>
+                                <div class="filterset" id="c-metier" role="group" aria-label="Filtre classe">
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn" data-value=""
+                                        aria-selected="true">
+                                        <div class="optionButtonContent">Toutes</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="poissonnoir">
+                                        <div class="optionButtonContent">Poissons Noirs</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="prolétaire">
+                                        <div class="optionButtonContent">Prolétaires</div>
+                                    </button>
+
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="respectable">
+                                        <div class="optionButtonContent">Respectables</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="notable">
+                                        <div class="optionButtonContent">Notables</div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="filterset" id="m-metier" role="group" aria-label="Filtre magie">
+                                <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="" aria-selected="true"><div class="optionButtonContent">Toutes</div></button>
+                                <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="animation"><div class="optionButtonContent">Animation</div></button>
+                                <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="construction"><div class="optionButtonContent">Construction</div></button>
+                                <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="communication"><div class="optionButtonContent">Communication</div></button>
+                                <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="alteration"><div class="optionButtonContent">Altération</div></button>
+                                <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="manipulation"><div class="optionButtonContent">Manipulation</div></button>
+                                <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="invocation"><div class="optionButtonContent">Invocation</div></button>
+
+                              </div>
+
+                            <div class="field"><span class="label100">Type</span>
+                                <div class="filterset" id="a-metier" role="group" aria-label="Filtre actif">
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn" data-value=""
+                                        aria-selected="true">
+                                        <div class="optionButtonContent">Tous</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="oui">
+                                        <div class="optionButtonContent">Actifs</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="non">
+                                        <div class="optionButtonContent">Inactifs</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="pnj">
+                                        <div class="optionButtonContent">PNJ</div>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANELS -->
+                <div id="panels" class="panels" aria-live="polite">
+                    <section class="panel active" id="panel-personnage" role="tabpanel" data-cat="personnage"
+                        data-sub="liste">
+                            <div id="list-personnage" class="secondary_card grid-list">
+                            </div>
+                            <div id="empty-personnage" class="muted" style="display:none">Aucun résultat.</div>
+                    </section>
+
+                    <section class="panel" id="panel-feat" role="tabpanel" data-cat="feat" data-sub="liste">
+                        <div class="secondary_card" id="list-feat">
+                        </div>
+                        <div id="empty-feat" class="muted secondary_card" style="display:none">Aucun résultat.</div>
+
+                    </section>
+
+                    <section class="panel" id="panel-metier" role="tabpanel" data-cat="metier" data-sub="liste">
+                        <div id="list-metier" class="secondary_card"></div>
+                        <div id="empty-metier" class="muted secondary_card" style="display:none">Aucun résultat.</div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Données démo : remplace par ton JSON -->
+    <script id="registre-data" type="application/json">[
+    {"nom":"Rojas","prenom":"Altelo","age":49,"metier":"Docker & Membre du Syndic","feat":"Corvo - Dishonored","actif":"oui","type":"joué","urlProfil":"https://arsin-rpg.forumactif.com/u5","urlFiche":"https://arsin-rpg.forumactif.com/t20-altelo-go-into-the-wet","referent":"Ghorgos","groupe":"Humain","classe":"Prolétaire","magie":"","avatar":"https://i.imgur.com/C9970TT.png"},
+    {"nom":"Thompson","prenom":"William","age":45,"metier":"Politicien","feat":"Obi-Wan - Star Wars","actif":"oui","type":"joué","urlProfil":"https://arsin-rpg.forumactif.com/u4","urlFiche":"https://arsin-rpg.forumactif.com/t19-will-le-passe-est-un-sourire","referent":"Cassie","groupe":"Humain","classe":"Notable","magie":"—","avatar":"https://sig.grumpybumpers.com/host/WillArsin.gif"},
+    
+  ]</script>
+
+    <!-- Script : moteur registre -->
+    <script>
+(function ($) {
+  "use strict";
+
+  /* ===================== Données ===================== */
+  // Lecture robuste: décode les entités HTML que le forum peut injecter
+  function getJSONFromScript(id){
+    const el = document.getElementById(id);
+    if(!el) return [];
+    let raw = (el.textContent || el.innerText || '').trim();
+    if(!raw) return [];
+    // Décoder les entités (&quot; &#91; &#93; &amp; …)
+    if (raw.includes('&')) {
+      const ta = document.createElement('textarea');
+      ta.innerHTML = raw;
+      raw = ta.value;
+    }
+    try { return JSON.parse(raw); }
+    catch(e){
+      // Normalisation de secours (guillemets typographiques, virgules finales)
+      raw = raw
+        .replace(/[\u2018\u2019]/g, "'")
+        .replace(/[\u201C\u201D]/g, '"')
+        .replace(/,\s*([}\]])/g, '$1');
+      return JSON.parse(raw);
+    }
+  }
+  let RAW  = getJSONFromScript('registre-data');
+  let DATA = [];
+
+  /* ===================== Utils ===================== */
+  const norm  = (s) => (s ?? '').toString().normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().trim();
+  const canon = (s) => norm(s).replace(/[\s\-_]+/g, ''); // retire aussi espaces/tirets/underscores
+  const cmpText = (k, dir = +1) => (a, b) => norm(a[k]).localeCompare(norm(b[k])) * dir;
+
+  // Tri par onglet
+  function sortKeyFor(view){ return view==='feat' ? 'feat' : (view==='metier' ? 'metier' : 'nom'); }
+  function getSorter(view, mode){
+    const key = sortKeyFor(view);
+    const dir = (mode==='za') ? -1 : +1;
+    if(view==='personnage'){
+      return (a,b)=> (cmpText('nom',dir)(a,b) || cmpText('prenom',dir)(a,b));
+    }
+    return cmpText(key, dir);
+  }
+
+  /* ===================== Boutons de filtres (multi) ===================== */
+  function ensureAnyState($set){
+    const $any = $set.find('.filter-btn[data-value=""]');
+    const $pressedSpecific = $set.find('.filter-btn[aria-selected="true"]').not($any);
+    if($pressedSpecific.length){ $any.attr('aria-selected','false'); }
+    else { $any.attr('aria-selected','true'); $set.find('.filter-btn').not($any).attr('aria-selected','false'); }
+  }
+  function bindFiltersets(container){
+    $(container).on('click keydown', '.filterset .filter-btn', function(e){
+      if(e.type==='keydown' && !['Enter',' '].includes(e.key)) return;
+      const $btn = $(this);
+      const $set = $btn.closest('.filterset');
+      const isAny = ($btn.data('value') + '') === '';
+      if(isAny){
+        $set.find('.filter-btn').attr('aria-selected','false');
+        $btn.attr('aria-selected','true');
+      } else {
+        const pressed = $btn.attr('aria-selected')==='true';
+        $btn.attr('aria-selected', pressed ? 'false' : 'true');
+        ensureAnyState($set);
+      }
+      renderView(currentView());
+    });
+  }
+  function getFilterValues($set){
+    return $set.find('.filter-btn[aria-selected="true"]').map(function(){
+      const v = ($(this).data('value') ?? '').toString();
+      return v === '' ? null : v;
+    }).get().filter(Boolean);
+  }
+
+  /* ===================== Mapping & normalisation Magie ===================== */
+  // On ne garde que CES 6 types :
+  const MAGIC_KEYS = ['animation','construction','communication','alteration','invocation','manipulation'];
+
+  // Transforme une valeur "magie" (string | array | vide) en tableau propre de libellés originaux
+  function magicToList(raw){
+    if (raw == null) return [];
+    if (Array.isArray(raw)) {
+      return raw.map(x => (x ?? '').toString().trim())
+                .filter(x => x && x !== '-' && x !== '—');
+    }
+    const s = (raw || '').toString().trim();
+    if (!s || s === '-' || s === '—') return [];
+    return s.split(/[,/|;•·+]+/).map(t => t.trim()).filter(Boolean);
+  }
+  // Détection de la clé de type à partir d'un libellé (ex: "Altération minérale" → "alteration")
+  function magicKey(label){
+    const m = canon(label);
+    return MAGIC_KEYS.find(k => m.includes(k)) || ''; // '' si non reconnu
+  }
+  // Classe CSS associée à la magie
+  const MAGIC_CLASS_MAP = {
+    animation:    'chipAnimation',
+    construction: 'chipConstruction',
+    communication:'chipCommunication',
+    alteration:   'chipAlteration',
+    invocation:   'chipInvocation',
+    manipulation: 'chipManipulation'
+  };
+  function classForMagic(label){
+    const key = magicKey(label);
+    return key ? (MAGIC_CLASS_MAP[key] || 'chipMagie') : 'chipMagie';
+  }
+
+  /* ===================== Humanisation Classe sociale ===================== */
+  function humanizeClasse(s){
+    const key = canon(s);
+    const map = {
+      poissonnoir: 'Poisson Noir',
+      proletaire:  'Prolétaire',
+      respectable: 'Respectable',
+      notable:     'Notable'
+    };
+    return map[key] || (s || '—');
+  }
+  function classeChipClass(s){
+    const key = canon(s);
+    if (key==='notable')      return 'chipNoble';
+    if (key==='respectable')  return 'chipCommercant';
+    if (key==='proletaire')   return 'chipProletaire';
+    if (key==='poissonnoir')  return 'chipPoisson';
+    return 'chipPoisson';
+  }
+
+  /* ===================== Normalisation du dataset ===================== */
+  function normalizeData(arr){
+    return (arr||[]).map(p=>{
+      const list = magicToList(p.magie);
+      const _magicKeys = list.map(magicKey).filter(Boolean);
+      const actifRaw = norm(p.actif);
+      const _actif = (actifRaw==='oui' || actifRaw==='non') ? actifRaw : '';
+      const _type  = norm(p.type);
+      return {...p, _magie:list, _magicKeys, _actif, _type};
+    });
+  }
+
+  /* ===================== Renderers ===================== */
+  function linkOrSpan(href, text){ return href && href !== '#' ? `<a href="${href}" target="_blank" rel="noopener">${text}</a>` : `<span>${text}</span>`; }
+  function chip(cls, text){ return '<div class="chip '+(cls||'')+'"><div class="chip_icon"></div>'+ (text||'—') +'</div>'; }
+
+  function cardPersonnage(p){
+    const magicChips = (p._magie || []).map(lbl => chip(classForMagic(lbl), lbl));
+    const chips = [
+      chip(p.groupe === 'Sorcière' ? 'chipSorciere' : (p.groupe === 'Humain' ? 'chipHumain' : (p.groupe === 'Cristallisé' ? 'chipCristal' : '')), p.groupe || '—'),
+      chip('chipAge', (p.age != null ? p.age + ' ans' : '—')),
+      chip(classeChipClass(p.classe), humanizeClasse(p.classe)),
+      chip('chipFeat', (p.feat != null ? p.feat :'—')),
+      magicChips.join(' ')
+    ].filter(Boolean).join(' ');
+
+    return `
+      <div class="message scoopcorners colorborder offsetEffect metierSection">
+        <div class="borders_top"><div></div><div></div></div>
+        <div class="borders_bottom"><div></div><div></div></div>
+
+        <div class="personnageRow">
+          <div class="fiche_avatar">
+            <div style="background-image: url('${p.avatar || 'https://i.imgur.com/wCy25MW.png'}');"></div>
+          </div>
+          <div class="perso_identity flexColumn">
+            <a class="perso_name" href="${p.urlProfil || ''}"><h4>${p.prenom || ''} ${p.nom || ''}</h4></a>
+            <div class="perso_metier text_600">${p.metier || '—'}</div>
+          </div>
+          <chipsrp class="perso_chips">${chips}</chipsrp>
+        </div>
+      </div>`;
+  }
+
+  function cardFeat(p){
+    return `
+      <div class="message scoopcorners colorborder offsetEffect featSection">
+        <div class="borders_top"><div></div><div></div></div>
+        <div class="borders_bottom"><div></div><div></div></div>
+        <div class="featRow">
+          <div class="avatar_diamond" data-feat="${(p.feat || '').toLowerCase()}">
+            <div class="avatar_diamond_border"><img src="${p.avatar || 'https://i.imgur.com/wCy25MW.png'}" /></div>
+          </div>
+          <div class="feat_info feat_name">
+            <div>Feat</div>
+            <h4>${p.feat || '—'}</h4>
+          </div>
+          <div class="feat_info feat_perso">
+            <div>Personnage</div>
+            <div class="flexRow perso_span">
+              ${p._type === 'pnj' ? '<div class="chip chipSmall">PNJ</div>' : ''}
+              <h4><a href="${p.urlProfil || ''}">${p.prenom || ''} ${p.nom || ''}</a></h4>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  function cardMetier(p){
+    return `
+      <div class="message scoopcorners colorborder offsetEffect metierSection">
+        <div class="borders_top"><div></div><div></div></div>
+        <div class="borders_bottom"><div></div><div></div></div>
+        <div class="metierRow">
+          <div class="avatar_diamond">
+            <div class="avatar_diamond_border"><img src="${p.avatar || 'https://i.imgur.com/wCy25MW.png'}" /></div>
+          </div>
+          <div class="feat_info metier_perso">
+            <div>Personnage</div>
+            <div class="flexRow perso_span">
+              <h4><a href="${p.urlProfil || '#'}">${p.prenom || ''} ${p.nom || ''}</a></h4>
+              ${p._type === 'pnj' ? '<div class="chip chipSmall">PNJ</div>' : ''}
+            </div>
+          </div>
+          <div class="feat_info metier_metier">
+            <div>Métier</div>
+            <h4>${p.metier || '—'}</h4>
+          </div>
+          <div class="feat_info metier_auteur">
+            <div>Auteur</div>
+            <h4><a href="${p.urlProfil || '#'}">${p.referent || '—'}</a></h4>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  const VIEW_RENDERER = { personnage: cardPersonnage, feat: cardFeat, metier: cardMetier };
+
+  /* ===================== Contrôles (multi + recherche + tri) ===================== */
+  function readControls(view){
+    const ids = {
+      personnage: { q: '#q-personnage', s: '#s-personnage', g: '#g-personnage', c: '#c-personnage', m: '#m-personnage', a: '#a-personnage' },
+      feat:       { q: '#q-feat',       s: '#s-feat',       g: '#g-feat',       c: '#c-feat',       m: '#m-feat',       a: '#a-feat' },
+      metier:     { q: '#q-metier',     s: '#s-metier',     g: '#g-metier',     c: '#c-metier',     m: '#m-metier',     a: '#a-metier' }
+    }[view];
+
+    ['g','c','m','a'].forEach(k=> ensureAnyState($(ids[k])));
+
+    return {
+      q: $(ids.q).val() || '',
+      s: $(ids.s).val() || 'az',
+      groupes: getFilterValues($(ids.g)),     // values = data-value des boutons
+      classes: getFilterValues($(ids.c)),
+      magies:  getFilterValues($(ids.m)),     // ex: ["alteration","invocation"]
+      actifs:  getFilterValues($(ids.a))      // "oui"/"non"
+    };
+  }
+
+  /* ===================== Filtrage + tri ===================== */
+  function applyFilterSort(data, view, c){
+    const q = norm(c.q);
+    const groupes = c.groupes.map(norm);
+    const classes = c.classes.map(canon);
+    const magies  = c.magies.map(canon); // déjà des clés
+    const actifs  = c.actifs.map(norm);
+
+    let out = data.filter(p=>{
+      if(groupes.length && !groupes.includes(norm(p.groupe))) return false;
+
+      // classe: on compare sur canon pour couvrir "Poisson Noir" vs "poissonnoir"
+      if(classes.length && !classes.includes(canon(p.classe))) return false;
+
+      // magie: OR sur les types sélectionnés
+      if(magies.length){
+        const keys = p._magicKeys || [];
+        const match = keys.some(k => magies.includes(k));
+        if(!match) return false;
+      }
+
+      if(actifs.length){
+        if(p._actif){ if(!actifs.includes(p._actif)) return false; }
+        else { // valeurs exotiques -> exclues si l'utilisateur choisit "oui" ou "non"
+          if(actifs.includes('oui') || actifs.includes('non')) return false;
+        }
+      }
+
+      if(!q) return true;
+      const hay = [
+        p.nom, p.prenom, p.metier, p.feat, p.referent, p.groupe, p.classe,
+        (p._magie || []).join(' '), p.type
+      ].map(norm).join(' ');
+      return hay.includes(q);
+    });
+
+    return out.sort( getSorter(view, c.s) );
+  }
+
+  /* ===================== Rendu d'une vue ===================== */
+  function renderView(view){
+    const targets = {
+      personnage: {list:'#list-personnage', empty:'#empty-personnage'},
+      feat:       {list:'#list-feat',       empty:'#empty-feat'},
+      metier:     {list:'#list-metier',     empty:'#empty-metier'}
+    }[view];
+
+    const c = readControls(view);
+    const arr = applyFilterSort(DATA, view, c);
+
+    const $list = $(targets.list).empty();
+    if(!arr.length){ $(targets.empty).show(); return; } else { $(targets.empty).hide(); }
+
+    const renderItem = VIEW_RENDERER[view] || cardPersonnage;
+    for(let i=0;i<arr.length;i++) $list.append( renderItem(arr[i]) );
+  }
+
+  /* ===================== Navigation ===================== */
+  function currentView(){ return $('#guidebook_nav [role="tab"][aria-selected="true"]').data('cat') || 'personnage'; }
+  function selectCategory(cat){
+    $('#guidebook_nav [role="tab"]').attr('aria-selected','false');
+    $('#guidebook_nav [role="tab"][data-cat="'+cat+'"]').attr('aria-selected','true');
+
+    $('#secondary .secondary-wrap').removeClass('active');
+    $('#sec-'+cat).addClass('active');
+
+    $('.panel').removeClass('active');
+    $('#panel-'+cat).addClass('active');
+
+    renderView(cat);
+  }
+
+  /* ===================== Bindings & Boot ===================== */
+  $('#guidebook_nav').on('click','[role="tab"][data-cat]', function(){ selectCategory($(this).data('cat')); });
+  bindFiltersets('#secondary');
+  $('#secondary').on('input change','input[type="search"], select', function(){ renderView(currentView()); });
+
+  $(function(){
+    DATA = normalizeData(RAW);                           // normalise tout (magie/classes/actif/type)
+    $('#secondary .filterset').each(function(){ ensureAnyState($(this)); });
+    selectCategory('personnage');                        // vue par défaut
+  });
+
+  /* ===================== API ===================== */
+  window.Registre = {
+    replace(arr){ if(Array.isArray(arr)){ DATA = normalizeData(arr); renderView(currentView()); } },
+    export(){ return JSON.parse(JSON.stringify(DATA)); }
+  };
+})(jQuery);
+</script>
+
+        
+
+
+
+</body>
+
+</html>

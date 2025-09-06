@@ -192,12 +192,18 @@
             justify-self: end;
         }
 
+        .secondary_card
+        {padding: 24px;
+            gap: 24px;
+
+        }
+
         #list-feat,
-        #list-metier {
+        #list-metier, #list-perso {
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            padding: 16px;
+            padding: 24px;
+            gap: 24px;
         }
 
         .chipSmall {
@@ -225,8 +231,8 @@
         {
             display: grid;
             grid-template-columns: auto 1fr;
-            grid-template-rows: auto auto;
-            /* avatar | nom du feat | perso */
+            grid-template-rows: auto 1fr;
+            gap: 16px;
             grid-template-areas: 
             "perso_avatar perso_identity"
             "perso_avatar perso_chips";
@@ -253,6 +259,7 @@
             justify-content: start;
             flex-wrap: wrap;
             gap: 4px;
+            height: fit-content;
         }
         .personnageRow .perso_chips .chip
         {
@@ -836,8 +843,8 @@
             <div style="background-image: url('${p.avatar || 'https://i.imgur.com/wCy25MW.png'}');"></div>
           </div>
           <div class="perso_identity flexColumn">
-            <a class="perso_name" href="${p.urlProfil || ''}"><h4>${p.prenom || ''} ${p.nom || ''}</h4></a>
-            <div class="perso_metier text_600">${p.metier || '—'}</div>
+            <a class="perso_name" href="${p.urlProfil || ''}"><h3>${p.prenom || ''} ${p.nom || ''}</h3></a>
+            <h4 class="perso_metier">${p.metier || '—'}</h4>
           </div>
           <chipsrp class="perso_chips">${chips}</chipsrp>
         </div>

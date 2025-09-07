@@ -721,7 +721,7 @@ a:hover {
   border: 1px solid var(--stroke-quinary);  padding: 8px;
   display: block;
   text-align: center;
-  color: var(--text-onTint);
+  color: var(--text-onTint) !important;
   transition: transform 0.2s ease-out;
   font-family: brugenfield;
   border-radius: var(--radius-xs);

@@ -3708,7 +3708,11 @@ blockquote cite {
   display: block;
   color: var(--text-secondary);
 }*/
-
+rp
+{
+  display: flex;
+  gap: 16px;
+}
 
 /* Censure texte*/
 tw {

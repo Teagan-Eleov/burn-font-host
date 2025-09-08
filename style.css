@@ -2844,7 +2844,15 @@ select {
     "roliste_triggers roliste_buttons"
     "roliste_quick_data roliste_buttons";
   gap: 16px;
+  margin-top: 16px;
 }
+
+#profil_container #fiche_slide_info {
+    margin-top: 16px;
+
+}
+
+
 
 #roliste_avatar {
   grid-area: roliste_avatar;

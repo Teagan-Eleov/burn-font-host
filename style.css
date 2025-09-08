@@ -1663,7 +1663,7 @@ input:checked+.theme-button {
 }
 
 #pa_list_of_news {
-  height: 300px;
+  height: 100%;
   overflow: auto;
   gap: 8px;
   flex: 1;

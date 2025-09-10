@@ -1533,7 +1533,7 @@ input:checked+.theme-button {
 
   grid-template-columns: 1fr 1fr 1fr 0.75fr;
   /*grid-template-rows: 0.80fr auto auto auto auto;*/
-  grid-template-rows: 0.30fr auto 0.5fr auto auto;
+  grid-template-rows: 0.3fr auto 0.3fr auto auto;
   gap: 16px;
   padding-top: 120px;
   padding-bottom: 120px;

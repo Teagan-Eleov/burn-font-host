@@ -196,7 +196,7 @@
 
 /* test variable JS changement de theme*/
 
-.theme-blue {
+.theme-blue, .theme-cristallise {
   --text-tint: var(--blue-200);
   --surface-tint: var(--cristal-theme);
   --stroke-tint: var(--cristal-theme);
@@ -220,7 +220,7 @@
   --pa-image: url("https://imgur.com/v3gR1iz.jpg");
 }
 
-.theme-green {
+.theme-green, .theme-inconnu {
   --text-tint: var(--green-400);
   --surface-tint: var(--dead-theme);
   --stroke-tint: var(--dead-theme);
@@ -233,7 +233,7 @@
 
 }
 
-.theme-gold {
+.theme-gold, .theme-humain {
   --text-tint: var(--gold-200);
   --surface-tint: var(--human-theme);
   --stroke-tint: var(--human-theme);
@@ -246,7 +246,7 @@
 
 }
 
-.theme-licorne {
+.theme-licorne, .theme-witch {
   --text-tint: var(--magenta-200);
   --surface-tint: var(--witch-theme);
   --stroke-tint: var(--witch-theme);

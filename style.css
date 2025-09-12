@@ -125,7 +125,9 @@
   --svg-ennemi: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-skull"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M12 4c4.418 0 8 3.358 8 7.5c0 1.901 -.755 3.637 -2 4.96l0 2.54a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1v-2.54c-1.245 -1.322 -2 -3.058 -2 -4.96c0 -4.142 3.582 -7.5 8 -7.5z" /%3E%3Cpath d="M10 17v3" /%3E%3Cpath d="M14 17v3" /%3E%3Cpath d="M9 11m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /%3E%3Cpath d="M15 11m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /%3E%3C/svg%3E');
 
   --svg-arrow: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M5 12l14 0" /%3E%3Cpath d="M13 18l6 -6" /%3E%3Cpath d="M13 6l6 6" /%3E%3C/svg%3E');
+  --svg-check: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-check"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M5 12l5 5l10 -10" /%3E%3C/svg%3E');
 
+  --svg-wait: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23c7c7c7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-hourglass"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"/%3E%3Cpath d="M6.5 7h11" /%3E%3Cpath d="M6.5 17h11" /%3E%3Cpath d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z" /%3E%3Cpath d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z" /%3E%3C/svg%3E');
 
 
 
@@ -635,6 +637,14 @@ blockquote cite {
 
 .ennemi .chip_icon {
   background-image: var(--svg-ennemi);
+}
+
+.check .chip_icon {
+  background-image: var(--svg-check);
+}
+
+.wait .chip_icon {
+  background-image: var(--svg-wait);
 }
 
 
@@ -3698,6 +3708,11 @@ blockquote cite {
   border: solid 1px var(--stroke-tertiary);
 }
 
+#fiche_scenarios
+{
+  gap: 32px;
+}
+
 
 /**************** Message contenu ********************/
 /*.rp_text
@@ -3832,18 +3847,31 @@ twsection:hover twreason {
   z-index: 0;
 }
 
-#fiche_buttons {
+#fiche_buttons, .fiche_buttons {
   grid-area: fiche_buttons;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 16px;
 }
 
+.fiche_slide
+{
+  gap: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
 .slide_inactive {
   display: none !important;
 }
 
-#fiche_carousel {
+#fiche_scenarios .fiche_carousel, #fiche_scenarios #fiche_carousel
+{
+  overflow: auto;
+  padding-top: 16px;
+}
+
+#fiche_carousel, .fiche_carousel {
   grid-area: fiche_carousel;
   width: 100%;
   height: 400px;

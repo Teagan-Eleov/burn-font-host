@@ -502,6 +502,10 @@ blockquote cite {
   background-image: var(--svg-sorciere);
 }
 
+.chipChasseur .chip_icon {
+  background-image: var(--svg-chasseur);
+}
+
 .chipDate .chip_icon {
   background-image: var(--svg-date);
 }

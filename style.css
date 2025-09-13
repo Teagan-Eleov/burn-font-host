@@ -138,7 +138,7 @@
 
   /*Theme colors*/
   --witch-theme: var(--magenta-200);
-  --fire-theme: var(--red-400);
+  --chasseur-theme: var(--red-400);
   --cristal-theme: var(--blue-400);
   --dead-theme: var(--green-400);
   --human-theme: var(--gold-400);
@@ -213,7 +213,7 @@
 
 .theme-red {
   --text-tint: var(--red-300);
-  --surface-tint: var(--fire-theme);
+  --surface-tint: var(--chasseur-theme);
   --stroke-tint: var(--red-300);
   --tint-grad-left: var(--red-200);
   --tint-grad-right: var(--red-400);
@@ -1515,7 +1515,7 @@ input:checked+.theme-button {
 }
 
 #theme_button_red {
-  background-color: var(--fire-theme);
+  background-color: var(--chasseur-theme);
 }
 
 .theme-red #hero_image {

@@ -211,7 +211,7 @@
   --pa-image: url("https://imgur.com/1i5kIIl.png");
 }
 
-.theme-red {
+.theme-red, .theme-chasseur {
   --text-tint: var(--red-300);
   --surface-tint: var(--chasseur-theme);
   --stroke-tint: var(--red-300);

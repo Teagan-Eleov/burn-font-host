@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Arsin - Formulaire de présentation</title>
+    <link rel="stylesheet" href="https://teagan-eleov.github.io/burn-font-host/formulaire_inscription.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://teagan-eleov.github.io/burn-font-host/style.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/malihu/jquery-style-my-tooltips/jquery.style-my-tooltips.js"></script>
+
+      <!-- Initialisation du plugin Tooltips -->
+      <script>
+      (function($){
+          $(document).ready(function(){
+              $("[title]").style_my_tooltips({
+                  tip_follows_cursor:true,
+                  tip_delay_time:0,
+                  tip_fade_speed:300
+              });
+          });
+      })(jQuery);
+      </script>
+  </head>
+  <body id="page_formulaire" class="">
+    <div id="background_blured"></div>
+    <div id="liens_forum">
+        <a href="https://arsin-rpg.forumactif.com/">Retour au forum</a>
+    </div>
+    <div class="text_600 forum_content">
+        <div class="page-content flexColumn">
+         <div class="categorie_title flexRow">
+            <div class="separator"></div>
+            <h1>Formulaire de présentation</h1>
+         </div>
+ <form id="form_inscription" action="/posting.forum" method="post" name="FicheForm" enctype="multipart/form-data" target="_blank" onSubmit="createMessage(this)" class="flexColumn">
+            <input type="hidden" name="mode" value="newtopic" />
+            <input type="hidden" name="topictype" value="0" checked="checked" />
+            <input type="hidden" name="message" value="" />
+            <input type="hidden" name="f" value="1" /><!-- numéro du forum où poster, à définir-->
+            
+            <div id="section_preface" class="blur_card section_form flexColumn">
+                <h3>01. Préface</h3>
+                
+                <div class="textField flexColumn">
+                    <label for="subject" class="label150">Titre de la fiche</label>
+                    <input id="subject" type="text" name="subject" placeholder="Titre de la fiche" required/>
+                </div>
+                <div class="grid">
+                    <div class="textField flexColumn">
+                        <label for="urlBandeau" class="label150">URL du bandeau</label>
+                        <input id="urlBandeau" type="text" name="urlBandeau" placeholder="URL image 400*180px - Facultatif" />
+                    </div>
+                    <div class="textField flexColumn">
+                        <label for="citation" class="label150">Citation</label>
+                        <input id="citation" type="text" name="citation" placeholder="Citation courte - Facultatif" />
+                    </div>
+                </div>
+            </div>
+
+            <div id="section_identite" class="blur_card section_form flexColumn">
+                <h3>02. Identité</h3>
+                <div class="grid">
+                    <div class="textField flexColumn">
+                        <label for="nom" class="label150">Nom</label>
+                        <input id="nom" type="text" name="nom" placeholder="Nom du personnage" required/>
+                    </div>
+                    <div class="textField flexColumn">
+                        <label for="prenom" class="label150">Prénom</label>
+                        <input id="prenom" type="text" name="prenom" placeholder="Prénom du personnage" required/>
+                    </div>
+                    <div class="textField flexColumn">
+                        <label for="age" class="label150">Age</label>
+                        <input id="age" type="text" name="age" placeholder="Age du personnage" required/>
+                    </div>
+                    <div class="textField flexColumn">
+                        <label for="metier" class="label150">Métier</label>
+                        <input id="metier" type="text" name="metier" placeholder="Métier du personnage" required/>
+                    </div>
+                </div>
+                <fieldset id="groupe_buttons" class="textField flexColumn">
+                    <label class="label150">Groupe</label>
+                    <div  class="flexRow list_radio_button">
+                        <label class="optionButton optionButton_inactive label100">
+                            <input type="radio" name="groupe" value="humain" required/>
+                            <div class="optionButtonContent chipHumain">
+                                <div class="chip_icon">
+                                </div>
+                                Humain
+                            </div>
+                        </label>
+                        <label class="optionButton optionButton_inactive label100">
+                            <input type="radio" name="groupe" value="sorciere" />
+                            <div class="optionButtonContent chipSorciere">
+                                <div class="chip_icon"></div>
+                                Sorcière
+                            </div>
+                        </label>
+                        <label class="optionButton optionButton_inactive label100">
+                            <input type="radio" name="groupe" value="cristalise" />
+                            <div class="optionButtonContent chipCristal"><div class="chip_icon">
+                            </div>Cristallisé</div>
+                        </label>
+                        <label class="optionButton optionButton_inactive label100">
+                            <input type="radio" name="groupe" value="chasseur" />
+                            <div class="optionButtonContent chipChasseur"><div class="chip_icon">
+                            </div>Chasseur</div>
+                        </label>
+                        <label class="optionButton optionButton_inactive label100">
+                            <input type="radio" name="groupe" value="inconnu" />
+                            <div class="optionButtonContent">???</div>
+                        </label>
+                        <label class="optionButton optionButton_inactive label100">
+                            <input type="radio" name="groupe" value="inconnu2" />
+                            <div class="optionButtonContent">???</div>
+                        </label>
+                    </div>
+                </fieldset>
+                <fieldset id="classeSociale_buttons" class="textField flexColumn">
+                    <label class="label150">Classe sociale</label>
+                    <div id="" class="flexRow list_radio_button">
+                        <label class="optionButton optionButton_inactive label100" title="Citoyens riches, ancienne noblesse, dirigeants et chef d'entreprises">
+                            <input type="radio" name="classeSociale" value="aristocrate" required/>
+                            <div class="optionButtonContent chipNoble"><div class="chip_icon">
+                            </div>Notable</div>
+                        </label>
+                        <label class="optionButton optionButton_inactive label100" title="Citoyens aisés, commerçants, enseignants, ..">
+                            <input type="radio" name="classeSociale" value="commercant" />
+                            <div class="optionButtonContent chipCommercant"><div class="chip_icon">
+                            </div>Respectable</div>
+                        </label>
+                        
+                        <label class="optionButton optionButton_inactive label100" title="Classe moyenne à pauvre, salariés, prolétaires">
+                            <input type="radio" name="classeSociale" value="proletaire" />
+                            <div class="optionButtonContent chipProletaire"><div class="chip_icon">
+                            </div>Prolétaire</div>
+                        </label>
+                        <label class="optionButton optionButton_inactive label100" title="Classe pauvre à très pauvre, métiers dépréciés et ingrats">
+                            <input type="radio" name="classeSociale" value="poissonNoir" />
+                            <div class="optionButtonContent chipPoisson"><div class="chip_icon">
+                            </div>Poisson noir</div>
+                        </label>
+                    </div>
+                </fieldset>
+                <div class="textField flexColumn">
+                    <label for="recap" class="label150">Ton personnage en 3 lignes</label>
+                    <textarea id="recap" type="text" name="recap" placeholder="Un résumé, des mots clefs, de quoi le cerner." required></textarea>
+                </div>
+                <div class="grid">
+                    <div class="textField flexColumn">
+                        <label for="avatar" class="label150">URL de l'avatar</label>
+                        <input id="avatar" type="text" name="avatar" placeholder="URL de l'avatar en 200*400px."required />
+                    </div>
+                    <div class="textField flexColumn">
+                        <label for="feat" class="label150">Feat de l'avatar</label>
+                        <input id="feat" type="text" name="feat" placeholder="Artiste et nom de l'oeuvre" required/>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="section_description" class="blur_card section_form flexColumn">
+                <h3>03. Description</h3>
+                
+                <div class="textField flexColumn">
+                    <label for="description_phy_car" class="label150">Caractère et physique</label>
+                    <textarea id="description_phy_car" type="text" name="description_phy_car" placeholder="Description générale du personnage" required></textarea>
+                </div>
+                <div class="textField flexColumn">
+                    <label for="ambitions" class="label150">Ambitions</label>
+                    <textarea id="ambitions" type="text" name="ambitions" placeholder="Ambitions du personnage" required></textarea> 
+                </div>
+                <div class="textField flexColumn">
+                    <label for="competences" class="label150">Compétences</label>
+                    <textarea id="competences" type="text" name="competences" placeholder="Compétences du personnage" required></textarea> 
+                </div>
+                <div id="section_armoricia" class="textField flexColumn ">
+                    <label for="armoricia" class="label150">Armoricia et Arsenal</label>
+                    <textarea id="armoricia" type="text" name="armoricia" placeholder="Description du physique et caractère de l'Armoricia, description de l'arsenal" required></textarea> 
+                </div>
+            </div>
+            <div id="section_magie" class="blur_card section_form flexColumn">
+                <h3>03.2 Compétences magiques</h3>
+                <fieldset id="magies_buttons" class="textField flexColumn">
+                    <label class="label150">Spécialité(s)</label>
+                    <div id="" class="flexRow list_radio_button">
+                        <label class="optionButton optionButton_inactive label100">
+                            <input type="checkbox" name="specialite" value="alteration" />
+                            <div class="optionButtonContent chipAlteration"><div class="chip_icon">
+                            </div>Alteration</div>
+                        </label>
+                        <label class="optionButton optionButton_inactive label100">
+                            <input type="checkbox" name="specialite" value="elementaire" />
+                            <div class="optionButtonContent chipElementaire"><div class="chip_icon">
+                            </div>Manipulation</div>
+                        </label>
+                        <label class="optionButton optionButton_inactive label100">
+                            <input type="checkbox" name="specialite" value="construction" />
+                            <div class="optionButtonContent chipConstruction"><div class="chip_icon">
+                            </div>Construction</div>
+                        </label>
+                        <label class="optionButton optionButton_inactive label100">
+                            <input type="checkbox" name="specialite" value="invocation" />
+                            <div class="optionButtonContent chipInvocation"><div class="chip_icon">
+                            </div>Invocation</div>
+                        </label>
+                        <label class="optionButton optionButton_inactive label100">
+                            <input type="checkbox" name="specialite" value="communication" />
+                            <div class="optionButtonContent chipCommunication"><div class="chip_icon">
+                            </div>Communication</div>
+                        </label>
+                        <label class="optionButton optionButton_inactive label100">
+                            <input type="checkbox" name="specialite" value="animation" />
+                            <div class="optionButtonContent chipAnimation"><div class="chip_icon">
+                            </div>Animation</div>
+                        </label>
+                        <label class="optionButton optionButton_inactive label100">
+                            <input type="checkbox" name="specialite" value="aucune" />
+                            <div class="optionButtonContent chipNone"><div class="chip_icon">
+                            </div>Aucune</div>
+                        </label>
+                        
+                    </div>
+                </fieldset>
+                <div class="textField flexColumn">
+                    <label for="description_magie" class="label150">Compétences magiques</label>
+                    <textarea id="description_magie" type="text" name="description_magie" placeholder="Description et justification rapide du niveau général de magie du personnage, présentation des spécialités s'il en a."></textarea> 
+                </div>
+                <div id="corruptionSection" class="textField flexColumn">
+                    <label for="corruption" class="label150">Corruption</label>
+                    <textarea id="corruption" type="text" name="corruption" placeholder="Facultatif - Présentation des symptomes de corruption s'il en a. Peut être laissé à l'appréciation du staff. "></textarea>
+                </div>
+            </div>
+
+            <div id="section_histoire" class="blur_card section_form flexColumn">
+                <h3>04. Histoire</h3>
+                <div class="textField flexColumn">
+                    <label for="chronologie" class="label150">Chronologie</label>
+                    <textarea id="chronologie" type="text" name="chronologie" placeholder="Liste des faits marquants du personnage dans l'ordre chronologique" required></textarea> 
+                </div>
+                <div class="textField flexColumn">
+                    <label for="histoire" class="label150">Détails de l'histoire</label>
+                    <textarea id="histoire" type="text" name="histoire" placeholder="Détails de l'histoire - Facultatif"></textarea>
+                </div>
+            </div>
+
+            <div id="section_roliste" class="blur_card section_form flexColumn">
+                <h3>05. Hors jeu</h3>
+                <div class="grid">
+                    <div class="textField flexColumn">
+                        <label for="pseudo" class="label150">Pseudo</label>
+                        <input id="pseudo" type="text" name="pseudo" placeholder="Ton pseudo" required/>
+                    </div>
+                    <div class="textField flexColumn">
+                        <label for="urlRoliste" class="label150">URL de la miniature</label>
+                        <input id="urlRoliste" type="text" name="urlRoliste" placeholder="URL de l'illustration du roliste, 300px * 120px"/>
+                    </div>
+                    <div class="textField flexColumn">
+                        <label for="triggers" class="label150">Triggers</label>
+                        <input id="triggers" type="text" name="triggers" placeholder="Si tu as des sujets sensibles, indiques les ici" required/>
+                    </div>
+                </div>
+                <div class="textField flexColumn">
+                    <label for="participationIntrigue" class="label150">Souhaites-tu t'impliquer dans l'intrigue ?</label>
+                    <input id="participationIntrigue" type="text" name="participationIntrigue" placeholder="Un peu, beaucoup, passionnément, à la folie ..." required/>
+                </div>
+                <div class="textField flexColumn">
+                    <label for="evolution" class="label150">Evolution envisagée</label>
+                    <input id="evolution" type="text" name="evolution" placeholder="As-tu des pistes d'évolution en tête pour ton personnage, que nous pourrions considérer ?" required />
+                </div>
+                <div class="textField flexColumn">
+                    <label for="disparition" class="label150">Que faire en cas de disparition ?</label>
+                    <input id="disparition" type="text" name="disparition" placeholder="Que faire de ton personnage si jamais tu quittes le forum ?" required />
+                </div>
+                <div class="textField flexColumn">
+                    <label for="commentaire" class="label150">Un dernier mot ?</label>
+                    <input id="commentaire" type="text" name="commentaire" placeholder="Jean Pierre" />
+                </div>
+            </div>
+
+   		<div class="flexRow" style="gap: 32px; align-items: center; justify-content: center; width: 100%;">
+                  <div id="form_preview_button">
+                      <input type="submit" name="preview" value="Prévisualiser" />
+                  </div>
+                  <div id="form_send_button">
+                      <input type="submit" name="post" value="Envoyer" />
+                  </div>
+  		 </div>
+         </form>
+         
+    </div>
+
+
+<script>
+$(document).ready(function () {
+            const $body = $('body');
+            const $themeRadios = $('input[name="groupe"]');
+        
+            const $magieSection = $('#section_magie');
+            const $corruptionInput = $('#corruption'); // input only
+            const $corruptionSection = $('#corruptionSection'); //label + input
+            const $magieInput =$('#description_magie');
+            const $armoInput = $('#armoricia');
+            const $armoSection = $('#section_armoricia');
+
+        
+            //par défaut, on masque le bloc magie et on retire le required
+            $magieSection.css('display','none');
+            $corruptionInput.prop('required', false);
+            $magieInput.prop('required', false);
+
+            //par défaut on masque armo et on retire required
+            $armoInput.prop('required', false);
+            $armoSection.css('display','none');
+
+        
+        
+        
+        
+            // changement du theme au clic
+            $themeRadios.on('change', function () {
+                // Supprimer les classes précédentes
+                $body.removeClass('theme-blue theme-green theme-gold theme-licorne theme-red');
+                // Appliquer le nouveau thème
+                const valInput = $(this).val();
+                if(valInput=="sorciere")
+                {
+                    $body.addClass(`theme-licorne`);
+                    $magieSection.css('display','flex');
+                    $corruptionInput.prop('required', true);
+                    $corruptionSection.css('display','block');
+                    $magieInput.prop('required', true);
+                    $armoInput.prop('required', false);
+                    $armoSection.css('display', 'none');
+                }
+                else if(valInput=="humain")
+                {
+                    $body.addClass(`theme-gold`);
+                    $magieSection.css('display','none');
+                    $corruptionInput.prop('required', false);
+                    $magieInput.prop('required', false);
+                    $corruptionSection.css('display','none');
+                    $armoInput.prop('required', false);
+                    $armoSection.css('display', 'none');
+                }
+                else if(valInput=="chasseur")
+                {
+                    $body.addClass(`theme-red`);
+                    $magieSection.css('display','none');
+                    $corruptionInput.prop('required', false);
+                    $magieInput.prop('required', false);
+                    $corruptionSection.css('display','none');
+                    $armoInput.prop('required', true);
+                    $armoSection.css('display', 'flex');
+                    
+                }
+                else if(valInput=="cristalise")
+                {
+                    $body.addClass(`theme-blue`);
+                    $magieSection.css('display','flex');
+                    $corruptionInput.prop('required', false);
+                    $magieInput.prop('required', true);
+                    $corruptionSection.css('display','none');
+                    $armoInput.prop('required', false);
+                    $armoSection.css('display', 'none');
+        
+                }
+                else if(valInput=="inconnu")
+                {
+                    $body.addClass(`theme-green`);
+                    $magieSection.css('display','none');
+                    $corruptionInput.prop('required', false);
+                    $magieInput.prop('required', false);
+                    $armoInput.prop('required', false);
+                    $armoSection.css('display', 'none');
+                }
+                else if(valInput=="inconnu2")
+                {
+                    $body.addClass(`theme-green`);
+                    $magieSection.css('display','none');
+                    $corruptionInput.prop('required', false);
+                    $magieInput.prop('required', false);
+                    $armoInput.prop('required', false);
+                    $armoSection.css('display', 'none');
+                }
+                else
+                {
+                    $body.addClass(`theme-licorne`);
+                }
+        
+            });
+        
+
+        });
+  
+  
+  
+  
+    //création de la fiche, on va rire
+    //$('#form_inscription').on('submit', function (form)
+    function createMessage(form)
+    {    
+  	var $ficheHTML;
+	
+ 	 // const $preview = $('#preview'); //juste pour les tests
+
+    
+        var chipGroupe;
+        var chipClasse = '<div id="fiche_classeSociale" class="chip flexRow chipProletaire"><div class="chip_icon"></div><span>Proletaire</span></div>'; //prolétaire par défaut
+        var chipMagie;
+        var chipSpecialite ='';
+
+        var prenom = $('input[name="prenom"]').val()|| '';
+        var nom = $('input[name="nom"]').val()|| '';
+        var themeFiche = "theme-licorne";
+        let urlBandeau = $('#urlBandeau').val().trim() || 'https://i.imgur.com/sEJ4YCi.png';
+        let citation = $('#citation').val().trim() || '';
+        var metier = $('#metier').val()|| '';
+        var age = $('input[name="age"]').val()|| '';
+        var recap = $('#recap').val()|| '';
+        var urlAvatar = $('#avatar').val()|| '';
+        var feat = $('#feat').val()|| '';
+        var descriptionPerso = $('#description_phy_car').val()|| '';
+        var armoricia = $('#armoricia').val()|| '';
+        var ambitions = $('#ambitions').val()|| '';
+        var corruption = $('#corruption').val()|| '';
+        var magieDescription = $('#description_magie').val()|| '';
+        var competences = $('#competences').val()|| '';
+        var histoire = $('#histoire').val();
+        var chronologie = $('#chronologie').val()|| '';
+        var pseudo = $('#pseudo').val()|| '';
+        var urlRoliste = $('#urlRoliste').val()|| 'https://i.imgur.com/sEJ4YCi.png'; //prévoir valeur par défaut
+        var triggers = $('#triggers').val()|| '';
+        var participationIntrigue = $('#participationIntrigue').val()|| '';
+        var evolution = $('#evolution').val()|| '';
+        var disparition = $('#disparition').val()|| '';
+        var commentaire = $('#commentaire').val()|| '';
+        var title = $('#subject').val();
+
+
+
+
+        //récupération du theme / type de fiche selon le groupe
+        var  groupe = $('input[name="groupe"]:checked').val()|| 'humain';
+        switch(groupe) {
+        case 'sorciere':
+            themeFiche = "theme-licorne fiche_sorciere"
+            chipGroupe = '<div id="fiche_biologie" class="chip flexRow chipSorciere"><div class="chip_icon"></div><span>Sorcière</span></div>';
+            break;
+        case 'chasseur':
+            themeFiche = "theme-red fiche_chasseur"
+            chipGroupe = '<div id="fiche_biologie" class="chip flexRow chipChasseur"><div class="chip_icon"></div><span>Chasseur</span></div>';
+            break;
+        case 'cristalise':
+            themeFiche = "theme-blue fiche_cristal"
+            chipGroupe = '<div id="fiche_biologie" class="chip flexRow chipCristal"><div class="chip_icon"></div><span>Cristallisé</span></div>';
+            break;
+        case 'humain':
+            themeFiche = "theme-gold fiche_humain"
+            chipGroupe = '<div id="fiche_biologie" class="chip flexRow chipHumain"><div class="chip_icon"></div><span>Humain</span></div>';
+            break;
+            
+        case 'inconnu':
+            themeFiche = "theme-green fiche_mort"
+            chipGroupe = '<div id="fiche_biologie" class="chip flexRow chipMort"><div class="chip_icon"></div><span>Inconnu</span></div>';
+            break;  
+  	case 'inconnu2':
+            themeFiche = "theme-green fiche_mort"
+            chipGroupe = '<div id="fiche_biologie" class="chip flexRow chipMort"><div class="chip_icon"></div><span>Inconnu</span></div>';
+            break; 
+        themeFiche = "theme-gold fiche_humain"
+        chipGroupe = '<div id="fiche_biologie" class="chip flexRow chipHumain"><div class="chip_icon"></div><span>Humain</span></div>';
+
+        }
+
+
+        //recupération classe sociale
+        var  classSociale = $('input[name="classeSociale"]:checked').val();
+        switch (classSociale)
+        {
+            case 'aristocrate':
+                chipClasse = '<div id="fiche_classeSociale" class="chip flexRow chipNoble"><div class="chip_icon"></div><span>Notable</span></div>';
+                break;
+            case 'commercant':
+                chipClasse = '<div id="fiche_classeSociale" class="chip flexRow chipCommercant"><div class="chip_icon"></div><span>Respectable</span></div>';
+                break;
+            case 'proletaire':
+                chipClasse = '<div id="fiche_classeSociale" class="chip flexRow chipProletaire"><div class="chip_icon"></div><span>Proletaire</span></div>';
+                break;
+            case 'poissonNoir':
+                chipClasse = '<div id="fiche_classeSociale" class="chip flexRow chipPoisson"><div class="chip_icon"></div><span>Poisson Noir</span></div>';
+                break;
+            default:
+                chipClasse = '<div id="fiche_classeSociale" class="chip flexRow chipProletaire"><div class="chip_icon"></div><span>Proletaire</span></div>';
+                ;
+        }
+
+        //recuperation specialité uniquement si sorciere ou cristalisé, sinon on met vide
+        if(groupe=='sorciere' || groupe=='cristalise')
+        {
+            $('input[name="specialite"]:checked').each(function() {
+
+                let specialite = $(this).val();
+
+                switch(specialite)
+                {
+                case 'alteration':
+                    chipSpecialite += '<div class="fiche_type_magie chip flexRow chipAlteration"><div class="chip_icon"></div><span>Altération</span></div>';
+                    break;
+                case 'elementaire':
+                    chipSpecialite += '<div class="fiche_type_magie chip flexRow chipElementaire"><div class="chip_icon"></div><span>Manipulation</span></div>';
+                    break;
+                case 'construction':
+                    chipSpecialite += '<div class="fiche_type_magie chip flexRow chipConstruction"><div class="chip_icon"></div><span>Construction</span></div>';
+                    break;
+                case 'animation':
+                    chipSpecialite += '<div class="fiche_type_magie chip flexRow chipAnimation"><div class="chip_icon"></div><span>Animation</span></div>';
+                    break;
+                case 'invocation':
+                    chipSpecialite += '<div class="fiche_type_magie chip flexRow chipInvocation"><div class="chip_icon"></div><span>Invocation</span></div>';
+                    break;
+                case 'communication':
+                    chipSpecialite += '<div class="fiche_type_magie chip flexRow chipCommunication"><div class="chip_icon"></div><span>Communication</span></div>';
+                    break;
+                case 'aucune':
+                    chipSpecialite = '<div class="fiche_type_magie chip flexRow chipNone"><div class="chip_icon"></div><span>Aucune spécialité</span></div>';
+                    break;
+                default :
+                    chipSpecialite = '';
+
+            }
+
+            });
+        }
+        else
+        {
+            chipSpecialite = '';
+        }
+
+        var classeHistoire = 'noDetailsStory'; //pas de détails histoire par défaut
+        //si on a le détail de l'histoire, ajouter une classe pour afficher la section
+        if(histoire && histoire.trim())
+        {
+            classeHistoire = '';
+        }
+        else
+        {
+            classeHistoire = 'noDetailsStory'; //pas de détails par défaut
+        }
+
+
+
+        $ficheHTML = '<div id="fichePrez" class="fiche '+themeFiche+'"><div id="ficheHeader" class="rp_header flexColumn" ><div id="ficheBandeau" style="background-image: url('+urlBandeau;
+        $ficheHTML+=');"></div><h3 class="rp_title gradientTitle">'+prenom + ' '+ nom+'</h3><div class="rp_subtitle text_500">'+citation;
+        $ficheHTML+='</div></div><div id="fiche_buttons" class=""><div id="button_info" class="optionButton optionButton_active label100"><div class="optionButtonContent">Informations</div></div><div id="button_desc" class="optionButton label100"><div class="optionButtonContent">Description</div></div><div id="button_comp" class="optionButton label100"><div class="optionButtonContent">Compétences</div></div><div id="button_histoire" class="optionButton label100"><div class="optionButtonContent">Histoire</div></div><div id="button_horsjeu" class="optionButton label100"><div class="optionButtonContent">Hors Jeu</div></div></div><div id="fiche_carousel">';
+        $ficheHTML+='<div id="fiche_slide_info" class="slide_active"><div class="fiche_avatar"><div style="background-image: url('+urlAvatar+');"></div></div><div id="fiche_quick_recap" class="sectionCard">'+recap+'</div><div id="fiche_quick_data" class="flexRow">';
+        $ficheHTML+='<div id="fiche_work" class="chip flexRow chipWork"><div class="chip_icon"></div><span>'+metier+'</span></div>';
+        $ficheHTML +=chipGroupe+ chipSpecialite+'<div id="fiche_Age" class="chip flexRow chipAge"><div class="chip_icon"></div><span>'+age+'</span></div>'+chipClasse
+        $ficheHTML += '<div id="fiche_feat" class="chip flexRow chipFeat"><div class="chip_icon"></div><span>'+feat+'</span></div></div></div>';
+        $ficheHTML+='<div id="fiche_slide_desc" class="slide_inactive"><div id="fiche_desc" class="sectionCard"><h4 class="sectionCardTitle gradientTitle">Caractère et physique</h4><div class="sectionText">'+descriptionPerso+'</div></div><div id="fiche_ambitions" class="sectionCard alignTitleRight"><h4 class="sectionCardTitle gradientTitle">Ambitions</h4><div class="sectionText">'+ambitions+'</div></div></div>';
+        $ficheHTML+='<div id="fiche_slide_comp" class="slide_inactive"><div class="fiche_magie_corruption flexRow"><div id="fiche_magie" class="sectionCard"><h4 class="sectionCardTitle gradientTitle">Magie</h4><div class="sectionText">'+magieDescription+'</div></div><div id="fiche_corruption" class="sectionCard"><h4 class="sectionCardTitle gradientTitleCorruption">Corruption</h4><div class="sectionText">'+corruption+'</div></div></div><div id="fiche_competences" class="sectionCard"><h4 class="sectionCardTitle gradientTitle">Compétences générales</h4><div class="sectionText">'+competences+'</div></div><div id="fiche_armoricia" class="sectionCard"><h4 class="sectionCardTitle gradientTitle">Armoricia & Arsenal</h4><div class="sectionText">'+armoricia+'</div></div></div>';
+        $ficheHTML+='<div id="fiche_slide_histoire" class="slide_inactive '+classeHistoire+'"><div id="fiche_chrono" class="sectionCard alignTitleRight"><h4 class="sectionCardTitle gradientTitle">Chronologie</h4><div class="sectionText">'+chronologie+'</div></div><div id="fiche_histoire" class="sectionCard"><h4 class="sectionCardTitle gradientTitle">Histoire</h4><div class="sectionText">'+histoire+'</div></div></div>';
+        $ficheHTML+='<div id="fiche_slide_horsjeu" class="slide_inactive"><div id="fiche_experience" class="sectionCard"><div id="question_intrigue" class="horsjeu_row flexColumn"><span class="fiche_question label100">Souhaites-tu t’impliquer dans l’intrigue ?</span><span class="fiche_reponse text_600">'+participationIntrigue+'</span></div><div id="question_evolution" class="horsjeu_row flexColumn"><span class="fiche_question label100">Evolution du personnage</span><span class="fiche_reponse text_600">'+evolution+'</span></div><div id="question_disparition" class="horsjeu_row flexColumn"><span class="fiche_question label100">Que faire de ton personnage en cas de disparition ?</span><span class="fiche_reponse text_600">'+disparition+'</span></div>';
+        $ficheHTML+='</div><div id="fiche_roliste" class="sectionCard"><div id="question_intrigue" class="horsjeu_row flexColumn"><span class="fiche_question label100">Pseudo</span><span class="fiche_reponse text_600">'+pseudo+'</span></div><div id="question_evolution" class="horsjeu_row flexColumn"><span class="fiche_question label100">Trigger</span><span class="fiche_reponse text_600">'+triggers+'</span></div><div id="question_disparition" class="horsjeu_row flexColumn"><span class="fiche_question label100">Votre dernier mot</span><span class="fiche_reponse text_600">'+commentaire+'</span></div></div><div class="fiche_roliste_avatar"><div style="background-image: url("'+urlRoliste+'");"></div></div></div></div></div>';
+  
+  	form.message.value = $ficheHTML;
+  
+  };
+
+
+</script>
+
+
+</body>
+</body>
+</html>

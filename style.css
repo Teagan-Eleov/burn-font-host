@@ -420,6 +420,10 @@ blockquote cite {
   color: var(--human-theme);
 }
 
+.color-chasseur {
+  color: var(--human-theme);
+}
+
 .color-cristal {
   color: var(--blue-200);
 }

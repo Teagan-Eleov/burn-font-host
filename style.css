@@ -4001,8 +4001,18 @@ twsection:hover twreason {
 
 /*masquer corruption si non sorciere*/
 .fiche_cristal #fiche_corruption,
-.fiche_humain #fiche_corruption {
+.fiche_humain #fiche_corruption, 
+.fiche_chasseur #fiche_corruption {
   display: none;
+}
+
+/*masquer armoricia si non chasseur*/
+.fiche_cristal #fiche_armoricia,
+.fiche_humain #fiche_armoricia,
+.fiche_sorciere #fiche_armoricia
+{
+  display: none;
+
 }
 
 /*si cristalisé, magie full width*/
@@ -4010,8 +4020,8 @@ twsection:hover twreason {
   width: 100% !important;
 }
 
-/*masquer section magie si humain, competences prend tout*/
-.fiche_humain .fiche_magie_corruption {
+/*masquer section magie si humain ou chasseur, competences prend tout*/
+.fiche_humain .fiche_magie_corruption, .fiche_chasseur .fiche_magie_corruption {
   display: none;
 }
 

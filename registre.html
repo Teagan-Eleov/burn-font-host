@@ -30,10 +30,11 @@
 
     <!-- Complément CSS local (le gros vient de style.css) -->
     <style>
-            #guidebook_content {
-        grid-template-columns: 300px 1fr;
-        gap: 32px;
-         }
+        #guidebook_content {
+            grid-template-columns: 300px 1fr;
+            gap: 32px;
+        }
+
         /* ===== Mise en page commune ===== */
         .toolbar {
             display: flex;
@@ -79,7 +80,7 @@
             }
         }
 
-        
+
 
         /* ===== Boutons de filtres (style "tabs") ===== */
 
@@ -98,7 +99,7 @@
             gap: 16px
         }
 
-        
+
 
         /* Layout des groupes */
         .filterset {
@@ -198,14 +199,15 @@
             justify-self: end;
         }
 
-        .secondary_card
-        {padding: 24px;
+        .secondary_card {
+            padding: 24px;
             gap: 24px;
 
         }
 
         #list-feat,
-        #list-metier, #list-perso {
+        #list-metier,
+        #list-perso {
             display: flex;
             flex-direction: column;
             padding: 24px;
@@ -226,49 +228,46 @@
             padding: 0;
         }
 
-        .personnageRow .fiche_avatar
-        {
+        .personnageRow .fiche_avatar {
             width: 100px;
             height: 200px;
             grid-area: perso_avatar;
         }
 
-        .personnageRow
-        {
+        .personnageRow {
             display: grid;
             grid-template-columns: auto 1fr;
             grid-template-rows: auto 1fr;
             gap: 16px;
-            grid-template-areas: 
-            "perso_avatar perso_identity"
-            "perso_avatar perso_chips";
+            grid-template-areas:
+                "perso_avatar perso_identity"
+                "perso_avatar perso_chips";
             column-gap: 32px;
         }
 
-        .personnageRow .perso_name
-        {
+        .personnageRow .perso_name {
             grid-area: perso_name;
         }
-        .perso_identity
-        {
+
+        .perso_identity {
             grid-area: perso_identity;
             justify-content: start;
             align-items: start;
         }
-        .personnageRow .perso_metier
-        {
+
+        .personnageRow .perso_metier {
             grid-area: perso_metier;
         }
-        .personnageRow .perso_chips
-        {
+
+        .personnageRow .perso_chips {
             grid-area: perso_chips;
             justify-content: start;
             flex-wrap: wrap;
             gap: 4px;
             height: fit-content;
         }
-        .personnageRow .perso_chips .chip
-        {
+
+        .personnageRow .perso_chips .chip {
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
@@ -363,9 +362,12 @@
                             <div class="field">
                                 <label class="label100" for="s-personnage">Tri</label>
                                 <select id="s-personnage">
-                                    <option value="az" selected>Nom A→Z</option>
-                                    <option value="za">Nom Z→A</option>
+                                    <option value="prenom-az" selected>Prénom A→Z</option>
+                                    <option value="prenom-za">Prénom Z→A</option>
+                                    <option value="nom-az">Nom A→Z</option>
+                                    <option value="nom-za">Nom Z→A</option>
                                 </select>
+
                             </div>
                             <div class="field"><span class="label100">Groupe</span>
                                 <div class="filterset" id="g-personnage" role="group" aria-label="Filtre groupe">
@@ -420,16 +422,37 @@
 
                             <div class="field"><span class="label100">Magie</span>
                                 <div class="filterset" id="m-personnage" role="group" aria-label="Filtre magie">
-                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="" aria-selected="true"><div class="optionButtonContent">Toutes</div></button>
-                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="animation"><div class="optionButtonContent">Animation</div></button>
-                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="construction"><div class="optionButtonContent">Construction</div></button>
-                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="communication"><div class="optionButtonContent">Communication</div></button>
-                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="alteration"><div class="optionButtonContent">Altération</div></button>
-                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="manipulation"><div class="optionButtonContent">Manipulation</div></button>
-                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="invocation"><div class="optionButtonContent">Invocation</div></button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn" data-value=""
+                                        aria-selected="true">
+                                        <div class="optionButtonContent">Toutes</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="animation">
+                                        <div class="optionButtonContent">Animation</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="construction">
+                                        <div class="optionButtonContent">Construction</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="communication">
+                                        <div class="optionButtonContent">Communication</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="alteration">
+                                        <div class="optionButtonContent">Altération</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="manipulation">
+                                        <div class="optionButtonContent">Manipulation</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="invocation">
+                                        <div class="optionButtonContent">Invocation</div>
+                                    </button>
 
                                 </div>
-                              </div>
+                            </div>
 
                             <div class="field"><span class="label100">Actif</span>
                                 <div class="filterset" id="a-personnage" role="group" aria-label="Filtre actif">
@@ -464,9 +487,15 @@
                             <div class="field">
                                 <label class="label100" for="s-feat">Tri</label>
                                 <select id="s-feat">
-                                    <option value="az" selected>Feat A→Z</option>
-                                    <option value="za">Feat Z→A</option>
+                                    <option value="feat-az" selected>Feat A→Z</option>
+                                    <option value="feat-za">Feat Z→A</option>
+                                    <option value="prenom-az">Prénom A→Z</option>
+                                    <option value="prenom-za">Prénom Z→A</option>
+                                    <option value="nom-az">Nom A→Z</option>
+                                    <option value="nom-za">Nom Z→A</option>
+
                                 </select>
+
                             </div>
                             <!--<div class="field"><span class="label100">Groupe</span>
                                 <div class="filterset" id="g-feat" role="group" aria-label="Filtre groupe">
@@ -539,7 +568,7 @@
                                         data-value="pnj">
                                         <div class="optionButtonContent">PNJ</div>
                                     </button>
-                                    
+
                                 </div>
                             </div>
 
@@ -556,9 +585,14 @@
                             <div class="field">
                                 <label class="label100" for="s-metier">Tri</label>
                                 <select id="s-metier">
-                                    <option value="az" selected>Métier A→Z</option>
-                                    <option value="za">Métier Z→A</option>
+                                    <option value="metier-az" selected>Métier A→Z</option>
+                                    <option value="metier-za">Métier Z→A</option>
+                                    <option value="prenom-az">Prénom A→Z</option>
+                                    <option value="prenom-za">Prénom Z→A</option>
+                                    <option value="nom-az">Nom A→Z</option>
+                                    <option value="nom-za">Nom Z→A</option>
                                 </select>
+
                             </div>
                             <div class="field"><span class="label100">Groupe</span>
                                 <div class="filterset" id="g-metier" role="group" aria-label="Filtre groupe">
@@ -613,16 +647,37 @@
 
                             <div class="field"><span class="label100">Magie</span>
                                 <div class="filterset" id="m-metier" role="group" aria-label="Filtre magie">
-                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="" aria-selected="true"><div class="optionButtonContent">Toutes</div></button>
-                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="animation"><div class="optionButtonContent">Animation</div></button>
-                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="construction"><div class="optionButtonContent">Construction</div></button>
-                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="communication"><div class="optionButtonContent">Communication</div></button>
-                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="alteration"><div class="optionButtonContent">Altération</div></button>
-                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="manipulation"><div class="optionButtonContent">Manipulation</div></button>
-                                  <button type="button" class="tab-btn optionButton label100 filter-btn" data-value="invocation"><div class="optionButtonContent">Invocation</div></button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn" data-value=""
+                                        aria-selected="true">
+                                        <div class="optionButtonContent">Toutes</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="animation">
+                                        <div class="optionButtonContent">Animation</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="construction">
+                                        <div class="optionButtonContent">Construction</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="communication">
+                                        <div class="optionButtonContent">Communication</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="alteration">
+                                        <div class="optionButtonContent">Altération</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="manipulation">
+                                        <div class="optionButtonContent">Manipulation</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="invocation">
+                                        <div class="optionButtonContent">Invocation</div>
+                                    </button>
 
                                 </div>
-                              </div>
+                            </div>
 
                             <div class="field"><span class="label100">Type</span>
                                 <div class="filterset" id="a-metier" role="group" aria-label="Filtre actif">
@@ -653,9 +708,10 @@
                 <div id="panels" class="panels" aria-live="polite">
                     <section class="panel active" id="panel-personnage" role="tabpanel" data-cat="personnage"
                         data-sub="liste">
-                            <div id="list-personnage" class="secondary_card grid-list">
-                            </div>
-                            <div id="empty-personnage" class="muted secondary_card" style="display:none">Aucun résultat.</div>
+                        <div id="list-personnage" class="secondary_card grid-list">
+                        </div>
+                        <div id="empty-personnage" class="muted secondary_card" style="display:none">Aucun résultat.
+                        </div>
                     </section>
 
                     <section class="panel" id="panel-feat" role="tabpanel" data-cat="feat" data-sub="liste">
@@ -678,171 +734,222 @@
     <script id="registre-data" type="application/json">[
     {"nom":"Rojas","prenom":"Altelo","age":49,"metier":"Docker & Membre du Syndic","feat":"Corvo - Dishonored","actif":"oui","type":"joué","urlProfil":"https://arsin-rpg.forumactif.com/u5","urlFiche":"https://arsin-rpg.forumactif.com/t20-altelo-go-into-the-wet","referent":"Ghorgos","groupe":"Humain","classe":"Prolétaire","magie":"","avatar":"https://i.imgur.com/C9970TT.png"},
     {"nom":"Thompson","prenom":"William","age":45,"metier":"Politicien","feat":"Obi-Wan - Star Wars","actif":"oui","type":"joué","urlProfil":"https://arsin-rpg.forumactif.com/u4","urlFiche":"https://arsin-rpg.forumactif.com/t19-will-le-passe-est-un-sourire","referent":"Cassie","groupe":"Humain","classe":"Notable","magie":"","avatar":"https://sig.grumpybumpers.com/host/WillArsin.gif"},
-    {"nom":"","prenom":"La Souris","age":20,"metier":"Soldate et informatrice","feat":"Vélice - Shilin","actif":"oui","type":"joué","urlProfil":"https://arsin-rpg.forumactif.com/u5","urlFiche":"https://arsin-rpg.forumactif.com/t23-le-bruit-court-qu-une-souris-ecoute-aux-portes","referent":"K'Howl","groupe":"Cristallisé","classe":"Poisson Noir","magie":"Communication","avatar":"https://signavatar.com/80564_v.gif"},
+    {"nom":"","prenom":"La Souris","age":20,"metier":"Soldate et informatrice","feat":"Véloce - Shilin","actif":"oui","type":"joué","urlProfil":"https://arsin-rpg.forumactif.com/u5","urlFiche":"https://arsin-rpg.forumactif.com/t23-le-bruit-court-qu-une-souris-ecoute-aux-portes","referent":"K'Howl","groupe":"Cristallisé","classe":"Poisson Noir","magie":"Communication","avatar":"https://signavatar.com/80564_v.gif"},
     {"nom":"","prenom":"Lyra","age":25,"metier":"Soldate","feat":"Siwoo Kim - personnal work","actif":"oui","type":"joué","urlProfil":"https://arsin-rpg.forumactif.com/u7","urlFiche":"https://arsin-rpg.forumactif.com/t21-lyra-la-radieuse","referent":"Batou","groupe":"Cristallisé","classe":"Poisson Noir","magie":"Altération","avatar":"https://i.imgur.com/UAnyGrq.jpeg"},
     {"nom":"Faoilèan","prenom":"Meera","age":18,"metier":"Voleuse","feat":"Camilla - The Locked Tomb","actif":"oui","type":"joué","urlProfil":"https://arsin-rpg.forumactif.com/u8","urlFiche":"https://arsin-rpg.forumactif.com/t26-look-out-to-the-horizon-meera","referent":"Sirocco","groupe":"Humain","classe":"Poisson Noir","magie":"","avatar":"https://i.postimg.cc/1zbwLL7V/Meera-1.png"},
+    {"nom":"","prenom":"L'Ombre","age":25,"metier":"Informateur de la sororité","feat":"P, Lie of P","actif":"oui","type":"joué","urlProfil":"https://arsin-rpg.forumactif.com/u9","urlFiche":"https://arsin-rpg.forumactif.com/t33-the-shadow-between-faces-l-ombre","referent":"Leloo","groupe":"Sorcière","classe":"Prolétaire","magie":["Communication", "Altération"],"avatar":"https://sig.grumpybumpers.com/host/Lieofp.gif"},
+    {"nom":"Von Holheim","prenom":"Wilhelm","age":50,"metier":"Médecin","feat":"Renoir - Clair Obscur Expédition 33","actif":"oui","type":"joué","urlProfil":"https://arsin-rpg.forumactif.com/u12","urlFiche":"https://arsin-rpg.forumactif.com/t32-wilhelm-docteur-pas-trop-maboul","referent":"AkaiBara","groupe":"Humain","classe":"Respectable","magie":"","avatar":"https://i.servimg.com/u/f76/14/18/37/29/wilhel10.png"},
+    {"nom":"Kreis","prenom":"Zackary","age":30,"metier":"Chasseur","feat":"Percival de Rolo - Critical Role","actif":"oui","type":"joué","urlProfil":"https://arsin-rpg.forumactif.com/u10","urlFiche":"https://arsin-rpg.forumactif.com/t31-le-bon-et-le-mauvais-chasseur","referent":"dEATh - alΦve","groupe":"Chasseur","classe":"Respectable","magie":"","avatar":"https://www.zupimages.net/up/25/37/ftv9.png"},
+
 
   ]</script>
 
     <!-- Script : moteur registre -->
     <script>
-(function ($) {
-  "use strict";
+        (function ($) {
+            "use strict";
 
-  /* ===================== Données ===================== */
-  // Lecture robuste: décode les entités HTML que le forum peut injecter
-  function getJSONFromScript(id){
-    const el = document.getElementById(id);
-    if(!el) return [];
-    let raw = (el.textContent || el.innerText || '').trim();
-    if(!raw) return [];
-    // Décoder les entités (&quot; &#91; &#93; &amp; …)
-    if (raw.includes('&')) {
-      const ta = document.createElement('textarea');
-      ta.innerHTML = raw;
-      raw = ta.value;
-    }
-    try { return JSON.parse(raw); }
-    catch(e){
-      // Normalisation de secours (guillemets typographiques, virgules finales)
-      raw = raw
-        .replace(/[\u2018\u2019]/g, "'")
-        .replace(/[\u201C\u201D]/g, '"')
-        .replace(/,\s*([}\]])/g, '$1');
-      return JSON.parse(raw);
-    }
-  }
-  let RAW  = getJSONFromScript('registre-data');
-  let DATA = [];
+            /* ===================== Données ===================== */
+            // Lecture robuste: décode les entités HTML que le forum peut injecter
+            function getJSONFromScript(id) {
+                const el = document.getElementById(id);
+                if (!el) return [];
+                let raw = (el.textContent || el.innerText || '').trim();
+                if (!raw) return [];
+                // Décoder les entités (&quot; &#91; &#93; &amp; …)
+                if (raw.includes('&')) {
+                    const ta = document.createElement('textarea');
+                    ta.innerHTML = raw;
+                    raw = ta.value;
+                }
+                try { return JSON.parse(raw); }
+                catch (e) {
+                    // Normalisation de secours (guillemets typographiques, virgules finales)
+                    raw = raw
+                        .replace(/[\u2018\u2019]/g, "'")
+                        .replace(/[\u201C\u201D]/g, '"')
+                        .replace(/,\s*([}\]])/g, '$1');
+                    return JSON.parse(raw);
+                }
+            }
+            let RAW = getJSONFromScript('registre-data');
+            let DATA = [];
 
-  /* ===================== Utils ===================== */
-  const norm  = (s) => (s ?? '').toString().normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().trim();
-  const canon = (s) => norm(s).replace(/[\s\-_]+/g, ''); // retire aussi espaces/tirets/underscores
-  const cmpText = (k, dir = +1) => (a, b) => norm(a[k]).localeCompare(norm(b[k])) * dir;
+            /* ===================== Utils ===================== */
+            const norm = (s) => (s ?? '').toString().normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().trim();
+            const canon = (s) => norm(s).replace(/[\s\-_]+/g, ''); // retire aussi espaces/tirets/underscores
+            const cmpText = (k, dir = +1) => (a, b) => norm(a[k]).localeCompare(norm(b[k])) * dir;
 
-  // Tri par onglet
-  function sortKeyFor(view){ return view==='feat' ? 'feat' : (view==='metier' ? 'metier' : 'nom'); }
-  function getSorter(view, mode){
-    const key = sortKeyFor(view);
-    const dir = (mode==='za') ? -1 : +1;
-    if(view==='personnage'){
-      return (a,b)=> (cmpText('nom',dir)(a,b) || cmpText('prenom',dir)(a,b));
-    }
-    return cmpText(key, dir);
-  }
+            // Tri par onglet
+            function sortKeyFor(view) { return view === 'feat' ? 'feat' : (view === 'metier' ? 'metier' : 'nom'); }
+            function getSorter(view, mode) {
+                // direction
+                const dir = (mode === 'za' || /-za$/.test(mode)) ? -1 : +1;
 
-  /* ===================== Boutons de filtres (multi) ===================== */
-  function ensureAnyState($set){
-    const $any = $set.find('.filter-btn[data-value=""]');
-    const $pressedSpecific = $set.find('.filter-btn[aria-selected="true"]').not($any);
-    if($pressedSpecific.length){ $any.attr('aria-selected','false'); }
-    else { $any.attr('aria-selected','true'); $set.find('.filter-btn').not($any).attr('aria-selected','false'); }
-  }
-  function bindFiltersets(container){
-    $(container).on('click keydown', '.filterset .filter-btn', function(e){
-      if(e.type==='keydown' && !['Enter',' '].includes(e.key)) return;
-      const $btn = $(this);
-      const $set = $btn.closest('.filterset');
-      const isAny = ($btn.data('value') + '') === '';
-      if(isAny){
-        $set.find('.filter-btn').attr('aria-selected','false');
-        $btn.attr('aria-selected','true');
-      } else {
-        const pressed = $btn.attr('aria-selected')==='true';
-        $btn.attr('aria-selected', pressed ? 'false' : 'true');
-        ensureAnyState($set);
-      }
-      renderView(currentView());
-    });
-  }
-  function getFilterValues($set){
-    return $set.find('.filter-btn[aria-selected="true"]').map(function(){
-      const v = ($(this).data('value') ?? '').toString();
-      return v === '' ? null : v;
-    }).get().filter(Boolean);
-  }
+                // Tri explicite par nom/prénom (pour n'importe quel onglet)
+                if (mode === 'nom-az' || mode === 'nom-za') {
+                    return (a, b) => (cmpText('nom', dir)(a, b) || cmpText('prenom', dir)(a, b));
+                }
+                if (mode === 'prenom-az' || mode === 'prenom-za') {
+                    return (a, b) => (cmpText('prenom', dir)(a, b) || cmpText('nom', dir)(a, b));
+                }
 
-  /* ===================== Mapping & normalisation Magie ===================== */
-  // On ne garde que CES 6 types :
-  const MAGIC_KEYS = ['animation','construction','communication','alteration','invocation','manipulation'];
+                // Tri "par défaut" de chaque onglet (champ mis en avant)
+                if (view === 'feat') {
+                    // Compat : 'az'/'za' ou 'feat-az'/'feat-za' -> tri sur le champ 'feat'
+                    const d = (mode === 'za' || mode === 'feat-za') ? -1 : +1;
+                    return cmpText('feat', d);
+                }
+                if (view === 'metier') {
+                    const d = (mode === 'za' || mode === 'metier-za') ? -1 : +1;
+                    return cmpText('metier', d);
+                }
 
-  // Transforme une valeur "magie" (string | array | vide) en tableau propre de libellés originaux
-  function magicToList(raw){
-    if (raw == null) return [];
-    if (Array.isArray(raw)) {
-      return raw.map(x => (x ?? '').toString().trim())
-                .filter(x => x && x !== '-' && x !== '—');
-    }
-    const s = (raw || '').toString().trim();
-    if (!s || s === '-' || s === '—') return [];
-    return s.split(/[,/|;•·+]+/).map(t => t.trim()).filter(Boolean);
-  }
-  // Détection de la clé de type à partir d'un libellé (ex: "Altération minérale" → "alteration")
-  function magicKey(label){
-    const m = canon(label);
-    return MAGIC_KEYS.find(k => m.includes(k)) || ''; // '' si non reconnu
-  }
-  // Classe CSS associée à la magie
-  const MAGIC_CLASS_MAP = {
-    animation:    'chipAnimation',
-    construction: 'chipConstruction',
-    communication:'chipCommunication',
-    alteration:   'chipAlteration',
-    invocation:   'chipInvocation',
-    manipulation: 'chipManipulation'
-  };
-  function classForMagic(label){
-    const key = magicKey(label);
-    return key ? (MAGIC_CLASS_MAP[key] || 'chipMagie') : 'chipMagie';
-  }
+                // Personnage : compat 'az'/'za' -> tri sur nom, puis prénom
+                if (view === 'personnage') {
+                    const d = (mode === 'za' || mode === 'nom-za') ? -1 : +1;
+                    return (a, b) => (cmpText('nom', d)(a, b) || cmpText('prenom', d)(a, b));
+                }
 
-  /* ===================== Humanisation Classe sociale ===================== */
-  function humanizeClasse(s){
-    const key = canon(s);
-    const map = {
-      poissonnoir: 'Poisson Noir',
-      proletaire:  'Prolétaire',
-      respectable: 'Respectable',
-      notable:     'Notable'
-    };
-    return map[key] || (s || '—');
-  }
-  function classeChipClass(s){
-    const key = canon(s);
-    if (key==='notable')      return 'chipNoble';
-    if (key==='respectable')  return 'chipCommercant';
-    if (key==='proletaire')   return 'chipProletaire';
-    if (key==='poissonnoir')  return 'chipPoisson';
-    return 'chipPoisson';
-  }
+                // Fallback (ne devrait pas arriver)
+                return cmpText('nom', +1);
+            }
 
-  /* ===================== Normalisation du dataset ===================== */
-  function normalizeData(arr){
-    return (arr||[]).map(p=>{
-      const list = magicToList(p.magie);
-      const _magicKeys = list.map(magicKey).filter(Boolean);
-      const actifRaw = norm(p.actif);
-      const _actif = (actifRaw==='oui' || actifRaw==='non') ? actifRaw : '';
-      const _type  = norm(p.type);
-      return {...p, _magie:list, _magicKeys, _actif, _type};
-    });
-  }
 
-  /* ===================== Renderers ===================== */
-  function linkOrSpan(href, text){ return href && href !== '#' ? `<a href="${href}" target="_blank" rel="noopener">${text}</a>` : `<span>${text}</span>`; }
-  function chip(cls, text){ return '<div class="chip '+(cls||'')+'"><div class="chip_icon"></div>'+ (text||'—') +'</div>'; }
 
-  function cardPersonnage(p){
-    const magicChips = (p._magie || []).map(lbl => chip(classForMagic(lbl), lbl));
-    const chips = [
-      chip(p.groupe === 'Sorcière' ? 'chipSorciere' : (p.groupe === 'Humain' ? 'chipHumain' : (p.groupe === 'Cristallisé' ? 'chipCristal' : '')), p.groupe || '—'),
-      chip('chipAge', (p.age != null ? p.age + ' ans' : '—')),
-      chip(classeChipClass(p.classe), humanizeClasse(p.classe)),
-      chip('chipFeat', (p.feat != null ? p.feat :'—')),
-      magicChips.join(' ')
-    ].filter(Boolean).join(' ');
+            /* ===================== Boutons de filtres (multi) ===================== */
+            function ensureAnyState($set) {
+                const $any = $set.find('.filter-btn[data-value=""]');
+                const $pressedSpecific = $set.find('.filter-btn[aria-selected="true"]').not($any);
+                if ($pressedSpecific.length) { $any.attr('aria-selected', 'false'); }
+                else { $any.attr('aria-selected', 'true'); $set.find('.filter-btn').not($any).attr('aria-selected', 'false'); }
+            }
+            function bindFiltersets(container) {
+                $(container).on('click keydown', '.filterset .filter-btn', function (e) {
+                    if (e.type === 'keydown' && !['Enter', ' '].includes(e.key)) return;
+                    const $btn = $(this);
+                    const $set = $btn.closest('.filterset');
+                    const isAny = ($btn.data('value') + '') === '';
+                    if (isAny) {
+                        $set.find('.filter-btn').attr('aria-selected', 'false');
+                        $btn.attr('aria-selected', 'true');
+                    } else {
+                        const pressed = $btn.attr('aria-selected') === 'true';
+                        $btn.attr('aria-selected', pressed ? 'false' : 'true');
+                        ensureAnyState($set);
+                    }
+                    renderView(currentView());
+                });
+            }
+            function getFilterValues($set) {
+                return $set.find('.filter-btn[aria-selected="true"]').map(function () {
+                    const v = ($(this).data('value') ?? '').toString();
+                    return v === '' ? null : v;
+                }).get().filter(Boolean);
+            }
 
-    return `
+            /* ===================== Mapping & normalisation Magie ===================== */
+            // On ne garde que CES 6 types :
+            const MAGIC_KEYS = ['animation', 'construction', 'communication', 'alteration', 'invocation', 'manipulation'];
+
+            // Transforme une valeur "magie" (string | array | vide) en tableau propre de libellés originaux
+            function magicToList(raw) {
+                if (raw == null) return [];
+                if (Array.isArray(raw)) {
+                    return raw.map(x => (x ?? '').toString().trim())
+                        .filter(x => x && x !== '-' && x !== '—');
+                }
+                const s = (raw || '').toString().trim();
+                if (!s || s === '-' || s === '—') return [];
+                return s.split(/[,/|;•·+]+/).map(t => t.trim()).filter(Boolean);
+            }
+            // Détection de la clé de type à partir d'un libellé (ex: "Altération minérale" → "alteration")
+            function magicKey(label) {
+                const m = canon(label);
+                return MAGIC_KEYS.find(k => m.includes(k)) || ''; // '' si non reconnu
+            }
+            // Classe CSS associée à la magie
+            const MAGIC_CLASS_MAP = {
+                animation: 'chipAnimation',
+                construction: 'chipConstruction',
+                communication: 'chipCommunication',
+                alteration: 'chipAlteration',
+                invocation: 'chipInvocation',
+                manipulation: 'chipManipulation'
+            };
+            function classForMagic(label) {
+                const key = magicKey(label);
+                return key ? (MAGIC_CLASS_MAP[key] || 'chipMagie') : 'chipMagie';
+            }
+
+            /* ===================== Humanisation Classe sociale ===================== */
+            function humanizeClasse(s) {
+                const key = canon(s);
+                const map = {
+                    poissonnoir: 'Poisson Noir',
+                    proletaire: 'Prolétaire',
+                    respectable: 'Respectable',
+                    notable: 'Notable'
+                };
+                return map[key] || (s || '—');
+            }
+            function classeChipClass(s) {
+                const key = canon(s);
+                if (key === 'notable') return 'chipNoble';
+                if (key === 'respectable') return 'chipCommercant';
+                if (key === 'proletaire') return 'chipProletaire';
+                if (key === 'poissonnoir') return 'chipPoisson';
+                return 'chipPoisson';
+            }
+
+            function groupChipClass(s) {
+                const k = canon(s); // minuscules, sans accents/espaces
+                if (k === 'sorciere') return 'chipSorciere';
+                if (k === 'humain') return 'chipHumain';
+                if (k === 'chasseur') return 'chipChasseur';   // ← nouveau
+                if (k === 'cristallise') return 'chipCristal';
+                return '';
+            }
+
+            function groupColorClass(s) {
+                const k = canon(s); // minuscules, sans accents, sans espaces
+                if (k === 'humain') return 'color-human';
+                if (k === 'sorciere') return 'color-witch';
+                if (k === 'cristallise') return 'color-cristal';
+                if (k === 'chasseur') return 'color-chasseur';
+                return ''; // par défaut, pas de classe
+            }
+
+
+
+            /* ===================== Normalisation du dataset ===================== */
+            function normalizeData(arr) {
+                return (arr || []).map(p => {
+                    const list = magicToList(p.magie);
+                    const _magicKeys = list.map(magicKey).filter(Boolean);
+                    const actifRaw = norm(p.actif);
+                    const _actif = (actifRaw === 'oui' || actifRaw === 'non') ? actifRaw : '';
+                    const _type = norm(p.type);
+                    return { ...p, _magie: list, _magicKeys, _actif, _type };
+                });
+            }
+
+            /* ===================== Renderers ===================== */
+            function linkOrSpan(href, text) { return href && href !== '#' ? `<a href="${href}" target="_blank" rel="noopener">${text}</a>` : `<span>${text}</span>`; }
+            function chip(cls, text) { return '<div class="chip ' + (cls || '') + '"><div class="chip_icon"></div>' + (text || '—') + '</div>'; }
+
+            function cardPersonnage(p) {
+                const magicChips = (p._magie || []).map(lbl => chip(classForMagic(lbl), lbl));
+                const chips = [
+                    chip(groupChipClass(p.groupe), p.groupe || '—'),
+                    chip('chipAge', (p.age != null ? p.age + ' ans' : '—')),
+                    chip(classeChipClass(p.classe), humanizeClasse(p.classe)),
+                    magicChips.join(' '),
+                    chip('chipFeat', (p.feat != null ? p.feat : '—'))
+
+                ].filter(Boolean).join(' ');
+
+                return `
       <div class="message scoopcorners colorborder offsetEffect metierSection">
         <div class="borders_top"><div></div><div></div></div>
         <div class="borders_bottom"><div></div><div></div></div>
@@ -852,16 +959,16 @@
             <div style="background-image: url('${p.avatar || 'https://i.imgur.com/wCy25MW.png'}');"></div>
           </div>
           <div class="perso_identity flexColumn">
-            <a class="perso_name" href="${p.urlProfil || ''}"><h3>${p.prenom || ''} ${p.nom || ''}</h3></a>
+            <a class="perso_name" href="${p.urlProfil || ''}"><h3 class="${groupColorClass(p.groupe)}">${p.prenom || ''} ${p.nom || ''}</h3></a>
             <h4 class="perso_metier">${p.metier || '—'}</h4>
           </div>
           <chipsrp class="perso_chips">${chips}</chipsrp>
         </div>
       </div>`;
-  }
+            }
 
-  function cardFeat(p){
-    return `
+            function cardFeat(p) {
+                return `
       <div class="message scoopcorners colorborder offsetEffect featSection">
         <div class="borders_top"><div></div><div></div></div>
         <div class="borders_bottom"><div></div><div></div></div>
@@ -877,15 +984,15 @@
             <div>Personnage</div>
             <div class="flexRow perso_span">
               ${p._type === 'pnj' ? '<div class="chip chipSmall">PNJ</div>' : ''}
-              <h4><a href="${p.urlProfil || ''}">${p.prenom || ''} ${p.nom || ''}</a></h4>
+              <h4><a class="${groupColorClass(p.groupe)}" href="${p.urlProfil || ''}">${p.prenom || ''} ${p.nom || ''}</a></h4>
             </div>
           </div>
         </div>
       </div>`;
-  }
+            }
 
-  function cardMetier(p){
-    return `
+            function cardMetier(p) {
+                return `
       <div class="message scoopcorners colorborder offsetEffect metierSection">
         <div class="borders_top"><div></div><div></div></div>
         <div class="borders_bottom"><div></div><div></div></div>
@@ -896,7 +1003,7 @@
           <div class="feat_info metier_perso">
             <div>Personnage</div>
             <div class="flexRow perso_span">
-              <h4><a href="${p.urlProfil || '#'}">${p.prenom || ''} ${p.nom || ''}</a></h4>
+              <h4><a class="${groupColorClass(p.groupe)}" href="${p.urlProfil || '#'}">${p.prenom || ''} ${p.nom || ''}</a></h4>
               ${p._type === 'pnj' ? '<div class="chip chipSmall">PNJ</div>' : ''}
             </div>
           </div>
@@ -910,132 +1017,132 @@
           </div>
         </div>
       </div>`;
-  }
+            }
 
-  const VIEW_RENDERER = { personnage: cardPersonnage, feat: cardFeat, metier: cardMetier };
+            const VIEW_RENDERER = { personnage: cardPersonnage, feat: cardFeat, metier: cardMetier };
 
-  /* ===================== Contrôles (multi + recherche + tri) ===================== */
-  function readControls(view){
-    const ids = {
-      personnage: { q: '#q-personnage', s: '#s-personnage', g: '#g-personnage', c: '#c-personnage', m: '#m-personnage', a: '#a-personnage' },
-      feat:       { q: '#q-feat',       s: '#s-feat',       g: '#g-feat',       c: '#c-feat',       m: '#m-feat',       a: '#a-feat' },
-      metier:     { q: '#q-metier',     s: '#s-metier',     g: '#g-metier',     c: '#c-metier',     m: '#m-metier',     a: '#a-metier' }
-    }[view];
+            /* ===================== Contrôles (multi + recherche + tri) ===================== */
+            function readControls(view) {
+                const ids = {
+                    personnage: { q: '#q-personnage', s: '#s-personnage', g: '#g-personnage', c: '#c-personnage', m: '#m-personnage', a: '#a-personnage' },
+                    feat: { q: '#q-feat', s: '#s-feat', g: '#g-feat', c: '#c-feat', m: '#m-feat', a: '#a-feat' },
+                    metier: { q: '#q-metier', s: '#s-metier', g: '#g-metier', c: '#c-metier', m: '#m-metier', a: '#a-metier' }
+                }[view];
 
-    ['g','c','m','a'].forEach(k=> ensureAnyState($(ids[k])));
+                ['g', 'c', 'm', 'a'].forEach(k => ensureAnyState($(ids[k])));
 
-    return {
-      q: $(ids.q).val() || '',
-      s: $(ids.s).val() || 'az',
-      groupes: getFilterValues($(ids.g)),     // values = data-value des boutons
-      classes: getFilterValues($(ids.c)),
-      magies:  getFilterValues($(ids.m)),     // ex: ["alteration","invocation"]
-      actifs:  getFilterValues($(ids.a))      // "oui"/"non"
-    };
-  }
+                return {
+                    q: $(ids.q).val() || '',
+                    s: $(ids.s).val() || (view === 'personnage' ? 'prenom-az' : 'az'),
+                    groupes: getFilterValues($(ids.g)),     // values = data-value des boutons
+                    classes: getFilterValues($(ids.c)),
+                    magies: getFilterValues($(ids.m)),     // ex: ["alteration","invocation"]
+                    actifs: getFilterValues($(ids.a))      // "oui"/"non"
+                };
+            }
 
-  /* ===================== Filtrage + tri ===================== */
-  function applyFilterSort(data, view, c){
-    const q = norm(c.q);
-    const groupes = c.groupes.map(norm);
-    const classes = c.classes.map(canon);
-    const magies  = c.magies.map(canon); // déjà des clés
-    const actifs  = c.actifs.map(norm);
+            /* ===================== Filtrage + tri ===================== */
+            function applyFilterSort(data, view, c) {
+                const q = norm(c.q);
+                const groupes = c.groupes.map(norm);
+                const classes = c.classes.map(canon);
+                const magies = c.magies.map(canon); // déjà des clés
+                const actifs = c.actifs.map(norm);
 
-    let out = data.filter(p=>{
-      if(groupes.length && !groupes.includes(norm(p.groupe))) return false;
+                let out = data.filter(p => {
+                    if (groupes.length && !groupes.includes(norm(p.groupe))) return false;
 
-      // classe: on compare sur canon pour couvrir "Poisson Noir" vs "poissonnoir"
-      if(classes.length && !classes.includes(canon(p.classe))) return false;
+                    // classe: on compare sur canon pour couvrir "Poisson Noir" vs "poissonnoir"
+                    if (classes.length && !classes.includes(canon(p.classe))) return false;
 
-      // magie: OR sur les types sélectionnés
-      if(magies.length){
-        const keys = p._magicKeys || [];
-        const match = keys.some(k => magies.includes(k));
-        if(!match) return false;
-      }
+                    // magie: OR sur les types sélectionnés
+                    if (magies.length) {
+                        const keys = p._magicKeys || [];
+                        const match = keys.some(k => magies.includes(k));
+                        if (!match) return false;
+                    }
 
-      if(actifs.length){
-        if(p._actif){ if(!actifs.includes(p._actif)) return false; }
-        else { // valeurs exotiques -> exclues si l'utilisateur choisit "oui" ou "non"
-          if(actifs.includes('oui') || actifs.includes('non')) return false;
-        }
-      }
+                    if (actifs.length) {
+                        if (p._actif) { if (!actifs.includes(p._actif)) return false; }
+                        else { // valeurs exotiques -> exclues si l'utilisateur choisit "oui" ou "non"
+                            if (actifs.includes('oui') || actifs.includes('non')) return false;
+                        }
+                    }
 
-      if(!q) return true;
-      const hay = [
-        p.nom, p.prenom, p.metier, p.feat, p.referent, p.groupe, p.classe,
-        (p._magie || []).join(' '), p.type
-      ].map(norm).join(' ');
-      return hay.includes(q);
-    });
+                    if (!q) return true;
+                    const hay = [
+                        p.nom, p.prenom, p.metier, p.feat, p.referent, p.groupe, p.classe,
+                        (p._magie || []).join(' '), p.type
+                    ].map(norm).join(' ');
+                    return hay.includes(q);
+                });
 
-    return out.sort( getSorter(view, c.s) );
-  }
+                return out.sort(getSorter(view, c.s));
+            }
 
-  /* ===================== Rendu d'une vue ===================== */
-  function renderView(view){
-  const targets = {
-    personnage: {list:'#list-personnage', empty:'#empty-personnage'},
-    feat:       {list:'#list-feat',       empty:'#empty-feat'},
-    metier:     {list:'#list-metier',     empty:'#empty-metier'}
-  }[view];
+            /* ===================== Rendu d'une vue ===================== */
+            function renderView(view) {
+                const targets = {
+                    personnage: { list: '#list-personnage', empty: '#empty-personnage' },
+                    feat: { list: '#list-feat', empty: '#empty-feat' },
+                    metier: { list: '#list-metier', empty: '#empty-metier' }
+                }[view];
 
-  const c   = readControls(view);
-  const arr = applyFilterSort(DATA, view, c);
+                const c = readControls(view);
+                const arr = applyFilterSort(DATA, view, c);
 
-  const $list  = $(targets.list).empty();
-  const $empty = $(targets.empty);
+                const $list = $(targets.list).empty();
+                const $empty = $(targets.empty);
 
-  if (!arr.length) {
-    $empty.show();
-    $list.hide();              // ← cache la section “résultats”
-    return;
-  }
+                if (!arr.length) {
+                    $empty.show();
+                    $list.hide();              // ← cache la section “résultats”
+                    return;
+                }
 
-  $empty.hide();
-  $list.show();                // ← ré-affiche la liste si on a des résultats
+                $empty.hide();
+                $list.show();                // ← ré-affiche la liste si on a des résultats
 
-  const renderItem = VIEW_RENDERER[view] || cardPersonnage;
-  for (let i = 0; i < arr.length; i++) $list.append(renderItem(arr[i]));
-}
+                const renderItem = VIEW_RENDERER[view] || cardPersonnage;
+                for (let i = 0; i < arr.length; i++) $list.append(renderItem(arr[i]));
+            }
 
 
-  /* ===================== Navigation ===================== */
-  function currentView(){ return $('#guidebook_nav [role="tab"][aria-selected="true"]').data('cat') || 'personnage'; }
-  function selectCategory(cat){
-    $('#guidebook_nav [role="tab"]').attr('aria-selected','false');
-    $('#guidebook_nav [role="tab"][data-cat="'+cat+'"]').attr('aria-selected','true');
+            /* ===================== Navigation ===================== */
+            function currentView() { return $('#guidebook_nav [role="tab"][aria-selected="true"]').data('cat') || 'personnage'; }
+            function selectCategory(cat) {
+                $('#guidebook_nav [role="tab"]').attr('aria-selected', 'false');
+                $('#guidebook_nav [role="tab"][data-cat="' + cat + '"]').attr('aria-selected', 'true');
 
-    $('#secondary .secondary-wrap').removeClass('active');
-    $('#sec-'+cat).addClass('active');
+                $('#secondary .secondary-wrap').removeClass('active');
+                $('#sec-' + cat).addClass('active');
 
-    $('.panel').removeClass('active');
-    $('#panel-'+cat).addClass('active');
+                $('.panel').removeClass('active');
+                $('#panel-' + cat).addClass('active');
 
-    renderView(cat);
-  }
+                renderView(cat);
+            }
 
-  /* ===================== Bindings & Boot ===================== */
-  $('#guidebook_nav').on('click','[role="tab"][data-cat]', function(){ selectCategory($(this).data('cat')); });
-  bindFiltersets('#secondary');
-  $('#secondary').on('input change','input[type="search"], select', function(){ renderView(currentView()); });
+            /* ===================== Bindings & Boot ===================== */
+            $('#guidebook_nav').on('click', '[role="tab"][data-cat]', function () { selectCategory($(this).data('cat')); });
+            bindFiltersets('#secondary');
+            $('#secondary').on('input change', 'input[type="search"], select', function () { renderView(currentView()); });
 
-  $(function(){
-    DATA = normalizeData(RAW);                           // normalise tout (magie/classes/actif/type)
-    $('#secondary .filterset').each(function(){ ensureAnyState($(this)); });
-    selectCategory('personnage');                        // vue par défaut
-  });
+            $(function () {
+                DATA = normalizeData(RAW);                           // normalise tout (magie/classes/actif/type)
+                $('#secondary .filterset').each(function () { ensureAnyState($(this)); });
+                selectCategory('personnage');                        // vue par défaut
+            });
 
-  /* ===================== API ===================== */
-  window.Registre = {
-    replace(arr){ if(Array.isArray(arr)){ DATA = normalizeData(arr); renderView(currentView()); } },
-    export(){ return JSON.parse(JSON.stringify(DATA)); }
-  };
-})(jQuery);
-</script>
+            /* ===================== API ===================== */
+            window.Registre = {
+                replace(arr) { if (Array.isArray(arr)) { DATA = normalizeData(arr); renderView(currentView()); } },
+                export() { return JSON.parse(JSON.stringify(DATA)); }
+            };
+        })(jQuery);
+    </script>
 
-        
+
 
 
 

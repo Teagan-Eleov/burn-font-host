@@ -138,7 +138,7 @@
 
   /*Theme colors*/
   --witch-theme: var(--magenta-200);
-  --chasseur-theme: var(--red-400);
+  --chasseur-theme: var(--red-300);
   --cristal-theme: var(--blue-400);
   --dead-theme: var(--green-400);
   --human-theme: var(--gold-400);

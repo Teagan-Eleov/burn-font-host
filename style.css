@@ -421,7 +421,7 @@ blockquote cite {
 }
 
 .color-chasseur {
-  color: var(--human-theme);
+  color: var(--chasseur-theme);
 }
 
 .color-cristal {

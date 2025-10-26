@@ -77,6 +77,10 @@
   --magenta-600: #5d0750;
   --magenta-800: #271e26;
 
+  --ash-200: #9388a4;
+  --ash-300: #59565e;
+  --ash-400: #2e242e;
+
   --gold-200: #a78f57;
   --gold-400: #857246;
 
@@ -148,6 +152,8 @@
   --cristal-theme: var(--blue-400);
   --dead-theme: var(--green-400);
   --human-theme: var(--gold-400);
+  --ghost-theme: var(--ash-200);
+
 
   --text-tint: var(--blue-200);
   --surface-tint: var(--cristal-theme);
@@ -265,6 +271,41 @@
   --background-image: url("https://imgur.com/8Z1jH1Z.png");
   --header-image: url("https://imgur.com/dvSFL3E.png");
   --pa-image: url("https://imgur.com/JIgsTOw.jpg");
+}
+
+.theme-ash, .theme-inconnudeux {
+  --text-tint: var(--ash-200);
+  --surface-tint: var(--ghost-theme);
+  --stroke-tint: var(--ghost-theme);
+  --tint-grad-left: var(--ash-300);
+  --tint-grad-right: var(--ash-400);
+  --text-important: var(--magenta-200);
+  --background-image: url("https://imgur.com/es7OPp7.png");
+  --header-image: url("https://cdnb.artstation.com/p/assets/images/images/087/944/881/large/julian-bauer-ghostly-bride.jpg?1747084126");
+  --pa-image: url("https://imgur.com/KNzwAAI.png");
+}
+
+/* passer les images en noir et blanc si theme ash*/
+/* Conteneur */
+.theme-ash .forum_header {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Le calque qui reprend le background et le passe en N&B */
+.theme-ash .forum_header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;                 /* hérite TOUT le background (image, position, size, repeat) */
+  filter: grayscale(70%);
+  z-index: 0;                          /* reste derrière le contenu */
+}
+
+/* S'assurer que le contenu passe au-dessus du calque filtré */
+.theme-ash .forum_header > * {
+  position: relative;
+  z-index: 1;
 }
 
 
@@ -1530,6 +1571,14 @@ input:checked+.theme-button {
 
 #theme_button_red {
   background-color: var(--chasseur-theme);
+}
+
+#theme_button_ash {
+  background-color: var(--ghost-theme);
+}
+
+.theme-ash #footer_image {
+  background-position: top !important;
 }
 
 .theme-red #hero_image {

@@ -625,7 +625,7 @@ blockquote cite {
   background-image: var(--svg-alteration);
 }
 
-.chipElementaire .chip_icon {
+.chipElementaire .chip_icon, .chipManipulation .chip_icon{
   background-image: var(--svg-elementaire);
 }
 

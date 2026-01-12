@@ -4102,6 +4102,7 @@ twsection:hover twreason {
 #fiche_quick_recap {
   grid-area: fiche_quick_recap;
   overflow: auto;
+  display: block;
 }
 
 

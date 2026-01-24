@@ -4023,7 +4023,7 @@ twsection:hover twreason {
   grid-area: rp_header;
 }
 
-#ficheBandeau {
+#ficheBandeau, .ficheBandeau {
   position: absolute;
   background-position: center;
   background-size: cover;

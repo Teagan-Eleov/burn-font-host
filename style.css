@@ -4440,6 +4440,7 @@ rp .chip {
 
 rpbloc {
   padding: 32px !important;
+  display: block!important;
   /*gap: 16px; inutile sur FA*/
 }
 

@@ -216,7 +216,8 @@
 
 /* test variable JS changement de theme*/
 
-.theme-blue, .theme-cristallise {
+.theme-blue,
+.theme-cristallise {
   --text-tint: var(--blue-200);
   --surface-tint: var(--cristal-theme);
   --stroke-tint: var(--cristal-theme);
@@ -225,10 +226,12 @@
   --text-important: var(--gold-200);
   --background-image: url("https://static.wixstatic.com/media/e609d3_db5e1da067484082b3afa8a510d28709~mv2.png");
   --header-image: url("https://cdna.artstation.com/p/assets/images/images/046/971/522/large/axel-sauerwald-sea-witch.jpg?1646419242");
-  --pa-image: url("https://imgur.com/1i5kIIl.png");
+  /*--pa-image: url("https://imgur.com/1i5kIIl.png");*/
+  --pa-image: url("https://imgur.com/2lP3iTn.jpg");
 }
 
-.theme-red, .theme-chasseur {
+.theme-red,
+.theme-chasseur {
   --text-tint: var(--red-300);
   --surface-tint: var(--chasseur-theme);
   --stroke-tint: var(--red-300);
@@ -237,10 +240,13 @@
   --text-important: var(--blue-200);
   --background-image: url("https://cdnb.artstation.com/p/assets/images/images/035/631/701/large/oliver-ryan-little-boat-big-men-resize.jpg?1615471672");
   --header-image: url("https://cdna.artstation.com/p/assets/images/images/049/040/782/large/john-patrick-ganas-hitodama-graveyard2.jpg?1651558373");
-  --pa-image: url("https://imgur.com/v3gR1iz.jpg");
+  /*--pa-image: url("https://imgur.com/v3gR1iz.jpg");*/
+  --pa-image: url("https://imgur.com/pvdHsvz.png");
+
 }
 
-.theme-green, .theme-inconnu {
+.theme-green,
+.theme-inconnu {
   --text-tint: var(--green-400);
   --surface-tint: var(--dead-theme);
   --stroke-tint: var(--dead-theme);
@@ -249,11 +255,15 @@
   --text-important: var(--blue-200);
   --background-image: url("https://imgur.com/EjlrxKo.png");
   --header-image: url("https://imgur.com/W1WB6a4.png");
-  --pa-image: url("https://imgur.com/KT9fJkq.jpg");
+  /*--pa-image: url("https://imgur.com/KT9fJkq.jpg");*/
+  --pa-image: url("https://imgur.com/ivn6ZmG.jpg");
+
 
 }
 
-.theme-gold, .theme-humain {
+
+.theme-gold,
+.theme-humain {
   --text-tint: var(--gold-200);
   --surface-tint: var(--human-theme);
   --stroke-tint: var(--human-theme);
@@ -262,11 +272,13 @@
   --text-important: var(--magenta-200);
   --background-image: url("https://imgur.com/0wKT0kg.png");
   --header-image: url("https://cdnb.artstation.com/p/assets/images/images/023/437/529/large/darek-zabrocki-marine-11-final.jpg?1579196604");
-  --pa-image: url("https://imgur.com/3J6e05b.png");
+  /*--pa-image: url("https://imgur.com/3J6e05b.png");*/
+  --pa-image: url("https://imgur.com/mB2CaSn.png");
 
 }
 
-.theme-licorne, .theme-witch {
+.theme-licorne,
+.theme-witch {
   --text-tint: var(--magenta-200);
   --surface-tint: var(--witch-theme);
   --stroke-tint: var(--witch-theme);
@@ -275,10 +287,11 @@
   --text-important: var(--gold-200);
   --background-image: url("https://imgur.com/8Z1jH1Z.png");
   --header-image: url("https://imgur.com/dvSFL3E.png");
-  --pa-image: url("https://imgur.com/JIgsTOw.jpg");
+  --pa-image: url("https://imgur.com/sot15sn.jpg");
 }
 
-.theme-ash, .theme-inconnudeux {
+.theme-ash,
+.theme-inconnudeux {
   --text-tint: var(--ash-200);
   --surface-tint: var(--ghost-theme);
   --stroke-tint: var(--ghost-theme);
@@ -287,7 +300,9 @@
   --text-important: var(--magenta-200);
   --background-image: url("https://imgur.com/es7OPp7.png");
   --header-image: url("https://cdnb.artstation.com/p/assets/images/images/087/944/881/large/julian-bauer-ghostly-bride.jpg?1747084126");
-  --pa-image: url("https://imgur.com/KNzwAAI.png");
+  /*--pa-image: url("https://imgur.com/KNzwAAI.png");*/
+  --pa-image: url("https://imgur.com/iP7lwcp.png");
+
 }
 
 /* passer les images en noir et blanc si theme ash*/
@@ -302,13 +317,15 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: inherit;                 /* hérite TOUT le background (image, position, size, repeat) */
+  background: inherit;
+  /* hérite TOUT le background (image, position, size, repeat) */
   filter: grayscale(70%);
-  z-index: 0;                          /* reste derrière le contenu */
+  z-index: 0;
+  /* reste derrière le contenu */
 }
 
 /* S'assurer que le contenu passe au-dessus du calque filtré */
-.theme-ash .forum_header > * {
+.theme-ash .forum_header>* {
   position: relative;
   z-index: 1;
 }
@@ -386,8 +403,7 @@ h2 {
   font-size: 40px;
 }
 
-h3
-  {
+h3 {
   font-size: 35px;
 }
 
@@ -630,7 +646,8 @@ blockquote cite {
   background-image: var(--svg-alteration);
 }
 
-.chipElementaire .chip_icon, .chipManipulation .chip_icon{
+.chipElementaire .chip_icon,
+.chipManipulation .chip_icon {
   background-image: var(--svg-elementaire);
 }
 
@@ -781,13 +798,12 @@ a:hover {
   transform: scale(0.95);
 }
 
-.post_content a
-{
+.post_content a {
   color: var(--text-tint);
   font-size: 15px;
 }
-.post_content a:hover
-{
+
+.post_content a:hover {
   color: var(--text-color);
 }
 
@@ -798,7 +814,8 @@ a:hover {
 .switcheroo__form-button,
 #fa_toolbar #fa_right #notif_list li.see_all a {
   background: linear-gradient(to right, var(--tint-grad-left), var(--tint-grad-right));
-  border: 1px solid var(--stroke-quinary);  padding: 8px;
+  border: 1px solid var(--stroke-quinary);
+  padding: 8px;
   display: block;
   text-align: center;
   color: var(--text-onTint) !important;
@@ -846,8 +863,8 @@ a:hover {
 form[name=form_login],
 form[name=form_login]~.panel,
 .row3,
-#postingbox, 
-form[name=form_confirm]{
+#postingbox,
+form[name=form_confirm] {
   border: 1px solid var(--stroke-tertiary);
   background-color: var(--surface-3);
   padding: 16px;
@@ -1631,14 +1648,56 @@ input:checked+.theme-button {
 
 
 
+.tag {
+  background-color: var(--tint-grad-left);
+  width: fit-content;
+  padding: 2px 8px;
+  color: var(--text-onTint);
+  font-size: 12px;
+}
+
+.event_details {
+  width: 100%;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.event_description {}
+
+#pa_illu h3 {
+  line-height: 38px;
+}
+
+#eventBanner {
+
+  background: linear-gradient(rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 1)), url("https://cdnb.artstation.com/p/assets/images/images/022/611/101/large/andre-kieschnik-artstation-andre-postlaunch-nightlife-1920x1080.jpg?1576070055");
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+
+}
+
+#eventBanner .forum_description
+{
+  height: fit-content !important;
+  flex: inherit;
+}
 
 
 
 #pa_illu {
   grid-area: illu;
-  background: var(--pa-image) top left no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 1)), var(--pa-image) top left no-repeat;
+  /* le gradient va de haut en bas*/
   background-size: cover;
   background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 16px;
+  justify-content: space-between;
 }
 
 #pa_main_actu {
@@ -1870,6 +1929,8 @@ input:checked+.theme-button {
   border-radius: var(--radius-m);
   height: 220px;
 }
+
+
 
 .forum_header {
   width: 100%;
@@ -2410,15 +2471,13 @@ input:checked+.theme-button {
   color: var(--text-secondary)
 }
 
-.lastPost_author
-{
+.lastPost_author {
   display: flex;
   flex-direction: row;
-  gap : 4px;
+  gap: 4px;
 }
 
-.lastPost_date
-{
+.lastPost_date {
   font-size: 10px;
 }
 
@@ -2426,8 +2485,8 @@ input:checked+.theme-button {
   fill: var(--text-tint);
 }
 
-.go_to_lastpost:hover svg, .last-post-icon:hover svg
-{
+.go_to_lastpost:hover svg,
+.last-post-icon:hover svg {
   stroke: var(--text-tint);
 }
 
@@ -2489,7 +2548,7 @@ input:checked+.theme-button {
   opacity: 0.5;
 }
 
-.post_button_img  {
+.post_button_img {
   display: none;
 }
 
@@ -2620,7 +2679,7 @@ input:checked+.theme-button {
   z-index: 1;
 }
 
-.post_right_content .avatar_default{
+.post_right_content .avatar_default {
   width: 200px;
 }
 
@@ -2646,15 +2705,14 @@ input:checked+.theme-button {
 }
 
 /*apercu d'un message en cours d'ecriture*/
-#preview .message_section
-{
+#preview .message_section {
   align-self: center;
-  max-width: 704px; /*forcer largeur equivalente a un message posté*/
+  max-width: 704px;
+  /*forcer largeur equivalente a un message posté*/
 }
 
-#preview.post_content
-{
-  display : flex;
+#preview.post_content {
+  display: flex;
 }
 
 /* liste participants*/
@@ -2936,7 +2994,7 @@ select {
 }
 
 #profil_container #fiche_slide_info {
-    margin-top: 16px;
+  margin-top: 16px;
 
 }
 
@@ -3048,23 +3106,20 @@ select {
 
 
 /************** Screen nav ************/
-#screen_nav
-{
+#screen_nav {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  z-index:2;
+  z-index: 2;
   gap: 20px;
 }
 
-#screen_nav a
-{
-opacity: 0.4;
+#screen_nav a {
+  opacity: 0.4;
 }
 
-#screen_nav a:hover
-{
-opacity: 1;
+#screen_nav a:hover {
+  opacity: 1;
 }
 
 
@@ -3811,8 +3866,7 @@ blockquote cite {
   border: solid 1px var(--stroke-tertiary);
 }
 
-#fiche_scenarios
-{
+#fiche_scenarios {
   gap: 32px;
 }
 
@@ -3834,43 +3888,45 @@ blockquote cite {
   display: block;
   color: var(--text-secondary);
 }*/
-rp
-{
+rp {
   display: flex;
   gap: 16px;
 }
 
 /********** test UI MJ post **********/
-.mjpost{
+.mjpost {
   padding: 16px;
 }
-.mjpost-background{
+
+.mjpost-background {
   padding: 10px;
   overflow: hidden;
   margin: 0 auto;
   background: var(--surface-2);
-      background: linear-gradient(135deg, var(--surface-2) 35px, var(--surface-2) 0) top left,
-                  linear-gradient(225deg, var(--surface-2) 35px, var(--surface-2) 0) top right,
-                  linear-gradient(315deg, var(--surface-2) 35px, var(--surface-2) 0) bottom right,
-                  linear-gradient(45deg, var(--surface-2) 35px, var(--surface-2) 0) bottom left;
-      background-size: 51% 51%;
-      background-repeat: no-repeat;
-      background-image: radial-gradient(circle at 0 0, rgba(0,0,0,0) 34px, var(--surface-5) 35px),
-                        radial-gradient(circle at 100% 0, rgba(0,0,0,0) 34px, var(--surface-5) 35px),
-                        radial-gradient(circle at 100% 100%, rgba(0,0,0,0) 34px, var(--surface-5) 35px),
-                        radial-gradient(circle at 0 100%, rgba(0,0,0,0) 34px, var(--surface-5) 35px);
+  background: linear-gradient(135deg, var(--surface-2) 35px, var(--surface-2) 0) top left,
+    linear-gradient(225deg, var(--surface-2) 35px, var(--surface-2) 0) top right,
+    linear-gradient(315deg, var(--surface-2) 35px, var(--surface-2) 0) bottom right,
+    linear-gradient(45deg, var(--surface-2) 35px, var(--surface-2) 0) bottom left;
+  background-size: 51% 51%;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(circle at 0 0, rgba(0, 0, 0, 0) 34px, var(--surface-5) 35px),
+    radial-gradient(circle at 100% 0, rgba(0, 0, 0, 0) 34px, var(--surface-5) 35px),
+    radial-gradient(circle at 100% 100%, rgba(0, 0, 0, 0) 34px, var(--surface-5) 35px),
+    radial-gradient(circle at 0 100%, rgba(0, 0, 0, 0) 34px, var(--surface-5) 35px);
 
 }
 
-.mjpost-border{
+.mjpost-border {
   padding: 60px;
   border: 1px solid var(--stroke-tertiary);
 }
+
 .mjpost h3 {
   padding-bottom: 10px;
   text-align: center;
 }
-.mjpost hr{
+
+.mjpost hr {
   border: 0;
   border: 1px solid var(--stroke-tertiary);
   margin-top: 10px;
@@ -3931,47 +3987,47 @@ twsection:hover twreason {
 
 
 .liste_citations .citation_bloc {
-    transform: translateY(-32px);
+  transform: translateY(-32px);
 }
 
 .liste_citations .citation_bloc:first-child {
-    transform: translateY(0) !important;
+  transform: translateY(0) !important;
 }
 
 .citation_bloc {
-    display: flex;
-    background-repeat: no-repeat;
-    background-size: fit-content;
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: fit-content;
 
-    font-style: italic;
-    letter-spacing: 0.1em;
-    height: fit-content;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  height: fit-content;
 }
 
 .citation_left {
-    background-position: left top;
-    background-image: var(--svg-quote-left);
+  background-position: left top;
+  background-image: var(--svg-quote-left);
 }
 
 .citation_right {
-    flex-direction: row-reverse;
-    text-align: end;
-    background-position: right top;
-    background-image: var(--svg-quote-right);
-    width: 100%;
+  flex-direction: row-reverse;
+  text-align: end;
+  background-position: right top;
+  background-image: var(--svg-quote-right);
+  width: 100%;
 
 }
 
 .citation_left .citation_content {
-    padding-left: 60px;
-    max-width: 500px;
-    padding-top: 32px;
+  padding-left: 60px;
+  max-width: 500px;
+  padding-top: 32px;
 }
 
 .citation_right .citation_content {
-    padding-right: 60px;
-    max-width: 500px;
-    padding-top: 32px;
+  padding-right: 60px;
+  max-width: 500px;
+  padding-top: 32px;
 }
 
 
@@ -4023,7 +4079,8 @@ twsection:hover twreason {
   grid-area: rp_header;
 }
 
-#ficheBandeau, .ficheBandeau {
+#ficheBandeau,
+.ficheBandeau {
   position: absolute;
   background-position: center;
   background-size: cover;
@@ -4035,15 +4092,15 @@ twsection:hover twreason {
   z-index: 0;
 }
 
-#fiche_buttons, .fiche_buttons {
+#fiche_buttons,
+.fiche_buttons {
   grid-area: fiche_buttons;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 16px;
 }
 
-.fiche_slide
-{
+.fiche_slide {
   gap: 32px;
   display: flex;
   flex-direction: column;
@@ -4053,13 +4110,14 @@ twsection:hover twreason {
   display: none !important;
 }
 
-#fiche_scenarios .fiche_carousel, #fiche_scenarios #fiche_carousel
-{
+#fiche_scenarios .fiche_carousel,
+#fiche_scenarios #fiche_carousel {
   overflow: auto;
   padding-top: 16px;
 }
 
-#fiche_carousel, .fiche_carousel {
+#fiche_carousel,
+.fiche_carousel {
   grid-area: fiche_carousel;
   width: 100%;
   height: 400px;
@@ -4181,7 +4239,7 @@ twsection:hover twreason {
 
 /*masquer corruption si non sorciere*/
 .fiche_cristal #fiche_corruption,
-.fiche_humain #fiche_corruption, 
+.fiche_humain #fiche_corruption,
 .fiche_chasseur #fiche_corruption {
   display: none;
 }
@@ -4189,8 +4247,7 @@ twsection:hover twreason {
 /*masquer armoricia si non chasseur*/
 .fiche_cristal #fiche_armoricia,
 .fiche_humain #fiche_armoricia,
-.fiche_sorciere #fiche_armoricia
-{
+.fiche_sorciere #fiche_armoricia {
   display: none;
 
 }
@@ -4201,7 +4258,8 @@ twsection:hover twreason {
 }
 
 /*masquer section magie si humain ou chasseur, competences prend tout*/
-.fiche_humain .fiche_magie_corruption, .fiche_chasseur .fiche_magie_corruption {
+.fiche_humain .fiche_magie_corruption,
+.fiche_chasseur .fiche_magie_corruption {
   display: none;
 }
 
@@ -4440,7 +4498,7 @@ rp .chip {
 
 rpbloc {
   padding: 32px !important;
-  display: block!important;
+  display: block !important;
   /*gap: 16px; inutile sur FA*/
 }
 
@@ -4730,14 +4788,12 @@ div.sceditor-dropdown a {
     display: none;
   }
 
-  #footer_credits
-  {
+  #footer_credits {
     flex-direction: column;
   }
 
-  #footer_credits div:first-child
-  {
-    width:100%;
+  #footer_credits div:first-child {
+    width: 100%;
   }
 
 }
@@ -4746,8 +4802,7 @@ div.sceditor-dropdown a {
 
 @media (max-width: 500px) {
 
-  .page-content
-  {
+  .page-content {
     padding-left: 12px;
     padding-right: 12px;
   }

@@ -4512,6 +4512,7 @@ chipsrp {
 hrp {
   /*gap: 16px; inutile sur FA*/
   color: var(--text-secondary);
+  display: block;
 }
 
 note {

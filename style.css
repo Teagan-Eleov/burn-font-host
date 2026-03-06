@@ -3900,6 +3900,9 @@ rp {
   padding: 16px;
 }
 
+.actionsmj{display: flex; flex-direction: column; gap: 8px;
+}optionmj{width: 75% !important; align-self: center; display: flex; padding: 8px; gap: 4px; flex-direction : row; background: var(--surface-5); align-items: center; border: 1px solid var(--stroke-tertiary); font-weigh: 400; border-radius: 2px;}
+
 .mjpost-background {
   padding: 10px;
   overflow: hidden;

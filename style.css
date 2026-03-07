@@ -29,7 +29,7 @@
   /****** Images*****/
   --background-image: url("https://static.wixstatic.com/media/e609d3_db5e1da067484082b3afa8a510d28709~mv2.png");
   --header-image: url("https://cdna.artstation.com/p/assets/images/images/046/971/522/large/axel-sauerwald-sea-witch.jpg?1646419242");
-  --pa-image: url("https://imgur.com/A8HQxob.jpg");
+  --pa-image: url("https://imgur.com/lwpD8W9.jpg");
 
   /*a suppr*/
   --subject-annonce: url("https://i.imgur.com/WBW2Adp.png");
@@ -227,7 +227,7 @@
   --background-image: url("https://static.wixstatic.com/media/e609d3_db5e1da067484082b3afa8a510d28709~mv2.png");
   --header-image: url("https://cdna.artstation.com/p/assets/images/images/046/971/522/large/axel-sauerwald-sea-witch.jpg?1646419242");
   /*--pa-image: url("https://imgur.com/1i5kIIl.png");*/
-  --pa-image: url("https://imgur.com/A8HQxob.jpg");
+  --pa-image: url("https://imgur.com/lwpD8W9.jpg");
 }
 
 .theme-red,
@@ -241,7 +241,7 @@
   --background-image: url("https://cdnb.artstation.com/p/assets/images/images/035/631/701/large/oliver-ryan-little-boat-big-men-resize.jpg?1615471672");
   --header-image: url("https://cdna.artstation.com/p/assets/images/images/049/040/782/large/john-patrick-ganas-hitodama-graveyard2.jpg?1651558373");
   /*--pa-image: url("https://imgur.com/v3gR1iz.jpg");*/
-  --pa-image: url("https://imgur.com/W7Q8d2c.png");
+  --pa-image: url("https://imgur.com/kTYe059.png");
 
 }
 
@@ -256,7 +256,7 @@
   --background-image: url("https://imgur.com/EjlrxKo.png");
   --header-image: url("https://imgur.com/W1WB6a4.png");
   /*--pa-image: url("https://imgur.com/KT9fJkq.jpg");*/
-  --pa-image: url("https://imgur.com/bppgTEG.jpg");
+  --pa-image: url("https://imgur.com/nwnHHjw.jpg");
 
 
 }
@@ -273,7 +273,8 @@
   --background-image: url("https://imgur.com/0wKT0kg.png");
   --header-image: url("https://cdnb.artstation.com/p/assets/images/images/023/437/529/large/darek-zabrocki-marine-11-final.jpg?1579196604");
   /*--pa-image: url("https://imgur.com/3J6e05b.png");*/
-  --pa-image: url("https://imgur.com/9DUOKQ4.png");
+  --pa-image: url("https://imgur.com/ol1WPWR.png");
+  /*--pa-image: url("https://imgur.com/7jAfVuj.png"); sirene v2*/
 
 }
 
@@ -287,7 +288,7 @@
   --text-important: var(--gold-200);
   --background-image: url("https://imgur.com/8Z1jH1Z.png");
   --header-image: url("https://imgur.com/dvSFL3E.png");
-  --pa-image: url("https://imgur.com/sot15sn.jpg.jpg");
+  --pa-image: url("https://imgur.com/EpmnIjq.jpg");
 }
 
 .theme-ash,
@@ -1672,16 +1673,15 @@ input:checked+.theme-button {
 
   /*background: linear-gradient(rgba(0, 0, 0, 0.0),
       rgba(0, 0, 0, 1)), url("https://cdnb.artstation.com/p/assets/images/images/022/611/101/large/andre-kieschnik-artstation-andre-postlaunch-nightlife-1920x1080.jpg?1576070055");*/
-      background: linear-gradient(rgba(0, 0, 0, 0.0),
-      rgba(0, 0, 0, 1)), url("https://i.pinimg.com/1200x/30/81/c3/3081c3a45ed7f237b6045657cc3b2a66.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 1)), url("https://cdna.artstation.com/p/assets/images/images/028/281/146/medium/andreas-rocha-burninghome01.jpg?1594031116");
   background-size: cover;
   background-position: center;
   height: 300px;
 
 }
 
-#eventBanner .forum_description
-{
+#eventBanner .forum_description {
   height: fit-content !important;
   flex: inherit;
 }
@@ -3900,9 +3900,6 @@ rp {
   padding: 16px;
 }
 
-.actionsmj{display: flex; flex-direction: column; gap: 8px;
-}optionmj{width: 75% !important; align-self: center; display: flex; padding: 8px; gap: 4px; flex-direction : row; background: var(--surface-5); align-items: center; border: 1px solid var(--stroke-tertiary); font-weigh: 400; border-radius: 2px;}
-
 .mjpost-background {
   padding: 10px;
   overflow: hidden;
@@ -3936,6 +3933,26 @@ rp {
   border: 1px solid var(--stroke-tertiary);
   margin-top: 10px;
   margin-bottom: 40px;
+}
+
+.actionsmj {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+optionmj {
+  width: 84% !important;
+  align-self: center;
+  display: flex;
+  padding: 8px;
+  gap: 4px;
+  flex-direction: row;
+  background: var(--surface-5);
+  align-items: center;
+  border: 1px solid var(--stroke-tertiary);
+  font-weight: 400;
+  border-radius: 2px;
 }
 
 /*********** fin mj post ***********/
@@ -4517,7 +4534,7 @@ chipsrp {
 hrp {
   /*gap: 16px; inutile sur FA*/
   color: var(--text-secondary);
-  display: block!important;
+  display: block !important;
 }
 
 note {

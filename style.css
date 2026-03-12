@@ -3900,6 +3900,9 @@ rp {
   padding: 16px;
 }
 
+translucide
+{opacity: 0.4;}
+
 .mjpost-background {
   padding: 10px;
   overflow: hidden;

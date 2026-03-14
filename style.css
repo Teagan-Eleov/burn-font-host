@@ -153,9 +153,10 @@
   --witch-theme: var(--magenta-200);
   --chasseur-theme: var(--red-300);
   --cristal-theme: var(--blue-400);
-  --dead-theme: var(--green-400);
+  /*--dead-theme: var(--green-400);*/
+  --inconnu-theme: var(--green-400);
   --human-theme: var(--gold-400);
-  --ghost-theme: var(--ash-200);
+  --inconnu2-theme: var(--ash-200);
 
 
   --text-tint: var(--blue-200);
@@ -248,8 +249,8 @@
 .theme-green,
 .theme-inconnu {
   --text-tint: var(--green-400);
-  --surface-tint: var(--dead-theme);
-  --stroke-tint: var(--dead-theme);
+  --surface-tint: var(--inconnu-theme);
+  --stroke-tint: var(--inconnu-theme);
   --tint-grad-left: var(--green-590);
   --tint-grad-right: var(--green-600);
   --text-important: var(--blue-200);
@@ -481,8 +482,8 @@ blockquote cite {
   color: var(--witch-theme);
 }
 
-.color-dead {
-  color: var(--dead-theme);
+.color-inconnu {
+  color: var(--inconnu-theme);
 }
 
 .color-human {
@@ -1582,7 +1583,7 @@ input:checked+.theme-button {
 }
 
 #theme_button_green {
-  background-color: var(--dead-theme);
+  background-color: var(--inconnu-theme);
 }
 
 #theme_button_gold {
@@ -1598,7 +1599,7 @@ input:checked+.theme-button {
 }
 
 #theme_button_ash {
-  background-color: var(--ghost-theme);
+  background-color: var(--inconnu2-theme);
 }
 
 .theme-ash #footer_image {

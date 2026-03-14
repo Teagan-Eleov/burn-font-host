@@ -295,8 +295,8 @@
 .theme-ash,
 .theme-inconnudeux {
   --text-tint: var(--ash-200);
-  --surface-tint: var(--ghost-theme);
-  --stroke-tint: var(--ghost-theme);
+  --surface-tint: var(--inconnu2-theme);
+  --stroke-tint: var(--inconnu2-theme);
   --tint-grad-left: var(--ash-300);
   --tint-grad-right: var(--ash-400);
   --text-important: var(--magenta-200);

@@ -1750,7 +1750,7 @@ input:checked+.theme-button {
   color: var(--red-400)
 }
 
-#pa_progressbar {
+#pa_progressbar, .pa_progressbar {
   grid-area: progress;
   width: 100%;
   gap: 16px;
@@ -1762,7 +1762,7 @@ input:checked+.theme-button {
   flex-wrap: nowrap;
 }
 
-#pa_progressbar .fondProgressBar {
+#pa_progressbar .fondProgressBar, .pa_progressbar .fondProgressBar{
   width: 100%;
   height: 10px;
   border-radius: 10px;
@@ -1771,7 +1771,7 @@ input:checked+.theme-button {
   background-color: var(--surface-1);
 }
 
-#pa_progressbar .progression {
+#pa_progressbar .progression, .pa_progressbar  .progression{
   width: 0%;
   height: 100%;
   background: linear-gradient(to right, var(--tint-grad-left), var(--tint-grad-right));

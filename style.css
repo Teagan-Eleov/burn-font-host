@@ -486,6 +486,10 @@ blockquote cite {
   color: var(--inconnu-theme);
 }
 
+.color-inconnudeux {
+  color: var(--inconnu2-theme);
+}
+
 .color-human {
   color: var(--human-theme);
 }

@@ -2481,7 +2481,7 @@ input:checked+.theme-button {
 .lastPost_author {
   display: flex;
   flex-direction: row;
-  gap: 4px;
+  /*gap: 4px;*/
 }
 
 .lastPost_date {

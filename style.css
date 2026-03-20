@@ -3561,6 +3561,14 @@ select {
   background: var(--surface-tint) !important;
 }
 
+#notif_list .contentTime, .recTopic-time
+{
+  font-family: 'Lora';
+  font-size: 10px;
+  font-weight: 100;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
 
 
 /*on masque la liste des notif par défaut*/

@@ -3561,7 +3561,7 @@ select {
   background: var(--surface-tint) !important;
 }
 
-#notif_list .contentTime, .recTopic-time
+#notif_list .contentTime
 {
   font-family: 'Lora';
   font-size: 10px;

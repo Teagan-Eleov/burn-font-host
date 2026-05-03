@@ -4174,19 +4174,19 @@ twsection:hover twreason {
 }
 
 .fiche_avatar,
-.fiche_roliste_avatar {
+.fiche_roliste_avatar, .predef_avatar {
   overflow: hidden;
   border: 1px solid var(--stroke-tertiary);
   padding: 4px;
 }
 
-.fiche_avatar {
+.fiche_avatar, .predef_avatar {
   grid-area: fiche_avatar;
 }
 
 .fiche_avatar div,
 .fiche_roliste_avatar div,
-.fiche_avatar img {
+.fiche_avatar img, .predef_avatar div {
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -4352,6 +4352,62 @@ twsection:hover twreason {
   color: var(--text-secondary)
 }
 
+/*********** fiche predef ***********/
+.fichePredef
+{
+  gap: 24px;
+}
+.recapPredef_section
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  align-items: start;
+  gap: 8px;
+  
+}
+.recapPredef_data
+{
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.recapPredef_card .sectionText
+{
+  height: 150px;
+  overflow: auto;
+}
+
+.prelien_voir_fiche
+{
+  color:var(--text-tint)
+}
+
+.predef_prelien
+{
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+
+.predef_avatar
+{
+  height:150px;
+  width: 150px;
+}
+
+.predef_prelien .recapPredef_card
+{
+width: 80%;
+height: 150px;
+}
+
+.predef_prelien .recapPredef_card .sectionText
+{
+  height: auto;
+}
+
 
 
 
@@ -4461,7 +4517,7 @@ twsection:hover twreason {
 }
 
 .recap_rp_section .recap_rp_button,
-.recap_relations_section .recap_rp_button {
+.recap_relations_section .recap_rp_button, .recapPredef_card .recap_rp_button {
   display: flex;
   padding-right: 24px;
   width: 100%;

@@ -1616,6 +1616,7 @@ input:checked+.theme-button {
     var(--inconnu2-theme),
     var(--cristal-theme)
   );
+  border: none;
 }
 
 .theme-ash #footer_image {

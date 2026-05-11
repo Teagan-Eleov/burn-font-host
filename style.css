@@ -3783,6 +3783,11 @@ blockquote cite {
 
 /**************** post rp ***********/
 
+hr
+{
+  border: 1px solid var(--stroke-tertiary);
+}
+
 .message {
   position: relative;
   overflow: hidden;

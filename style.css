@@ -2301,6 +2301,8 @@ input:checked+.theme-button {
 #qeel_last_connected {
   grid-area: lastConnected;
   overflow: auto;
+  height: 308px;
+
 }
 
 #qeel_legend {

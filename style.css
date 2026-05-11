@@ -1606,6 +1606,18 @@ input:checked+.theme-button {
   background-color: var(--inconnu2-theme);
 }
 
+#theme_button_random {
+  background: conic-gradient(
+    var(--cristal-theme),
+    var(--inconnu-theme),
+    var(--human-theme),
+    var(--witch-theme),
+    var(--chasseur-theme),
+    var(--inconnu2-theme),
+    var(--cristal-theme)
+  );
+}
+
 .theme-ash #footer_image {
   background-position: top !important;
 }

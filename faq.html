@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Feuilles existantes -->
+    <link rel="stylesheet" href="https://teagan-eleov.github.io/burn-font-host/style.css" />
+    <link rel="stylesheet" href="https://teagan-eleov.github.io/burn-font-host/guidebook.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+
+    <!-- jQuery + tooltips -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/malihu/jquery-style-my-tooltips/jquery.style-my-tooltips.js"></script>
+    <script>
+        (function ($) {
+            $(function () {
+                $("[title]").style_my_tooltips({
+                    tip_follows_cursor: true,
+                    tip_delay_time: 0,
+                    tip_fade_speed: 300
+                });
+            });
+        })(jQuery);
+    </script>
+
+    <title>FAQ</title>
+
+    <!-- Complément CSS local (le gros vient de style.css / guidebook.css) -->
+    <style>
+        /* Layout principal — sera précisé en Étape 2 (sidebar gauche / résultats droite) */
+        #guidebook_content {
+            grid-template-columns: 300px 1fr;
+            gap: 32px;
+        }
+
+        /* ===== Toolbar & champs génériques ===== */
+        .toolbar {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin: 12px 0;
+        }
+
+        .toolbar .field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: start;
+            width: 100%;
+        }
+
+        .toolbar input[type="search"] {
+            background: var(--surface-1);
+            border: 1px solid var(--stroke-tertiary);
+            color: var(--text-color);
+            padding: 8px 10px;
+            width: 100%;
+        }
+
+        .grid-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        /* ===== Boutons de filtres (style "tabs") ===== */
+        .field .optionButton {
+            width: fit-content;
+            font-family: "Lora", "Merriweather Sans";
+            font-weight: 400;
+        }
+
+        .filterset {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .secondary_card {
+            padding: 24px;
+            gap: 24px;
+        }
+
+        .panel {
+            padding: 0;
+        }
+
+        /* ===== Sidebar FAQ ===== */
+        #faq-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            align-self: start;
+            /* la sidebar ne s'étire pas en hauteur */
+        }
+
+        #faq-sidebar .toolbar {
+            margin: 0;
+        }
+
+        #faq-filters {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .faq-category {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-category .optionButton {
+            width: fit-content;
+        }
+
+        .faq-category-title {
+            font-family: "Lora", "Merriweather Sans", serif;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 1.2;
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        /* ===== Panel résultats (droite) ===== */
+        .faq-results-card {
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+
+        /* ===== Cards de questions (inspiré de faq_answer.html) ===== */
+        .questionMessage {
+            padding: 0;
+            width: 100%;
+        }
+
+        .questionRow {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .questionRow chipsrp {
+            width: 100%;
+            justify-content: flex-start !important;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .questionLabel {
+            margin: 0;
+            /* la police serif Lora et la taille viennent du style global h3 */
+        }
+
+        .questionAnswer {
+            line-height: 1.6;
+            width: 100%;
+        }
+
+        .questionAnswer p {
+            margin: 0 0 12px 0;
+            max-width: 100% !important;
+        }
+
+        .questionAnswer p:last-child {
+            margin-bottom: 0;
+        }
+
+        .questionAnswer ul {
+            margin: 0 0 12px 0;
+            padding-left: 24px;
+        }
+
+        .questionAnswer a {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body id="modernbb" class="">
+    <div id="background_blured"></div>
+
+    <!-- HERO -->
+    <div class="text_600 forum_content">
+        <div id="hero">
+            <div class="fog-layer"></div>
+            <a id="hero_image" target="_blank" href="https://arsin-rpg.forumactif.com/forum"></a>
+            <div id="hero_content" class="flexColumn">
+                <div id="forumName">FAQ</div>
+                <div id="hero_context_section" class="flexColumn">
+                    <div class="blur_card" id="hero_contexte"><br />
+                        Bienvenue sur la FAQ de Arsin.<br />
+                        Retrouvez ici les questions/réponses utiles, filtrables par mots-clés.
+                    </div>
+                </div>
+            </div>
+            <div id="theme_selector" class="flexColumn">
+                <input type="radio" id="input_blue" name="theme" value="blue" checked />
+                <label for="input_blue" id="theme_button_blue" class="theme-button"></label>
+                <input type="radio" id="input_green" name="theme" value="green" />
+                <label for="input_green" id="theme_button_green" class="theme-button"></label>
+                <input type="radio" id="input_gold" name="theme" value="gold" />
+                <label for="input_gold" id="theme_button_gold" class="theme-button"></label>
+                <input type="radio" id="input_licorne" name="theme" value="licorne" />
+                <label for="input_licorne" id="theme_button_licorne" class="theme-button"></label>
+                <input type="radio" id="input_red" name="theme" value="red" />
+                <label for="input_red" id="theme_button_red" class="theme-button"></label>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- LAYOUT FAQ — squelette, sera enrichi en Étape 2 -->
+    <div id="guidebook" class="text_600">
+        <div class="layout">
+            <div id="guidebook_content">
+                <!-- Sidebar (gauche) : champ recherche + liste des mots-clés groupés -->
+                <aside id="faq-sidebar" class="secondary_card">
+                    <div class="toolbar">
+                        <div class="field">
+                            <input id="q-faq" type="search" placeholder="Rechercher">
+                        </div>
+                        <div class="field">
+                            <button type="button" id="faq-reset" class="tab-btn optionButton">
+                                <div class="optionButtonContent">Réinitialiser</div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Catégories de mots-clés : générées dynamiquement en Étape 4
+                         Une catégorie ressemblera à :
+                           <div class="faq-category">
+                               <h3 class="faq-category-title">Groupe</h3>
+                               <div class="filterset" data-category="Groupe" role="group" aria-label="Filtre Groupe">
+                                   <button type="button" class="tab-btn optionButton filter-btn" data-value="Humain" aria-selected="false">
+                                       <div class="optionButtonContent">Humain</div>
+                                   </button>
+                                   ...
+                               </div>
+                           </div>
+                    -->
+                    <div id="faq-filters"></div>
+                </aside>
+
+                <!-- Résultats (droite) : liste des questions -->
+                <section id="faq-results" class="panel active">
+                    <div class="secondary_card faq-results-card">
+                        <div id="list-faq" class="grid-list"></div>
+                        <div id="empty-faq" class="muted" style="display:none">Aucun résultat.</div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Données FAQ
+         Format d'une entrée :
+           {
+             "id":       "slug-unique",                       // identifiant stable (utile pour ancres futures)
+             "question": "Texte de la question ?",
+             "answer":   "Texte de la réponse.\n\nSauts de ligne doubles = paragraphes. **gras**, *italique*, [lien](url), - listes.",
+             "keywords": ["Mot-clé 1", "Mot-clé 2"]          // libellés tels qu'ils s'affichent
+           }
+    -->
+    <script id="faq-data" type="application/json">[
+      {
+        "id": "armee-recrutement-truands",
+        "question": "Est-ce que l'armée a essayé de recruter parmi les truands et/ou ils ont créé leur propre force ?",
+        "answer": "Les premières recrues de l'armée étaient des poissons noirs, ils ont plutôt enrôlé des invisibilisés et des sacrifiables le temps de valider le concept. Ils auraient veillé à ne pas sélectionner les pires raclures de la ville, l'expérience consistait quand même à leur donner de la magie, donc ils ont donc plutôt choisi ceux accusés d'infractions de type délits ou contraventions. C'était plutôt des jeunes qu'ils pouvaient modeler à leurs idéaux.\n\nIls ont également pu recruter des cristallisés de 1ère génération, pour en savoir plus sur le système d'apprentissage, la gestion de la magie, les effets secondaires/indésirables de la greffe.",
+        "keywords": ["Cristallisés", "Armée"]
+      },
+      {
+        "id": "fantomes-parlent",
+        "question": "Est-ce que les fantômes parlent ? Peut-on les comprendre sans magie ou faut-il forcément être une sorcière et maîtriser la magie de communication ?",
+        "answer": "Tout le monde peut voir les fantômes, à condition d'avoir le fameux gène qui le permet, qu'on soit sorcière ou non. Cependant, le gène ne permet pas de leur parler, ni d'interagir avec eux.\n\nIl est possible d'entendre les fantômes parler, mais eux ne vous comprendront pas. Et même lorsqu'ils parlent, ils ne sont pas très informatifs : ils vont principalement hurler, faire des choses étranges et flippantes en lien avec ce qui les obsèdent… bref, ils perdent la tête et ça se sent.",
+        "keywords": ["Fantômes", "Magie"]
+      },
+      {
+        "id": "homosexualite-pf-seiland",
+        "question": "Quelles sont les normes par rapport à l'homosexualité à Port-Fidèl / Seiland ?",
+        "answer": "À PF, les choses sont plutôt chill, surtout niveau loi (mariage homosexuel légal, par exemple).\n\nBien entendu, pour que chacun puisse satisfaire ses envies de drama, on laisse le reste du monde (et dans une certaine mesure, le reste de Seiland) flou pour que vous puissiez combler avec vos envies et vos besoins. Par exemple, on peut imaginer une région lointaine, à Seiland ou dans un autre pays, qui soit moins friendly par rapport à l'homosexualité (et autres sujets, d'ailleurs).",
+        "keywords": ["Port-Fidèl", "Us & coutumes", "Seiland"]
+      }
+    ]</script>
+
+    <!-- Moteur FAQ -->
+    <script>
+        (function ($) {
+            "use strict";
+
+            /* ===================== Chargement des données ===================== */
+            // Décode aussi les entités HTML que le forum peut injecter (&quot; &#91; …)
+            function getJSONFromScript(id) {
+                const el = document.getElementById(id);
+                if (!el) return [];
+                let raw = (el.textContent || el.innerText || '').trim();
+                if (!raw) return [];
+                if (raw.includes('&')) {
+                    const ta = document.createElement('textarea');
+                    ta.innerHTML = raw;
+                    raw = ta.value;
+                }
+                try { return JSON.parse(raw); }
+                catch (e) {
+                    // Normalisation de secours (guillemets typographiques, virgules finales)
+                    raw = raw
+                        .replace(/[‘’]/g, "'")
+                        .replace(/[“”]/g, '"')
+                        .replace(/,\s*([}\]])/g, '$1');
+                    return JSON.parse(raw);
+                }
+            }
+
+            /* ===================== Utilitaires de comparaison ===================== */
+            const norm = (s) => (s ?? '').toString().normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().trim();
+            const canon = (s) => norm(s).replace(/[\s\-_]+/g, ''); // retire aussi espaces/tirets/underscores
+
+            /* ===================== Filtres multi-sélection (boutons "tabs") ===================== */
+            function ensureAnyState($set) {
+                const $any = $set.find('.filter-btn[data-value=""]');
+                const $pressedSpecific = $set.find('.filter-btn[aria-selected="true"]').not($any);
+                if ($pressedSpecific.length) { $any.attr('aria-selected', 'false'); }
+                else { $any.attr('aria-selected', 'true'); $set.find('.filter-btn').not($any).attr('aria-selected', 'false'); }
+            }
+            function bindFiltersets(container, onChange) {
+                $(container).on('click keydown', '.filterset .filter-btn', function (e) {
+                    if (e.type === 'keydown' && !['Enter', ' '].includes(e.key)) return;
+                    const $btn = $(this);
+                    const $set = $btn.closest('.filterset');
+                    const isAny = ($btn.data('value') + '') === '';
+                    if (isAny) {
+                        $set.find('.filter-btn').attr('aria-selected', 'false');
+                        $btn.attr('aria-selected', 'true');
+                    } else {
+                        const pressed = $btn.attr('aria-selected') === 'true';
+                        $btn.attr('aria-selected', pressed ? 'false' : 'true');
+                        ensureAnyState($set);
+                    }
+                    if (typeof onChange === 'function') onChange();
+                });
+            }
+            function getFilterValues($set) {
+                return $set.find('.filter-btn[aria-selected="true"]').map(function () {
+                    const v = ($(this).data('value') ?? '').toString();
+                    return v === '' ? null : v;
+                }).get().filter(Boolean);
+            }
+
+            /* ===================== Catégories de mots-clés =====================
+               Map { "Nom de catégorie": [ "Mot-clé tel qu'écrit dans les questions", ... ] }
+               - Les mots-clés non rangés ici atterriront automatiquement dans "Mots clefs".
+               - Pour créer une nouvelle catégorie : ajoute une clé. Tout est dynamique au boot.
+               - Pour qu'un mot-clé apparaisse dans le filtre, il suffit qu'il existe dans
+                 au moins une question : pas besoin de le déclarer ici.
+            ============================================================= */
+            const CATEGORIES = {
+                "Magie": ["Magie", "Alchimie", "Artefacts", "Runes"],
+                "Groupe": ["Humain", "Sorcières", "Cristallisés", "Chasseurs"],
+                "Bestiaire": ["Sirène", "Nécrophage", "Fantômes"],
+                "Seiland": ["Histoire", "Port-Fidèl", "Seiland", "Us & coutumes"],
+                // Tout mot-clé non listé ici atterrit dans la rubrique "Mots clefs" (cf. DEFAULT_CATEGORY plus bas).
+            };
+            const DEFAULT_CATEGORY = "Autres";
+
+            /* ===================== Markdown léger ===================== */
+            // Échappe le HTML AVANT toute substitution, pour éviter les injections.
+            function escapeHtml(s) {
+                return (s ?? '').toString()
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;');
+            }
+
+            // Formatages inline : liens, gras, italique. Le HTML a déjà été échappé.
+            function mdInline(s) {
+                return s
+                    // [texte](url)  — traité avant gras/italique pour autoriser **gras dans lien**
+                    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+                    // **gras**
+                    .replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>')
+                    // *italique* (le gras est déjà transformé, donc plus de risque de double match)
+                    .replace(/\*([^*\n]+)\*/g, '<em>$1</em>');
+            }
+
+            // Parse un texte markdown léger :
+            //  - "\n\n" = nouveau paragraphe
+            //  - lignes "- xxx" consécutives = <ul><li>…</li></ul>
+            //  - simple "\n" dans un paragraphe = <br>
+            function parseMarkdown(md) {
+                if (!md) return '';
+                const escaped = escapeHtml(md);
+                const blocks = escaped.split(/\n\s*\n/);
+
+                return blocks.map(raw => {
+                    const block = raw.replace(/^\n+|\n+$/g, '');
+                    if (!block) return '';
+                    const lines = block.split('\n');
+
+                    // Liste : toutes les lignes commencent par "- " ou "* "
+                    if (lines.every(l => /^\s*[-*]\s+/.test(l))) {
+                        const items = lines.map(l =>
+                            '<li>' + mdInline(l.replace(/^\s*[-*]\s+/, '').trim()) + '</li>'
+                        );
+                        return '<ul>' + items.join('') + '</ul>';
+                    }
+
+                    // Paragraphe normal : sauts de ligne simples = <br>
+                    return '<p>' + lines.map(l => mdInline(l.trim())).join('<br>') + '</p>';
+                }).filter(Boolean).join('');
+            }
+
+            /* ===================== Renderer cards ===================== */
+            function chipTag(label) {
+                return '<div class="chip flexRow"><span>' + escapeHtml(label) + '</span></div>';
+            }
+
+            function cardQuestion(entry) {
+                const chips = (entry.keywords || []).map(chipTag).join('');
+                const anchor = entry.id ? ('faq-' + entry.id) : '';
+                return `
+        <div class="message questionMessage scoopcorners colorborder offsetEffect"${anchor ? ' id="' + anchor + '"' : ''}>
+          <div class="borders_top"><div></div><div></div></div>
+          <div class="borders_bottom"><div></div><div></div></div>
+          <div class="questionRow">
+            <chipsrp>${chips}</chipsrp>
+            <h4 class="questionLabel">${escapeHtml(entry.question || '')}</h4>
+            <div class="questionAnswer">${parseMarkdown(entry.answer || '')}</div>
+          </div>
+        </div>`;
+            }
+
+            // Filtre DATA selon les contrôles et affiche les cards correspondantes.
+            function render() {
+                const c = readControls();
+                const arr = DATA.filter(e => matchesFilter(e, c));
+
+                const $list = $('#list-faq').empty();
+                const $empty = $('#empty-faq');
+                if (!arr.length) {
+                    $empty.show();
+                    $list.hide();
+                    return;
+                }
+                $empty.hide();
+                $list.show();
+                for (const entry of arr) {
+                    $list.append(cardQuestion(entry));
+                }
+            }
+
+            /* ===================== Sidebar dynamique ===================== */
+            // Construit la sidebar à partir de l'union des keywords présents dans `data`,
+            // regroupés selon `categories`. Les mots-clés non rangés vont dans DEFAULT_CATEGORY.
+            // Ordre d'affichage : les catégories listées dans CATEGORIES dans leur ordre de déclaration,
+            // puis DEFAULT_CATEGORY à la fin. Au sein d'une catégorie, tri alphabétique (FR).
+            function buildSidebar(data, categories) {
+                // 1) Tous les mots-clés présents dans le dataset (uniques)
+                const allKeywords = [...new Set(
+                    (data || []).flatMap(e => e.keywords || [])
+                )];
+
+                // 2) keyword -> nom de catégorie (lookup case-insensitive via canon())
+                const kwToCat = new Map();
+                for (const [catName, kws] of Object.entries(categories || {})) {
+                    for (const kw of kws) kwToCat.set(canon(kw), catName);
+                }
+
+                // 3) Groupement (préserve l'ordre de CATEGORIES puis DEFAULT_CATEGORY)
+                const groups = {};
+                for (const catName of Object.keys(categories || {})) groups[catName] = [];
+                groups[DEFAULT_CATEGORY] = [];
+                for (const kw of allKeywords) {
+                    const cat = kwToCat.get(canon(kw)) || DEFAULT_CATEGORY;
+                    if (!groups[cat]) groups[cat] = [];
+                    groups[cat].push(kw);
+                }
+
+                // 4) Rendu DOM
+                const $container = $('#faq-filters').empty();
+                for (const [cat, kws] of Object.entries(groups)) {
+                    if (!kws.length) continue;
+                    kws.sort((a, b) => a.localeCompare(b, 'fr', { sensitivity: 'base' }));
+
+                    const buttons = kws.map(kw => `
+                        <button type="button" class="tab-btn optionButton filter-btn" data-value="${escapeHtml(kw)}" aria-selected="false">
+                            <div class="optionButtonContent">${escapeHtml(kw)}</div>
+                        </button>
+                    `).join('');
+
+                    $container.append(`
+                        <div class="faq-category">
+                            <h3 class="faq-category-title">${escapeHtml(cat)}</h3>
+                            <div class="filterset" data-category="${escapeHtml(cat)}" role="group" aria-label="Filtre ${escapeHtml(cat)}">
+                                ${buttons}
+                            </div>
+                        </div>
+                    `);
+                }
+            }
+
+            /* ===================== Filtrage ===================== */
+            // Lit l'état courant des contrôles (recherche + mots-clés sélectionnés).
+            function readControls() {
+                return {
+                    q: $('#q-faq').val() || '',
+                    // Tous les mots-clés cochés, toutes catégories confondues (union = OR)
+                    keywords: getFilterValues($('#faq-sidebar'))
+                };
+            }
+
+            // Une question matche si :
+            //   - (aucun mot-clé sélectionné) OU au moins un de ses keywords est sélectionné (OR / union)
+            //   - ET la recherche texte (si non vide) apparaît dans question/answer/keywords
+            function matchesFilter(entry, c) {
+                if (c.keywords.length) {
+                    const entryKeys = (entry.keywords || []).map(canon);
+                    const selected = c.keywords.map(canon);
+                    if (!selected.some(k => entryKeys.includes(k))) return false;
+                }
+                if (c.q) {
+                    const q = norm(c.q);
+                    const hay = [
+                        entry.question,
+                        entry.answer,
+                        (entry.keywords || []).join(' ')
+                    ].map(norm).join(' ');
+                    if (!hay.includes(q)) return false;
+                }
+                return true;
+            }
+
+            /* ===================== Boot ===================== */
+            let RAW = [];
+            let DATA = [];
+
+            $(function () {
+                RAW = getJSONFromScript('faq-data');
+                DATA = RAW; // pas encore de normalisation (à brancher si besoin en Étape 5)
+
+                buildSidebar(DATA, CATEGORIES);
+
+                // Toggle des boutons mots-clés → re-render (la logique de filtrage arrive Étape 5)
+                bindFiltersets('#faq-sidebar', render);
+
+                // Recherche texte → re-render à chaque frappe (idem)
+                $('#q-faq').on('input', render);
+
+                // Bouton Réinitialiser : déselectionne tous les mots-clés + vide la recherche
+                $('#faq-reset').on('click', function () {
+                    $('#faq-filters .filter-btn').attr('aria-selected', 'false');
+                    $('#q-faq').val('');
+                    render();
+                });
+
+                render();
+            });
+
+            /* ===================== API publique ===================== */
+            window.FAQ = {
+                _debug: () => ({ RAW, DATA })
+            };
+        })(jQuery);
+    </script>
+
+</body>
+
+</html>

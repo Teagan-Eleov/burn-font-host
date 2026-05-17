@@ -37,6 +37,11 @@
 
 }
 
+.source
+{
+    color: var(--text-secondary);
+}
+
 .citation_left .citation_content {
     padding-left: 60px;
     max-width: 500px;

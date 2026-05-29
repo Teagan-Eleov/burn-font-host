@@ -1,0 +1,349 @@
+[
+    {
+        "id": "chasseurs-coutumes-pratique",
+        "question": "Il est précisé dans le guidebook que les coutumes discutables des Chasseurs n'ont quasiment plus cours : est-ce que ça signifie qu'une minorité de familles les pratiquent encore ? Si oui, comment c'est perçu par les autres Chasseurs et par l'Ordre ?",
+        "answer": "Oui, on peut tout à fait considérer que <imp>quelques familles de Chasseurs la pratiquent encore</imp>. La perception de la chose varie selon chacun, mais le métier est en déclin : par la force des choses, la nécessité de conserver cet élitisme est d'autant plus critiquable. Néanmoins, ceux qui croient toujours en l'Ordre peuvent penser que cette pratique reste pertinente, bien qu'ils restent <imp>une minorité de nos jours</imp>.",
+        "keywords": [
+            "Chasseurs"
+        ]
+    },
+    {
+        "id": "fantomes-peuvent-ils-parler",
+        "question": "Est-ce que les fantômes parlent ? Peut-on les comprendre sans magie ou faut-il forcément être une sorcière et maîtriser la magie de communication ?",
+        "answer": "<imp>Tout le monde peut voir les fantômes</imp>, à condition d'avoir le fameux <imp>gène</imp> qui le permet, qu'on soit sorcière ou non. Cependant, le gène ne permet pas de leur parler, ni d'interagir avec eux. Il est possible d'entendre les fantômes parler, mais <imp>eux ne vous comprendront pas</imp>. Et même lorsqu'ils parlent, ils ne sont pas très informatifs : ils vont principalement hurler, faire des choses étranges et flippantes en lien avec <imp>ce qui les obsède</imp>… bref, ils perdent la tête et ça se sent.",
+        "keywords": [
+            "Fantômes"
+        ]
+    },
+    {
+        "id": "fantomes-qui-peut-les-voir",
+        "question": "Qui peut voir les fantômes ?",
+        "answer": "Les personnes capables de voir les fantômes <imp>n'ont aucun signe distinctif</imp>. Il y en a parmi tous les groupes biologiques.\nUn fantôme a plusieurs états :\n<imp>Après la mort</imp> : il est fidèle à celui qu'il était avant sa mort. Très rares sont ceux qui le voient si vite.\n<imp>Après quelques mois</imp> : le fantôme commence à s'étioler. Sa lucidité va lentement commencer à disparaître, grignotée par son obsession. Son visage et son physique vont se dissoudre en même temps que sa mémoire. Environ <imp>3% de la population voit les fantômes étiolés</imp>, tous groupes biologiques confondus.\n<imp>Après des siècles — stade Feu Follet</imp> : tout le monde peut les voir.",
+        "keywords": [
+            "Fantômes"
+        ]
+    },
+    {
+        "id": "fantomes-comment-interagir",
+        "question": "Comment interagir avec un fantôme ?",
+        "answer": "Ce n'est pas parce qu'on voit le fantôme qu'on peut interagir avec lui.\nLes fantômes peuvent émettre quelques sons audibles, notamment ceux qu'on appelle les <imp>\"esprits frappeurs\"</imp>, mais la majeure partie du temps il est impossible de les entendre ou comprendre.\n<imp>Sans magie, il est impossible de parler avec un fantôme.</imp> Il faut la <imp>magie de communication</imp> pour parler et comprendre un fantôme.\nIl n'est <imp>pas possible de toucher un fantôme</imp>.",
+        "keywords": [
+            "Fantômes",
+            "Magie"
+        ]
+    },
+    {
+        "id": "societe-homosexualite",
+        "question": "Quelles sont les normes par rapport à l'homosexualité à Port-Fidèl / Seiland ?",
+        "answer": "À <imp>Port-Fidèl</imp>, il n'y a <imp>pas de discrimination, de normes sociétales ni de lois contre l'homosexualité</imp>. Le <imp>mariage homosexuel est légal</imp>, par exemple.\nOn laisse le reste du monde flou pour que vous puissiez combler avec vos envies et vos besoins. Par exemple, on peut imaginer une région lointaine qui soit moins friendly par rapport à l'homosexualité. De même, une famille à Port-Fidèl peut être homophobe de façon isolée.",
+        "keywords": [
+            "Société",
+            "Sexualité"
+        ]
+    },
+    {
+        "id": "technologie-avancees-1842",
+        "question": "Quelles sont les avancées technologiques en 1842 à Seiland ?",
+        "answer": "On considère les avancées de Seiland / Port-Fidèl équivalentes aux avancées de <imp>1850 environ dans notre monde</imp>, donc :\n<imp>Électricité</imp> principalement dans les quartiers riches.\n<imp>Premières voitures</imp> (encore très rares), <imp>tramway</imp> (plutôt dans le quartier riche).\nEt autres innovations du siècle : machine à coudre, batterie, dynamo, <imp>photographie</imp>, antibiotiques, revolver (mais pas encore d'arme automatique), machine à écrire, presse, journaux, etc.",
+        "keywords": [
+            "Technologie",
+            "Électricité"
+        ]
+    },
+    {
+        "id": "technologie-eau-egouts",
+        "question": "Est-ce qu'il y a des égouts / l'eau courante ?",
+        "answer": "Oui, le <imp>réseau d'eau est particulièrement développé</imp> du fait de l'historique d'incendies dans Port-Fidèl (système anti-incendie).\nLes <imp>Beaux-Quartiers</imp> et <imp>La Petite Fidèle</imp> sont raccordés à l'eau froide (a minima par bâtiment, voire par logement pour les mieux lotis). Certains chanceux ont également <imp>l'eau chaude</imp> mais ça reste rare.",
+        "keywords": [
+            "Technologie"
+        ]
+    },
+    {
+        "id": "technologie-armes-a-feu",
+        "question": "Quelles sont les armes à feu développées à Port-Fidèl / Seiland ?",
+        "answer": "Ce sont majoritairement des <imp>systèmes de percussion et de la poudre</imp> : fusils, pistolets, canon, arquebuses, baïonnettes. Ces armes sont possédées par la <imp>Milice</imp>, les <imp>Chasseurs</imp> ou les plus fortunés.\nLes <imp>armes automatiques / à barillet</imp> commencent à apparaître mais sont <imp>très très rares</imp>, surtout possédées par des riches.",
+        "keywords": [
+            "Technologie",
+            "Armée"
+        ]
+    },
+    {
+        "id": "armee-arsenal",
+        "question": "Quel est l'arsenal de l'Armée ?",
+        "answer": "<imp>Matraque, sable, pistolet ou fusil</imp> selon la situation. Pour plus d'informations, se référer à la question sur les armes à feu développées à Seiland.",
+        "keywords": [
+            "Technologie",
+            "Armée"
+        ]
+    },
+    {
+        "id": "armee-hierarchie",
+        "question": "Quelle est la hiérarchie de l'Armée ?",
+        "answer": "On a globalement la <imp>même hiérarchie qu'en 1840 dans notre monde</imp>.",
+        "keywords": [
+            "Armée"
+        ]
+    },
+    {
+        "id": "armee-sorciere",
+        "question": "Est-ce qu'une sorcière peut travailler à l'Armée ?",
+        "answer": "<imp>Aucune sorcière connue ne sera acceptée à l'Armée.</imp> Cependant, c'est tout à fait envisageable si la <imp>sorcière cache son statut</imp>.",
+        "keywords": [
+            "Armée",
+            "Sorcières"
+        ]
+    },
+    {
+        "id": "societe-illettrisme",
+        "question": "Quel est le niveau d'illettrisme à Port-Fidèl ?",
+        "answer": "Même si l'école est supposée obligatoire jusque 14 ans, dans les faits beaucoup d'enfants (notamment prolétaires et poissons noirs) arrêtent d'étudier pour travailler.\nOn estime le taux d'illettrisme à Port-Fidèl à :\n<imp>3%</imp> chez les notables.\n<imp>10%</imp> chez les respectables.\n<imp>30%</imp> des prolétaires.\n<imp>60%</imp> des poissons noirs.",
+        "keywords": [
+            "Société",
+            "Éducation"
+        ]
+    },
+    {
+        "id": "magie-rapport-autres-pays",
+        "question": "Quel est le rapport à la Magie dans les autres pays ?",
+        "answer": "<imp>Ealmodhor</imp> est <imp>anti-magie</imp>.\n<imp>Seiland</imp> reste neutre avec un passé d'anti-magie, mais la magie est de plus en plus tolérée dans certaines régions (principalement <imp>Port-Fidèl</imp>).\n<imp>Thédarban</imp> et <imp>Nesta-Himil</imp> sont globalement neutres, le rapport à la magie varie selon les régions.",
+        "keywords": [
+            "Société",
+            "Magie"
+        ]
+    },
+    {
+        "id": "geographie-distances-pays",
+        "question": "Quelle distance sépare les pays ?",
+        "answer": "Ces chiffres dépendent du navire, des conditions météorologiques, etc.\n<imp>Seiland - Ealmodhor</imp> : 600 km = 1,5j en vapeur, 2j en voile.\n<imp>Seiland - Nesta-Hamil</imp> : 1 200 km = 3,3j en vapeur, 6j en voile.\n<imp>Seiland - Thédarban</imp> : 1 800 km = 5j en vapeur, 9j en voile.\nVoile : environ 200 km/j (5 nœuds en vitesse de croisière).\nBateau à vapeur : environ 360 km/j (8 à 10 nœuds), mais <imp>pas encore très démocratisé</imp> (plutôt utilisé sur les fleuves ou par l'armée).",
+        "keywords": [
+            "Géographie"
+        ]
+    },
+    {
+        "id": "societe-academie",
+        "question": "Y a-t-il une académie à Port-Fidèl ?",
+        "answer": "Oui, il y a un <imp>campus dans les Beaux Quartiers</imp>, plutôt à destination des enfants <imp>Notables</imp> et quelques chanceux <imp>Respectables</imp>.\nOn y enseigne la politique, le commerce, les sciences, le droit, l'art, la philosophie, etc.",
+        "keywords": [
+            "Société",
+            "Éducation"
+        ]
+    },
+    {
+        "id": "societe-classes-sociales",
+        "question": "Comment savoir quelle est la classe sociale de mon personnage ?",
+        "answer": "<imp>Notables</imp> : les plus fortunés de la ville. Certains descendent de l'ancienne noblesse, d'autres sont chefs d'entreprises, médecins, juges, avocats. Ils vivent majoritairement dans les <imp>Beaux-Quartiers</imp>.\n<imp>Respectables</imp> : la bourgeoisie, la classe moyenne haute. Comprend les commerces en tous genres, précepteurs, quelques scientifiques, certains militaires. Ils vivent dans la <imp>Petite Fidèle</imp> ou les Beaux-Quartiers.\n<imp>Prolétaires</imp> : les ouvriers, marins, dockers, salariés en galère. Ils vivent <imp>aux Cris</imp>.\n<imp>Poissons noirs</imp> : la classe sociale la plus pauvre, les sans-abri et métiers les plus précaires ou mal vus. Ils vivent aux Cris, aux Noyés ou en dehors de la ville.",
+        "keywords": [
+            "Société"
+        ]
+    },
+    {
+        "id": "societe-croyances",
+        "question": "Y a-t-il des croyances spécifiques à Port-Fidèl / Seiland ?",
+        "answer": "Il n'y a <imp>aucune grande religion à Seiland</imp>. Des <imp>croyances locales</imp> peuvent exister.",
+        "keywords": [
+            "Société"
+        ]
+    },
+    {
+        "id": "demantelement-pegre",
+        "question": "Comment s'est déroulé le démantèlement de la pègre ?",
+        "answer": "Après des mois d'<imp>enquête</imp>, la <imp>milice</imp> a effectué une puissante et rapide <imp>attaque nocturne</imp>. Une nuit d'orage, tous les lieux de commerces, QG et autres zones de rassemblement liés à la Pègre ont été saisis. Les stocks de <imp>marchandises illégales</imp> ont été pris et les acteurs présents sur place ont tous été arrêtés (qu'ils soient clients, fournisseurs, petites mains, ou juste de passage au mauvais moment).\nAucune place pour le dialogue. En cas de riposte ou de fuite, l'armée n'a pas hésité à <imp>faire couler le sang</imp>. Si des morts ont été à déplorer, les corps ont été dissimulés, les bavures effacées. L'orage a nettoyé le sang, et la prison a témoigné des absences. Les <imp>procès ont été expéditifs</imp>. Si des cristallisés ont été arrêtés, <imp>leur cristal leur a été retiré</imp>. Les <imp>Cols Noirs</imp> survivants ont quitté la ville.\nÀ la population, on a parlé d'arrestations justes. Les victimes ne sont plus là pour dire l'inverse.",
+        "keywords": [
+            "Pègre",
+            "Cristallisés",
+            "Armée"
+        ]
+    },
+    {
+        "id": "alchimie-existe",
+        "question": "Est-ce que l'Alchimie existe ?",
+        "answer": "L'alchimie correspond à la volonté de transmuter les métaux pour obtenir de nouveaux résultats. Elle existait il y a plusieurs siècles, comme dans notre monde. <imp>L'alchimie n'a pas vraiment marché</imp> et avec le temps, a évolué pour devenir de la <imp>chimie</imp>.\nL'alchimie dans le sens <imp>fantasy</imp> du terme (utilisation de divers ingrédients magiques et non magiques pour obtenir un résultat inédit) <imp>n'existe pas vraiment</imp> : les ingrédients alchimiques ont disparu pour la majorité et le savoir s'est perdu.\nNe reste que l'<imp>herboristerie</imp> et la <imp>magie d'altération</imp> : utiliser des plantes (ou de la matière organique) pour en faire diverses préparations (potions, pommades, baumes, poudres, etc.) qui peuvent avoir divers effets (soins, améliorations physiques, etc.). Il faut garder à l'esprit que ce n'est <imp>pas aussi puissant que de la magie</imp> et que ça a des limites.",
+        "keywords": [
+            "Alchimie",
+            "Magie",
+            "Herboristerie"
+        ]
+    },
+    {
+        "id": "alchimie-ingredients-fabuleux",
+        "question": "Quels étaient les ingrédients fabuleux ?",
+        "answer": "Jadis, Seiland était peuplé de <imp>créatures fantastiques</imp>, depuis chassées ou éteintes. Ces créatures pouvaient fournir des <imp>éléments biologiques aux propriétés extraordinaires</imp> (cornes, sang, bois, écailles, etc.).\nNe sont trouvables actuellement que les ingrédients provenant de <imp>Sirènes</imp> et de <imp>Nécrophages</imp>. Les autres stocks qui pourraient encore exister sont <imp>à découvrir en RP</imp>.",
+        "keywords": [
+            "Alchimie",
+            "Bestiaire"
+        ]
+    },
+    {
+        "id": "alchimie-transformer-ingredient",
+        "question": "Est-ce que je peux transformer un ingrédient d'Herboristerie ?",
+        "answer": "La <imp>magie d'Altération</imp> peut transformer un ingrédient et son effet (ex : de l'urticant devient analgésique, ou augmenter ou réduire l'intensité). <imp>Plus l'effet recherché est éloigné de l'effet initial</imp>, plus ce sera coûteux en énergie, difficile et/ou avec un risque d'effets secondaires.\nL'effet obtenu doit rester \"réaliste\" : un anti-inflammatoire ne pourra pas être modifié au point de rendre invisible.",
+        "keywords": [
+            "Alchimie",
+            "Magie"
+        ]
+    },
+    {
+        "id": "sorcieres-corruption-magie",
+        "question": "Est-ce que la corruption des Sorcières doit avoir un lien avec l'usage de sa magie ?",
+        "answer": "Non, vous êtes libres d'imaginer la <imp>corruption</imp> que vous voulez. Si vous avez besoin d'aide pour trouver une corruption, n'hésitez pas à contacter le <imp>staff</imp> durant la rédaction de votre fiche ou même en amont.",
+        "keywords": [
+            "Sorcières",
+            "Corruption"
+        ]
+    },
+    {
+        "id": "cristal-recrutement-truands",
+        "question": "Est-ce que l'armée a essayé de recruter parmi les truands et/ou ils ont créé leur propre force ?",
+        "answer": "Les premières recrues de l'armée étaient des <imp>poissons noirs</imp> : ils ont plutôt enrôlé des invisibilisés et des sacrifiables le temps de valider le concept. Ils auraient veillé à ne pas sélectionner les pires raclures, l'expérience consistant quand même à leur donner de la magie. Ils ont donc plutôt choisi ceux accusés d'<imp>infractions de type délits ou contraventions</imp>, et c'était plutôt <imp>des jeunes qu'ils pouvaient modeler à leurs idéaux</imp>. Ils ont également pu recruter des <imp>cristallisés de 1ère génération</imp>, pour en savoir plus sur le système d'apprentissage, la gestion de la magie et les effets secondaires de la greffe.",
+        "keywords": [
+            "Cristallisés",
+            "Armée"
+        ]
+    },
+    {
+        "id": "cristal-emplacement-greffe",
+        "question": "Où un cristal peut-il être greffé ?",
+        "answer": "Il peut être greffé sur <imp>n'importe quelle partie du corps</imp>. Pour les cristallisés de <imp>génération 3</imp>, l'armée favorisera des endroits \"sûrs\" (évitant le visage ou la poitrine notamment), à moins que ce soit justifié.",
+        "keywords": [
+            "Cristallisés",
+            "Greffe"
+        ]
+    },
+    {
+        "id": "cristal-prediction-branche",
+        "question": "Est-ce qu'on peut prédire la branche que fournira un cristal ?",
+        "answer": "<imp>Non</imp>, il n'est pas possible de prédire la branche que fournira un cristal.",
+        "keywords": [
+            "Cristallisés",
+            "Magie"
+        ]
+    },
+    {
+        "id": "cristal-effets-secondaires-greffe",
+        "question": "Une greffe de cristal peut-elle avoir des effets secondaires ?",
+        "answer": "Un greffé peut souffrir d'<imp>effets secondaires physiques</imp> suite à une greffe, les plus communs étant :\nUne <imp>mauvaise cicatrisation</imp> autour du cristal.\nUne <imp>inflammation</imp> le temps que le cristal prenne.\nDes <imp>maux de tête</imp> durant les quelques jours suivant la greffe.",
+        "keywords": [
+            "Cristallisés",
+            "Greffe"
+        ]
+    },
+    {
+        "id": "cristal-rejet-greffe",
+        "question": "Comment se passe un rejet de greffe ?",
+        "answer": "Il existe <imp>deux types de rejet</imp> :\nLe <imp>rejet précoce</imp> : dans les jours (rarement les semaines) qui suivent la greffe. C'est le corps qui rejette le cristal qu'il considère comme un corps étranger.\nLe <imp>rejet tardif</imp> : peut se faire quelques années après la greffe. L'union entre le corps et le cristal n'est pas viable, le cristal finit par ne plus fonctionner, <imp>se brise</imp> et perd sa couleur ; le cristallisé ne peut plus pratiquer la magie.\nUn <imp>cristal brisé ne fonctionnera plus</imp> ensuite : même si une nouvelle greffe se passe bien, le greffé n'aura aucune magie.",
+        "keywords": [
+            "Cristallisés",
+            "Greffe"
+        ]
+    },
+    {
+        "id": "cristal-retrait",
+        "question": "Un cristal peut-il être retiré ?",
+        "answer": "Oui, dans ce cas, le <imp>cristal est réutilisable</imp>, tant qu'il est intact.\nLe retrait d'un cristal peut se faire :\n<imp>Volontairement.</imp>\n<imp>Involontairement</imp> (après une arrestation, retrait par l'armée, ou banditisme).",
+        "keywords": [
+            "Cristallisés",
+            "Greffe"
+        ]
+    },
+    {
+        "id": "cristal-risques-retrait",
+        "question": "Quels sont les risques à retirer un cristal ?",
+        "answer": "Plus une greffe est <imp>ancienne (plusieurs années)</imp>, plus le cristal va créer des <imp>adhérences</imp>. Il va devenir plus difficile à retirer, et l'opération pourra présenter des <imp>risques importants pour le porteur</imp>.",
+        "keywords": [
+            "Cristallisés",
+            "Greffe"
+        ]
+    },
+    {
+        "id": "cristal-maitrise-magie",
+        "question": "En combien de temps peut-on maîtriser la magie liée à un cristal ?",
+        "answer": "Il faut distinguer <imp>maîtrise</imp> et <imp>expertise</imp>.\nLa <imp>maîtrise</imp> correspond à l'utilisation imparfaite de la magie, provoquant plus rapidement la \"décharge\" du cristal. Il faut ensuite attendre que le cristal se recharge. Le délai de recharge dépend de l'expérience du cristallisé.\nL'<imp>expertise</imp> correspond à une utilisation plus naturelle de la magie, avec une décharge moins rapide et des sorts plus complexes. On estime à <imp>environ 10 ans de pratique quotidienne</imp> l'expertise de l'usage du cristal.\nLa majorité des cristallisés <imp>maîtrisent</imp> la magie mais ne sont pas pour autant <imp>experts</imp>.",
+        "keywords": [
+            "Cristallisés",
+            "Magie"
+        ]
+    },
+    {
+        "id": "cristal-reaction-magie",
+        "question": "Comment réagit le cristal lors de l'usage de la magie ?",
+        "answer": "Il peut <imp>briller</imp>, le reste est laissé à votre appréciation.\nL'<imp>usage de la magie est indolore</imp>. Si des effets sont souhaités, ils dépendront de la greffe en elle-même (opération et soins post-opératoires).",
+        "keywords": [
+            "Cristallisés",
+            "Magie"
+        ]
+    },
+    {
+        "id": "sorcieres-corruption-connue",
+        "question": "Est-ce que la Corruption est connue des non-sorcières ?",
+        "answer": "Dans l'ensemble, <imp>non</imp>. On connaît des mythes, l'idée que les Sorcières sont <imp>monstrueuses</imp>, perdent la tête ou le physique, mais <imp>la raison est inconnue du grand public</imp>.",
+        "keywords": [
+            "Sorcières",
+            "Corruption"
+        ]
+    },
+    {
+        "id": "sorcieres-maitrise-magie",
+        "question": "En combien de temps peut-on maîtriser une branche / la magie ?",
+        "answer": "Il faut :\n<imp>10 ans</imp> pour apprendre à maîtriser les bases de magie (ne pas l'utiliser involontairement, contrôler les sorts de base de chaque branche).\n<imp>5 ans supplémentaires</imp> pour maîtriser la première branche.\n<imp>10 ans par branche supplémentaire</imp>, si spécialisation il y a.",
+        "keywords": [
+            "Sorcières",
+            "Magie"
+        ]
+    },
+    {
+        "id": "sorcieres-fille-de-sorcieres",
+        "question": "Puis-je jouer une sorcière fille de sorcières ?",
+        "answer": "Oui c'est possible, mais il faut garder à l'esprit que c'est <imp>très rare</imp>.\nLa <imp>sorcellerie n'est pas génétique</imp>. Ainsi, retrouver des sorcières sur <imp>3 générations successives</imp> est extrêmement rare (voire impossible).",
+        "keywords": [
+            "Sorcières"
+        ]
+    },
+    {
+        "id": "societe-proportion-groupes-biologiques",
+        "question": "Quelle est la proportion de chaque groupe biologique à Port-Fidèl ?",
+        "answer": "<imp>1% de la population est Sorcière</imp> à Port-Fidèl (environ 8 000 personnes sur 80 000). C'est plus important que dans les autres régions du fait de la <imp>légalisation de la magie</imp>.\n<imp>0,01% sont cristallisés</imp> (environ 500 personnes sur 80 000).\nIl n'y a qu'<imp>une dizaine de chasseurs</imp>.",
+        "keywords": [
+            "Sorcières",
+            "Chasseurs",
+            "Cristallisés",
+            "Société"
+        ]
+    },
+    {
+        "id": "magie-traces",
+        "question": "Est-ce que la magie (un sort) laisse des traces ?",
+        "answer": "Oui. L'usage de la magie laisse des <imp>traces</imp> qu'un adepte avancé (sorcière ou cristallisé expérimentés) ou un <imp>armoricia</imp> peuvent sentir.\nPlus le sort est <imp>puissant</imp>, plus la trace va rester longtemps.\nPlus le sort est <imp>vieux</imp>, moins la trace est nette.\nPlus l'adepte est <imp>expérimenté</imp>, plus il est capable de sentir la trace longtemps et d'en comprendre les subtilités (branches employées, type de sort, etc.).\nLes <imp>sorcières</imp> y sont bien plus sensibles que les cristallisés (manipulation de toutes les branches au quotidien).\nLes <imp>cristallisés</imp>, ne manipulant qu'une branche, auront du mal à reconnaître et décrypter les traces, et seront principalement sensibles à leur propre branche.\nLes magies ont des <imp>\"empreintes\"</imp> : les plus experts peuvent reconnaître le lanceur du sort rien qu'à sa trace. L'<imp>armo</imp> aura plus d'aisance à reconnaître l'identité, quand les <imp>sorcières</imp> savent mieux déchiffrer le sort lui-même.",
+        "keywords": [
+            "Sorcières",
+            "Cristallisés",
+            "Magie"
+        ]
+    },
+    {
+        "id": "magie-modifier-trace",
+        "question": "Est-ce qu'on peut modifier sa trace ?",
+        "answer": "Il n'est <imp>pas possible de modifier ou effacer une trace à posteriori</imp> du sort : cela voudrait dire relancer un sort (qui laisse une trace) pour effacer une autre trace… et donc remettre une nouvelle trace.\nLa seule chose qu'un adepte peut apprendre, c'est <imp>agir pendant qu'il lance son sort</imp> : lancer une sorte de méta-sort (le sort de base + le sort qui modifie la trace). Cela relève d'un <imp>théorème multi-branches</imp> qui demande une <imp>maîtrise experte</imp> de la théorie de la magie, et c'est uniquement à la portée de sorcières ayant <imp>plusieurs décennies d'expérience</imp>.",
+        "keywords": [
+            "Sorcières",
+            "Magie"
+        ]
+    },
+    {
+        "id": "magie-duree-traces",
+        "question": "Combien de temps sont perceptibles les traces ?",
+        "answer": "Les traces sont décelables pendant une durée limitée qui varie en fonction de l'intensité du sort.\nOn estime :\n<imp>7 à 15 jours</imp> pour un sort simple.\n<imp>15 à 30 jours</imp> pour un sort complexe.\n<imp>Jusqu'à plusieurs mois</imp> pour les théorèmes.\nPassé ce délai, il ne reste que des <imp>résidus</imp> non décelables naturellement (il faut un sort ou un effort de l'armo pour les mettre en exergue). Ces résidus peuvent durer <imp>des années, voire des décennies</imp>.\nL'inconvénient d'étudier les résidus, c'est que toutes les traces ressortent sur plusieurs décennies, rendant difficile le tri des sorts accumulés.",
+        "keywords": [
+            "Magie"
+        ]
+    },
+    {
+        "id": "sorcieres-peut-devenir-chasseur",
+        "question": "Est-ce qu'une Sorcière peut devenir Chasseur ?",
+        "answer": "<imp>Non</imp>, les Chasseurs doivent rester neutres d'une part, et l'<imp>Armoricia refusera la symbiose</imp> d'autre part.\nIdem si le Chasseur devient <imp>Cristallisé</imp> : la symbiose prendra fin.",
+        "keywords": [
+            "Sorcières",
+            "Chasseurs",
+            "Cristallisés"
+        ]
+    }
+]

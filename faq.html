@@ -174,6 +174,67 @@
         .questionAnswer a {
             text-decoration: underline;
         }
+
+        /* ===== Accordéon ===== */
+        .questionHeader {
+            cursor: pointer;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            user-select: none;
+        }
+
+        .questionHeaderBottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .questionChevron {
+            flex-shrink: 0;
+            font-size: 18px;
+            transition: transform 0.2s ease;
+            opacity: 0.5;
+        }
+
+        .questionChevron.open {
+            transform: rotate(180deg);
+            opacity: 1;
+        }
+
+        /* ===== Compteur par filtre ===== */
+        .filter-count {
+            opacity: 0.5;
+            font-size: 0.85em;
+        }
+
+        /* ===== Compteur de résultats ===== */
+        #faq-count {
+            font-size: 0.75em;
+            margin-bottom: 8px;
+            text-align: right;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-secondary, currentColor);
+            opacity: 0.6;
+        }
+
+        /* ===== Empty state ===== */
+        #empty-faq {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            padding: 24px 0;
+            text-align: center;
+        }
+
+        #faq-reset-empty {
+            width: fit-content;
+        }
     </style>
 </head>
 
@@ -232,8 +293,15 @@
                 <!-- Résultats (droite) : liste des questions -->
                 <section id="faq-results" class="panel active">
                     <div class="secondary_card faq-results-card">
+                        <div id="faq-count" class="muted"></div>
                         <div id="list-faq" class="grid-list"></div>
-                        <div id="empty-faq" class="muted" style="display:none">Aucun résultat.</div>
+                        <div id="empty-faq" style="display:none">
+                            <p class="muted">Aucun résultat pour ces filtres.</p>
+                            <p class="muted">Réinitialises tes filtres, ou va poser ta question dans la zone invité sur le forum, ou dans "Need-help" sur discord.</p>
+                            <button type="button" id="faq-reset-empty" class="tab-btn optionButton">
+                                <div class="optionButtonContent">Réinitialiser les filtres</div>
+                            </button>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -290,7 +358,7 @@
                 "Groupes biologiques": ["Sorcières", "Chasseurs", "Cristallisés"],
                 "Bestiaire":           ["Bestiaire", "Fantômes"],
                 "Société":             ["Société", "Sexualité", "Éducation", "Géographie"],
-                "Technologies":        ["Technologie", "Électricité"],
+                "Technologies":        ["Technologie"],
                 "Groupes Sociaux":     ["Armée", "Pègre"]
             };
             const DEFAULT_CATEGORY = "Autres";
@@ -343,9 +411,14 @@
           <div class="borders_top"><div></div><div></div></div>
           <div class="borders_bottom"><div></div><div></div></div>
           <div class="questionRow">
-            <chipsrp>${chips}</chipsrp>
-            <h4 class="questionLabel gradientTitle">${escapeHtml(entry.question || '')}</h4>
-            <div class="questionAnswer">${parseMarkdown(entry.answer || '')}</div>
+            <div class="questionHeader">
+              <chipsrp>${chips}</chipsrp>
+              <div class="questionHeaderBottom">
+                <h4 class="questionLabel gradientTitle">${escapeHtml(entry.question || '')}</h4>
+                <span class="questionChevron">▾</span>
+              </div>
+            </div>
+            <div class="questionAnswer" style="display:none">${parseMarkdown(entry.answer || '')}</div>
           </div>
         </div>`;
             }
@@ -356,13 +429,22 @@
 
                 const $list = $('#list-faq').empty();
                 const $empty = $('#empty-faq');
+                const $count = $('#faq-count');
+
                 if (!arr.length) {
-                    $empty.show();
+                    $count.hide();
                     $list.hide();
+                    $empty.show();
                     return;
                 }
                 $empty.hide();
                 $list.show();
+                const total = DATA.length;
+                const isFiltered = c.keywords.length > 0 || c.q.trim().length > 0;
+                const countText = isFiltered
+                    ? arr.length + ' résultat' + (arr.length > 1 ? 's' : '') + ' sur ' + total
+                    : total + ' résultat' + (total > 1 ? 's' : '');
+                $count.text(countText).show();
                 for (const entry of arr) {
                     $list.append(cardQuestion(entry));
                 }
@@ -393,11 +475,15 @@
                     if (!kws.length) continue;
                     kws.sort((a, b) => a.localeCompare(b, 'fr', { sensitivity: 'base' }));
 
-                    const buttons = kws.map(kw => `
+                    const buttons = kws.map(kw => {
+                        const count = (data || []).filter(e =>
+                            (e.keywords || []).some(k => canon(k) === canon(kw))
+                        ).length;
+                        return `
                         <button type="button" class="tab-btn optionButton filter-btn" data-value="${escapeHtml(kw)}" aria-selected="false">
-                            <div class="optionButtonContent">${escapeHtml(kw)}</div>
-                        </button>
-                    `).join('');
+                            <div class="optionButtonContent">${escapeHtml(kw)} <span class="filter-count">${count}</span></div>
+                        </button>`;
+                    }).join('');
 
                     $container.append(`
                         <div class="faq-category">
@@ -444,11 +530,19 @@
                 // Bind des contrôles (indépendant du chargement des données)
                 bindFiltersets('#faq-sidebar', render);
                 $('#q-faq').on('input', render);
-                $('#faq-reset').on('click', function () {
+
+                // Accordéon
+                $('#list-faq').on('click', '.questionHeader', function () {
+                    $(this).siblings('.questionAnswer').slideToggle(200);
+                    $(this).find('.questionChevron').toggleClass('open');
+                });
+                function resetFilters() {
                     $('#faq-filters .filter-btn').attr('aria-selected', 'false');
                     $('#q-faq').val('');
                     render();
-                });
+                }
+                $('#faq-reset').on('click', resetFilters);
+                $('#faq-results').on('click', '#faq-reset-empty', resetFilters);
 
                 // Chargement des données depuis le JSON externe
                 fetch('faq.json')

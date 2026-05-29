@@ -574,3 +574,47 @@
                 $('#faq-results').on('click', '#faq-toggle-all', function () {
                     const $answers = $('#list-faq .questionAnswer');
                     const $chevrons = $('#list-faq .questionChevron');
+                    const isOpen = $answers.first().is(':visible');
+                    if (isOpen) {
+                        $answers.slideUp(200);
+                        $chevrons.removeClass('open');
+                        $(this).find('.optionButtonContent').text('Tout ouvrir');
+                    } else {
+                        $answers.slideDown(200);
+                        $chevrons.addClass('open');
+                        $(this).find('.optionButtonContent').text('Tout fermer');
+                    }
+                });
+                function resetFilters() {
+                    $('#faq-filters .filter-btn').attr('aria-selected', 'false');
+                    $('#q-faq').val('');
+                    render();
+                }
+                $('#faq-reset').on('click', resetFilters);
+                $('#faq-results').on('click', '#faq-reset-empty', resetFilters);
+
+                // Chargement des données depuis le JSON externe
+                fetch('faq.json')
+                    .then(r => r.json())
+                    .then(data => {
+                        RAW = data;
+                        DATA = RAW;
+                        buildSidebar(DATA, CATEGORIES);
+                        render();
+                    })
+                    .catch(err => {
+                        console.error('Erreur chargement FAQ :', err);
+                        $('#empty-faq').text('Impossible de charger les données.').show();
+                    });
+            });
+
+            /* ===================== API publique ===================== */
+            window.FAQ = {
+                _debug: () => ({ RAW, DATA })
+            };
+        })(jQuery);
+    </script>
+
+</body>
+
+</html>

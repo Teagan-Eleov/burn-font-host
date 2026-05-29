@@ -106,7 +106,7 @@
         "question": "Quel est le rapport à la Magie dans les autres pays ?",
         "answer": "<imp>Ealmodhor</imp> est <imp>anti-magie</imp>.\n<imp>Seiland</imp> reste neutre avec un passé d'anti-magie, mais la magie est de plus en plus tolérée dans certaines régions (principalement <imp>Port-Fidèl</imp>).\n<imp>Thédarban</imp> et <imp>Nesta-Himil</imp> sont globalement neutres, le rapport à la magie varie selon les régions.",
         "keywords": [
-            "Société",
+            "Société", "Géographie",
             "Magie"
         ]
     },

@@ -216,10 +216,29 @@
             font-size: 0.85em;
         }
 
-        /* ===== Compteur de résultats ===== */
+        /* ===== Header résultats (bouton tout ouvrir + compteur) ===== */
+        #faq-list-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        #faq-toggle-all {
+            width: fit-content;
+            border: none !important;
+            box-shadow: none !important;
+            background: transparent !important;
+            padding: 0;
+            opacity: 0.6;
+        }
+
+        #faq-toggle-all:hover {
+            opacity: 1;
+        }
+
         #faq-count {
             font-size: 0.75em;
-            margin-bottom: 8px;
             text-align: right;
             text-transform: uppercase;
             letter-spacing: 0.08em;
@@ -298,7 +317,12 @@
                 <!-- Résultats (droite) : liste des questions -->
                 <section id="faq-results" class="panel active">
                     <div class="secondary_card faq-results-card">
-                        <div id="faq-count" class="muted"></div>
+                        <div id="faq-list-header">
+                            <button type="button" id="faq-toggle-all" class="tab-btn optionButton" style="display:none">
+                                <div class="optionButtonContent">Tout ouvrir</div>
+                            </button>
+                            <div id="faq-count" class="muted"></div>
+                        </div>
                         <div id="list-faq" class="grid-list"></div>
                         <div id="empty-faq" style="display:none">
                             <p class="muted">Aucun résultat pour ces filtres.</p>
@@ -408,7 +432,7 @@
                 return '<div class="chip flexRow"><span>' + escapeHtml(label) + '</span></div>';
             }
 
-            function cardQuestion(entry) {
+            function cardQuestion(entry, open) {
                 const chips = (entry.keywords || []).map(chipTag).join('');
                 const anchor = entry.id ? ('faq-' + entry.id) : '';
                 return `
@@ -420,10 +444,10 @@
               <chipsrp>${chips}</chipsrp>
               <div class="questionHeaderBottom">
                 <h4 class="questionLabel gradientTitle">${escapeHtml(entry.question || '')}</h4>
-                <span class="questionChevron">▾</span>
+                <span class="questionChevron${open ? ' open' : ''}">▾</span>
               </div>
             </div>
-            <div class="questionAnswer" style="display:none">${parseMarkdown(entry.answer || '')}</div>
+            <div class="questionAnswer" style="${open ? '' : 'display:none'}">${parseMarkdown(entry.answer || '')}</div>
           </div>
         </div>`;
             }
@@ -438,6 +462,7 @@
 
                 if (!arr.length) {
                     $count.hide();
+                    $('#faq-toggle-all').hide();
                     $list.hide();
                     $empty.show();
                     return;
@@ -450,8 +475,11 @@
                     ? arr.length + ' résultat' + (arr.length > 1 ? 's' : '') + ' sur ' + total
                     : total + ' résultat' + (total > 1 ? 's' : '');
                 $count.text(countText).show();
+                $('#faq-toggle-all').show()
+                    .find('.optionButtonContent')
+                    .text(isFiltered ? 'Tout fermer' : 'Tout ouvrir');
                 for (const entry of arr) {
-                    $list.append(cardQuestion(entry));
+                    $list.append(cardQuestion(entry, isFiltered));
                 }
             }
 
@@ -541,36 +569,8 @@
                     $(this).siblings('.questionAnswer').slideToggle(200);
                     $(this).find('.questionChevron').toggleClass('open');
                 });
-                function resetFilters() {
-                    $('#faq-filters .filter-btn').attr('aria-selected', 'false');
-                    $('#q-faq').val('');
-                    render();
-                }
-                $('#faq-reset').on('click', resetFilters);
-                $('#faq-results').on('click', '#faq-reset-empty', resetFilters);
 
-                // Chargement des données depuis le JSON externe
-                fetch('faq.json')
-                    .then(r => r.json())
-                    .then(data => {
-                        RAW = data;
-                        DATA = RAW;
-                        buildSidebar(DATA, CATEGORIES);
-                        render();
-                    })
-                    .catch(err => {
-                        console.error('Erreur chargement FAQ :', err);
-                        $('#empty-faq').text('Impossible de charger les données.').show();
-                    });
-            });
-
-            /* ===================== API publique ===================== */
-            window.FAQ = {
-                _debug: () => ({ RAW, DATA })
-            };
-        })(jQuery);
-    </script>
-
-</body>
-
-</html>
+                // Tout ouvrir / tout fermer
+                $('#faq-results').on('click', '#faq-toggle-all', function () {
+                    const $answers = $('#list-faq .questionAnswer');
+                    const $chevrons = $('#list-faq .questionChevron');

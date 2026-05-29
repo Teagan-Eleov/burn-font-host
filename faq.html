@@ -33,7 +33,6 @@
         /* Layout principal — sera précisé en Étape 2 (sidebar gauche / résultats droite) */
         #guidebook_content {
             grid-template-columns: 300px 1fr;
-            gap: 32px;
         }
 
         /* ===== Toolbar & champs génériques ===== */
@@ -95,7 +94,8 @@
             flex-direction: column;
             gap: 32px;
             align-self: start;
-            /* la sidebar ne s'étire pas en hauteur */
+            overflow: auto;
+            max-height: calc(100vh - 120px);
         }
 
         #faq-sidebar .toolbar {
@@ -118,14 +118,7 @@
             width: fit-content;
         }
 
-        .faq-category-title {
-            font-family: "Lora", "Merriweather Sans", serif;
-            font-weight: 400;
-            font-size: 22px;
-            line-height: 1.2;
-            margin: 0;
-            color: var(--text-color);
-        }
+        .faq-category-title {}
 
         /* ===== Panel résultats (droite) ===== */
         .faq-results-card {
@@ -157,7 +150,6 @@
 
         .questionLabel {
             margin: 0;
-            /* la police serif Lora et la taille viennent du style global h3 */
         }
 
         .questionAnswer {
@@ -218,7 +210,7 @@
     </div>
 
 
-    <!-- LAYOUT FAQ — squelette, sera enrichi en Étape 2 -->
+    <!-- LAYOUT FAQ -->
     <div id="guidebook" class="text_600">
         <div class="layout">
             <div id="guidebook_content">
@@ -234,19 +226,6 @@
                             </button>
                         </div>
                     </div>
-
-                    <!-- Catégories de mots-clés : générées dynamiquement en Étape 4
-                         Une catégorie ressemblera à :
-                           <div class="faq-category">
-                               <h3 class="faq-category-title">Groupe</h3>
-                               <div class="filterset" data-category="Groupe" role="group" aria-label="Filtre Groupe">
-                                   <button type="button" class="tab-btn optionButton filter-btn" data-value="Humain" aria-selected="false">
-                                       <div class="optionButtonContent">Humain</div>
-                                   </button>
-                                   ...
-                               </div>
-                           </div>
-                    -->
                     <div id="faq-filters"></div>
                 </aside>
 
@@ -261,67 +240,14 @@
         </div>
     </div>
 
-    <!-- Données FAQ
-         Format d'une entrée :
-           {
-             "id":       "slug-unique",                       // identifiant stable (utile pour ancres futures)
-             "question": "Texte de la question ?",
-             "answer":   "Texte de la réponse.\n\nSauts de ligne doubles = paragraphes. **gras**, *italique*, [lien](url), - listes.",
-             "keywords": ["Mot-clé 1", "Mot-clé 2"]          // libellés tels qu'ils s'affichent
-           }
-    -->
-    <script id="faq-data" type="application/json">[
-      {
-        "id": "armee-recrutement-truands",
-        "question": "Est-ce que l'armée a essayé de recruter parmi les truands et/ou ils ont créé leur propre force ?",
-        "answer": "Les premières recrues de l'armée étaient des poissons noirs, ils ont plutôt enrôlé des invisibilisés et des sacrifiables le temps de valider le concept. Ils auraient veillé à ne pas sélectionner les pires raclures de la ville, l'expérience consistait quand même à leur donner de la magie, donc ils ont donc plutôt choisi ceux accusés d'infractions de type délits ou contraventions. C'était plutôt des jeunes qu'ils pouvaient modeler à leurs idéaux.\n\nIls ont également pu recruter des cristallisés de 1ère génération, pour en savoir plus sur le système d'apprentissage, la gestion de la magie, les effets secondaires/indésirables de la greffe.",
-        "keywords": ["Cristallisés", "Armée"]
-      },
-      {
-        "id": "fantomes-parlent",
-        "question": "Est-ce que les fantômes parlent ? Peut-on les comprendre sans magie ou faut-il forcément être une sorcière et maîtriser la magie de communication ?",
-        "answer": "Tout le monde peut voir les fantômes, à condition d'avoir le fameux gène qui le permet, qu'on soit sorcière ou non. Cependant, le gène ne permet pas de leur parler, ni d'interagir avec eux.\n\nIl est possible d'entendre les fantômes parler, mais eux ne vous comprendront pas. Et même lorsqu'ils parlent, ils ne sont pas très informatifs : ils vont principalement hurler, faire des choses étranges et flippantes en lien avec ce qui les obsèdent… bref, ils perdent la tête et ça se sent.",
-        "keywords": ["Fantômes", "Magie"]
-      },
-      {
-        "id": "homosexualite-pf-seiland",
-        "question": "Quelles sont les normes par rapport à l'homosexualité à Port-Fidèl / Seiland ?",
-        "answer": "À PF, les choses sont plutôt chill, surtout niveau loi (mariage homosexuel légal, par exemple).\n\nBien entendu, pour que chacun puisse satisfaire ses envies de drama, on laisse le reste du monde (et dans une certaine mesure, le reste de Seiland) flou pour que vous puissiez combler avec vos envies et vos besoins. Par exemple, on peut imaginer une région lointaine, à Seiland ou dans un autre pays, qui soit moins friendly par rapport à l'homosexualité (et autres sujets, d'ailleurs).",
-        "keywords": ["Port-Fidèl", "Us & coutumes", "Seiland"]
-      }
-    ]</script>
-
     <!-- Moteur FAQ -->
     <script>
         (function ($) {
             "use strict";
 
-            /* ===================== Chargement des données ===================== */
-            // Décode aussi les entités HTML que le forum peut injecter (&quot; &#91; …)
-            function getJSONFromScript(id) {
-                const el = document.getElementById(id);
-                if (!el) return [];
-                let raw = (el.textContent || el.innerText || '').trim();
-                if (!raw) return [];
-                if (raw.includes('&')) {
-                    const ta = document.createElement('textarea');
-                    ta.innerHTML = raw;
-                    raw = ta.value;
-                }
-                try { return JSON.parse(raw); }
-                catch (e) {
-                    // Normalisation de secours (guillemets typographiques, virgules finales)
-                    raw = raw
-                        .replace(/[‘’]/g, "'")
-                        .replace(/[“”]/g, '"')
-                        .replace(/,\s*([}\]])/g, '$1');
-                    return JSON.parse(raw);
-                }
-            }
-
             /* ===================== Utilitaires de comparaison ===================== */
             const norm = (s) => (s ?? '').toString().normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().trim();
-            const canon = (s) => norm(s).replace(/[\s\-_]+/g, ''); // retire aussi espaces/tirets/underscores
+            const canon = (s) => norm(s).replace(/[\s\-_]+/g, '');
 
             /* ===================== Filtres multi-sélection (boutons "tabs") ===================== */
             function ensureAnyState($set) {
@@ -356,22 +282,20 @@
 
             /* ===================== Catégories de mots-clés =====================
                Map { "Nom de catégorie": [ "Mot-clé tel qu'écrit dans les questions", ... ] }
-               - Les mots-clés non rangés ici atterriront automatiquement dans "Mots clefs".
+               - Les mots-clés non rangés ici atterriront automatiquement dans "Autres".
                - Pour créer une nouvelle catégorie : ajoute une clé. Tout est dynamique au boot.
-               - Pour qu'un mot-clé apparaisse dans le filtre, il suffit qu'il existe dans
-                 au moins une question : pas besoin de le déclarer ici.
             ============================================================= */
             const CATEGORIES = {
-                "Magie": ["Magie", "Alchimie", "Artefacts", "Runes"],
-                "Groupe": ["Humain", "Sorcières", "Cristallisés", "Chasseurs"],
-                "Bestiaire": ["Sirène", "Nécrophage", "Fantômes"],
-                "Seiland": ["Histoire", "Port-Fidèl", "Seiland", "Us & coutumes"],
-                // Tout mot-clé non listé ici atterrit dans la rubrique "Mots clefs" (cf. DEFAULT_CATEGORY plus bas).
+                "Magie":               ["Magie", "Alchimie", "Herboristerie", "Corruption", "Greffe"],
+                "Groupes biologiques": ["Sorcières", "Chasseurs", "Cristallisés"],
+                "Bestiaire":           ["Bestiaire", "Fantômes"],
+                "Société":             ["Société", "Sexualité", "Éducation", "Géographie"],
+                "Technologies":        ["Technologie", "Électricité"],
+                "Groupes Sociaux":     ["Armée", "Pègre"]
             };
             const DEFAULT_CATEGORY = "Autres";
 
             /* ===================== Markdown léger ===================== */
-            // Échappe le HTML AVANT toute substitution, pour éviter les injections.
             function escapeHtml(s) {
                 return (s ?? '').toString()
                     .replace(/&/g, '&amp;')
@@ -379,32 +303,22 @@
                     .replace(/>/g, '&gt;');
             }
 
-            // Formatages inline : liens, gras, italique. Le HTML a déjà été échappé.
             function mdInline(s) {
                 return s
-                    // [texte](url)  — traité avant gras/italique pour autoriser **gras dans lien**
                     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
-                    // **gras**
                     .replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>')
-                    // *italique* (le gras est déjà transformé, donc plus de risque de double match)
                     .replace(/\*([^*\n]+)\*/g, '<em>$1</em>');
             }
 
-            // Parse un texte markdown léger :
-            //  - "\n\n" = nouveau paragraphe
-            //  - lignes "- xxx" consécutives = <ul><li>…</li></ul>
-            //  - simple "\n" dans un paragraphe = <br>
             function parseMarkdown(md) {
                 if (!md) return '';
-                const escaped = escapeHtml(md);
-                const blocks = escaped.split(/\n\s*\n/);
+                const blocks = md.split(/\n\s*\n/);
 
                 return blocks.map(raw => {
                     const block = raw.replace(/^\n+|\n+$/g, '');
                     if (!block) return '';
                     const lines = block.split('\n');
 
-                    // Liste : toutes les lignes commencent par "- " ou "* "
                     if (lines.every(l => /^\s*[-*]\s+/.test(l))) {
                         const items = lines.map(l =>
                             '<li>' + mdInline(l.replace(/^\s*[-*]\s+/, '').trim()) + '</li>'
@@ -412,7 +326,6 @@
                         return '<ul>' + items.join('') + '</ul>';
                     }
 
-                    // Paragraphe normal : sauts de ligne simples = <br>
                     return '<p>' + lines.map(l => mdInline(l.trim())).join('<br>') + '</p>';
                 }).filter(Boolean).join('');
             }
@@ -431,13 +344,12 @@
           <div class="borders_bottom"><div></div><div></div></div>
           <div class="questionRow">
             <chipsrp>${chips}</chipsrp>
-            <h4 class="questionLabel">${escapeHtml(entry.question || '')}</h4>
+            <h4 class="questionLabel gradientTitle">${escapeHtml(entry.question || '')}</h4>
             <div class="questionAnswer">${parseMarkdown(entry.answer || '')}</div>
           </div>
         </div>`;
             }
 
-            // Filtre DATA selon les contrôles et affiche les cards correspondantes.
             function render() {
                 const c = readControls();
                 const arr = DATA.filter(e => matchesFilter(e, c));
@@ -457,23 +369,16 @@
             }
 
             /* ===================== Sidebar dynamique ===================== */
-            // Construit la sidebar à partir de l'union des keywords présents dans `data`,
-            // regroupés selon `categories`. Les mots-clés non rangés vont dans DEFAULT_CATEGORY.
-            // Ordre d'affichage : les catégories listées dans CATEGORIES dans leur ordre de déclaration,
-            // puis DEFAULT_CATEGORY à la fin. Au sein d'une catégorie, tri alphabétique (FR).
             function buildSidebar(data, categories) {
-                // 1) Tous les mots-clés présents dans le dataset (uniques)
                 const allKeywords = [...new Set(
                     (data || []).flatMap(e => e.keywords || [])
                 )];
 
-                // 2) keyword -> nom de catégorie (lookup case-insensitive via canon())
                 const kwToCat = new Map();
                 for (const [catName, kws] of Object.entries(categories || {})) {
                     for (const kw of kws) kwToCat.set(canon(kw), catName);
                 }
 
-                // 3) Groupement (préserve l'ordre de CATEGORIES puis DEFAULT_CATEGORY)
                 const groups = {};
                 for (const catName of Object.keys(categories || {})) groups[catName] = [];
                 groups[DEFAULT_CATEGORY] = [];
@@ -483,7 +388,6 @@
                     groups[cat].push(kw);
                 }
 
-                // 4) Rendu DOM
                 const $container = $('#faq-filters').empty();
                 for (const [cat, kws] of Object.entries(groups)) {
                     if (!kws.length) continue;
@@ -497,7 +401,7 @@
 
                     $container.append(`
                         <div class="faq-category">
-                            <h3 class="faq-category-title">${escapeHtml(cat)}</h3>
+                            <h4 class="gradientTitle faq-category-title">${escapeHtml(cat)}</h4>
                             <div class="filterset" data-category="${escapeHtml(cat)}" role="group" aria-label="Filtre ${escapeHtml(cat)}">
                                 ${buttons}
                             </div>
@@ -507,18 +411,13 @@
             }
 
             /* ===================== Filtrage ===================== */
-            // Lit l'état courant des contrôles (recherche + mots-clés sélectionnés).
             function readControls() {
                 return {
                     q: $('#q-faq').val() || '',
-                    // Tous les mots-clés cochés, toutes catégories confondues (union = OR)
                     keywords: getFilterValues($('#faq-sidebar'))
                 };
             }
 
-            // Une question matche si :
-            //   - (aucun mot-clé sélectionné) OU au moins un de ses keywords est sélectionné (OR / union)
-            //   - ET la recherche texte (si non vide) apparaît dans question/answer/keywords
             function matchesFilter(entry, c) {
                 if (c.keywords.length) {
                     const entryKeys = (entry.keywords || []).map(canon);
@@ -542,25 +441,28 @@
             let DATA = [];
 
             $(function () {
-                RAW = getJSONFromScript('faq-data');
-                DATA = RAW; // pas encore de normalisation (à brancher si besoin en Étape 5)
-
-                buildSidebar(DATA, CATEGORIES);
-
-                // Toggle des boutons mots-clés → re-render (la logique de filtrage arrive Étape 5)
+                // Bind des contrôles (indépendant du chargement des données)
                 bindFiltersets('#faq-sidebar', render);
-
-                // Recherche texte → re-render à chaque frappe (idem)
                 $('#q-faq').on('input', render);
-
-                // Bouton Réinitialiser : déselectionne tous les mots-clés + vide la recherche
                 $('#faq-reset').on('click', function () {
                     $('#faq-filters .filter-btn').attr('aria-selected', 'false');
                     $('#q-faq').val('');
                     render();
                 });
 
-                render();
+                // Chargement des données depuis le JSON externe
+                fetch('faq.json')
+                    .then(r => r.json())
+                    .then(data => {
+                        RAW = data;
+                        DATA = RAW;
+                        buildSidebar(DATA, CATEGORIES);
+                        render();
+                    })
+                    .catch(err => {
+                        console.error('Erreur chargement FAQ :', err);
+                        $('#empty-faq').text('Impossible de charger les données.').show();
+                    });
             });
 
             /* ===================== API publique ===================== */

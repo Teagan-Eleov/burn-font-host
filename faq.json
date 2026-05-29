@@ -283,7 +283,7 @@
     {
         "id": "sorcieres-maitrise-magie",
         "question": "En combien de temps peut-on maîtriser une branche / la magie ?",
-        "answer": "Il faut :\n<imp>10 ans</imp> pour apprendre à maîtriser les bases de magie (ne pas l'utiliser involontairement, contrôler les sorts de base de chaque branche).\n<imp>5 ans supplémentaires</imp> pour maîtriser la première branche.\n<imp>10 ans par branche supplémentaire</imp>, si spécialisation il y a.",
+        "answer": "Il faut :\n<imp>10 ans</imp> pour apprendre à maîtriser les bases de magie (ne pas l'utiliser involontairement, contrôler les sorts de base de chaque branche).\n<imp>5 ans supplémentaires</imp> pour maîtriser la première branche, encore <imp>5ans</imp> pour la seconde, puis\n<imp>10 ans par branche supplémentaire</imp>, si spécialisation il y a.",
         "keywords": [
             "Sorcières",
             "Magie"

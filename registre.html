@@ -218,10 +218,66 @@
             gap: 24px;
         }
 
+        .results-count {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            opacity: 0.6;
+            text-align: right;
+            grid-column: 1 / -1;
+        }
+
         .chipSmall {
             width: fit-content;
             font-size: 10px;
 
+        }
+
+        .perso_chips_break {
+            flex-basis: 100%;
+            height: 0;
+        }
+
+        .chipActif,
+        .chipInactif {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 6px;
+            width: fit-content;
+            opacity: .5;
+        }
+
+        /* Nom + tag alignés à droite (carte feat) */
+        .feat_perso .flexRow {
+            justify-content: flex-end;
+        }
+
+        .feat_perso .chipActif,
+        .feat_perso .chipInactif {
+            margin-left: auto;
+        }
+
+
+        .chipActif .chip_icon,
+        .chipInactif .chip_icon {
+            background-image: none;
+            -webkit-mask: none;
+            mask: none;
+            border-radius: 50%;
+            width: 8px;
+            height: 8px;
+            min-width: 8px;
+            min-height: 8px;
+            flex: 0 0 auto;
+        }
+
+        .chipActif .chip_icon {
+            background-color: #2e9e6b;
+        }
+
+        .chipInactif .chip_icon {
+            background-color: #d64545;
         }
 
         .perso_span {
@@ -373,6 +429,26 @@
                                 </select>
 
                             </div>
+                            <div class="field"><span class="label100">Actif</span>
+                                <div class="filterset" id="a-personnage" role="group" aria-label="Filtre actif">
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn" data-value=""
+                                        aria-selected="true">
+                                        <div class="optionButtonContent">Tous</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="oui">
+                                        <div class="optionButtonContent">Actifs</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="non">
+                                        <div class="optionButtonContent">Inactifs</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="pnj">
+                                        <div class="optionButtonContent">PNJ</div>
+                                    </button>
+                                </div>
+                            </div>
                             <div class="field"><span class="label100">Groupe</span>
                                 <div class="filterset" id="g-personnage" role="group" aria-label="Filtre groupe">
                                     <button type="button" class="tab-btn optionButton label100 filter-btn" data-value=""
@@ -458,26 +534,6 @@
                                 </div>
                             </div>
 
-                            <div class="field"><span class="label100">Actif</span>
-                                <div class="filterset" id="a-personnage" role="group" aria-label="Filtre actif">
-                                    <button type="button" class="tab-btn optionButton label100 filter-btn" data-value=""
-                                        aria-selected="true">
-                                        <div class="optionButtonContent">Tous</div>
-                                    </button>
-                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
-                                        data-value="oui">
-                                        <div class="optionButtonContent">Actifs</div>
-                                    </button>
-                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
-                                        data-value="non">
-                                        <div class="optionButtonContent">Inactifs</div>
-                                    </button>
-                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
-                                        data-value="pnj">
-                                        <div class="optionButtonContent">PNJ</div>
-                                    </button>
-                                </div>
-                            </div>
 
                         </div>
                     </div>
@@ -500,6 +556,27 @@
 
                                 </select>
 
+                            </div>
+                            <div class="field"><span class="label100">Type</span>
+                                <div class="filterset" id="a-feat" role="group" aria-label="Filtre actif">
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn" data-value=""
+                                        aria-selected="true">
+                                        <div class="optionButtonContent">Tous</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="oui">
+                                        <div class="optionButtonContent">Actifs</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="non">
+                                        <div class="optionButtonContent">Inactifs</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="pnj">
+                                        <div class="optionButtonContent">PNJ</div>
+                                    </button>
+
+                                </div>
                             </div>
                             <!--<div class="field"><span class="label100">Groupe</span>
                                 <div class="filterset" id="g-feat" role="group" aria-label="Filtre groupe">
@@ -554,28 +631,6 @@
 
                             -->
 
-                            <div class="field"><span class="label100">Type</span>
-                                <div class="filterset" id="a-feat" role="group" aria-label="Filtre actif">
-                                    <button type="button" class="tab-btn optionButton label100 filter-btn" data-value=""
-                                        aria-selected="true">
-                                        <div class="optionButtonContent">Tous</div>
-                                    </button>
-                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
-                                        data-value="oui">
-                                        <div class="optionButtonContent">Actifs</div>
-                                    </button>
-                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
-                                        data-value="non">
-                                        <div class="optionButtonContent">Inactifs</div>
-                                    </button>
-                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
-                                        data-value="pnj">
-                                        <div class="optionButtonContent">PNJ</div>
-                                    </button>
-
-                                </div>
-                            </div>
-
                         </div>
                     </div>
 
@@ -597,6 +652,26 @@
                                     <option value="nom-za">Nom Z→A</option>
                                 </select>
 
+                            </div>
+                            <div class="field"><span class="label100">Type</span>
+                                <div class="filterset" id="a-metier" role="group" aria-label="Filtre actif">
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn" data-value=""
+                                        aria-selected="true">
+                                        <div class="optionButtonContent">Tous</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="oui">
+                                        <div class="optionButtonContent">Actifs</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="non">
+                                        <div class="optionButtonContent">Inactifs</div>
+                                    </button>
+                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
+                                        data-value="pnj">
+                                        <div class="optionButtonContent">PNJ</div>
+                                    </button>
+                                </div>
                             </div>
                             <div class="field"><span class="label100">Groupe</span>
                                 <div class="filterset" id="g-metier" role="group" aria-label="Filtre groupe">
@@ -683,26 +758,6 @@
                                 </div>
                             </div>
 
-                            <div class="field"><span class="label100">Type</span>
-                                <div class="filterset" id="a-metier" role="group" aria-label="Filtre actif">
-                                    <button type="button" class="tab-btn optionButton label100 filter-btn" data-value=""
-                                        aria-selected="true">
-                                        <div class="optionButtonContent">Tous</div>
-                                    </button>
-                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
-                                        data-value="oui">
-                                        <div class="optionButtonContent">Actifs</div>
-                                    </button>
-                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
-                                        data-value="non">
-                                        <div class="optionButtonContent">Inactifs</div>
-                                    </button>
-                                    <button type="button" class="tab-btn optionButton label100 filter-btn"
-                                        data-value="pnj">
-                                        <div class="optionButtonContent">PNJ</div>
-                                    </button>
-                                </div>
-                            </div>
 
                         </div>
                     </div>
@@ -985,6 +1040,7 @@
             /* ===================== Renderers ===================== */
             function linkOrSpan(href, text) { return href && href !== '#' ? `<a href="${href}" target="_blank" rel="noopener">${text}</a>` : `<span>${text}</span>`; }
             function chip(cls, text) { return '<div class="chip ' + (cls || '') + '"><div class="chip_icon"></div>' + (text || '—') + '</div>'; }
+            function actifChip(p) { return p._actif === 'oui' ? chip('chipActif', 'Actif') : (p._actif === 'non' ? chip('chipInactif', 'Inactif') : ''); }
 
             function cardPersonnage(p) {
                 const magicChips = (p._magie || []).map(lbl => chip(classForMagic(lbl), lbl));
@@ -996,6 +1052,7 @@
                     chip('chipFeat', (p.feat != null ? p.feat : '—'))
 
                 ].filter(Boolean).join(' ');
+                const actif = actifChip(p);
 
                 return `
       <div class="message scoopcorners colorborder offsetEffect metierSection">
@@ -1010,7 +1067,7 @@
             <a class="perso_name" href="${p.urlProfil || ''}"><h3 class="${groupColorClass(p.groupe)}">${p.prenom || ''} ${p.nom || ''}</h3></a>
             <h4 class="perso_metier">${p.metier || '—'}</h4>
           </div>
-          <chipsrp class="perso_chips">${chips}</chipsrp>
+          <chipsrp class="perso_chips">${chips}${actif ? '<div class="perso_chips_break"></div>' + actif : ''}</chipsrp>
         </div>
       </div>`;
             }
@@ -1032,8 +1089,9 @@
             <div>Personnage</div>
             <div class="flexRow perso_span">
               ${p._type === 'pnj' ? '<div class="chip chipSmall">PNJ</div>' : ''}
-              <h4><a class="${groupColorClass(p.groupe)}" href="${p.urlProfil || ''}">${p.prenom || ''} ${p.nom || ''}</a></h4>
+              <h4><a class="${groupColorClass(p.groupe)}" href="${p.urlProfil || ''}">${[p.prenom, p.nom].filter(Boolean).join(' ')}</a></h4>
             </div>
+            ${actifChip(p)}
           </div>
         </div>
       </div>`;
@@ -1053,6 +1111,7 @@
             <div class="flexRow perso_span">
               <h4><a class="${groupColorClass(p.groupe)}" href="${p.urlProfil || '#'}">${p.prenom || ''} ${p.nom || ''}</a></h4>
               ${p._type === 'pnj' ? '<div class="chip chipSmall">PNJ</div>' : ''}
+              ${actifChip(p)}
             </div>
           </div>
           <div class="feat_info metier_metier">
@@ -1150,6 +1209,13 @@
 
                 $empty.hide();
                 $list.show();                // ← ré-affiche la liste si on a des résultats
+
+                const total = DATA.length;
+                const isFiltered = arr.length !== total;
+                const countText = isFiltered
+                    ? arr.length + ' résultat' + (arr.length > 1 ? 's' : '') + ' sur ' + total
+                    : total + ' résultat' + (total > 1 ? 's' : '');
+                $list.append('<div class="results-count">' + countText + '</div>');
 
                 const renderItem = VIEW_RENDERER[view] || cardPersonnage;
                 for (let i = 0; i < arr.length; i++) $list.append(renderItem(arr[i]));

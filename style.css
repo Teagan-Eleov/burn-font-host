@@ -494,7 +494,7 @@ blockquote cite {
   color: var(--human-theme);
 }
 
-.color-chasseur {
+.color-chasseur, .color-hunter {
   color: var(--chasseur-theme);
 }
 

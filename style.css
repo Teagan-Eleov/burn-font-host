@@ -4994,3 +4994,10 @@ div.sceditor-dropdown a {
       "legend";
   }
 }
+
+@media (min-width: 1900px)
+{
+  #hero_image{
+    background-position: top;
+  }
+}

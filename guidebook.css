@@ -418,6 +418,14 @@ twsection {
     column-span: all;
 }
 
+/* Une note est un encart encadré : si la colonne se termine au milieu, elle
+   est coupée en deux et chaque moitié redessine bordure et outline, ce qui
+   donne un cadre tronqué en bas de colonne. On lui interdit d'être scindée :
+   elle bascule entière dans la colonne suivante. */
+note {
+    break-inside: avoid;
+}
+
 /* === Mode "révélé" global : quand le switch est coché === */
 :root:has(#reveal-switch:checked) tw {
     filter: none !important;

@@ -54,6 +54,10 @@
     padding-top: 32px;
 }
 
+#panel-ville-mythes_seiland .citation_bloc {
+    font-style: normal;
+}
+
 #guidebook {
     height: 100vh;
     width: 100%;

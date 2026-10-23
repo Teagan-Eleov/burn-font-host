@@ -154,7 +154,7 @@
   --witch-theme: var(--magenta-200);
   --chasseur-theme: var(--red-300);
   --cristal-theme: var(--blue-400);
-  /*--dead-theme: var(--green-400);*/
+  --revenant-theme: var(--green-400);
   --inconnu-theme: var(--green-400);
   --human-theme: var(--gold-400);
   --inconnu2-theme: var(--ash-200);
@@ -228,8 +228,9 @@
   --text-important: var(--gold-200);
   --background-image: url("https://static.wixstatic.com/media/e609d3_db5e1da067484082b3afa8a510d28709~mv2.png");
   --header-image: url("https://cdna.artstation.com/p/assets/images/images/046/971/522/large/axel-sauerwald-sea-witch.jpg?1646419242");
-  /*--pa-image: url("https://imgur.com/1i5kIIl.png");*/
-  --pa-image: url("https://imgur.com/lwpD8W9.jpg");
+  /*--pa-image: url("https://imgur.com/1i5kIIl.png"); *//*acte 1*/
+  /*--pa-image: url("https://imgur.com/lwpD8W9.jpg");*/ /*fanons*/
+  --pa-image: url("https://imgur.com/SMNmh4r.png");/*acte 2*/
 }
 
 .theme-red,
@@ -242,8 +243,10 @@
   --text-important: var(--blue-200);
   --background-image: url("https://cdnb.artstation.com/p/assets/images/images/035/631/701/large/oliver-ryan-little-boat-big-men-resize.jpg?1615471672");
   --header-image: url("https://cdna.artstation.com/p/assets/images/images/049/040/782/large/john-patrick-ganas-hitodama-graveyard2.jpg?1651558373");
-  /*--pa-image: url("https://imgur.com/v3gR1iz.jpg");*/
-  --pa-image: url("https://imgur.com/kTYe059.png");
+  /*--pa-image: url("https://imgur.com/v3gR1iz.jpg"); *//*acte 1*/
+  /*--pa-image: url("https://imgur.com/kTYe059.png");*/ /*fanons*/
+    --pa-image: url("https://imgur.com/vp3dyXO.jpg");
+
 
 }
 
@@ -257,8 +260,9 @@
   --text-important: var(--blue-200);
   --background-image: url("https://imgur.com/EjlrxKo.png");
   --header-image: url("https://imgur.com/W1WB6a4.png");
-  /*--pa-image: url("https://imgur.com/KT9fJkq.jpg");*/
-  --pa-image: url("https://imgur.com/nwnHHjw.jpg");
+  /*--pa-image: url("https://imgur.com/KT9fJkq.jpg"); *//*acte 1*/
+  /*--pa-image: url("https://imgur.com/nwnHHjw.jpg");*/ /* fanons*/
+  --pa-image: url("https://imgur.com/poGAADK.jpg"); /*acte 2*/
 
 
 }
@@ -274,9 +278,9 @@
   --text-important: var(--magenta-200);
   --background-image: url("https://imgur.com/0wKT0kg.png");
   --header-image: url("https://cdnb.artstation.com/p/assets/images/images/023/437/529/large/darek-zabrocki-marine-11-final.jpg?1579196604");
-  /*--pa-image: url("https://imgur.com/3J6e05b.png");*/
-  --pa-image: url("https://imgur.com/ol1WPWR.png");
-  /*--pa-image: url("https://imgur.com/7jAfVuj.png"); sirene v2*/
+  /*--pa-image: url("https://imgur.com/3J6e05b.png");*/ /*acte 1*/
+  --pa-image: url("https://imgur.com/CZK0WrL.png"); /*acte 2*/
+  /*--pa-image: url("https://imgur.com/ol1WPWR.png"); /*fanons*/
 
 }
 
@@ -290,7 +294,8 @@
   --text-important: var(--gold-200);
   --background-image: url("https://imgur.com/8Z1jH1Z.png");
   --header-image: url("https://imgur.com/dvSFL3E.png");
-  --pa-image: url("https://imgur.com/EpmnIjq.jpg");
+  /*--pa-image: url("https://imgur.com/EpmnIjq.jpg");*/ /*fanons*/
+  --pa-image: url("https://imgur.com/kjx1Ok3.jpg");
 }
 
 .theme-ash,
@@ -303,8 +308,10 @@
   --text-important: var(--magenta-200);
   --background-image: url("https://imgur.com/es7OPp7.png");
   --header-image: url("https://cdnb.artstation.com/p/assets/images/images/087/944/881/large/julian-bauer-ghostly-bride.jpg?1747084126");
-  /*--pa-image: url("https://imgur.com/KNzwAAI.png");*/
-  --pa-image: url("https://imgur.com/iP7lwcp.png");
+  /*--pa-image: url("https://imgur.com/KNzwAAI.png");*/ /*acte 1*/
+  /*--pa-image: url("https://imgur.com/iP7lwcp.png");*/ /*fanons*/
+  --pa-image: url("https://imgur.com/y9QMxDO.png"); /*fanons*/
+
 
 }
 
@@ -483,8 +490,8 @@ blockquote cite {
   color: var(--witch-theme);
 }
 
-.color-inconnu {
-  color: var(--inconnu-theme);
+.color-inconnu, .color-revenant {
+  color: var(--revenant-theme);
 }
 
 .color-inconnudeux {
@@ -1714,7 +1721,7 @@ input:checked+.theme-button {
 #pa_illu {
   grid-area: illu;
   background: linear-gradient(rgba(0, 0, 0, 0.0),
-      rgba(0, 0, 0, 1)), var(--pa-image) top left no-repeat;
+      rgba(0, 0, 0, 0.5)), var(--pa-image) top left no-repeat;
   /* le gradient va de haut en bas*/
   background-size: cover;
   background-position: center;
@@ -4275,7 +4282,8 @@ twsection:hover twreason {
 
 #fiche_slide_desc,
 #fiche_slide_histoire,
-#fiche_slide_comp {
+#fiche_slide_comp,
+#fiche_slide_mort {
   display: flex;
   height: 100%;
   padding-top: 16px;
@@ -4285,7 +4293,8 @@ twsection:hover twreason {
 
 #fiche_slide_desc .sectionCard,
 #fiche_slide_comp .sectionCard,
-#fiche_slide_histoire .sectionCard {
+#fiche_slide_histoire .sectionCard,
+#fiche_slide_mort .sectionCard {
   height: 50%;
 }
 
@@ -4328,6 +4337,78 @@ twsection:hover twreason {
 
 .fiche_humain #fiche_competences {
   height: 100%;
+}
+
+/* ---------- Revenant (fiche_mort) ---------- */
+
+/*titres des competences passees : degrade blanc -> couleur du groupe d'origine*/
+.gradientTitleExWitch {
+  background: linear-gradient(45deg, var(--witch-theme), var(--text-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradientTitleExCristal {
+  background: linear-gradient(45deg, var(--cristal-theme), var(--text-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/*ex-humain : les competences generales sont seules, elles prennent toute la hauteur*/
+#fiche_slide_comp > #fiche_competences:only-child {
+  height: 100%;
+}
+
+/*barre d'onglets a 6 boutons (l'onglet Mort s'ajoute pour les Revenants)*/
+#fiche_buttons.fiche_buttons_mort,
+.fiche_buttons.fiche_buttons_mort {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+}
+
+/*Les titres de carte sont en position:absolute, a cheval sur la bordure haute.
+  Un titre qui passe sur deux lignes recouvre donc le texte de la carte.
+  On le maintient sur une ligne, et sa taille suit la largeur de la carte :
+  20px tant qu'il y a la place, puis reduction. Sans container queries : 20px.*/
+.sectionCard {
+  container-type: inline-size;
+}
+
+.sectionCard > .sectionCardTitle,
+.sectionCard > .sectionTitleRight {
+  white-space: nowrap;
+  max-width: calc(100% - 32px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: clamp(11px, 6.5cqi, 20px);
+}
+
+/* ---------- Libelles des onglets de fiche ---------- */
+
+/*formulaire_inscription.css passe .optionButtonContent en display:flex pour aligner
+  l'icone et le texte des chips. Les onglets de fiche n'ont pas d'icone, et ce flex
+  annule le text-align:center (le texte se colle a gauche et deborde a droite).
+  On revient donc a un bloc, ou text-align et l'ellipse fonctionnent.*/
+#fiche_buttons .optionButtonContent,
+.fiche_buttons .optionButtonContent {
+  display: block;
+}
+
+/*la taille du texte suit la largeur du bouton : 15px tant qu'il y a la place
+  (cas du forum), puis reduction progressive quand la fiche est etroite
+  (panneau d'apercu, mobile). Navigateur sans container queries : on reste a 15px.*/
+#fiche_buttons .optionButton,
+.fiche_buttons .optionButton {
+  container-type: inline-size;
+}
+
+#fiche_buttons .optionButtonContent,
+.fiche_buttons .optionButtonContent {
+  font-size: clamp(10px, 13cqi, 15px);
 }
 
 /*no chrono : masquer la vue*/
@@ -4797,6 +4878,50 @@ div.sceditor-dropdown a {
 }
 
 
+/* Pubs Forumactif : une bannière de 728px fixes (min-width inline) est injectée
+   dans #main-content. Sans ce bloc, elle élargit toute la colonne de contenu,
+   la page dépasse l'écran et le téléphone dézoome. On autorise la cascade de
+   conteneurs à rétrécir sous 728px et on rogne la pub. */
+@media (max-width: 800px) {
+
+  #modernbb .conteneur_minwidth_IE,
+  #modernbb .conteneur_layout_IE,
+  #modernbb .conteneur_container_IE,
+  #modernbb #wrap,
+  #modernbb #page-body,
+  #modernbb #content-container,
+  #modernbb #outer-wrapper,
+  #modernbb #wrapper,
+  #modernbb #container,
+  #modernbb #content-main,
+  #modernbb #main,
+  #modernbb #main-content {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* minmax(0, 1fr) : la piste de grille ne s'élargit plus pour la pub */
+  #modernbb .forum_content {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-items: center;
+    align-items: center;
+  }
+
+  /* clip et pas hidden : ne crée pas de conteneur de défilement */
+  #modernbb #main-content {
+    overflow-x: clip;
+  }
+
+  #modernbb .forum_content > *,
+  #modernbb #main-content > * {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 800px) {
 
 
@@ -4935,6 +5060,15 @@ div.sceditor-dropdown a {
     font-size: 45px;
   }
 
+  /* padding-top au lieu du translateY(120px) du bloc 800px : le hero grandit
+     au lieu de déborder sur la suite. La largeur laisse la place au
+     sélecteur de thème, à droite. */
+  #hero_content {
+    transform: none;
+    width: calc(100% - 56px);
+    padding-top: 170px;
+  }
+
   #hero_context_section {
     padding: 0;
     transform: translateY(0px);
@@ -4945,22 +5079,68 @@ div.sceditor-dropdown a {
     padding: 8px;
   }
 
+  /* boutons sous le contexte, et non plus par-dessus son texte */
+  #title_accessories {
+    transform: none;
+    margin-top: 12px;
+  }
+
   #hero {
     overflow: visible;
   }
 
+  /* Une seule colonne, rangées à la hauteur de leur contenu (les rangées
+     en fr s'alignaient toutes sur la plus haute, d'où les grands vides) */
   #pa {
     padding-top: 0px;
     grid-template-areas:
-      "date date"
-      "main main"
-      "progress progress "
-      "messages news"
-      "liensRapides liensRapides"
-      "partenaires partenaires";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.5fr 0.5fr auto 0.5fr auto auto;
+      "date"
+      "main"
+      "progress"
+      "messages"
+      "news"
+      "liensRapides"
+      "partenaires";
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
     gap: 16px;
+  }
+
+  #pa_derniers_messages,
+  #pa_list_of_news {
+    max-height: 360px;
+  }
+
+  #list_top_partos {
+    flex-wrap: wrap;
+  }
+
+  #extrait_journaux {
+    right: auto;
+    left: 0;
+  }
+
+  .user_login_form {
+    max-width: 100%;
+  }
+
+  /* les boutons haut / bas fixes recouvrent le texte sur petit écran */
+  #screen_nav {
+    display: none;
+  }
+
+  /* multicompte : en ligne en haut de page au lieu d'une colonne fixe
+     qui recouvre tout le bord droit */
+  .switcheroo[position="top"] {
+    position: absolute;
+    height: auto;
+  }
+
+  .switcheroo[direction="vertical"] .switcheroo__squircles {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 22px;
   }
 
   #pa_date_inscriptions {
@@ -5005,4 +5185,85 @@ div.sceditor-dropdown a {
   #hero_image{
     background-position: top;
   }
+}
+
+/****************************** INTRO BRÈCHE *********************************/
+/* Overlay d'accueil joué une seule fois par visiteur. Le HTML correspondant
+   se place tout en haut du <body>, le JS en fin de <body>, et la garde qui
+   pose .breach-seen dans l'en-tête, avant cette feuille. */
+
+#breach_intro {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: #000;
+  cursor: pointer;
+  overflow: hidden;
+  touch-action: none;       /* et pas de défilement tactile non plus */
+}
+
+/* Pendant l'intro, la page derrière ne défile pas. La classe est posée et
+   retirée par le JS de l'intro, jamais par la garde de l'en-tête : si ce
+   script venait à ne pas s'exécuter, le forum resterait bloqué. */
+html.breach-lock,
+html.breach-lock body {
+  overflow: hidden;
+}
+
+#breach_intro canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Déjà vue par ce visiteur : jamais affichée */
+.breach-seen #breach_intro { display: none; }
+
+/* Accessibilité : pas d'animation si l'utilisateur la refuse */
+@media (prefers-reduced-motion: reduce) {
+  #breach_intro { display: none; }
+}
+
+/* Fondu final : blanc -> forum */
+#breach_intro.is-fading {
+  opacity: 0;
+  transition: opacity 750ms ease-out;
+  pointer-events: none;
+}
+
+/* Sortie par le bouton : coupe nette, sans flash */
+#breach_intro.is-skipping {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+  pointer-events: none;
+}
+
+/* Bouton de sortie, discret, en haut à droite */
+#breach_skip {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  z-index: 2;
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.45);
+  font: inherit;
+  font-size: 13px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: opacity 800ms ease-out, color 250ms, border-color 250ms;
+}
+
+#breach_skip:hover,
+#breach_skip:focus-visible {
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Animation complète lancée : le bouton s'efface */
+#breach_intro.is-playing #breach_skip {
+  opacity: 0;
+  pointer-events: none;
 }

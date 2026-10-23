@@ -459,7 +459,7 @@
     {
         "id": "societe-proportion-groupes-biologiques",
         "question": "Quelle est la proportion de chaque groupe biologique à Port-Fidèl ?",
-        "answer": "<imp>1% de la population est Sorcière</imp> à Port-Fidèl (environ 800 personnes sur 80 000). C’est plus important que dans les autres régions du fait de la <imp>légalisation de la magie</imp>.\n<imp>0,005% sont cristallisés</imp> (environ 250 personnes sur 80 000).\nIl n’y a qu’<imp>une dizaine de chasseurs</imp>.",
+        "answer": "<imp>1% de la population est Sorcière</imp> à Port-Fidèl (environ 800 personnes sur 80 000). C’est plus important que dans les autres régions du fait de la <imp>légalisation de la magie</imp>.\n<imp>0,25% sont cristallisés</imp> (environ 250 personnes sur 80 000).\nIl n’y a qu’<imp>une dizaine de chasseurs</imp>.",
         "keywords": [
             "Sorcières",
             "Chasseurs",

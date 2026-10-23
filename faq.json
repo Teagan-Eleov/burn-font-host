@@ -1,97 +1,5 @@
 [
-    {
-        "id": "chasseurs-qg-jouable",
-        "question": "Est-ce que le QG des Chasseurs est une zone jouable ?",
-        "answer": "<imp>Non</imp>, le QG des Chasseurs se situe dans une autre région de Seiland, il n’est donc pas jouable.\nPar contre, une Maison de Passage existe à Port-Fidèl.",
-        "keywords": [
-            "Chasseurs",
-            "Géographie"
-        ]
-    },
-    {
-        "id": "chasseurs-communication",
-        "question": "Comment communiquent les Chasseurs ?",
-        "answer": "Il peut y avoir plusieurs méthodes de communication :\n- télégraphe entre les Maisons de Passage (eh oui faut vivre avec son temps), courrier\n- Chasseur \"messager\", qui voyagera pour communiquer auprès des Chasseurs isolés\n- usage d’artefacts\nCes méthodes peuvent aussi être employées bien sûr pour juste informer les Chasseurs des actualités de l’Ordre, de rencontres éventuelles, etc.",
-        "keywords": [
-            "Chasseurs"
-        ]
-    },
-    {
-        "id": "chasseurs-ordre-mission",
-        "question": "Est-ce que l’Ordre peut communiquer une mission à des Chasseurs ?",
-        "answer": "<imp>Oui, mais c’est rare</imp>. Ce sera plutôt pour des missions complexes, qui demanderont des compétences spécifiques ou la collaboration de plusieurs membres.",
-        "keywords": [
-            "Chasseurs"
-        ]
-    },
-    {
-        "id": "chasseurs-mort",
-        "question": "Que se passe-t-il lorsqu’un Chasseur meurt ?",
-        "answer": "A la mort d’un Chasseur, l’Ordre va supposer que <imp>l’Armoricia est toujours en vie</imp> et va donc mettre les moyens nécessaires pour la retrouver.\nL’Armoricia sans son hôte ne sera pas vaillante mais survivra aussi longtemps que nécessaire. Elle repassera en mode blob, peu offensif. Au début, elle va plutôt phaser dans un coin en attendant d’être retrouvée, mais si rien ne se passe pendant une certaine durée, elle va essayer de retrouver un hôte seule. Potentiellement elle passera par des hôtes non humains pour se déplacer, mais ce ne sera toujours que temporaire car ils ne peuvent pas lui apporter ce dont elle a besoin (cf. conditions de symbiose).\n<imp>Pour retrouver une Armo, il faut une autre Armo</imp> (ou beaucoup de chance). Puisque ce sont des créatures magiques, elles laissent des \"traces\" (au même titre que la magie des sorcières, même si différentes de celles des sorcières), traces que d’autres Armo peuvent percevoir.",
-        "keywords": [
-            "Chasseurs"
-        ]
-    },
-    {
-        "id": "fantomes-interaction-physique",
-        "question": "Est-ce qu’il est possible d’interagir physiquement avec un fantôme ?",
-        "answer": "<imp>Non</imp>, un fantôme ne peut pas être touché ni blessé (ni par un autre corps, ni par magie, ni par une Armoricia). Il n’est pas possible de le faire souffrir physiquement, uniquement de l’emprisonner ou de l’annihiler.",
-        "keywords": [
-            "Fantômes"
-        ]
-    },
-    {
-        "id": "fantomes-blesser",
-        "question": "Est-ce qu’il est possible de blesser un fantôme ?",
-        "answer": "On peut porter atteinte à l’intégrité d’un fantôme mais on ne peut <imp>pas le blesser physiquement</imp>.\n- Les fantômes ont une âme, on peut donc les blesser avec des mots (du moins ceux assez rationnels pour les comprendre)\n- les emprisonner / entraver\n- les exorciser (cf. annexe)",
-        "keywords": [
-            "Fantômes"
-        ]
-    },
-    {
-        "id": "fantomes-evenements-apres-mort",
-        "question": "Est-ce qu’un Esprit comprend les évènements survenus après sa mort et s’en souvient ?",
-        "answer": "<imp>Oui</imp>",
-        "keywords": [
-            "Fantômes"
-        ]
-    },
-    {
-        "id": "fantomes-capacite-voir-obtenir-alterer",
-        "question": "Est-ce que la capacité à voir les fantômes peut s’obtenir ou s’altérer ?",
-        "answer": "<imp>Oui.</imp>\nElle peut être conférée temporairement par magie ou par corruption (si la corruption le justifie).\nElle peut également être retirée par magie, corruption, blessure ou atteinte aux yeux.",
-        "keywords": [
-            "Fantômes",
-            "Magie",
-            "Corruption"
-        ]
-    },
-    {
-        "id": "fantomes-souvenir-partage-victime",
-        "question": "Est-ce que l’Esprit se souviendra du souvenir partagé avec sa victime ?",
-        "answer": "<imp>Oui</imp>. Le véritable souvenir et le souvenir partagé se confondront.\nLa présence de trop nombreuses variantes d’un même souvenir peut augmenter la folie d’un fantôme.",
-        "keywords": [
-            "Fantômes"
-        ]
-    },
-    {
-        "id": "fantomes-traces-esprits",
-        "question": "Est-ce que les Esprits ont des traces, à l’instar des traces laissées par l’usage de la magie ?",
-        "answer": "Oui, mais ces traces ne sont perceptibles que par un autre fantôme, par une personne qui a été possédée récemment, ou par un Revenant.\nDans les deux derniers cas, la personne doit apprendre à comprendre les traces des fantômes, c’est un nouveau sens qui doit s’entraîner.",
-        "keywords": [
-            "Fantômes",
-            "Revenants"
-        ]
-    },
-    {
-        "id": "horsjeu-plusieurs-feats",
-        "question": "Est-ce que je peux avoir plusieurs feats pour un même personnage ?",
-        "answer": "Oui du moment qu’ils se ressemblent et respectent les règles.\nEssayez néanmoins de ne pas en avoir plus de 3 max.\nLes différents feats peuvent être réservés et indiqués dans le registre.",
-        "keywords": [
-            "Hors Jeu"
-        ]
-    },
-    {
+   {
         "id": "revenants-ignorant-sa-condition",
         "question": "Est-ce que je peux jouer un Revenant qui ne sait pas qu’il est Revenant ?",
         "answer": "Oui",
@@ -155,6 +63,98 @@
         "answer": "Le <imp>Corps</imp> peut avoir été mort <imp>maximum quelques semaines avant d’être ramené</imp>, sauf s’il a été particulièrement bien conservé (emploi de magie).\n<imp>L’Esprit</imp> quant à lui peut avoir été <imp>mort quelques minutes à quelques années</imp>, voire décennies.\nA noter que <imp>plus l’Esprit est vieux</imp>, <imp>plus son Obsession sera marquée</imp>. Si, en tant que fantôme, celui-ci n’avait déjà plus toute sa tête, il ne la retrouvera pas une fois Revenant. De la même manière, sa capacité à entendre et communiquer avec les fantômes sera facilitée.",
         "keywords": [
             "Revenants"
+        ]
+    },
+    {
+        "id": "chasseurs-qg-jouable",
+        "question": "Est-ce que le QG des Chasseurs est une zone jouable ?",
+        "answer": "<imp>Non</imp>, le QG des Chasseurs se situe dans une autre région de Seiland, il n’est donc pas jouable.\nPar contre, une Maison de Passage existe à Port-Fidèl.",
+        "keywords": [
+            "Chasseurs",
+            "Géographie"
+        ]
+    },
+    {
+        "id": "chasseurs-communication",
+        "question": "Comment communiquent ensemble les Chasseurs dispersés dans le pays ?",
+        "answer": "Il peut y avoir plusieurs méthodes de communication :\n- télégraphe entre les Maisons de Passage (eh oui faut vivre avec son temps), courrier\n- Chasseur \"messager\", qui voyagera pour communiquer auprès des Chasseurs isolés\n- usage d’artefacts\nCes méthodes peuvent aussi être employées bien sûr pour juste informer les Chasseurs des actualités de l’Ordre, de rencontres éventuelles, etc.",
+        "keywords": [
+            "Chasseurs"
+        ]
+    },
+    {
+        "id": "chasseurs-ordre-mission",
+        "question": "Est-ce que l’Ordre peut communiquer une mission à des Chasseurs ?",
+        "answer": "<imp>Oui, mais c’est rare</imp>. Ce sera plutôt pour des missions complexes, qui demanderont des compétences spécifiques ou la collaboration de plusieurs membres.",
+        "keywords": [
+            "Chasseurs"
+        ]
+    },
+    {
+        "id": "chasseurs-mort",
+        "question": "Que se passe-t-il lorsqu’un Chasseur meurt ?",
+        "answer": "A la mort d’un Chasseur, l’Ordre va supposer que <imp>l’Armoricia est toujours en vie</imp> et va donc mettre les moyens nécessaires pour la retrouver.\nL’Armoricia sans son hôte ne sera pas vaillante mais survivra aussi longtemps que nécessaire. Elle repassera en mode blob, peu offensif. Au début, elle va plutôt phaser dans un coin en attendant d’être retrouvée, mais si rien ne se passe pendant une certaine durée, elle va essayer de retrouver un hôte seule. Potentiellement elle passera par des hôtes non humains pour se déplacer, mais ce ne sera toujours que temporaire car ils ne peuvent pas lui apporter ce dont elle a besoin (cf. conditions de symbiose).\n<imp>Pour retrouver une Armo, il faut une autre Armo</imp> (ou beaucoup de chance). Puisque ce sont des créatures magiques, elles laissent des \"traces\" (au même titre que la magie des sorcières, même si différentes de celles des sorcières), traces que d’autres Armo peuvent percevoir.",
+        "keywords": [
+            "Chasseurs"
+        ]
+    },
+    {
+        "id": "fantomes-interaction-physique",
+        "question": "Est-ce qu’il est possible d’interagir physiquement avec un fantôme ?",
+        "answer": "<imp>Non</imp>, un fantôme ne peut pas être touché ni blessé (ni par un autre corps, ni par magie, ni par une Armoricia). Il n’est pas possible de le faire souffrir physiquement, uniquement de l’emprisonner ou de l’annihiler.",
+        "keywords": [
+            "Fantômes"
+        ]
+    },
+    {
+        "id": "fantomes-blesser",
+        "question": "Est-ce qu’il est possible de blesser un fantôme ?",
+        "answer": "On peut porter atteinte à l’intégrité d’un fantôme mais on ne peut <imp>pas le blesser physiquement</imp>.\n- Les fantômes ont une âme, on peut donc les blesser avec des mots (du moins ceux assez rationnels pour les comprendre)\n- les emprisonner / entraver\n- les exorciser (cf. annexe)",
+        "keywords": [
+            "Fantômes"
+        ]
+    },
+    {
+        "id": "fantomes-evenements-apres-mort",
+        "question": "Est-ce qu’un Esprit comprend les évènements survenus après sa mort et s’en souvient ?",
+        "answer": "<imp>Oui</imp>",
+        "keywords": [
+            "Fantômes"
+        ]
+    },
+    {
+        "id": "fantomes-capacite-voir-obtenir-alterer",
+        "question": "Est-ce que la capacité à voir les fantômes peut s’obtenir ou s’altérer ?",
+        "answer": "<imp>Oui.</imp>\nElle peut être conférée temporairement par magie ou par corruption (si la corruption le justifie).\nElle peut également être retirée par magie, corruption, blessure ou atteinte aux yeux.",
+        "keywords": [
+            "Fantômes",
+            "Magie",
+            "Corruption"
+        ]
+    },
+    {
+        "id": "fantomes-souvenir-partage-victime",
+        "question": "Après une possession, est-ce que l’Esprit se souviendra du souvenir partagé avec sa victime ?",
+        "answer": "<imp>Oui</imp>. Le véritable souvenir et le souvenir partagé se confondront.\nLa présence de trop nombreuses variantes d’un même souvenir peut augmenter la folie d’un fantôme.",
+        "keywords": [
+            "Fantômes"
+        ]
+    },
+    {
+        "id": "fantomes-traces-esprits",
+        "question": "Est-ce que les Esprits ont des traces, à l’instar des traces laissées par l’usage de la magie ?",
+        "answer": "Oui, mais ces traces ne sont perceptibles que par un autre fantôme, par une personne qui a été possédée récemment, ou par un Revenant.\nDans les deux derniers cas, la personne doit apprendre à comprendre les traces des fantômes, c’est un nouveau sens qui doit s’entraîner.",
+        "keywords": [
+            "Fantômes",
+            "Revenants"
+        ]
+    },
+    {
+        "id": "horsjeu-plusieurs-feats",
+        "question": "Est-ce que je peux avoir plusieurs feats pour un même personnage ?",
+        "answer": "Oui du moment qu’ils se ressemblent et respectent les règles.\nEssayez néanmoins de ne pas en avoir plus de 3 max.\nLes différents feats peuvent être réservés et indiqués dans le registre.",
+        "keywords": [
+            "Hors Jeu"
         ]
     },
     {

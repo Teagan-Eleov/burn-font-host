@@ -2236,11 +2236,13 @@ input:checked+.theme-button {
 
 #qeel_faille {
   position: absolute;
-  width: 150px;
-  transform: rotate(-90deg);
-  right: 80px;
-  opacity: 0.4;
-  top: -85px;
+  width: 35%;
+  transform: translate(50%, -50%) rotate(-90deg);
+  right: 15.5%;
+  opacity: 0.6;
+  filter: brightness(0);
+  top: 72px;
+  z-index: -1;
 }
 
 #qeel_legend {

@@ -4375,13 +4375,15 @@ twsection:hover twreason {
 /*Les titres de carte sont en position:absolute, a cheval sur la bordure haute.
   Un titre qui passe sur deux lignes recouvre donc le texte de la carte.
   On le maintient sur une ligne, et sa taille suit la largeur de la carte :
-  20px tant qu'il y a la place, puis reduction. Sans container queries : 20px.*/
-.sectionCard {
+  20px tant qu'il y a la place, puis reduction. Sans container queries : 20px.
+  Limite aux cartes de la fiche de presentation (#fichePrez) : ailleurs,
+  container-type peut ecraser la largeur d'une carte qui n'en a pas d'imposee.*/
+#fichePrez .sectionCard {
   container-type: inline-size;
 }
 
-.sectionCard > .sectionCardTitle,
-.sectionCard > .sectionTitleRight {
+#fichePrez .sectionCard > .sectionCardTitle,
+#fichePrez .sectionCard > .sectionTitleRight {
   white-space: nowrap;
   max-width: calc(100% - 32px);
   overflow: hidden;

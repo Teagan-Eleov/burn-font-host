@@ -2,7 +2,7 @@
    {
         "id": "revenants-ignorant-sa-condition",
         "question": "Est-ce que je peux jouer un Revenant qui ne sait pas qu’il est Revenant ?",
-        "answer": "Oui",
+        "answer": "Oui.",
         "keywords": [
             "Revenants"
         ]
@@ -10,7 +10,7 @@
     {
         "id": "revenants-fete-des-fanons",
         "question": "Est-ce que je peux jouer un Revenant ramené avant ou après la Fête des Fanons ?",
-        "answer": "Non pas pour le moment",
+        "answer": "Non, pas pour le moment. Les seuls Revenants jouables sont ceux ramenés durant la Fête des Fanons (cf Revenants dans le guidebook).",
         "keywords": [
             "Revenants"
         ]

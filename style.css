@@ -25,8 +25,6 @@
   src: url('https://teagan-eleov.github.io/burn-font-host/HoneyScript-Light.ttf');
 }
 
-/* Ecriture de la lettre de réponse à la Nuit des Rubans (.reponse_rubans_rp).
-   Fichier servi par Google Fonts : remplacer l'adresse si la police est un jour hébergée sur burn-font-host */
 @font-face {
   font-family: 'Mrs Saint Delafield';
   src: url('https://fonts.gstatic.com/s/mrssaintdelafield/v14/v6-IGZDIOVXH9xtmTZfRagunqBw5WC62QKknL-mYF20.woff2') format('woff2');
@@ -324,25 +322,20 @@
 }
 
 /* passer les images en noir et blanc si theme ash*/
-/* Conteneur */
 .theme-ash .forum_header {
   position: relative;
   overflow: hidden;
 }
 
-/* Le calque qui reprend le background et le passe en N&B */
 .theme-ash .forum_header::before {
   content: "";
   position: absolute;
   inset: 0;
   background: inherit;
-  /* hérite TOUT le background (image, position, size, repeat) */
   filter: grayscale(70%);
   z-index: 0;
-  /* reste derrière le contenu */
 }
 
-/* S'assurer que le contenu passe au-dessus du calque filtré */
 .theme-ash .forum_header>* {
   position: relative;
   z-index: 1;
@@ -371,6 +364,12 @@ imp {
   color: var(--text-important) !important;
   font-weight: 500;
   display: inline;
+}
+
+dia {
+  font-weight: 500;
+  color: var(--text-important);
+  display: inline-block;
 }
 
 h1,
@@ -580,7 +579,7 @@ blockquote cite {
   height: 1px;
   background: linear-gradient(to right, transparent, var(--stroke-secondary));
   /*align-self: stretch;
-    flex-shrink: 0;     /* très important : empêche la div de s'étirer */
+    flex-shrink: 0;*/
 }
 
 .separatorInverse {
@@ -588,7 +587,6 @@ blockquote cite {
   background: linear-gradient(to left, transparent, var(--stroke-secondary));
   align-self: stretch;
   flex-shrink: 0;
-  /* très important : empêche la div de s'étirer */
 }
 
 /******************************* ICON *************************/
@@ -919,6 +917,33 @@ form[name=post] {
 
 form[name=form_login] .h3 {
   display: none;
+}
+
+#quick_login {
+  width: 100%;
+}
+
+form[name=form_login] {
+  width: 100% !important;
+  align-items: flex-start;
+}
+
+form[name=form_login] input[type="text"],
+form[name=form_login] input[type="password"] {
+  width: 300px;
+}
+
+.user_login_form {
+  align-items: flex-start !important;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.user_login_form label {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  width: 400px;
 }
 
 #main-content>p {
@@ -2547,6 +2572,18 @@ input:checked+.theme-button {
   gap: 16px;
 }
 
+.breadcrumb > span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-right: 8px;
+}
+
+.breadcrumb > span strong {
+  color: var(--text-important);
+  font-size: 18px;
+}
+
 .forumActions {
   width: 100%;
   padding: 16px;
@@ -2707,19 +2744,13 @@ input:checked+.theme-button {
 .post_right_content {
 
   align-self: flex-start;
-  /* au cas où le parent resterait en stretch */
   flex: 0 0 200px;
-  /* largeur fixe indicative, ajuste à ton design */
   z-index: 1;
-  /* passe au-dessus du flot si nécessaire */
   height: fit-content;
-  /* évite de prendre toute la hauteur en Safari/Firefox */
   overflow: visible;
   position: sticky;
   top: 24px;
-  /* ajuste selon ton header */
   height: fit-content;
-  /* évite l’étirement plein height */
   z-index: 1;
 }
 
@@ -2925,11 +2956,8 @@ select {
   height: 50px;
   padding: 0px 8px 0px 8px;
   display: -webkit-box;
-  /* On précise qu'on veut utiliser webkit-box */
   -webkit-box-orient: vertical;
-  /* On indique le sens du texte */
   -webkit-line-clamp: 2;
-  /* On donne le nombre de lignes souhaité */
   overflow: hidden;
 }
 
@@ -3042,6 +3070,15 @@ select {
 
 }
 
+#profil_container #fiche_slide_info .sectionCard {
+  height: 150px;
+}
+
+.profile_field,
+#contact_fields {
+  display: none;
+}
+
 
 
 #roliste_avatar {
@@ -3123,6 +3160,35 @@ select {
   gap: 16px;
   box-sizing: border-box;
   justify-content: space-between;
+}
+
+#profil_edit fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#profil_edit dt span {
+  font-family: Brugenfield, BrunelDeck, "Brunel Deck";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  font-size: 18px;
+  color: var(--text-important) !important;
+}
+
+#profil_edit dd span {
+  color: var(--text-secondary);
+}
+
+#profil_edit ul, ol {
+  list-style: none;   /* Supprime le marqueur */
+  padding-left: 0;    /* Supprime l’espace laissé pour la puce */
+  margin-left: 0;
+}
+
+#profil_edit input[type="text"] {
+  width: 500px !important;
 }
 
 
@@ -3504,7 +3570,6 @@ select {
 
 /******************** NOTIFICATIONS ***************/
 
-/* Cacher les bout de la toolbar que je ne veux pas */
 .fa_tbMainElement#fa_left,
 .fa_tbMainElement#fa_search,
 .fa_tbMainElement#fa_share,
@@ -3514,7 +3579,6 @@ select {
   display: none !important;
 }
 
-/* Supprimer la couleur de fond et positionnement du bloc */
 #fa_toolbar {
   background-color: transparent !important;
   justify-content: end;
@@ -3531,7 +3595,6 @@ select {
   width: fit-content;
 }
 
-/* Référence pour la liste des notifications */
 #fa_toolbar #fa_right.fa_tbMainElement {
   display: flex;
   gap: 16px;
@@ -3539,7 +3602,6 @@ select {
   align-items: end;
 }
 
-/* Mise en page du bouton Notification */
 .fa_tbMainElement#fa_right a.rightHeaderLink#fa_notifications {
   display: block !important;
   border: 1px solid var(--stroke-quinary);
@@ -3592,7 +3654,6 @@ select {
   background: none !important;
 }
 
-/* Mise en page bouton "notification" - Au clic */
 #fa_menu:hover:visited,
 #fa_toolbar>#fa_right.notification>#fa_notifications {
   background: var(--surface-tint) !important;
@@ -3608,17 +3669,14 @@ select {
 }
 
 
-/*on masque la liste des notif par défaut*/
 #fa_toolbar #fa_right.fa_tbMainElement ul {
   display: none;
 }
 
-/*sauf quand le bouton 'notification est cliqué : class notification ajoutée, donc display*/
 #fa_toolbar #fa_right.notification ul {
   display: flex !important;
 }
 
-/* Mise en page de la liste des notifications */
 #notif_list {
   top: 50px !important;
   right: 10px;
@@ -3636,13 +3694,10 @@ select {
   flex-direction: column;
   gap: 8px;
   scrollbar-width: thin;
-  /* Firefox */
   scrollbar-color: transparent;
-  /* Couleur de la scrollbar */
 }
 
 
-/* Mise en page des notifications */
 #fa_toolbar #fa_right #notif_list li .content {
   width: auto !important;
   padding: 8px;
@@ -3652,20 +3707,17 @@ select {
 
 #fa_toolbar #fa_right #notif_list li {
   list-style-type: none;
-  /*masque les puces*/
   background: var(--surface-3);
   width: auto !important;
   padding: 8px;
   border-radius: var(--radius-s);
 }
 
-/* Taille des blocs textes des points de la liste de notif' */
 #fa_toolbar #fa_right #notif_list li .contentText {
   color: var(--text-secondary);
   width: 95%;
 }
 
-/* Bloc "notifs non lues" */
 .fa_tbMainElement#fa_right a.rightHeaderLink.unread#fa_notifications {
   background: var(--surface-tint);
   opacity: 1;
@@ -3685,7 +3737,6 @@ select {
   color: var(--text-color);
 }
 
-/* Mise en page du bloc "voir toutes les notifications" */
 #fa_toolbar #fa_right #notif_list li.see_all {
   margin-top: 8px;
 }
@@ -4064,9 +4115,6 @@ twsection:hover twreason {
 
 }
 
-/* Texte miroir : retourné et aligné à droite, il se brouille puis se remet
-   à l’endroit au survol. --miroir va de 0 à 1 pendant la transition ; le
-   flou et l’opacité culminent à mi-parcours, là où le texte se retourne. */
 @property --miroir {
   syntax: '<number>';
   inherits: false;
@@ -4076,7 +4124,6 @@ twsection:hover twreason {
 miroir {
   --miroir: 0;
   display: block;
-  /* aligné à gauche avant retournement, donc à droite à l’écran */
   text-align: left;
   transform: scaleX(-1);
   opacity: calc(1 - 2 * min(var(--miroir), 1 - var(--miroir)));
@@ -4098,8 +4145,6 @@ miroir:hover {
   }
 }
 
-/* Texte en vision double : le texte lui-même est transparent, seuls ses deux
-   reflets décalés sont visibles. Au survol, ils se rejoignent. */
 double {
   color: transparent;
   text-shadow: -5px -2px 0 var(--text-secondary),
@@ -4408,7 +4453,6 @@ double:hover {
 
 /* ---------- Revenant (fiche_mort) ---------- */
 
-/*titres des competences passees : degrade blanc -> couleur du groupe d'origine*/
 .gradientTitleExWitch {
   background: linear-gradient(45deg, var(--witch-theme), var(--text-color));
   -webkit-background-clip: text;
@@ -4425,24 +4469,16 @@ double:hover {
   color: transparent;
 }
 
-/*ex-humain : les competences generales sont seules, elles prennent toute la hauteur*/
 #fiche_slide_comp > #fiche_competences:only-child {
   height: 100%;
 }
 
-/*barre d'onglets a 6 boutons (l'onglet Mort s'ajoute pour les Revenants)*/
 #fiche_buttons.fiche_buttons_mort,
 .fiche_buttons.fiche_buttons_mort {
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 8px;
 }
 
-/*Les titres de carte sont en position:absolute, a cheval sur la bordure haute.
-  Un titre qui passe sur deux lignes recouvre donc le texte de la carte.
-  On le maintient sur une ligne, et sa taille suit la largeur de la carte :
-  20px tant qu'il y a la place, puis reduction. Sans container queries : 20px.
-  Limite aux cartes de la fiche de presentation (#fichePrez) : ailleurs,
-  container-type peut ecraser la largeur d'une carte qui n'en a pas d'imposee.*/
 #fichePrez .sectionCard {
   container-type: inline-size;
 }
@@ -4458,18 +4494,11 @@ double:hover {
 
 /* ---------- Libelles des onglets de fiche ---------- */
 
-/*formulaire_inscription.css passe .optionButtonContent en display:flex pour aligner
-  l'icone et le texte des chips. Les onglets de fiche n'ont pas d'icone, et ce flex
-  annule le text-align:center (le texte se colle a gauche et deborde a droite).
-  On revient donc a un bloc, ou text-align et l'ellipse fonctionnent.*/
 #fiche_buttons .optionButtonContent,
 .fiche_buttons .optionButtonContent {
   display: block;
 }
 
-/*la taille du texte suit la largeur du bouton : 15px tant qu'il y a la place
-  (cas du forum), puis reduction progressive quand la fiche est etroite
-  (panneau d'apercu, mobile). Navigateur sans container queries : on reste a 15px.*/
 #fiche_buttons .optionButton,
 .fiche_buttons .optionButton {
   container-type: inline-size;
@@ -4885,6 +4914,13 @@ a[name="quickreply"]+.h3 {
   box-sizing: border-box;
 }
 
+img[id^="smiley"] {
+  max-width: 40px;
+  max-height: 40px;
+  width: auto;
+  height: auto;
+}
+
 div.sceditor-dropdown {
   border: none;
   background: var(--surface-4) !important;
@@ -4947,10 +4983,6 @@ div.sceditor-dropdown a {
 }
 
 
-/* Pubs Forumactif : une bannière de 728px fixes (min-width inline) est injectée
-   dans #main-content. Sans ce bloc, elle élargit toute la colonne de contenu,
-   la page dépasse l'écran et le téléphone dézoome. On autorise la cascade de
-   conteneurs à rétrécir sous 728px et on rogne la pub. */
 @media (max-width: 800px) {
 
   #modernbb .conteneur_minwidth_IE,
@@ -4970,7 +5002,6 @@ div.sceditor-dropdown a {
     width: 100% !important;
   }
 
-  /* minmax(0, 1fr) : la piste de grille ne s'élargit plus pour la pub */
   #modernbb .forum_content {
     display: grid !important;
     grid-template-columns: minmax(0, 1fr) !important;
@@ -4980,7 +5011,6 @@ div.sceditor-dropdown a {
     align-items: center;
   }
 
-  /* clip et pas hidden : ne crée pas de conteneur de défilement */
   #modernbb #main-content {
     overflow-x: clip;
   }
@@ -5129,9 +5159,6 @@ div.sceditor-dropdown a {
     font-size: 45px;
   }
 
-  /* padding-top au lieu du translateY(120px) du bloc 800px : le hero grandit
-     au lieu de déborder sur la suite. La largeur laisse la place au
-     sélecteur de thème, à droite. */
   #hero_content {
     transform: none;
     width: calc(100% - 56px);
@@ -5148,7 +5175,6 @@ div.sceditor-dropdown a {
     padding: 8px;
   }
 
-  /* boutons sous le contexte, et non plus par-dessus son texte */
   #title_accessories {
     transform: none;
     margin-top: 12px;
@@ -5158,8 +5184,6 @@ div.sceditor-dropdown a {
     overflow: visible;
   }
 
-  /* Une seule colonne, rangées à la hauteur de leur contenu (les rangées
-     en fr s'alignaient toutes sur la plus haute, d'où les grands vides) */
   #pa {
     padding-top: 0px;
     grid-template-areas:
@@ -5193,13 +5217,10 @@ div.sceditor-dropdown a {
     max-width: 100%;
   }
 
-  /* les boutons haut / bas fixes recouvrent le texte sur petit écran */
   #screen_nav {
     display: none;
   }
 
-  /* multicompte : en ligne en haut de page au lieu d'une colonne fixe
-     qui recouvre tout le bord droit */
   .switcheroo[position="top"] {
     position: absolute;
     height: auto;
@@ -5257,9 +5278,6 @@ div.sceditor-dropdown a {
 }
 
 /****************************** INTRO BRÈCHE *********************************/
-/* Overlay d'accueil joué une seule fois par visiteur. Le HTML correspondant
-   se place tout en haut du <body>, le JS en fin de <body>, et la garde qui
-   pose .breach-seen dans l'en-tête, avant cette feuille. */
 
 #breach_intro {
   position: fixed;
@@ -5268,12 +5286,9 @@ div.sceditor-dropdown a {
   background: #000;
   cursor: pointer;
   overflow: hidden;
-  touch-action: none;       /* et pas de défilement tactile non plus */
+  touch-action: none;
 }
 
-/* Pendant l'intro, la page derrière ne défile pas. La classe est posée et
-   retirée par le JS de l'intro, jamais par la garde de l'en-tête : si ce
-   script venait à ne pas s'exécuter, le forum resterait bloqué. */
 html.breach-lock,
 html.breach-lock body {
   overflow: hidden;
@@ -5286,29 +5301,24 @@ html.breach-lock body {
   display: block;
 }
 
-/* Déjà vue par ce visiteur : jamais affichée */
 .breach-seen #breach_intro { display: none; }
 
-/* Accessibilité : pas d'animation si l'utilisateur la refuse */
 @media (prefers-reduced-motion: reduce) {
   #breach_intro { display: none; }
 }
 
-/* Fondu final : blanc -> forum */
 #breach_intro.is-fading {
   opacity: 0;
   transition: opacity 750ms ease-out;
   pointer-events: none;
 }
 
-/* Sortie par le bouton : coupe nette, sans flash */
 #breach_intro.is-skipping {
   opacity: 0;
   transition: opacity 300ms ease-out;
   pointer-events: none;
 }
 
-/* Bouton de sortie, discret, en haut à droite */
 #breach_skip {
   position: absolute;
   top: 18px;
@@ -5331,16 +5341,12 @@ html.breach-lock body {
   border-color: rgba(255, 255, 255, 0.6);
 }
 
-/* Animation complète lancée : le bouton s'efface */
 #breach_intro.is-playing #breach_skip {
   opacity: 0;
   pointer-events: none;
 }
 
-/* ========== NUIT DES RUBANS : LETTRE DE REPONSE ==========
-   Message posté par Invitation/reponse_invitation.html.
-   Même papier que l'invitation (Invitation/invitation.js), sans frise en tête :
-   le courrier (section RP) au recto, la section HRP au verso. */
+/* ========== NUIT DES RUBANS : LETTRE DE REPONSE ========== */
 .reponse_rubans {
   position: relative;
   box-sizing: border-box;
@@ -5362,7 +5368,6 @@ html.breach-lock body {
   text-transform: none;
 }
 
-/* Double filet doré */
 .reponse_rubans::before {
   content: "";
   position: absolute;
@@ -5387,8 +5392,6 @@ html.breach-lock body {
   margin-bottom: 0;
 }
 
-/* Libellé d'une réponse, au-dessus de celle-ci.
-   Pas de passage en capitales : il accentuerait les majuscules (« OÙ », « RÔLE ») */
 .reponse_rubans_libelle {
   display: block;
   color: #8a6a2f;
@@ -5398,7 +5401,6 @@ html.breach-lock body {
   letter-spacing: 0.04em;
 }
 
-/* Section RP : le courrier, écrit à la main */
 .reponse_rubans_rp {
   font-family: "Mrs Saint Delafield", "Honey Script", cursive;
   font-size: 36px;
@@ -5409,7 +5411,6 @@ html.breach-lock body {
   margin-bottom: 0.7em;
 }
 
-/* Section HRP : en plus petit, précédée de son titre */
 .reponse_rubans_hrp {
   font-size: 14px;
   line-height: 1.6;
@@ -5423,7 +5424,6 @@ html.breach-lock body {
   letter-spacing: 0.14em;
 }
 
-/* Réponses de la section HRP, par groupes */
 .reponse_rubans_groupe + .reponse_rubans_groupe {
   margin-top: 0.9em;
 }
@@ -5432,8 +5432,6 @@ html.breach-lock body {
   margin-bottom: 0.3em;
 }
 
-/* Recto verso : le courrier au recto, la section HRP au verso. Un clic retourne la feuille.
-   Sans script : une case à cocher invisible, dans un label qui couvre toute la feuille */
 .reponse_rubans_double {
   display: block;
   position: relative;
@@ -5449,7 +5447,6 @@ html.breach-lock body {
   pointer-events: none;
 }
 
-/* Les deux faces occupent la même case : la feuille prend la hauteur de la plus longue */
 .reponse_rubans_feuille {
   display: grid;
   transform-style: preserve-3d;
@@ -5469,7 +5466,6 @@ html.breach-lock body {
   grid-area: 1 / 1;
   max-width: none;
   margin: 0;
-  /* Place pour l'invitation à retourner, sous le contenu */
   padding-bottom: 72px;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -5479,7 +5475,6 @@ html.breach-lock body {
   transform: rotateY(180deg);
 }
 
-/* Invitation à retourner la feuille, au bas de chaque face. Le texte se change ici, pour tous les messages */
 .reponse_rubans_feuille .reponse_rubans_rp::after,
 .reponse_rubans_feuille .reponse_rubans_hrp::after {
   content: "Cliquer pour retourner";
@@ -5493,7 +5488,6 @@ html.breach-lock body {
   text-align: center;
 }
 
-/* Coin doré, en bas à droite de chaque face : la feuille se retourne */
 .reponse_rubans_feuille > .reponse_rubans::after {
   content: "";
   position: absolute;

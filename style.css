@@ -4633,6 +4633,19 @@ double:hover {
   overflow: auto;
 }
 
+.recapPredef_section > .recapPredef_card {
+  align-self: stretch;
+  contain: size;
+  min-height: calc(150px + 2 * var(--space-l) + 2px);
+  flex-direction: column;
+}
+
+.recapPredef_section > .recapPredef_card .sectionText {
+  height: auto;
+  flex: 1 1 0;
+  min-height: 0;
+}
+
 .prelien_voir_fiche
 {
   color:var(--text-tint)
@@ -5301,21 +5314,32 @@ div.sceditor-dropdown a {
 
   .switcheroo[position="top"] {
     position: absolute;
+    left: 0;
+    right: 64px;
     height: auto;
+    padding: 0;
     z-index: 998;
     pointer-events: none;
   }
 
-  .switcheroo[position="top"] .switcheroo__squircle {
+  .switcheroo[direction="vertical"] .switcheroo__squircles {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 22px;
+    padding: var(--space-l) var(--space-m);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
     pointer-events: auto;
   }
 
-  .switcheroo[direction="vertical"] .switcheroo__squircles {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 22px;
-    padding-right: 64px;
+  .switcheroo[direction="vertical"] .switcheroo__squircle {
+    flex-shrink: 0;
+  }
+
+  .switcheroo[direction="vertical"] .switcheroo__squircle:first-child {
+    margin-left: auto;
   }
 
   #fa_toolbar {

@@ -1422,8 +1422,9 @@ fieldset {
   transform: rotate(-45deg) translate(0, -25%);
 }
 
-/* Balise d'override d'avatar (override_avatar.js) : jamais affichée dans le message */
-img.overrideAvatar {
+/* Balises d'override d'avatar (override_avatar.js) : jamais affichées dans le message */
+img.overrideAvatar,
+img.overrideAvatarLosange {
   display: none !important;
 }
 

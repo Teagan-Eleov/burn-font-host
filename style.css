@@ -5846,3 +5846,70 @@ html.breach-lock body {
     bottom: 21px;
   }
 }
+
+/* ===== Effet glitch : deux mots superposes, bascule au survol facon bougie ===== */
+.glitch {
+  display: inline-grid;
+  cursor: default;
+}
+
+/* les deux mots occupent la meme case : superposes */
+.glitch > span {
+  grid-area: 1 / 1;
+  text-align: center;
+}
+
+/* au repos : les deux mots visibles en meme temps, melanges */
+.glitch_a,
+.glitch_b {
+  opacity: 0.6;
+}
+
+/* au survol : vacillement irregulier, comme sous une flamme.
+   Cycle de 1,2 s : 0-25 % transition vers B, 25-50 % B seul (0,3 s),
+   50-75 % transition vers A, 75-100 % A seul (0,3 s).
+   Place avant le bloc d'accessibilite pour que celui-ci garde le dernier mot. */
+.glitch:hover .glitch_a {
+  animation: bougie-a 1.2s linear infinite;
+}
+
+.glitch:hover .glitch_b {
+  animation: bougie-b 1.2s linear infinite;
+}
+
+@keyframes bougie-a {
+  0%       { opacity: 1; }
+  6%       { opacity: 0.35; }
+  10%      { opacity: 0.8; }
+  16%      { opacity: 0.15; }
+  25%, 50% { opacity: 0; }
+  56%      { opacity: 0.5; }
+  61%      { opacity: 0.2; }
+  68%      { opacity: 0.9; }
+  75%, 100% { opacity: 1; }
+}
+
+@keyframes bougie-b {
+  0%       { opacity: 0; }
+  6%       { opacity: 0.5; }
+  11%      { opacity: 0.2; }
+  18%      { opacity: 0.9; }
+  25%, 50% { opacity: 1; }
+  56%      { opacity: 0.35; }
+  60%      { opacity: 0.8; }
+  66%      { opacity: 0.15; }
+  75%, 100% { opacity: 0; }
+}
+
+/* accessibilite : pas d'animation si l'utilisateur la refuse */
+@media (prefers-reduced-motion: reduce) {
+  .glitch:hover .glitch_a {
+    animation: none;
+    opacity: 0;
+  }
+
+  .glitch:hover .glitch_b {
+    animation: none;
+    opacity: 1;
+  }
+}
